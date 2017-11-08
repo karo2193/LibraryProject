@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  Library
+
+  Created by Kryg Tomasz on 29.10.2017.
+  Copyright © 2017 Kryg Tomek. All rights reserved.
+*/
+
+"enterLogin" = "Podaj login";
+"enterPassword" = "Podaj hasło";
