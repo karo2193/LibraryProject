@@ -10,6 +10,7 @@ import UIKit
 
 class ListViewController: MainVC {
 
+    @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var viewTitleLabel: UILabel! {
         didSet {
             viewTitleLabel.textColor = .tintDark
@@ -35,6 +36,7 @@ class ListViewController: MainVC {
             backButton.appTheme()
             backButton.setTitle(R.string.localizable.backToSearch(), for: .normal)
             backButton.addTarget(self, action: #selector(onButtonClicked), for: .touchUpInside)
+            backButton.addShadow()
         }
     }
     
@@ -62,6 +64,13 @@ class ListViewController: MainVC {
         super.viewDidLoad()
         setColor(to: .main)
         tableView.separatorColor = .tintDark
+        addParallaxEffect()
+    }
+    
+    private func addParallaxEffect() {
+        titleView.addParallaxEffect(15)
+        tableView.addParallaxEffect(15)
+        backButton.addParallaxEffect(30)
     }
     
     @objc func onButtonClicked() {
@@ -94,6 +103,11 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
             return
         }
         selectedCell.setSelected(false, animated: true)
+        
+        guard let coverVC = R.storyboard.main().instantiateViewController(withIdentifier: "BookCoverViewController") as? BookCoverViewController else { return }
+        let book = books[indexPath.row]
+        coverVC.book = book
+        present(coverVC, animated: true, completion: nil)
     }
     
 }

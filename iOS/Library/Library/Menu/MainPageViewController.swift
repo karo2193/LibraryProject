@@ -11,6 +11,7 @@ import UIKit
 protocol MainPageViewControllerDelegate: class {
     func nextViewController(from viewController: UIViewController)
     func previousViewController(from viewController: UIViewController)
+    func presentViewController(_ viewController: UIViewController)
 }
 
 class MainPageViewController: UIPageViewController {
@@ -93,6 +94,10 @@ extension MainPageViewController: MainPageViewControllerDelegate {
             completed in
             self.view.isUserInteractionEnabled = true
         })
+    }
+    
+    func presentViewController(_ viewController: UIViewController) {
+        self.present(viewController, animated: true, completion: nil)
     }
     
 }

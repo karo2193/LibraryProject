@@ -10,6 +10,7 @@ import UIKit
 
 class SearchViewController: MainVC {
 
+    @IBOutlet weak var titleView: UIView!
     @IBOutlet weak var viewTitleLabel: UILabel! {
         didSet {
             viewTitleLabel.textColor = .tintDark
@@ -26,6 +27,7 @@ class SearchViewController: MainVC {
             searchButton.appTheme()
             searchButton.setTitle(R.string.localizable.search(), for: .normal)
             searchButton.addTarget(self, action: #selector(onSearchButtonClicked), for: .touchUpInside)
+            searchButton.addShadow()
         }
     }
     
@@ -34,11 +36,12 @@ class SearchViewController: MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         setColor(to: .main)
+        addParallaxEffect()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-//        showLoginScreen()
+    private func addParallaxEffect() {
+        titleView.addParallaxEffect(15)
+        searchButton.addParallaxEffect(30)
     }
     
     @objc func onSearchButtonClicked() {

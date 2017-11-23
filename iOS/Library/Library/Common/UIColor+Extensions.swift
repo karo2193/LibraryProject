@@ -33,7 +33,7 @@ extension UIColor {
     }
     
     public class var tintDark: UIColor {
-        return UIColor(hex: "#66461B")
+        return UIColor(hex: "#3D2607")
     }
     
     public class var tintLight: UIColor {

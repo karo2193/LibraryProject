@@ -25,6 +25,8 @@
 		22A18F9F1FC77523000A00FE /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A18F9D1FC77523000A00FE /* BookTableViewCell.xib */; };
 		22A18FA11FC77F3B000A00FE /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18FA01FC77F3B000A00FE /* UIButton+Extensions.swift */; };
 		22A18FA41FC78098000A00FE /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18FA31FC78098000A00FE /* Book.swift */; };
+		22A18FA61FC78944000A00FE /* BookCoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18FA51FC78944000A00FE /* BookCoverViewController.swift */; };
+		22A18FA81FC7936A000A00FE /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18FA71FC7936A000A00FE /* UIView+Extensions.swift */; };
 		9FAE27CEA775C95FD2955012 /* Pods_Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDBBEEBBCF767E00D452531A /* Pods_Library.framework */; };
 /* End PBXBuildFile section */
 
@@ -52,6 +54,8 @@
 		22A18F9D1FC77523000A00FE /* BookTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookTableViewCell.xib; sourceTree = "<group>"; };
 		22A18FA01FC77F3B000A00FE /* UIButton+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extensions.swift"; sourceTree = "<group>"; };
 		22A18FA31FC78098000A00FE /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		22A18FA51FC78944000A00FE /* BookCoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCoverViewController.swift; sourceTree = "<group>"; };
+		22A18FA71FC7936A000A00FE /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		6AD9E1DE3353ABA4B5326C43 /* Pods-Library.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Library.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Library/Pods-Library.debug.xcconfig"; sourceTree = "<group>"; };
 		A670CAB7F9C8216AF3CA346B /* Pods-Library.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Library.release.xcconfig"; path = "Pods/Target Support Files/Pods-Library/Pods-Library.release.xcconfig"; sourceTree = "<group>"; };
 		CDBBEEBBCF767E00D452531A /* Pods_Library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -120,6 +124,7 @@
 				220230211FA5DB0C00777446 /* MainVC.swift */,
 				220230251FA5E3B400777446 /* UIColor+Extensions.swift */,
 				22A18FA01FC77F3B000A00FE /* UIButton+Extensions.swift */,
+				22A18FA71FC7936A000A00FE /* UIView+Extensions.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 				22A18F821FC75FF5000A00FE /* ListViewController.swift */,
 				22A18F9C1FC77523000A00FE /* BookTableViewCell.swift */,
 				22A18F9D1FC77523000A00FE /* BookTableViewCell.xib */,
+				22A18FA51FC78944000A00FE /* BookCoverViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -303,6 +309,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22A18FA81FC7936A000A00FE /* UIView+Extensions.swift in Sources */,
+				22A18FA61FC78944000A00FE /* BookCoverViewController.swift in Sources */,
 				2202300F1FA5DA8C00777446 /* LoginVC.swift in Sources */,
 				2260513E1FA5EED600C56E91 /* R.generated.swift in Sources */,
 				220230261FA5E3B400777446 /* UIColor+Extensions.swift in Sources */,
