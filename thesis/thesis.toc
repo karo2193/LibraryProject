@@ -1,0 +1,8 @@
+\contentsline {section}{Wst\k ep}{7}
+\contentsline {section}{\numberline {1}\kernsekcyjny Tytu\IeC {\l } rozdzia\IeC {\l } pierwszego}{9}
+\contentsline {subsection}{\numberline {1.1}\kernsubsekcyjny Tytu\IeC {\l } podrozdzia\IeC {\l }u}{9}
+\contentsline {section}{\numberline {2}\kernsekcyjny Tytu\IeC {\l } drugiego rozdzia\IeC {\l }u. \relax Bardzo d\IeC {\l }ugi tytu\IeC {\l }. \relax Jego \\formatowanie jest trudniejsze}{13}
+\contentsline {section}{Dodatek: M\IeC {\'o}j specjalny dodatek}{15}
+\contentsline {section}{Rysunki}{17}
+\contentsline {section}{Programy}{19}
+\contentsline {section}{Literatura}{21}
