@@ -1,5 +1,5 @@
 //
-//  MenuViewController.swift
+//  SearchViewController.swift
 //  Library
 //
 //  Created by Kryg Tomasz on 29.10.2017.
@@ -8,12 +8,23 @@
 
 import UIKit
 
-class MenuViewController: MainVC {
+class SearchViewController: MainVC {
 
+    @IBOutlet weak var viewTitleLabel: UILabel! {
+        didSet {
+            viewTitleLabel.textColor = .tintDark
+            viewTitleLabel.text = R.string.localizable.bookSearch()
+        }
+    }
+    @IBOutlet weak var titleSeparatorView: UIView! {
+        didSet {
+            titleSeparatorView.backgroundColor = .tintDark
+        }
+    }
     @IBOutlet weak var searchButton: UIButton! {
         didSet {
-            searchButton.setTitle("Next", for: .normal)
-            searchButton.backgroundColor = UIColor.main
+            searchButton.appTheme()
+            searchButton.setTitle(R.string.localizable.search(), for: .normal)
             searchButton.addTarget(self, action: #selector(onSearchButtonClicked), for: .touchUpInside)
         }
     }

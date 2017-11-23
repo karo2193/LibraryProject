@@ -85,7 +85,7 @@ class LoginVC: MainVC {
     @IBOutlet weak var loginButton: UIButton! {
         didSet {
             loginButton.backgroundColor = .main
-            loginButton.setTitleColor(.tint, for: .normal)
+            loginButton.setTitleColor(.tintDark, for: .normal)
             loginButton.addTarget(self, action: #selector(onLoginButtonClicked), for: .touchUpInside)
         }
     }
@@ -101,7 +101,7 @@ class LoginVC: MainVC {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setColor(to: .tint)
+        setColor(to: .tintDark)
     }
     
     private func getPlaceholderAttributedString(using text: String) -> NSMutableAttributedString {

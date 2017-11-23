@@ -32,12 +32,12 @@ extension UIColor {
         return UIColor(hex: "#D9C694")
     }
     
-    public class var tint: UIColor {
+    public class var tintDark: UIColor {
         return UIColor(hex: "#66461B")
     }
     
-    public class var text: UIColor {
-        return UIColor(hex: "#3B3523")
+    public class var tintLight: UIColor {
+        return UIColor(hex: "#6E4C1D")
     }
     
 }

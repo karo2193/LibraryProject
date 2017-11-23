@@ -16,7 +16,7 @@ protocol MainPageViewControllerDelegate: class {
 class MainPageViewController: UIPageViewController {
     
     private(set) lazy var orderedViewControllers: [UIViewController] = {
-        guard let firstViewController = getViewController(named: "MenuViewController") as? MenuViewController,
+        guard let firstViewController = getViewController(named: "SearchViewController") as? SearchViewController,
             let secondViewController = getViewController(named: "ListViewController") as? ListViewController else { return [] }
         firstViewController.delegate = self
         secondViewController.delegate = self
@@ -59,6 +59,7 @@ extension MainPageViewController: UIPageViewControllerDataSource {
 extension MainPageViewController {
     
     fileprivate func previous(from viewController: UIViewController) -> UIViewController? {
+        view.isUserInteractionEnabled = false // to protect user's gazillion clicks
         guard let index = orderedViewControllers.index(of: viewController) else { return nil }
         let previousIndex = index - 1
         guard previousIndex >= 0, orderedViewControllers.count > previousIndex else { return nil }
@@ -66,6 +67,7 @@ extension MainPageViewController {
     }
     
     fileprivate func next(from viewController: UIViewController) -> UIViewController? {
+        view.isUserInteractionEnabled = false // to protect user's gazillion clicks
         guard let index = orderedViewControllers.index(of: viewController) else { return nil }
         let nextIndex = index + 1
         guard nextIndex < orderedViewControllers.count else { return nil }
@@ -79,12 +81,18 @@ extension MainPageViewController: MainPageViewControllerDelegate {
     
     func nextViewController(from viewController: UIViewController) {
         guard let nextViewController = next(from: viewController) else { return }
-        setViewControllers([nextViewController], direction: .forward, animated: true, completion: nil)
+        setViewControllers([nextViewController], direction: .forward, animated: true, completion: {
+            completed in
+            self.view.isUserInteractionEnabled = true
+        })
     }
     
     func previousViewController(from viewController: UIViewController) {
         guard let previousViewController = previous(from: viewController) else { return }
-        setViewControllers([previousViewController], direction: .reverse, animated: true, completion: nil)
+        setViewControllers([previousViewController], direction: .reverse, animated: true, completion: {
+            completed in
+            self.view.isUserInteractionEnabled = true
+        })
     }
     
 }

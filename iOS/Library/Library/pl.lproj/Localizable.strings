@@ -8,7 +8,7 @@
 
 "enterLogin" = "Podaj login";
 "enterPassword" = "Podaj hasło";
-"search" = "Search";
-"backToSearch" = "Back to search";
-"searchingResults" = "Searching results";
-"bookSearch" = "Book search";
+"search" = "Szukaj";
+"backToSearch" = "Wróć do wyszukiwarki";
+"searchingResults" = "Wyniki wyszukiwania";
+"bookSearch" = "Wyszukiwarka";
