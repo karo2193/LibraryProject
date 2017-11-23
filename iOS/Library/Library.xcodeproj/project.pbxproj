@@ -16,9 +16,11 @@
 		220230221FA5DB0C00777446 /* MainVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220230211FA5DB0C00777446 /* MainVC.swift */; };
 		220230261FA5E3B400777446 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220230251FA5E3B400777446 /* UIColor+Extensions.swift */; };
 		220230291FA5EAB200777446 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 220230281FA5EAB200777446 /* Main.storyboard */; };
-		2202302B1FA5EAE600777446 /* MenuVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2202302A1FA5EAE600777446 /* MenuVC.swift */; };
+		2202302B1FA5EAE600777446 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2202302A1FA5EAE600777446 /* MenuViewController.swift */; };
 		2260513E1FA5EED600C56E91 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260513D1FA5EED600C56E91 /* R.generated.swift */; };
 		226051411FA5F6DD00C56E91 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 226051431FA5F6DD00C56E91 /* Localizable.strings */; };
+		22A18F811FC75F35000A00FE /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F801FC75F35000A00FE /* MainPageViewController.swift */; };
+		22A18F831FC75FF5000A00FE /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F821FC75FF5000A00FE /* ListViewController.swift */; };
 		9FAE27CEA775C95FD2955012 /* Pods_Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDBBEEBBCF767E00D452531A /* Pods_Library.framework */; };
 /* End PBXBuildFile section */
 
@@ -34,9 +36,11 @@
 		220230211FA5DB0C00777446 /* MainVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainVC.swift; sourceTree = "<group>"; };
 		220230251FA5E3B400777446 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		220230281FA5EAB200777446 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
-		2202302A1FA5EAE600777446 /* MenuVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuVC.swift; sourceTree = "<group>"; };
+		2202302A1FA5EAE600777446 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		2260513D1FA5EED600C56E91 /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		226051421FA5F6DD00C56E91 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		22A18F801FC75F35000A00FE /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
+		22A18F821FC75FF5000A00FE /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
 		6AD9E1DE3353ABA4B5326C43 /* Pods-Library.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Library.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Library/Pods-Library.debug.xcconfig"; sourceTree = "<group>"; };
 		A670CAB7F9C8216AF3CA346B /* Pods-Library.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Library.release.xcconfig"; path = "Pods/Target Support Files/Pods-Library/Pods-Library.release.xcconfig"; sourceTree = "<group>"; };
 		CDBBEEBBCF767E00D452531A /* Pods_Library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -111,7 +115,9 @@
 			isa = PBXGroup;
 			children = (
 				220230281FA5EAB200777446 /* Main.storyboard */,
-				2202302A1FA5EAE600777446 /* MenuVC.swift */,
+				2202302A1FA5EAE600777446 /* MenuViewController.swift */,
+				22A18F801FC75F35000A00FE /* MainPageViewController.swift */,
+				22A18F821FC75FF5000A00FE /* ListViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";
@@ -277,8 +283,10 @@
 				220230261FA5E3B400777446 /* UIColor+Extensions.swift in Sources */,
 				220230221FA5DB0C00777446 /* MainVC.swift in Sources */,
 				2202300D1FA5DA8C00777446 /* AppDelegate.swift in Sources */,
+				22A18F831FC75FF5000A00FE /* ListViewController.swift in Sources */,
 				220230151FA5DA8C00777446 /* Library.xcdatamodeld in Sources */,
-				2202302B1FA5EAE600777446 /* MenuVC.swift in Sources */,
+				2202302B1FA5EAE600777446 /* MenuViewController.swift in Sources */,
+				22A18F811FC75F35000A00FE /* MainPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
