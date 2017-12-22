@@ -133,12 +133,12 @@
 			isa = PBXGroup;
 			children = (
 				220230281FA5EAB200777446 /* Main.storyboard */,
-				2202302A1FA5EAE600777446 /* SearchViewController.swift */,
 				22A18F801FC75F35000A00FE /* MainPageViewController.swift */,
+				2202302A1FA5EAE600777446 /* SearchViewController.swift */,
 				22A18F821FC75FF5000A00FE /* ListViewController.swift */,
+				22A18FA51FC78944000A00FE /* BookCoverViewController.swift */,
 				22A18F9C1FC77523000A00FE /* BookTableViewCell.swift */,
 				22A18F9D1FC77523000A00FE /* BookTableViewCell.xib */,
-				22A18FA51FC78944000A00FE /* BookCoverViewController.swift */,
 			);
 			path = Menu;
 			sourceTree = "<group>";

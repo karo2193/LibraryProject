@@ -10,7 +10,12 @@ import UIKit
 
 class ListViewController: MainVC {
 
-    @IBOutlet weak var titleView: UIView!
+    @IBOutlet weak var titleView: UIView! {
+        didSet {
+            titleView.backgroundColor = .main
+            titleView.addShadow()
+        }
+    }
     @IBOutlet weak var viewTitleLabel: UILabel! {
         didSet {
             viewTitleLabel.textColor = .tintDark
@@ -67,10 +72,19 @@ class ListViewController: MainVC {
         addParallaxEffect()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        reloadView()
+    }
+    
     private func addParallaxEffect() {
-        titleView.addParallaxEffect(15)
-        tableView.addParallaxEffect(15)
-        backButton.addParallaxEffect(30)
+        backButton.addParallaxEffect(20)
+    }
+    
+    private func reloadView() {
+        tableView.reloadData()
+        let topIndexPath = IndexPath(row: 0, section: 0)
+        tableView.scrollToRow(at: topIndexPath, at: .top, animated: false)
     }
     
     @objc func onButtonClicked() {
@@ -93,9 +107,15 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
         guard let bookCell = tableView.dequeueReusableCell(withIdentifier: "BookTableViewCell") as? BookTableViewCell else {
             return UITableViewCell()
         }
+        return bookCell
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        guard let bookCell = cell as? BookTableViewCell else {
+            return
+        }
         let book = books[indexPath.row]
         bookCell.fill(using: book)
-        return bookCell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

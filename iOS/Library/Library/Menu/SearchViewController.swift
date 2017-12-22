@@ -10,11 +10,17 @@ import UIKit
 
 class SearchViewController: MainVC {
 
-    @IBOutlet weak var titleView: UIView!
+    @IBOutlet weak var titleView: UIView! {
+        didSet {
+            titleView.backgroundColor = .main
+            titleView.addShadow()
+        }
+    }
     @IBOutlet weak var viewTitleLabel: UILabel! {
         didSet {
             viewTitleLabel.textColor = .tintDark
             viewTitleLabel.text = R.string.localizable.bookSearch()
+            
         }
     }
     @IBOutlet weak var titleSeparatorView: UIView! {
@@ -40,8 +46,7 @@ class SearchViewController: MainVC {
     }
     
     private func addParallaxEffect() {
-        titleView.addParallaxEffect(15)
-        searchButton.addParallaxEffect(30)
+        searchButton.addParallaxEffect(20)
     }
     
     @objc func onSearchButtonClicked() {
