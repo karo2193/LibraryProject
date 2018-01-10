@@ -17,6 +17,7 @@
 		220230261FA5E3B400777446 /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 220230251FA5E3B400777446 /* UIColor+Extensions.swift */; };
 		220230291FA5EAB200777446 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 220230281FA5EAB200777446 /* Main.storyboard */; };
 		2202302B1FA5EAE600777446 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2202302A1FA5EAE600777446 /* SearchViewController.swift */; };
+		22444A5A2006818200D5740F /* LoadingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22444A592006818200D5740F /* LoadingButton.swift */; };
 		2260513E1FA5EED600C56E91 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260513D1FA5EED600C56E91 /* R.generated.swift */; };
 		226051411FA5F6DD00C56E91 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 226051431FA5F6DD00C56E91 /* Localizable.strings */; };
 		22A18F811FC75F35000A00FE /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F801FC75F35000A00FE /* MainPageViewController.swift */; };
@@ -44,6 +45,7 @@
 		220230251FA5E3B400777446 /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		220230281FA5EAB200777446 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		2202302A1FA5EAE600777446 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		22444A592006818200D5740F /* LoadingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingButton.swift; sourceTree = "<group>"; };
 		2260513D1FA5EED600C56E91 /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		226051421FA5F6DD00C56E91 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		22A18F801FC75F35000A00FE /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				220230251FA5E3B400777446 /* UIColor+Extensions.swift */,
 				22A18FA01FC77F3B000A00FE /* UIButton+Extensions.swift */,
 				22A18FA71FC7936A000A00FE /* UIView+Extensions.swift */,
+				22444A592006818200D5740F /* LoadingButton.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -328,6 +331,7 @@
 				220230261FA5E3B400777446 /* UIColor+Extensions.swift in Sources */,
 				220230221FA5DB0C00777446 /* MainVC.swift in Sources */,
 				2202300D1FA5DA8C00777446 /* AppDelegate.swift in Sources */,
+				22444A5A2006818200D5740F /* LoadingButton.swift in Sources */,
 				22A18F831FC75FF5000A00FE /* ListViewController.swift in Sources */,
 				220230151FA5DA8C00777446 /* Library.xcdatamodeld in Sources */,
 				2202302B1FA5EAE600777446 /* SearchViewController.swift in Sources */,

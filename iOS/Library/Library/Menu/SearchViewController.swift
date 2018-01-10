@@ -28,7 +28,7 @@ class SearchViewController: MainVC {
             titleSeparatorView.backgroundColor = .tintDark
         }
     }
-    @IBOutlet weak var searchButton: UIButton! {
+    @IBOutlet weak var searchButton: LoadingButton! {
         didSet {
             searchButton.appTheme()
             searchButton.setTitle(R.string.localizable.search(), for: .normal)
@@ -45,16 +45,26 @@ class SearchViewController: MainVC {
         addParallaxEffect()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        searchButton.isUserInteractionEnabled = true
+    }
+    
     private func addParallaxEffect() {
         searchButton.addParallaxEffect(20)
     }
     
     @objc func onSearchButtonClicked() {
+        searchButton.showIndicator()
+        searchButton.isUserInteractionEnabled = false
         RequestManager.shared.getBooks(completion: goToListViewController)
     }
     
     func goToListViewController(with books: [Book]) {
-        delegate?.nextViewController(from: self, books: books)
+        searchButton.hideIndicator()
+        DispatchQueue.main.async {
+            self.delegate?.nextViewController(from: self, books: books)
+        }
     }
     
 //    private func showLoginScreen() {

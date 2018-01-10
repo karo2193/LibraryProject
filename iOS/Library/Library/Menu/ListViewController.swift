@@ -45,23 +45,12 @@ class ListViewController: MainVC {
         }
     }
     
-    var books: [Book] = [
-//        Book(title: "Algebraiczne Aspekty Kryptografii", author: "N. Koblitz", year: 2000),
-//        Book(title: "Złożoność obliczeniowa", author: "C.H. Papadimitriou", year: 2002),
-//        Book(title: "Introduction to the Theory of Computation", author: "M. Sipser", year: 1997),
-//        Book(title: "Classical and Quantum Computation", author: "A.Yu. Kitaev, A.H. Shen, M.N. Vyalyi", year: 2002),
-//        Book(title: "Algorytmy i struktury danych. Wybrane zagadnienia", author: "Z.J. Czech, S. Deorowicz, P. Fabian", year: 2007),
-//        Book(title: "Algebraiczne Aspekty Kryptografii", author: "N. Koblitz", year: 2000),
-//        Book(title: "Złożoność obliczeniowa", author: "C.H. Papadimitriou", year: 2002),
-//        Book(title: "Introduction to the Theory of Computation", author: "M. Sipser", year: 1997),
-//        Book(title: "Classical and Quantum Computation", author: "A.Yu. Kitaev, A.H. Shen, M.N. Vyalyi", year: 2002),
-//        Book(title: "Algorytmy i struktury danych. Wybrane zagadnienia", author: "Z.J. Czech, S. Deorowicz, P. Fabian", year: 2007),
-//        Book(title: "Algebraiczne Aspekty Kryptografii", author: "N. Koblitz", year: 2000),
-//        Book(title: "Złożoność obliczeniowa", author: "C.H. Papadimitriou", year: 2002),
-//        Book(title: "Introduction to the Theory of Computation", author: "M. Sipser", year: 1997),
-//        Book(title: "Classical and Quantum Computation", author: "A.Yu. Kitaev, A.H. Shen, M.N. Vyalyi", year: 2002),
-//        Book(title: "Algorytmy i struktury danych. Wybrane zagadnienia", author: "Z.J. Czech, S. Deorowicz, P. Fabian", year: 2007)
-    ]
+    var books: [Book] = [] {
+        didSet {
+            self.view.layoutIfNeeded()
+            reloadView()
+        }
+    }
     
     weak var delegate: MainPageViewControllerDelegate?
     
