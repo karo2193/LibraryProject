@@ -9,7 +9,7 @@
 import UIKit
 
 protocol MainPageViewControllerDelegate: class {
-    func nextViewController(from viewController: UIViewController)
+    func nextViewController(from viewController: UIViewController, books: [Book])
     func previousViewController(from viewController: UIViewController)
     func presentViewController(_ viewController: UIViewController)
 }
@@ -80,8 +80,9 @@ extension MainPageViewController {
 //MARK: Custom MainPageViewControllerDelegate for automatic page curling
 extension MainPageViewController: MainPageViewControllerDelegate {
     
-    func nextViewController(from viewController: UIViewController) {
-        guard let nextViewController = next(from: viewController) else { return }
+    func nextViewController(from viewController: UIViewController, books: [Book]) {
+        guard let nextViewController = next(from: viewController) as? ListViewController else { return }
+        nextViewController.books = books
         setViewControllers([nextViewController], direction: .forward, animated: true, completion: {
             completed in
             self.view.isUserInteractionEnabled = true

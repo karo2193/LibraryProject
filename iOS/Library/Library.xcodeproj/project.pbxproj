@@ -27,6 +27,7 @@
 		22A18FA41FC78098000A00FE /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18FA31FC78098000A00FE /* Book.swift */; };
 		22A18FA61FC78944000A00FE /* BookCoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18FA51FC78944000A00FE /* BookCoverViewController.swift */; };
 		22A18FA81FC7936A000A00FE /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18FA71FC7936A000A00FE /* UIView+Extensions.swift */; };
+		22B6632B2002265D004B9731 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B6632A2002265D004B9731 /* RequestManager.swift */; };
 		9FAE27CEA775C95FD2955012 /* Pods_Library.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDBBEEBBCF767E00D452531A /* Pods_Library.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		22A18FA31FC78098000A00FE /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		22A18FA51FC78944000A00FE /* BookCoverViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCoverViewController.swift; sourceTree = "<group>"; };
 		22A18FA71FC7936A000A00FE /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
+		22B6632A2002265D004B9731 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		6AD9E1DE3353ABA4B5326C43 /* Pods-Library.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Library.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Library/Pods-Library.debug.xcconfig"; sourceTree = "<group>"; };
 		A670CAB7F9C8216AF3CA346B /* Pods-Library.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Library.release.xcconfig"; path = "Pods/Target Support Files/Pods-Library/Pods-Library.release.xcconfig"; sourceTree = "<group>"; };
 		CDBBEEBBCF767E00D452531A /* Pods_Library.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Library.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -103,6 +105,7 @@
 				220230271FA5EA9700777446 /* Menu */,
 				220230241FA5DBB400777446 /* Common */,
 				22A18FA21FC78088000A00FE /* Models */,
+				22B6632920022617004B9731 /* Networking */,
 				226051431FA5F6DD00C56E91 /* Localizable.strings */,
 			);
 			path = Library;
@@ -149,6 +152,14 @@
 				22A18FA31FC78098000A00FE /* Book.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		22B6632920022617004B9731 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				22B6632A2002265D004B9731 /* RequestManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 		51D81674CAA7EB3A716DF96E /* Pods */ = {
@@ -309,6 +320,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22B6632B2002265D004B9731 /* RequestManager.swift in Sources */,
 				22A18FA81FC7936A000A00FE /* UIView+Extensions.swift in Sources */,
 				22A18FA61FC78944000A00FE /* BookCoverViewController.swift in Sources */,
 				2202300F1FA5DA8C00777446 /* LoginVC.swift in Sources */,

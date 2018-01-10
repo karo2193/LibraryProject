@@ -51,9 +51,9 @@ class BookCoverViewController: MainVC {
     var book: Book? {
         didSet {
             self.view.layoutIfNeeded()
-            titleLabel.text = book?.title
-            authorLabel.text = book?.author
-            guard let yearInt = book?.year else { return }
+            titleLabel.text = book?.tytul
+            authorLabel.text = book?.ozn_opdow
+            guard let yearInt = book?.rok else { return }
             yearLabel.text = "\(yearInt)"
         }
     }

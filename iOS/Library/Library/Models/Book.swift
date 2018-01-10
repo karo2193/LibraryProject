@@ -8,16 +8,10 @@
 
 import Foundation
 
-class Book {
+struct Book: Codable {
     
-    var title: String?
-    var author: String?
-    var year: Int?
-    
-    init(title: String?, author: String?, year: Int?) {
-        self.title = title
-        self.author = author
-        self.year = year
-    }
+    let tytul: String?
+    let ozn_opdow: String?
+    let rok: Int?
     
 }

@@ -50,7 +50,11 @@ class SearchViewController: MainVC {
     }
     
     @objc func onSearchButtonClicked() {
-        delegate?.nextViewController(from: self)
+        RequestManager.shared.getBooks(completion: goToListViewController)
+    }
+    
+    func goToListViewController(with books: [Book]) {
+        delegate?.nextViewController(from: self, books: books)
     }
     
 //    private func showLoginScreen() {
