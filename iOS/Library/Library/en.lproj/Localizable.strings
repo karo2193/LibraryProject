@@ -6,9 +6,13 @@
   Copyright © 2017 Kryg Tomek. All rights reserved.
 */
 
-"enterLogin" = "Podaj login";
-"enterPassword" = "Podaj hasło";
+"enterLogin" = "Enter login";
+"enterPassword" = "Enter password";
 "search" = "Search";
 "backToSearch" = "Back to search";
 "searchingResults" = "Searching results";
 "bookSearch" = "Book search";
+"show" = "Show";
+"copy" = "Copy";
+"copyTitle" = "Copy title";
+"copyAuthor" = "Copy author";

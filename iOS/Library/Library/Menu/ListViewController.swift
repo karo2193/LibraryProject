@@ -61,9 +61,11 @@ class ListViewController: MainVC {
         addParallaxEffect()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        reloadView()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self, sourceView: tableView)
+        }
     }
     
     private func addParallaxEffect() {
@@ -73,7 +75,7 @@ class ListViewController: MainVC {
     private func reloadView() {
         tableView.reloadData()
         let topIndexPath = IndexPath(row: 0, section: 0)
-//        tableView.scrollToRow(at: topIndexPath, at: .top, animated: false)
+        tableView.scrollToRow(at: topIndexPath, at: .top, animated: false)
     }
     
     @objc func onButtonClicked() {
@@ -82,6 +84,7 @@ class ListViewController: MainVC {
 
 }
 
+//MARK: TableView delegates
 extension ListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -112,11 +115,37 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
             return
         }
         selectedCell.setSelected(false, animated: true)
-        
-        guard let coverVC = R.storyboard.main().instantiateViewController(withIdentifier: "BookCoverViewController") as? BookCoverViewController else { return }
         let book = books[indexPath.row]
-        coverVC.book = book
-        present(coverVC, animated: true, completion: nil)
+        let detailsVC = getDetailsViewController(withBook: book)
+        present(detailsVC, animated: true, completion: nil)
+    }
+    
+    private func getDetailsViewController(withBook book: Book) -> UIViewController {
+        guard let detailsVC = R.storyboard.main().instantiateViewController(withIdentifier: "BookCoverViewController") as? BookCoverViewController else { return UIViewController() }
+        detailsVC.book = book
+        return detailsVC
+    }
+    
+}
+
+//MARK: 3D Touch delegate
+extension ListViewController: UIViewControllerPreviewingDelegate {
+    
+    //PEEK
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
+        guard let indexPath = tableView.indexPathForRow(at: location),
+            let cell = tableView.cellForRow(at: indexPath) else {
+                return nil
+        }
+        let book = books[indexPath.row]
+        let detailsVC = getDetailsViewController(withBook: book)
+        previewingContext.sourceRect = cell.frame
+        return detailsVC
+    }
+    
+    //POP
+    func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
+        self.showDetailViewController(viewControllerToCommit, sender: self)
     }
     
 }

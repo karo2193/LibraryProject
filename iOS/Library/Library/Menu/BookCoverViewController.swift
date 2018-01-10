@@ -48,6 +48,17 @@ class BookCoverViewController: MainVC {
         }
     }
     
+    override var previewActionItems: [UIPreviewActionItem] {
+        let copyTitleAction = UIPreviewAction(title: R.string.localizable.copyTitle(), style: .default) { (action, vc) in
+            UIPasteboard.general.string = self.book?.tytul
+        }
+        let copyAuthorAction = UIPreviewAction(title: R.string.localizable.copyAuthor(), style: .default) { (action, viewcontroller) in
+            UIPasteboard.general.string = self.book?.ozn_opdow
+        }
+        let copyGroupAction = UIPreviewActionGroup(title: R.string.localizable.copy() + "...", style: .default, actions: [copyTitleAction, copyAuthorAction])
+        return [copyGroupAction]
+    }
+    
     var book: Book? {
         didSet {
             self.view.layoutIfNeeded()

@@ -12,3 +12,7 @@
 "backToSearch" = "Wróć do wyszukiwarki";
 "searchingResults" = "Wyniki wyszukiwania";
 "bookSearch" = "Wyszukiwarka";
+"show" = "Wyświetl";
+"copy" = "Kopiuj";
+"copyTitle" = "Kopiuj tytuł";
+"copyAuthor" = "Kopiuj autora";
