@@ -30,8 +30,8 @@ class BookTableViewCell: UITableViewCell {
     }
     
     func fill(using book: Book?) {
-        titleLabel.text = book?.tytul
-        authorLabel.text = book?.ozn_opdow
+        titleLabel.text = book?.title
+        authorLabel.text = book?.authors
     }
     
 }

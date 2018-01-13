@@ -10,8 +10,35 @@ import Foundation
 
 struct Book: Codable {
     
-    let tytul: String?
-    let ozn_opdow: String?
-    let rok: Int?
+    private var tytul: String?
+    private var ozn_opdow: String?
+    private var rok: Int?
+    
+    var title: String? {
+        set {
+            tytul = title
+        }
+        get {
+            return tytul
+        }
+    }
+    
+    var authors: String? {
+        set {
+            ozn_opdow = authors
+        }
+        get {
+            return ozn_opdow
+        }
+    }
+    
+    var year: Int? {
+        set {
+            rok = year
+        }
+        get {
+            return rok
+        }
+    }
     
 }

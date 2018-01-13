@@ -50,10 +50,10 @@ class BookCoverViewController: MainVC {
     
     override var previewActionItems: [UIPreviewActionItem] {
         let copyTitleAction = UIPreviewAction(title: R.string.localizable.copyTitle(), style: .default) { (action, vc) in
-            UIPasteboard.general.string = self.book?.tytul
+            UIPasteboard.general.string = self.book?.title
         }
         let copyAuthorAction = UIPreviewAction(title: R.string.localizable.copyAuthor(), style: .default) { (action, viewcontroller) in
-            UIPasteboard.general.string = self.book?.ozn_opdow
+            UIPasteboard.general.string = self.book?.authors
         }
         let copyGroupAction = UIPreviewActionGroup(title: R.string.localizable.copy() + "...", style: .default, actions: [copyTitleAction, copyAuthorAction])
         return [copyGroupAction]
@@ -62,9 +62,9 @@ class BookCoverViewController: MainVC {
     var book: Book? {
         didSet {
             self.view.layoutIfNeeded()
-            titleLabel.text = book?.tytul
-            authorLabel.text = book?.ozn_opdow
-            guard let yearInt = book?.rok else { return }
+            titleLabel.text = book?.title
+            authorLabel.text = book?.authors
+            guard let yearInt = book?.year else { return }
             yearLabel.text = "\(yearInt)"
         }
     }
