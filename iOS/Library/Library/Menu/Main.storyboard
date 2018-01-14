@@ -60,6 +60,10 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ugx-q0-EXd">
                                 <rect key="frame" x="0.0" y="80" width="375" height="587"/>
                                 <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="BuW-hu-kdv">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="587"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ORO-31-GhP" customClass="LoadingButton" customModule="Library" customModuleProvider="target">
                                         <rect key="frame" x="16" y="531" width="343" height="40"/>
                                         <constraints>
@@ -70,9 +74,13 @@
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="BuW-hu-kdv" secondAttribute="trailing" id="1s3-nR-be8"/>
+                                    <constraint firstItem="BuW-hu-kdv" firstAttribute="leading" secondItem="Ugx-q0-EXd" secondAttribute="leading" id="P9p-1w-xg3"/>
                                     <constraint firstItem="ORO-31-GhP" firstAttribute="leading" secondItem="Ugx-q0-EXd" secondAttribute="leading" constant="16" id="SA1-A4-PZK"/>
+                                    <constraint firstAttribute="bottom" secondItem="BuW-hu-kdv" secondAttribute="bottom" id="n83-9O-3xY"/>
                                     <constraint firstAttribute="trailing" secondItem="ORO-31-GhP" secondAttribute="trailing" constant="16" id="s4f-9u-m9v"/>
                                     <constraint firstAttribute="bottom" secondItem="ORO-31-GhP" secondAttribute="bottom" constant="16" id="tqA-dY-V70"/>
+                                    <constraint firstItem="BuW-hu-kdv" firstAttribute="top" secondItem="Ugx-q0-EXd" secondAttribute="top" id="uvT-a4-ZMK"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -90,6 +98,7 @@
                     </view>
                     <connections>
                         <outlet property="searchButton" destination="ORO-31-GhP" id="SGZ-yQ-lVi"/>
+                        <outlet property="tableView" destination="BuW-hu-kdv" id="497-01-INa"/>
                         <outlet property="titleSeparatorView" destination="SEc-Pt-ohI" id="Cyu-mA-dhI"/>
                         <outlet property="titleView" destination="VFA-dc-Z5o" id="8Ec-fN-TYp"/>
                         <outlet property="viewTitleLabel" destination="wW3-jf-6bU" id="AcX-vL-1M8"/>

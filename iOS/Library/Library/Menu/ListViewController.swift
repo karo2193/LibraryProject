@@ -58,7 +58,6 @@ class ListViewController: MainVC {
         super.viewDidLoad()
         setColor(to: .main)
         tableView.separatorColor = .tintDark
-        addParallaxEffect()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -68,14 +67,16 @@ class ListViewController: MainVC {
         }
     }
     
-    private func addParallaxEffect() {
-        backButton.addParallaxEffect(20)
-    }
-    
     private func reloadView() {
         tableView.reloadData()
-        let topIndexPath = IndexPath(row: 0, section: 0)
-        tableView.scrollToRow(at: topIndexPath, at: .top, animated: false)
+        scrollTableViewToTop()
+    }
+    
+    private func scrollTableViewToTop() {
+        if !books.isEmpty {
+            let topIndexPath = IndexPath(row: 0, section: 0)
+            tableView.scrollToRow(at: topIndexPath, at: .top, animated: false)
+        }
     }
     
     @objc func onButtonClicked() {

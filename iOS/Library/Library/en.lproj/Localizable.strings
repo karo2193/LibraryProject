@@ -16,3 +16,13 @@
 "copy" = "Copy";
 "copyTitle" = "Copy title";
 "copyAuthor" = "Copy author";
+
+//Titles available to search for
+"title" = "Title";
+"author" = "Author";
+"isbn" = "ISBN";
+"mainLibrarySignature" = "Main library signature";
+"publicationYear" = "Publication year";
+"bookVolume" = "Volume";
+"positionType" = "Position type";
+"category" = "Category";

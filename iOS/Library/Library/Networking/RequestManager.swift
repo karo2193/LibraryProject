@@ -17,15 +17,17 @@ class RequestManager {
     private let URL_STRING = "http://szymongor.pythonanywhere.com"
     private let BOOK_ENDPOINT = "/ksiazka/"
     
+    typealias Filter = [String:Any]
+    
     func getBooks(searchedBook: Book, completion: @escaping (([Book])->())) {
         let address = URL_STRING + BOOK_ENDPOINT
         guard let url = URL(string: address) else { return }
         
+        let filter: Filter = getFilter(usingBook: searchedBook)
+        
         let parameters = [
             "query" : [
-                "filters" : [
-                    "tytul__contains" : searchedBook.title ?? ""
-                ],
+                "filters" : filter,
                 "pagination" : [
                     "offset" : 0,
                     "limit" : 100
@@ -54,21 +56,29 @@ class RequestManager {
                 completion([])
             }
         }.resume()
-        
-//        URLSession.shared.dataTask(with: url) { (data, response, error) in
-//            if let error = error {
-//                NSLog(error.localizedDescription)
-//            }
-//            guard let data = data else { return }
-//            print(data)
-//            do {
-//                let books = try JSONDecoder().decode([Book].self, from: data)
-//                completion(books)
-//                print(books.count)
-//            } catch let jsonError {
-//                NSLog(jsonError.localizedDescription)
-//            }
-//        }.resume()
+    }
+    
+    private func getFilter(usingBook searchedBook: Book) -> Filter {
+        var filters: Filter = [:]
+        if let title = searchedBook.title {
+            filters["tytul__contains"] = title
+        }
+        if let author = searchedBook.authors {
+            filters["ozn_opdow__contains"] = author
+        }
+        if let isbn = searchedBook.isbn {
+            filters["isbn_issn__contains"] = isbn
+        }
+        if let signature = searchedBook.mainLibrarySignature {
+            filters["syg_bg__contains"] = signature
+        }
+        if let year = searchedBook.year {
+            filters["rok__contains"] = year
+        }
+        if let volume = searchedBook.volume {
+            filters["tom__contains"] = volume
+        }
+        return filters
     }
     
 }
