@@ -31,7 +31,14 @@ class BookTableViewCell: UITableViewCell {
     
     func fill(using book: Book?) {
         titleLabel.text = book?.title
-        authorLabel.text = book?.authors
+        if let author = book?.authors {
+            if author.isEmpty {
+                authorLabel.text = "—"
+            } else {
+                authorLabel.text = book?.authors
+            }
+        }
+        
     }
     
 }

@@ -16,13 +16,16 @@
 "copy" = "Kopiuj";
 "copyTitle" = "Kopiuj tytuł";
 "copyAuthor" = "Kopiuj autora";
+"typePhraseToSearch" = "Wpisz szukaną frazę";
 
 //Titles available to search for
 "title" = "Tytuł";
 "author" = "Autor";
 "isbn" = "ISBN";
-"mainLibrarySignature" = "Sygnatura biblioteki głownej";
+"mathLibrarySignature" = "Sygnatura biblioteki MS";
+"mainLibrarySignature" = "Sygnatura biblioteki głównej";
 "publicationYear" = "Rok wydania";
 "bookVolume" = "Tom";
 "positionType" = "Typ pozycji";
 "category" = "Kategoria";
+"availability" = "Dostępność";

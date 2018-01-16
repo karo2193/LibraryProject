@@ -13,10 +13,12 @@ struct Book: Codable {
     private var tytul: String?
     private var ozn_opdow: String?
     private var isbn_issn: String?
+    private var syg_ms: Int?
     private var syg_bg: String?
     private var rok: Int?
     private var tom: String?
     private var typ: String?
+    private var dostepnosc: String?
     
     var title: String? {
         set {
@@ -42,6 +44,21 @@ struct Book: Codable {
         }
         get {
             return isbn_issn
+        }
+    }
+    
+    var mathLibrarySignature: String? {
+        set {
+            let mathSignatureString = newValue ?? ""
+            let mathSignatureValue = Int(mathSignatureString)
+            syg_ms = mathSignatureValue
+        }
+        get {
+            if let mathSignatureValue = syg_ms {
+                return "\(mathSignatureValue)"
+            } else {
+                return nil
+            }
         }
     }
     
@@ -87,4 +104,14 @@ struct Book: Codable {
         }
     }
     
+    var available: String? {
+        set {
+            dostepnosc = newValue
+        }
+        get {
+            return dostepnosc
+        }
+    }
+
+
 }

@@ -15,7 +15,7 @@ class RequestManager {
     static let shared = RequestManager()
     
     private let URL_STRING = "http://szymongor.pythonanywhere.com"
-    private let BOOK_ENDPOINT = "/ksiazka/"
+    private let BOOK_ENDPOINT = "/ksiazka"
     
     typealias Filter = [String:Any]
     
@@ -24,13 +24,33 @@ class RequestManager {
         guard let url = URL(string: address) else { return }
         
         let filter: Filter = getFilter(usingBook: searchedBook)
+        let cat: NSDictionary = ["category_id" : "G_02"]
+        
+        let categories = ["G_02"]
+//        let json: [String: Any] = ["filters": filter,
+//                                   "kategorie": categories,
+//                                   "pagination": ["offset": 0, "limit": 10]
+//                                   ]
+        
+//        var yourString : String = ""
+//        do
+//        {
+//            let postData = try JSONSerialization.data(withJSONObject: categories, options: JSONSerialization.WritingOptions.prettyPrinted)
+//            yourString = NSString(data: postData, encoding: String.Encoding.utf8.rawValue)! as String
+//        }
+//        catch
+//        {
+//            print(error)
+//        }
+        
         
         let parameters = [
             "query" : [
                 "filters" : filter,
+                "kategorie" : [],
                 "pagination" : [
                     "offset" : 0,
-                    "limit" : 100
+                    "limit" : 10
                 ]
             ]
         ]
@@ -69,14 +89,23 @@ class RequestManager {
         if let isbn = searchedBook.isbn {
             filters["isbn_issn__contains"] = isbn
         }
-        if let signature = searchedBook.mainLibrarySignature {
-            filters["syg_bg__contains"] = signature
+        if let mathSignature = searchedBook.mathLibrarySignature {
+            filters["syg_ms__contains"] = mathSignature
+        }
+        if let mainSignature = searchedBook.mainLibrarySignature {
+            filters["syg_bg__contains"] = mainSignature
         }
         if let year = searchedBook.year {
             filters["rok__contains"] = year
         }
         if let volume = searchedBook.volume {
             filters["tom__contains"] = volume
+        }
+        if let type = searchedBook.type {
+            filters["typ__contains"] = type
+        }
+        if let availability = searchedBook.available {
+            filters["dostepnosc__contains"] = availability
         }
         return filters
     }

@@ -19,7 +19,8 @@ class SearchTextTableViewCell: UITableViewCell {
         didSet {
             textField.delegate = self
             textField.textColor = .tintDark
-            textField.placeholder = "Wpisz szukaną frazę..."
+            textField.placeholder = R.string.localizable.typePhraseToSearch() + "..."
+            textField.clearButtonMode = .always
         }
     }
     @IBOutlet weak var separatorView: UIView! {
@@ -27,6 +28,9 @@ class SearchTextTableViewCell: UITableViewCell {
             separatorView.backgroundColor = .tintDark
         }
     }
+    
+    var searchedBook: Book?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -40,11 +44,18 @@ class SearchTextTableViewCell: UITableViewCell {
     
 }
 
+//MARK: UITextField delegates
 extension SearchTextTableViewCell: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
+    }
+    
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        textField.text = ""
+        textField.resignFirstResponder()
+        return false // Used to resignFirstResponder. True value triggers also becomeFirstResponder().
     }
     
 }
