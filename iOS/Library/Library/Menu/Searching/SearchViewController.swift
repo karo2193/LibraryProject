@@ -31,6 +31,7 @@ class SearchViewController: MainVC {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.register(R.nib.searchTextTableViewCell(), forCellReuseIdentifier: "SearchTextTableViewCell")
+            tableView.register(R.nib.searchCategoryTableViewCell(), forCellReuseIdentifier: "SearchCategoryTableViewCell")
             tableView.dataSource = self
             tableView.delegate = self
             tableView.keyboardDismissMode = .interactive
@@ -48,17 +49,15 @@ class SearchViewController: MainVC {
     }
     
     weak var delegate: MainPageViewControllerDelegate?
-    let searchTitles: [String] = [R.string.localizable.title(), R.string.localizable.author(), R.string.localizable.isbn(), R.string.localizable.mathLibrarySignature(), R.string.localizable.mainLibrarySignature(), R.string.localizable.publicationYear(), R.string.localizable.bookVolume(), R.string.localizable.positionType(), R.string.localizable.category(), R.string.localizable.availability()]
+    let searchTitles: [String] = [R.string.localizable.title(), R.string.localizable.author(), R.string.localizable.isbn(), R.string.localizable.mathLibrarySignature(), R.string.localizable.mainLibrarySignature(), R.string.localizable.publicationYear(), R.string.localizable.bookVolume(), R.string.localizable.positionType(), R.string.localizable.availability(), R.string.localizable.category()]
     let NUMBER_OF_ROWS: Int = 10
     let EDGE_INSET_BOTTOM: CGFloat = 72.0
-    
-    var searchedBook: Book!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setColor(to: .main)
         initObservers()
-        searchedBook = Book()
+        RequestManager.shared.getCategories(completion: fillCategories)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -74,76 +73,23 @@ class SearchViewController: MainVC {
     @objc func onSearchButtonClicked() {
         searchButton.showIndicator()
         searchButton.isUserInteractionEnabled = false
-        
-        let searchedBook = getBookForSearch()
-        
-        RequestManager.shared.getBooks(searchedBook: searchedBook,completion: goToListViewController)
+        RequestManager.shared.getBooks(searchedBook: SessionManager.shared.searchedBook,completion: goToListViewController)
+    }
+    
+    func fillCategories(using mainCategoriesArray: [MainCategory]) {
+        SessionManager.shared.mainCategories = mainCategoriesArray
     }
     
     func goToListViewController(with books: [Book]) {
         searchButton.hideIndicator()
+        guard let listVC = R.storyboard.main().instantiateViewController(withIdentifier: "ListViewController") as? ListViewController else { return }
+        listVC.books = books
+        listVC.delegate = self.delegate
         DispatchQueue.main.async {
-            self.delegate?.nextViewController(from: self, books: books)
+//            self.delegate?.nextViewController(from: self, books: books)
+            
+            self.delegate?.next(viewController: listVC)
         }
-    }
-    
-}
-
-//MARK: Book searching methods
-extension SearchViewController {
-    
-    fileprivate func getBookForSearch() -> Book {
-        var searchedBook = Book()
-        
-        let titleIndexPath = IndexPath(row: 0, section: 0)
-        let title = tryGetTextToSearch(fromIndexPath: titleIndexPath)
-        searchedBook.title = title
-        
-        let authorIndexPath = IndexPath(row: 1, section: 0)
-        let author = tryGetTextToSearch(fromIndexPath: authorIndexPath)
-        searchedBook.authors = author
-        
-        let isbnIndexPath = IndexPath(row: 2, section: 0)
-        let isbn = tryGetTextToSearch(fromIndexPath: isbnIndexPath)
-        searchedBook.isbn = isbn
-        
-        let mathSignatureIndexPath = IndexPath(row: 3, section: 0)
-        let mathSignature = tryGetTextToSearch(fromIndexPath: mathSignatureIndexPath)
-        searchedBook.mathLibrarySignature = mathSignature
-        
-        let mainSignatureIndexPath = IndexPath(row: 4, section: 0)
-        let mainSignature = tryGetTextToSearch(fromIndexPath: mainSignatureIndexPath)
-        searchedBook.mainLibrarySignature = mainSignature
-        
-        let yearIndexPath = IndexPath(row: 5, section: 0)
-        let year = tryGetTextToSearch(fromIndexPath: yearIndexPath)
-        searchedBook.year = year
-        
-        let volumeIndexPath = IndexPath(row: 6, section: 0)
-        let volume = tryGetTextToSearch(fromIndexPath: volumeIndexPath)
-        searchedBook.volume = volume
-        
-        let typeIndexPath = IndexPath(row: 7, section: 0)
-        let type = tryGetTextToSearch(fromIndexPath: typeIndexPath)
-        searchedBook.type = type
-        
-        let availabilityIndexPath = IndexPath(row: 9, section: 0)
-        let available = tryGetTextToSearch(fromIndexPath: availabilityIndexPath)
-        searchedBook.available = available
-        
-        return searchedBook
-    }
-    
-    private func tryGetTextToSearch(fromIndexPath indexPath: IndexPath) -> String? {
-        var value: String?
-        if
-            let searchTextCell = tableView.cellForRow(at: indexPath) as? SearchTextTableViewCell,
-            let searchedValue = searchTextCell.textField.text {
-            if !searchedValue.isEmpty {
-                value = searchedValue.trimmingCharacters(in: .whitespacesAndNewlines)
-            }
-        }
-        return value
     }
     
 }
@@ -160,68 +106,93 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let searchTextCell = tableView.dequeueReusableCell(withIdentifier: "SearchTextTableViewCell") as? SearchTextTableViewCell else {
-            return UITableViewCell()
+        if indexPath.row == 9 {
+            guard let searchCategoryCell = tableView.dequeueReusableCell(withIdentifier: "SearchCategoryTableViewCell") as? SearchCategoryTableViewCell else {
+                return UITableViewCell()
+            }
+            return searchCategoryCell
+        } else {
+            guard let searchTextCell = tableView.dequeueReusableCell(withIdentifier: "SearchTextTableViewCell") as? SearchTextTableViewCell else {
+                return UITableViewCell()
+            }
+            return searchTextCell
         }
-        return searchTextCell
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         let row = indexPath.row
         if let searchTextCell = cell as? SearchTextTableViewCell {
             searchTextCell.titleLabel.text = searchTitles[row]
-//            searchTextCell.textField.text = getTextFromProperty(fromIndexPath: indexPath)
+            searchTextCell.delegate = self
+            searchTextCell.row = indexPath.row
+            searchTextCell.textField.text = getTextFromProperty(for: searchTextCell)
             return
         }
-        if let searchButtonCell = cell as? SearchTextTableViewCell {
-            return
+        if let searchCategoryCell = cell as? SearchCategoryTableViewCell {
         }
     }
     
-//    private func getTextFromProperty(fromIndexPath indexPath: IndexPath) -> String? {
-//        let row = indexPath.row
-//        switch row {
-//        case 0:
-//            return
-//        default:
-//            <#code#>
-//        }
-//        let titleIndexPath = IndexPath(row: 0, section: 0)
-//        let title = tryGetTextToSearch(fromIndexPath: titleIndexPath)
-//        searchedBook.title = title
-//
-//        let authorIndexPath = IndexPath(row: 1, section: 0)
-//        let author = tryGetTextToSearch(fromIndexPath: authorIndexPath)
-//        searchedBook.authors = author
-//
-//        let isbnIndexPath = IndexPath(row: 2, section: 0)
-//        let isbn = tryGetTextToSearch(fromIndexPath: isbnIndexPath)
-//        searchedBook.isbn = isbn
-//
-//        let mathSignatureIndexPath = IndexPath(row: 3, section: 0)
-//        let mathSignature = tryGetTextToSearch(fromIndexPath: mathSignatureIndexPath)
-//        searchedBook.mathLibrarySignature = mathSignature
-//
-//        let mainSignatureIndexPath = IndexPath(row: 4, section: 0)
-//        let mainSignature = tryGetTextToSearch(fromIndexPath: mainSignatureIndexPath)
-//        searchedBook.mainLibrarySignature = mainSignature
-//
-//        let yearIndexPath = IndexPath(row: 5, section: 0)
-//        let year = tryGetTextToSearch(fromIndexPath: yearIndexPath)
-//        searchedBook.year = year
-//
-//        let volumeIndexPath = IndexPath(row: 6, section: 0)
-//        let volume = tryGetTextToSearch(fromIndexPath: volumeIndexPath)
-//        searchedBook.volume = volume
-//
-//        let typeIndexPath = IndexPath(row: 7, section: 0)
-//        let type = tryGetTextToSearch(fromIndexPath: typeIndexPath)
-//        searchedBook.type = type
-//
-//        let availabilityIndexPath = IndexPath(row: 9, section: 0)
-//        let available = tryGetTextToSearch(fromIndexPath: availabilityIndexPath)
-//        searchedBook.available = available
-//    }
+    private func getTextFromProperty(for cell: SearchTextTableViewCell) -> String? {
+        let type = cell.searchPropertyType
+        switch type {
+        case .title:
+            return SessionManager.shared.searchedBook.title
+        case .author:
+            return SessionManager.shared.searchedBook.authors
+        case .isbn:
+            return SessionManager.shared.searchedBook.isbn
+        case .mathSignature:
+            return SessionManager.shared.searchedBook.mathLibrarySignature
+        case .mainSignature:
+            return SessionManager.shared.searchedBook.mainLibrarySignature
+        case .year:
+            return SessionManager.shared.searchedBook.year
+        case .volume:
+            return SessionManager.shared.searchedBook.volume
+        case .type:
+            return SessionManager.shared.searchedBook.type
+        case .category:
+//            cell.textField.text = searchedBook.
+            return ""
+        case .availability:
+            return SessionManager.shared.searchedBook.available
+        default:
+            return ""
+        }
+    }
+    
+}
+
+//MARK SearchTextTableViewCellDelegate
+extension SearchViewController: SearchTextTableViewCellDelegate {
+    
+    func fill(text: String, forType type: SearchPropertyType) {
+        switch type {
+        case .title:
+            SessionManager.shared.searchedBook.title = text
+        case .author:
+            SessionManager.shared.searchedBook.authors = text
+        case .isbn:
+            SessionManager.shared.searchedBook.isbn = text
+        case .mathSignature:
+            SessionManager.shared.searchedBook.mathLibrarySignature = text
+        case .mainSignature:
+            SessionManager.shared.searchedBook.mainLibrarySignature = text
+        case .year:
+            SessionManager.shared.searchedBook.year = text
+        case .volume:
+            SessionManager.shared.searchedBook.volume = text
+        case .type:
+            SessionManager.shared.searchedBook.type = text
+        case .category:
+//            searchedBook.title = text
+            return
+        case .availability:
+            SessionManager.shared.searchedBook.available = text
+        default:
+            return
+        }
+    }
     
 }
 

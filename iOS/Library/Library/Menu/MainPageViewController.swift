@@ -12,6 +12,8 @@ protocol MainPageViewControllerDelegate: class {
     func nextViewController(from viewController: UIViewController, books: [Book])
     func previousViewController(from viewController: UIViewController)
     func presentViewController(_ viewController: UIViewController)
+    func next(viewController: UIViewController)
+    func previous(viewController: UIViewController)
 }
 
 class MainPageViewController: UIPageViewController {
@@ -99,6 +101,20 @@ extension MainPageViewController: MainPageViewControllerDelegate {
     
     func presentViewController(_ viewController: UIViewController) {
         self.present(viewController, animated: true, completion: nil)
+    }
+    
+    func next(viewController: UIViewController) {
+        setViewControllers([viewController], direction: .forward, animated: true, completion: {
+            completed in
+            self.view.isUserInteractionEnabled = true
+        })
+    }
+    
+    func previous(viewController: UIViewController) {
+        setViewControllers([viewController], direction: .reverse, animated: true, completion: {
+            completed in
+            self.view.isUserInteractionEnabled = true
+        })
     }
     
 }

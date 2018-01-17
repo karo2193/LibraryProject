@@ -58,6 +58,7 @@ class ListViewController: MainVC {
         super.viewDidLoad()
         setColor(to: .main)
         tableView.separatorColor = .tintDark
+        let book = SessionManager.shared.searchedBook
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -80,7 +81,9 @@ class ListViewController: MainVC {
     }
     
     @objc func onButtonClicked() {
-        delegate?.previousViewController(from: self)
+        guard let searchVC = R.storyboard.main().instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController else { return }
+        searchVC.delegate = self.delegate
+        delegate?.previous(viewController: searchVC)
     }
 
 }
