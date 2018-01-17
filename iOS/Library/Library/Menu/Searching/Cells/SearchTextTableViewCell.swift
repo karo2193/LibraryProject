@@ -47,11 +47,22 @@ class SearchTextTableViewCell: UITableViewCell {
         }
     }
     
+    private var pickerView: UIPickerView?
     weak var delegate: SearchTextTableViewCellDelegate?
     var searchPropertyType: SearchPropertyType = .none
     var row: Int = 0 {
         didSet {
             setPropertyType()
+            switch searchPropertyType {
+            case .type, .availability:
+                pickerView = UIPickerView()
+                pickerView?.delegate = self
+                pickerView?.dataSource = self
+//                pickerView?.addTarget(self, action: #selector(onPickerChange), for: .valueChanged)
+                textField.inputView = pickerView
+            default:
+                textField.inputView = nil
+            }
         }
     }
     
@@ -85,9 +96,9 @@ class SearchTextTableViewCell: UITableViewCell {
         case 7:
             searchPropertyType = .type
         case 8:
-            searchPropertyType = .category
-        case 9:
             searchPropertyType = .availability
+        case 9:
+            searchPropertyType = .category
         default:
             searchPropertyType = .none
         }
@@ -115,6 +126,52 @@ extension SearchTextTableViewCell: UITextFieldDelegate {
         delegate?.fill(text: "", forType: searchPropertyType)
         textField.resignFirstResponder()
         return false // Used to resignFirstResponder. True value triggers also becomeFirstResponder().
+    }
+    
+}
+
+extension SearchTextTableViewCell: UIPickerViewDelegate, UIPickerViewDataSource {
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        switch searchPropertyType {
+        case .type:
+            return SessionManager.shared.dictionaryTypes.type.count
+        case .availability:
+            return SessionManager.shared.dictionaryTypes.availability.count
+        default:
+            return 0
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        switch searchPropertyType {
+        case .type:
+            return SessionManager.shared.dictionaryTypes.type[row]
+        case .availability:
+            return SessionManager.shared.dictionaryTypes.availability[row]
+        default:
+            return ""
+        }
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        let dictionaryTypes = SessionManager.shared.dictionaryTypes
+        switch searchPropertyType {
+        case .type:
+            let type = dictionaryTypes?.type[row]
+            SessionManager.shared.searchedBook.type = type
+            textField.text = type
+        case .availability:
+            let availability = dictionaryTypes?.availability[row]
+            SessionManager.shared.searchedBook.available = availability
+            textField.text = availability
+        default:
+            return
+        }
     }
     
 }

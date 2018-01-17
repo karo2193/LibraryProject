@@ -15,7 +15,8 @@ struct DictionaryTypes: Codable {
     
     var type: [String] {
         get {
-            return typ
+            var types = [""] + typ
+            return types
         }
         set {
             typ = newValue
@@ -24,7 +25,8 @@ struct DictionaryTypes: Codable {
     
     var availability: [String] {
         get {
-            return dostepnosc
+            var availables = [""] + dostepnosc
+            return availables
         }
         set {
             dostepnosc = newValue

@@ -58,7 +58,6 @@ class ListViewController: MainVC {
         super.viewDidLoad()
         setColor(to: .main)
         tableView.separatorColor = .tintDark
-        let book = SessionManager.shared.searchedBook
     }
     
     override func viewDidAppear(_ animated: Bool) {
