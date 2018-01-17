@@ -172,6 +172,7 @@ extension SearchTextTableViewCell: UIPickerViewDelegate, UIPickerViewDataSource 
         default:
             return
         }
+        textField.resignFirstResponder()
     }
     
 }

@@ -74,7 +74,7 @@ class SearchViewController: MainVC {
     @objc func onSearchButtonClicked() {
         searchButton.showIndicator()
         searchButton.isUserInteractionEnabled = false
-        RequestManager.shared.getBooks(searchedBook: SessionManager.shared.searchedBook,completion: goToListViewController)
+        RequestManager.shared.getBooks(withOffset: 0, completion: goToListViewController)
     }
     
     func fillCategories(using mainCategoriesArray: [MainCategory]) {

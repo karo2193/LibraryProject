@@ -45,14 +45,19 @@ class ListViewController: MainVC {
         }
     }
     
+    private var offset: Int = 0
+    private var canFetchMore: Bool = true
+    weak var delegate: MainPageViewControllerDelegate?
     var books: [Book] = [] {
         didSet {
-            self.view.layoutIfNeeded()
-            reloadView()
+            DispatchQueue.main.async {
+                self.view.layoutIfNeeded()
+                self.tableView.reloadData()
+            }
+            
         }
     }
     
-    weak var delegate: MainPageViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -111,6 +116,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
         }
         let book = books[indexPath.row]
         bookCell.fill(using: book)
+        tryFetchMoreBooks(loadedIndexPath: indexPath)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -127,6 +133,27 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
         guard let detailsVC = R.storyboard.main().instantiateViewController(withIdentifier: "BookCoverViewController") as? BookCoverViewController else { return UIViewController() }
         detailsVC.book = book
         return detailsVC
+    }
+    
+}
+
+//MARK: Fetch more books methods
+extension ListViewController {
+    
+    fileprivate func tryFetchMoreBooks(loadedIndexPath: IndexPath) {
+        let rowWhenFetchNeeded = books.count - 5
+        if loadedIndexPath.row == rowWhenFetchNeeded && canFetchMore {
+            offset += DefaultValues.BOOKS_PER_FETCH
+            RequestManager.shared.getBooks(withOffset: offset, completion: appendFetchedBooks)
+        }
+    }
+    
+    fileprivate func appendFetchedBooks(_ fetchedBooks: [Book]) {
+        if fetchedBooks.isEmpty {
+            canFetchMore = false
+            return
+        }
+        self.books.append(contentsOf: fetchedBooks)
     }
     
 }

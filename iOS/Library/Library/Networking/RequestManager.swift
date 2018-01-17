@@ -35,16 +35,16 @@ class RequestManager {
 //MARK: Books fetch
 extension RequestManager {
     
-    func getBooks(searchedBook: Book, completion: @escaping (([Book])->())) {
-        let filter: Filter = getFilter(usingBook: searchedBook)
+    func getBooks(withOffset offset: Int, completion: @escaping (([Book])->())) {
+        let filter: Filter = getFilter(usingBook: SessionManager.shared.searchedBook)
         let categories = ["G_02"]
         let parameters = [
             "query" : [
                 "filters" : filter,
                 "kategorie" : [],
                 "pagination" : [
-                    "offset" : 0,
-                    "limit" : 20
+                    "offset" : offset,
+                    "limit" : DefaultValues.BOOKS_PER_FETCH
                 ]
             ]
         ]
