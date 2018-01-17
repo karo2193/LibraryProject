@@ -58,6 +58,7 @@ class SearchViewController: MainVC {
         setColor(to: .main)
         initObservers()
         RequestManager.shared.getCategories(completion: fillCategories)
+        RequestManager.shared.getDictionary()
     }
     
     override func viewWillAppear(_ animated: Bool) {

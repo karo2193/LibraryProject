@@ -17,8 +17,23 @@ class RequestManager {
     private let URL_STRING = "http://szymongor.pythonanywhere.com"
     private let BOOK_ENDPOINT = "/ksiazka"
     private let CATEGORY_ENDPOINT = "/kategorie"
+    private let DICTIONARY_ENDPOINT = "/slownik"
     
     typealias Filter = [String:Any]
+    
+    fileprivate func getRequest(usingHttpMethod httpMethod: String?, forEndpoint endpoint: String) -> URLRequest? {
+        let address = URL_STRING + endpoint
+        guard let url = URL(string: address) else { return nil }
+        var request = URLRequest(url: url)
+        request.httpMethod = httpMethod
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+        return request
+    }
+    
+}
+
+//MARK: Books fetch
+extension RequestManager {
     
     func getBooks(searchedBook: Book, completion: @escaping (([Book])->())) {
         let filter: Filter = getFilter(usingBook: searchedBook)
@@ -51,10 +66,10 @@ class RequestManager {
                 NSLog(jsonError.localizedDescription)
                 completion([])
             }
-        }.resume()
+            }.resume()
     }
     
-    private func getFilter(usingBook searchedBook: Book) -> Filter {
+    fileprivate func getFilter(usingBook searchedBook: Book) -> Filter {
         var filters: Filter = [:]
         if let title = searchedBook.title {
             filters["tytul__contains"] = title
@@ -86,18 +101,9 @@ class RequestManager {
         return filters
     }
     
-    fileprivate func getRequest(usingHttpMethod httpMethod: String?, forEndpoint endpoint: String) -> URLRequest? {
-        let address = URL_STRING + endpoint
-        guard let url = URL(string: address) else { return nil }
-        var request = URLRequest(url: url)
-        request.httpMethod = httpMethod
-        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
-        return request
-    }
-    
 }
 
-//MARK: Categories
+//MARK: Categories fetch
 extension RequestManager {
     
     func getCategories(completion: @escaping (([MainCategory])->())) {
@@ -113,6 +119,27 @@ extension RequestManager {
             } catch let jsonError {
                 NSLog(jsonError.localizedDescription)
                 completion([])
+            }
+        }.resume()
+    }
+    
+}
+
+//MARK: Dictionary fetch
+extension RequestManager {
+    
+    func getDictionary() {
+        guard let request = getRequest(usingHttpMethod: "GET", forEndpoint: DICTIONARY_ENDPOINT) else { return }
+        URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                NSLog(error.localizedDescription)
+            }
+            guard let data = data else { return }
+            do {
+                let dictionaryTypes = try JSONDecoder().decode(DictionaryTypes.self, from: data)
+                SessionManager.shared.dictionaryTypes = dictionaryTypes
+            } catch let jsonError {
+                NSLog(jsonError.localizedDescription)
             }
         }.resume()
     }

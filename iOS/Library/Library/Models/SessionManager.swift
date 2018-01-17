@@ -12,11 +12,13 @@ class SessionManager {
     
     private init() {
         searchedBook = Book()
+        dictionaryTypes = DictionaryTypes()
     }
     
     static let shared = SessionManager()
     
     var searchedBook: Book!
     var mainCategories: [MainCategory] = []
+    var dictionaryTypes: DictionaryTypes!
     
 }

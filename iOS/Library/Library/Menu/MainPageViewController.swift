@@ -9,8 +9,6 @@
 import UIKit
 
 protocol MainPageViewControllerDelegate: class {
-    func nextViewController(from viewController: UIViewController, books: [Book])
-    func previousViewController(from viewController: UIViewController)
     func presentViewController(_ viewController: UIViewController)
     func next(viewController: UIViewController)
     func previous(viewController: UIViewController)
@@ -19,11 +17,11 @@ protocol MainPageViewControllerDelegate: class {
 class MainPageViewController: UIPageViewController {
     
     private(set) lazy var orderedViewControllers: [UIViewController] = {
-        guard let firstViewController = getViewController(named: "SearchViewController") as? SearchViewController,
-            let secondViewController = getViewController(named: "ListViewController") as? ListViewController else { return [] }
+        guard let firstViewController = getViewController(named: "SearchViewController") as? SearchViewController else {
+            return []
+        }
         firstViewController.delegate = self
-        secondViewController.delegate = self
-        return [firstViewController, secondViewController]
+        return [firstViewController]
     }()
     
     override func viewDidLoad() {
@@ -49,55 +47,17 @@ class MainPageViewController: UIPageViewController {
 extension MainPageViewController: UIPageViewControllerDataSource {
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        return nil//previous(from: viewController)
+        return nil
     }
     
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        return nil//next(from: viewController)
-    }
-    
-}
-
-//MARK: Next/previous UIViewController getters
-extension MainPageViewController {
-    
-    fileprivate func previous(from viewController: UIViewController) -> UIViewController? {
-        view.isUserInteractionEnabled = false // to protect user's gazillion clicks
-        guard let index = orderedViewControllers.index(of: viewController) else { return nil }
-        let previousIndex = index - 1
-        guard previousIndex >= 0, orderedViewControllers.count > previousIndex else { return nil }
-        return orderedViewControllers[previousIndex]
-    }
-    
-    fileprivate func next(from viewController: UIViewController) -> UIViewController? {
-        view.isUserInteractionEnabled = false // to protect user's gazillion clicks
-        guard let index = orderedViewControllers.index(of: viewController) else { return nil }
-        let nextIndex = index + 1
-        guard nextIndex < orderedViewControllers.count else { return nil }
-        return orderedViewControllers[nextIndex]
+        return nil
     }
     
 }
 
 //MARK: Custom MainPageViewControllerDelegate for automatic page curling
 extension MainPageViewController: MainPageViewControllerDelegate {
-    
-    func nextViewController(from viewController: UIViewController, books: [Book]) {
-        guard let nextViewController = next(from: viewController) as? ListViewController else { return }
-        nextViewController.books = books
-        setViewControllers([nextViewController], direction: .forward, animated: true, completion: {
-            completed in
-            self.view.isUserInteractionEnabled = true
-        })
-    }
-    
-    func previousViewController(from viewController: UIViewController) {
-        guard let previousViewController = previous(from: viewController) else { return }
-        setViewControllers([previousViewController], direction: .reverse, animated: true, completion: {
-            completed in
-            self.view.isUserInteractionEnabled = true
-        })
-    }
     
     func presentViewController(_ viewController: UIViewController) {
         self.present(viewController, animated: true, completion: nil)
