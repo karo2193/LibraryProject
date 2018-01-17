@@ -9,7 +9,7 @@
 import UIKit
 
 protocol SearchCategoryTableViewCellDelegate: class {
-    func setCategories()
+    func showCategoriesViewController()
 }
 
 class SearchCategoryTableViewCell: UITableViewCell {
@@ -25,9 +25,11 @@ class SearchCategoryTableViewCell: UITableViewCell {
             categoriesButton.setTitleColor(.main, for: .normal)
             categoriesButton.setTitle("Wybierz kategorie...", for: .normal)
             categoriesButton.layer.cornerRadius = 5.0
+            categoriesButton.addTarget(self, action: #selector(onCategoriesButtonClicked), for: .touchUpInside)
         }
     }
     
+    weak var delegate: SearchCategoryTableViewCellDelegate?
     var searchPropertyType: SearchPropertyType = .category
     
     override func awakeFromNib() {
@@ -36,6 +38,10 @@ class SearchCategoryTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    @objc func onCategoriesButtonClicked() {
+        delegate?.showCategoriesViewController()
     }
     
 }

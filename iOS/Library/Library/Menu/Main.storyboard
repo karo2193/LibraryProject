@@ -108,6 +108,37 @@
             </objects>
             <point key="canvasLocation" x="152.80000000000001" y="263.11844077961024"/>
         </scene>
+        <!--Categories View Controller-->
+        <scene sceneID="jK4-09-7lX">
+            <objects>
+                <viewController storyboardIdentifier="CategoriesViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="j2Y-z6-fcK" customClass="CategoriesViewController" customModule="Library" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fQ9-ob-fBB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="95D-oA-xA7">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gQY-XF-Fyi" firstAttribute="trailing" secondItem="95D-oA-xA7" secondAttribute="trailing" id="2Cr-sO-KiW"/>
+                            <constraint firstItem="95D-oA-xA7" firstAttribute="top" secondItem="gQY-XF-Fyi" secondAttribute="top" id="Ndf-pU-AIZ"/>
+                            <constraint firstItem="95D-oA-xA7" firstAttribute="leading" secondItem="gQY-XF-Fyi" secondAttribute="leading" id="is4-8y-bgI"/>
+                            <constraint firstItem="gQY-XF-Fyi" firstAttribute="bottom" secondItem="95D-oA-xA7" secondAttribute="bottom" id="mHh-SL-Zu9"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gQY-XF-Fyi"/>
+                    </view>
+                    <connections>
+                        <outlet property="tableView" destination="95D-oA-xA7" id="Cc2-yP-VQJ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aVi-MC-rUT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="153" y="972"/>
+        </scene>
         <!--Book List View Controller-->
         <scene sceneID="b5n-Zg-C0U">
             <objects>

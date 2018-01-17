@@ -19,6 +19,7 @@ struct Book: Codable {
     private var tom: String?
     private var typ: String?
     private var dostepnosc: String?
+    private var kategoria: [Category]?
     
     var title: String? {
         set {
@@ -112,6 +113,14 @@ struct Book: Codable {
             return dostepnosc
         }
     }
-
-
+    
+    var categories: [Category]? {
+        set {
+            kategoria = categories
+        }
+        get {
+            return kategoria
+        }
+    }
+    
 }

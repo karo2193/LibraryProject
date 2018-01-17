@@ -130,6 +130,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
             return
         }
         if let searchCategoryCell = cell as? SearchCategoryTableViewCell {
+            searchCategoryCell.delegate = self
         }
     }
     
@@ -164,7 +165,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     
 }
 
-//MARK SearchTextTableViewCellDelegate
+//MARK: SearchTextTableViewCellDelegate
 extension SearchViewController: SearchTextTableViewCellDelegate {
     
     func fill(text: String, forType type: SearchPropertyType) {
@@ -192,6 +193,19 @@ extension SearchViewController: SearchTextTableViewCellDelegate {
             SessionManager.shared.searchedBook.available = text
         default:
             return
+        }
+    }
+    
+}
+
+//MARK: SearchCategoryTableViewCellDelegate
+extension SearchViewController: SearchCategoryTableViewCellDelegate {
+    
+    func showCategoriesViewController() {
+        guard let categoriesVC = R.storyboard.main().instantiateViewController(withIdentifier: "CategoriesViewController") as? CategoriesViewController else { return }
+        categoriesVC.delegate = self.delegate
+        DispatchQueue.main.async {
+            self.delegate?.next(viewController: categoriesVC)
         }
     }
     
