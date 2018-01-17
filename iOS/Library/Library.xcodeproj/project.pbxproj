@@ -27,7 +27,7 @@
 		2260513E1FA5EED600C56E91 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2260513D1FA5EED600C56E91 /* R.generated.swift */; };
 		226051411FA5F6DD00C56E91 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 226051431FA5F6DD00C56E91 /* Localizable.strings */; };
 		22A18F811FC75F35000A00FE /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F801FC75F35000A00FE /* MainPageViewController.swift */; };
-		22A18F831FC75FF5000A00FE /* ListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F821FC75FF5000A00FE /* ListViewController.swift */; };
+		22A18F831FC75FF5000A00FE /* BookListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F821FC75FF5000A00FE /* BookListViewController.swift */; };
 		22A18F9E1FC77523000A00FE /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18F9C1FC77523000A00FE /* BookTableViewCell.swift */; };
 		22A18F9F1FC77523000A00FE /* BookTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22A18F9D1FC77523000A00FE /* BookTableViewCell.xib */; };
 		22A18FA11FC77F3B000A00FE /* UIButton+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22A18FA01FC77F3B000A00FE /* UIButton+Extensions.swift */; };
@@ -63,7 +63,7 @@
 		2260513D1FA5EED600C56E91 /* R.generated.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
 		226051421FA5F6DD00C56E91 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		22A18F801FC75F35000A00FE /* MainPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainPageViewController.swift; sourceTree = "<group>"; };
-		22A18F821FC75FF5000A00FE /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
+		22A18F821FC75FF5000A00FE /* BookListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookListViewController.swift; sourceTree = "<group>"; };
 		22A18F981FC77376000A00FE /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		22A18F991FC77376000A00FE /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Login.strings; sourceTree = "<group>"; };
 		22A18F9A1FC77376000A00FE /* pl */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pl; path = pl.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -155,15 +155,31 @@
 		220230271FA5EA9700777446 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
-				22C271F2200A830E00FE674B /* Searching */,
+				222F4D6120100905004FF825 /* BooksListViewController */,
+				22C271F2200A830E00FE674B /* SearchViewController */,
 				220230281FA5EAB200777446 /* Main.storyboard */,
 				22A18F801FC75F35000A00FE /* MainPageViewController.swift */,
-				22A18F821FC75FF5000A00FE /* ListViewController.swift */,
 				22A18FA51FC78944000A00FE /* BookCoverViewController.swift */,
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		222F4D6120100905004FF825 /* BooksListViewController */ = {
+			isa = PBXGroup;
+			children = (
+				22A18F821FC75FF5000A00FE /* BookListViewController.swift */,
+				222F4D622010098C004FF825 /* Cells */,
+			);
+			path = BooksListViewController;
+			sourceTree = "<group>";
+		};
+		222F4D622010098C004FF825 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
 				22A18F9C1FC77523000A00FE /* BookTableViewCell.swift */,
 				22A18F9D1FC77523000A00FE /* BookTableViewCell.xib */,
 			);
-			path = Menu;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		22A18FA21FC78088000A00FE /* Models */ = {
@@ -185,22 +201,22 @@
 			path = Networking;
 			sourceTree = "<group>";
 		};
-		22C271F2200A830E00FE674B /* Searching */ = {
+		22C271F2200A830E00FE674B /* SearchViewController */ = {
 			isa = PBXGroup;
 			children = (
 				2202302A1FA5EAE600777446 /* SearchViewController.swift */,
 				22C271F3200A832200FE674B /* Cells */,
 			);
-			path = Searching;
+			path = SearchViewController;
 			sourceTree = "<group>";
 		};
 		22C271F3200A832200FE674B /* Cells */ = {
 			isa = PBXGroup;
 			children = (
-				22C271F4200A834800FE674B /* SearchTextTableViewCell.swift */,
-				22C271F5200A834800FE674B /* SearchTextTableViewCell.xib */,
 				222F4D57200FD3AC004FF825 /* SearchCategoryTableViewCell.swift */,
 				222F4D58200FD3AC004FF825 /* SearchCategoryTableViewCell.xib */,
+				22C271F4200A834800FE674B /* SearchTextTableViewCell.swift */,
+				22C271F5200A834800FE674B /* SearchTextTableViewCell.xib */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -376,7 +392,7 @@
 				220230221FA5DB0C00777446 /* MainVC.swift in Sources */,
 				2202300D1FA5DA8C00777446 /* AppDelegate.swift in Sources */,
 				22444A5A2006818200D5740F /* LoadingButton.swift in Sources */,
-				22A18F831FC75FF5000A00FE /* ListViewController.swift in Sources */,
+				22A18F831FC75FF5000A00FE /* BookListViewController.swift in Sources */,
 				220230151FA5DA8C00777446 /* Library.xcdatamodeld in Sources */,
 				2202302B1FA5EAE600777446 /* SearchViewController.swift in Sources */,
 				22A18FA41FC78098000A00FE /* Book.swift in Sources */,
@@ -538,7 +554,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9Q8P88U6B9;
+				DEVELOPMENT_TEAM = MX7YRK8T35;
 				INFOPLIST_FILE = Library/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kryg.Library;
@@ -554,7 +570,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 9Q8P88U6B9;
+				DEVELOPMENT_TEAM = MX7YRK8T35;
 				INFOPLIST_FILE = Library/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = kryg.Library;

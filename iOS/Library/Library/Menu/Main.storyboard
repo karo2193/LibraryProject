@@ -108,10 +108,10 @@
             </objects>
             <point key="canvasLocation" x="152.80000000000001" y="263.11844077961024"/>
         </scene>
-        <!--List View Controller-->
+        <!--Book List View Controller-->
         <scene sceneID="b5n-Zg-C0U">
             <objects>
-                <viewController storyboardIdentifier="ListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Aj8-ry-RN0" customClass="ListViewController" customModule="Library" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BookListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Aj8-ry-RN0" customClass="BookListViewController" customModule="Library" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vsQ-dd-P2S">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

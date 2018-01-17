@@ -1,5 +1,5 @@
 //
-//  ListViewController.swift
+//  BookListViewController.swift
 //  Library
 //
 //  Created by Kryg Tomasz on 23.11.2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ListViewController: MainVC {
+class BookListViewController: MainVC {
 
     @IBOutlet weak var titleView: UIView! {
         didSet {
@@ -93,7 +93,7 @@ class ListViewController: MainVC {
 }
 
 //MARK: TableView delegates
-extension ListViewController: UITableViewDataSource, UITableViewDelegate {
+extension BookListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -138,7 +138,7 @@ extension ListViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 //MARK: Fetch more books methods
-extension ListViewController {
+extension BookListViewController {
     
     fileprivate func tryFetchMoreBooks(loadedIndexPath: IndexPath) {
         let rowWhenFetchNeeded = books.count - 5
@@ -159,7 +159,7 @@ extension ListViewController {
 }
 
 //MARK: 3D Touch delegate
-extension ListViewController: UIViewControllerPreviewingDelegate {
+extension BookListViewController: UIViewControllerPreviewingDelegate {
     
     //PEEK
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {

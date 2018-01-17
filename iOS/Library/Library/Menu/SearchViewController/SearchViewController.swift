@@ -83,7 +83,7 @@ class SearchViewController: MainVC {
     
     func goToListViewController(with books: [Book]) {
         searchButton.hideIndicator()
-        guard let listVC = R.storyboard.main().instantiateViewController(withIdentifier: "ListViewController") as? ListViewController else { return }
+        guard let listVC = R.storyboard.main().instantiateViewController(withIdentifier: "BookListViewController") as? BookListViewController else { return }
         listVC.books = books
         listVC.delegate = self.delegate
         DispatchQueue.main.async {
