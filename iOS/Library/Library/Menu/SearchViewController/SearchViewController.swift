@@ -10,24 +10,6 @@ import UIKit
 
 class SearchViewController: MainVC {
 
-    @IBOutlet weak var titleView: UIView! {
-        didSet {
-            titleView.backgroundColor = .main
-            titleView.addShadow()
-        }
-    }
-    @IBOutlet weak var viewTitleLabel: UILabel! {
-        didSet {
-            viewTitleLabel.textColor = .tintDark
-            viewTitleLabel.text = R.string.localizable.bookSearch()
-            
-        }
-    }
-    @IBOutlet weak var titleSeparatorView: UIView! {
-        didSet {
-            titleSeparatorView.backgroundColor = .tintDark
-        }
-    }
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.register(R.nib.searchTextTableViewCell(), forCellReuseIdentifier: "SearchTextTableViewCell")
@@ -48,7 +30,11 @@ class SearchViewController: MainVC {
         }
     }
     
-    weak var delegate: MainPageViewControllerDelegate?
+    weak var delegate: MainPageViewControllerDelegate? {
+        didSet {
+            delegate?.initNavigationBar(withTitle: R.string.localizable.bookSearch())
+        }
+    }
     let searchTitles: [String] = [R.string.localizable.title(), R.string.localizable.author(), R.string.localizable.isbn(), R.string.localizable.mathLibrarySignature(), R.string.localizable.mainLibrarySignature(), R.string.localizable.publicationYear(), R.string.localizable.bookVolume(), R.string.localizable.positionType(), R.string.localizable.availability(), R.string.localizable.category()]
     let NUMBER_OF_ROWS: Int = 10
     let EDGE_INSET_BOTTOM: CGFloat = 72.0

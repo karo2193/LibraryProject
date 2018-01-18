@@ -12,6 +12,7 @@ protocol MainPageViewControllerDelegate: class {
     func presentViewController(_ viewController: UIViewController)
     func next(viewController: UIViewController)
     func previous(viewController: UIViewController)
+    func initNavigationBar(withTitle title: String?)
 }
 
 class MainPageViewController: UIPageViewController {
@@ -75,6 +76,14 @@ extension MainPageViewController: MainPageViewControllerDelegate {
             completed in
             self.view.isUserInteractionEnabled = true
         })
+    }
+    
+    func initNavigationBar(withTitle title: String?) {
+        DispatchQueue.main.async {
+            self.navigationController?.navigationBar.barTintColor = .main
+            self.navigationController?.navigationBar.tintColor = .tintDark
+            self.navigationController?.navigationBar.topItem?.title = title
+        }
     }
     
 }

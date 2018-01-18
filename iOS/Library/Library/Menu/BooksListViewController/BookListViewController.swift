@@ -9,24 +9,7 @@
 import UIKit
 
 class BookListViewController: MainVC {
-
-    @IBOutlet weak var titleView: UIView! {
-        didSet {
-            titleView.backgroundColor = .main
-            titleView.addShadow()
-        }
-    }
-    @IBOutlet weak var viewTitleLabel: UILabel! {
-        didSet {
-            viewTitleLabel.textColor = .tintDark
-            viewTitleLabel.text = R.string.localizable.searchingResults()
-        }
-    }
-    @IBOutlet weak var titleSeparatorView: UIView! {
-        didSet {
-            titleSeparatorView.backgroundColor = .tintDark
-        }
-    }
+    
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.register(R.nib.bookTableViewCell(), forCellReuseIdentifier: "BookTableViewCell")
@@ -47,7 +30,11 @@ class BookListViewController: MainVC {
     
     private var offset: Int = 0
     private var canFetchMore: Bool = true
-    weak var delegate: MainPageViewControllerDelegate?
+    weak var delegate: MainPageViewControllerDelegate? {
+        didSet {
+            delegate?.initNavigationBar(withTitle: R.string.localizable.searchingResults())
+        }
+    }
     var books: [Book] = [] {
         didSet {
             DispatchQueue.main.async {

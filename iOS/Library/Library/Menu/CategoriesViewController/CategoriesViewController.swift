@@ -19,7 +19,11 @@ class CategoriesViewController: MainVC {
         }
     }
     
-    weak var delegate: MainPageViewControllerDelegate?
+    weak var delegate: MainPageViewControllerDelegate? {
+        didSet {
+            delegate?.initNavigationBar(withTitle: R.string.localizable.categories())
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()

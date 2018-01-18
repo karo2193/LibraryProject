@@ -17,6 +17,8 @@
 "copyTitle" = "Kopiuj tytuł";
 "copyAuthor" = "Kopiuj autora";
 "typePhraseToSearch" = "Wpisz szukaną frazę";
+"chooseCategories" = "Wybierz kategorie";
+"categories" = "Kategorie";
 
 //Titles available to search for
 "title" = "Tytuł";

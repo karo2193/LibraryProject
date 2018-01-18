@@ -17,6 +17,9 @@
 "copyTitle" = "Copy title";
 "copyAuthor" = "Copy author";
 "typePhraseToSearch" = "Type phrase to search";
+"chooseCategories" = "Choose categories";
+"categories" = "Categories";
+
 
 //Titles available to search for
 "title" = "Title";

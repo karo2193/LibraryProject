@@ -23,7 +23,7 @@ class SearchCategoryTableViewCell: UITableViewCell {
         didSet {
             categoriesButton.backgroundColor = .tintDark
             categoriesButton.setTitleColor(.main, for: .normal)
-            categoriesButton.setTitle("Wybierz kategorie...", for: .normal)
+            categoriesButton.setTitle(R.string.localizable.chooseCategories() + "...", for: .normal)
             categoriesButton.layer.cornerRadius = 5.0
             categoriesButton.addTarget(self, action: #selector(onCategoriesButtonClicked), for: .touchUpInside)
         }
