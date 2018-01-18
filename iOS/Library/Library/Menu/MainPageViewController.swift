@@ -80,9 +80,14 @@ extension MainPageViewController: MainPageViewControllerDelegate {
     
     func initNavigationBar(withTitle title: String?) {
         DispatchQueue.main.async {
-            self.navigationController?.navigationBar.barTintColor = .main
-            self.navigationController?.navigationBar.tintColor = .tintDark
-            self.navigationController?.navigationBar.topItem?.title = title
+            let navigationBar = self.navigationController?.navigationBar
+            navigationBar?.barStyle = .blackOpaque
+            navigationBar?.barTintColor = .tintDark
+            navigationBar?.tintColor = .main
+            navigationBar?.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.main]
+            navigationBar?.topItem?.title = title
+            
+            
         }
     }
     

@@ -74,9 +74,9 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="checkImageView" destination="TlU-FX-PtW" id="Tqt-hg-H1R"/>
-                <outlet property="separatorView" destination="QmB-jt-PQh" id="rLY-Pc-KV0"/>
-                <outlet property="titleLabel" destination="U4x-TB-yt3" id="2wH-7H-M4Y"/>
+                <outlet property="checkImageView" destination="TlU-FX-PtW" id="9Lp-vy-E44"/>
+                <outlet property="separatorView" destination="QmB-jt-PQh" id="9bc-Xi-jqm"/>
+                <outlet property="titleLabel" destination="U4x-TB-yt3" id="3WL-gg-ke5"/>
             </connections>
             <point key="canvasLocation" x="-168.5" y="96"/>
         </tableViewCell>

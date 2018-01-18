@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Book</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="TJw-xJ-jZq" customClass="CategoryHeaderView" customModule="Library" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="608" height="56"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sTl-By-6dh">
+                    <rect key="frame" x="0.0" y="0.0" width="608" height="56"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sUF-O9-qPx">
+                            <rect key="frame" x="0.0" y="0.0" width="608" height="55"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EXD-xE-jh0">
+                                    <rect key="frame" x="16" y="16" width="24" height="24"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" secondItem="EXD-xE-jh0" secondAttribute="height" multiplier="1:1" id="SED-yW-Koe"/>
+                                        <constraint firstAttribute="height" constant="24" id="vgp-zZ-O4m"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ose-j1-DFZ">
+                                    <rect key="frame" x="56" y="16" width="536" height="23.5"/>
+                                    <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="EXD-xE-jh0" firstAttribute="leading" secondItem="sUF-O9-qPx" secondAttribute="leading" constant="16" id="NZu-BE-LvP"/>
+                                <constraint firstItem="EXD-xE-jh0" firstAttribute="top" secondItem="sUF-O9-qPx" secondAttribute="top" constant="16" id="O8I-8e-n9f"/>
+                                <constraint firstItem="Ose-j1-DFZ" firstAttribute="centerY" secondItem="sUF-O9-qPx" secondAttribute="centerY" id="XFN-Ay-7Nk"/>
+                                <constraint firstAttribute="bottom" secondItem="EXD-xE-jh0" secondAttribute="bottom" constant="16" id="XRR-lp-DkC"/>
+                                <constraint firstItem="Ose-j1-DFZ" firstAttribute="leading" secondItem="EXD-xE-jh0" secondAttribute="trailing" constant="16" id="nPO-z9-xor"/>
+                                <constraint firstItem="EXD-xE-jh0" firstAttribute="centerY" secondItem="sUF-O9-qPx" secondAttribute="centerY" id="pMj-Sw-LOt"/>
+                                <constraint firstAttribute="trailing" secondItem="Ose-j1-DFZ" secondAttribute="trailing" constant="16" id="yIi-Gk-vmX"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kDN-J3-1yQ">
+                            <rect key="frame" x="0.0" y="55" width="608" height="1"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="JU4-jx-j2y"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="kDN-J3-1yQ" firstAttribute="top" secondItem="sUF-O9-qPx" secondAttribute="bottom" id="8E6-Q6-L7v"/>
+                        <constraint firstItem="kDN-J3-1yQ" firstAttribute="leading" secondItem="sTl-By-6dh" secondAttribute="leading" id="TDf-5Y-4RV"/>
+                        <constraint firstAttribute="trailing" secondItem="kDN-J3-1yQ" secondAttribute="trailing" id="gaN-6E-qEx"/>
+                        <constraint firstItem="sUF-O9-qPx" firstAttribute="leading" secondItem="sTl-By-6dh" secondAttribute="leading" id="lSs-ko-XOG"/>
+                        <constraint firstAttribute="trailing" secondItem="sUF-O9-qPx" secondAttribute="trailing" id="tCM-VZ-sRu"/>
+                        <constraint firstItem="sUF-O9-qPx" firstAttribute="top" secondItem="sTl-By-6dh" secondAttribute="top" id="xnM-2g-Qva"/>
+                        <constraint firstAttribute="bottom" secondItem="kDN-J3-1yQ" secondAttribute="bottom" id="yKN-IS-5Xa"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="sTl-By-6dh" firstAttribute="bottom" secondItem="tdp-jG-peB" secondAttribute="bottom" id="UJP-IB-3Sw"/>
+                <constraint firstItem="sTl-By-6dh" firstAttribute="top" secondItem="tdp-jG-peB" secondAttribute="top" id="ds8-ul-d4J"/>
+                <constraint firstItem="sTl-By-6dh" firstAttribute="leading" secondItem="tdp-jG-peB" secondAttribute="leading" id="in2-Ah-MdU"/>
+                <constraint firstItem="tdp-jG-peB" firstAttribute="trailing" secondItem="sTl-By-6dh" secondAttribute="trailing" id="jMI-Bk-eNE"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="tdp-jG-peB"/>
+            <connections>
+                <outlet property="checkImageView" destination="EXD-xE-jh0" id="vzT-Cy-zYL"/>
+                <outlet property="container" destination="sTl-By-6dh" id="prH-1q-OJS"/>
+                <outlet property="separatorView" destination="kDN-J3-1yQ" id="RxE-7h-78v"/>
+                <outlet property="titleLabel" destination="Ose-j1-DFZ" id="D1o-ZW-Wwe"/>
+            </connections>
+            <point key="canvasLocation" x="81" y="-387"/>
+        </view>
+    </objects>
+</document>

@@ -13,9 +13,19 @@ class CategoriesViewController: MainVC {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.backgroundColor = .main
+            tableView.register(R.nib.categoryHeaderView(), forHeaderFooterViewReuseIdentifier: "CategoryHeaderView")
             tableView.register(R.nib.categoryTableViewCell(), forCellReuseIdentifier: "CategoryTableViewCell")
             tableView.delegate = self
             tableView.dataSource = self
+            tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: DefaultValues.EDGE_INSET_BOTTOM, right: 0)
+        }
+    }
+    @IBOutlet weak var acceptButton: UIButton! {
+        didSet {
+            acceptButton.appTheme()
+            acceptButton.setTitle(R.string.localizable.bookSearch(), for: .normal)
+            acceptButton.addTarget(self, action: #selector(onAcceptButtonClicked), for: .touchUpInside)
+            acceptButton.addShadow()
         }
     }
     
@@ -28,6 +38,18 @@ class CategoriesViewController: MainVC {
     override func viewDidLoad() {
         super.viewDidLoad()
         setColor(to: .main)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        acceptButton.isUserInteractionEnabled = true
+    }
+    
+    @objc func onAcceptButtonClicked() {
+        acceptButton.isUserInteractionEnabled = false
+        guard let searchVC = R.storyboard.main().instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController else { return }
+        searchVC.delegate = self.delegate
+        delegate?.next(viewController: searchVC)
     }
     
 }
@@ -51,15 +73,36 @@ extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let categoryCell = cell as? CategoryTableViewCell else { return }
-        categoryCell.titleLabel.text = getCategoryName(forIndexPath: indexPath)
+        categoryCell.category = getCategory(forIndexPath: indexPath)
     }
     
-    private func getCategoryName(forIndexPath indexPath: IndexPath) -> String? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        guard let categoryHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: "CategoryHeaderView") as? CategoryHeaderView else {
+            return UIView()
+        }
+        return categoryHeader
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard let categoryHeader = view as? CategoryHeaderView else { return }
+        let mainCategory = SessionManager.shared.mainCategories[section]
+        categoryHeader.mainCategory = mainCategory
+    }
+    
+    func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
+        return 100
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    private func getCategory(forIndexPath indexPath: IndexPath) -> Category? {
         let section = indexPath.section
         let row = indexPath.row
         let mainCategory = SessionManager.shared.mainCategories[section]
         let category = mainCategory.subcategories[row]
-        return category.name
+        return category
     }
     
 }

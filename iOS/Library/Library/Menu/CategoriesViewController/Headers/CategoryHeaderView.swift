@@ -1,15 +1,20 @@
 //
-//  CategoryTableViewCell.swift
+//  CategoryHeaderView.swift
 //  Library
 //
-//  Created by Kryg Tomasz on 17.01.2018.
+//  Created by Kryg Tomasz on 18.01.2018.
 //  Copyright © 2018 Kryg Tomek. All rights reserved.
 //
 
 import UIKit
 
-class CategoryTableViewCell: UITableViewCell {
+class CategoryHeaderView: UITableViewHeaderFooterView {
 
+    @IBOutlet weak var container: UIView! {
+        didSet {
+            container.backgroundColor = .main
+        }
+    }
     @IBOutlet weak var checkImageView: UIImageView! {
         didSet {
             checkImageView.image = #imageLiteral(resourceName: "unchecked").withRenderingMode(.alwaysTemplate)
@@ -27,18 +32,10 @@ class CategoryTableViewCell: UITableViewCell {
         }
     }
     
-    var category: Category? {
+    var mainCategory: MainCategory? {
         didSet {
-            titleLabel.text = category?.name
+            titleLabel.text = mainCategory?.category?.name
         }
     }
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-    }
-    
 }

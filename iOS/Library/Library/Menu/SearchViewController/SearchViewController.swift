@@ -18,7 +18,7 @@ class SearchViewController: MainVC {
             tableView.delegate = self
             tableView.keyboardDismissMode = .interactive
             tableView.separatorStyle = .none
-            tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: EDGE_INSET_BOTTOM, right: 0)
+            tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: DefaultValues.EDGE_INSET_BOTTOM, right: 0)
         }
     }
     @IBOutlet weak var searchButton: LoadingButton! {
@@ -37,7 +37,6 @@ class SearchViewController: MainVC {
     }
     let searchTitles: [String] = [R.string.localizable.title(), R.string.localizable.author(), R.string.localizable.isbn(), R.string.localizable.mathLibrarySignature(), R.string.localizable.mainLibrarySignature(), R.string.localizable.publicationYear(), R.string.localizable.bookVolume(), R.string.localizable.positionType(), R.string.localizable.availability(), R.string.localizable.category()]
     let NUMBER_OF_ROWS: Int = 10
-    let EDGE_INSET_BOTTOM: CGFloat = 72.0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,8 +46,8 @@ class SearchViewController: MainVC {
         RequestManager.shared.getDictionary()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         searchButton.isUserInteractionEnabled = true
     }
     
@@ -73,8 +72,6 @@ class SearchViewController: MainVC {
         listVC.books = books
         listVC.delegate = self.delegate
         DispatchQueue.main.async {
-//            self.delegate?.nextViewController(from: self, books: books)
-            
             self.delegate?.next(viewController: listVC)
         }
     }
@@ -211,7 +208,7 @@ extension SearchViewController {
         var userInfo = notification.userInfo!
         var keyboardFrame:CGRect = (userInfo[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         keyboardFrame = self.view.convert(keyboardFrame, from: nil)
-        tableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, EDGE_INSET_BOTTOM, 0.0)
+        tableView.contentInset = UIEdgeInsetsMake(0.0, 0.0, DefaultValues.EDGE_INSET_BOTTOM, 0.0)
     }
     
 }

@@ -28,7 +28,7 @@
                         <rect key="frame" x="16" y="24" width="329" height="189.5"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lE2-QM-Brg">
-                                <rect key="frame" x="8" y="0.0" width="321" height="145.5"/>
+                                <rect key="frame" x="8" y="0.0" width="321" height="137.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -49,7 +49,7 @@
                             <constraint firstAttribute="bottom" secondItem="vCN-BF-KKJ" secondAttribute="bottom" id="gRV-XK-3L2"/>
                             <constraint firstItem="lE2-QM-Brg" firstAttribute="leading" secondItem="mUi-1b-QBd" secondAttribute="leading" constant="8" id="iNV-zm-0nt"/>
                             <constraint firstItem="vCN-BF-KKJ" firstAttribute="leading" secondItem="mUi-1b-QBd" secondAttribute="leading" constant="4" id="jUt-6C-1An"/>
-                            <constraint firstItem="vCN-BF-KKJ" firstAttribute="top" secondItem="lE2-QM-Brg" secondAttribute="bottom" id="uPH-0D-V9g"/>
+                            <constraint firstItem="vCN-BF-KKJ" firstAttribute="top" secondItem="lE2-QM-Brg" secondAttribute="bottom" constant="8" id="uPH-0D-V9g"/>
                             <constraint firstItem="lE2-QM-Brg" firstAttribute="top" secondItem="mUi-1b-QBd" secondAttribute="top" id="yDX-Ze-Y1L"/>
                         </constraints>
                     </view>

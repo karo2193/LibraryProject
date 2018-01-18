@@ -16,13 +16,13 @@ class BookListViewController: MainVC {
             tableView.dataSource = self
             tableView.delegate = self
             tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-            tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 72, right: 0)
+            tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: DefaultValues.EDGE_INSET_BOTTOM, right: 0)
         }
     }
     @IBOutlet weak var backButton: UIButton! {
         didSet {
             backButton.appTheme()
-            backButton.setTitle(R.string.localizable.backToSearch(), for: .normal)
+            backButton.setTitle(R.string.localizable.bookSearch(), for: .normal)
             backButton.addTarget(self, action: #selector(onButtonClicked), for: .touchUpInside)
             backButton.addShadow()
         }
@@ -54,6 +54,7 @@ class BookListViewController: MainVC {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        backButton.isUserInteractionEnabled = true
         if traitCollection.forceTouchCapability == .available {
             registerForPreviewing(with: self, sourceView: tableView)
         }
@@ -72,9 +73,10 @@ class BookListViewController: MainVC {
     }
     
     @objc func onButtonClicked() {
+        backButton.isUserInteractionEnabled = false
         guard let searchVC = R.storyboard.main().instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController else { return }
         searchVC.delegate = self.delegate
-        delegate?.previous(viewController: searchVC)
+        delegate?.next(viewController: searchVC)
     }
 
 }

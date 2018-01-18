@@ -7,9 +7,11 @@
 //
 
 import Foundation
+import UIKit
 
 class DefaultValues {
     
     static let BOOKS_PER_FETCH = 20
+    static let EDGE_INSET_BOTTOM: CGFloat = 72.0
     
 }
