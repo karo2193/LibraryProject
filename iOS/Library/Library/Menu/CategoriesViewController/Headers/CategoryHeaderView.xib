@@ -24,8 +24,22 @@
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sTl-By-6dh">
                     <rect key="frame" x="0.0" y="0.0" width="608" height="56"/>
                     <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jj0-yw-nIu" userLabel="Top Separator View">
+                            <rect key="frame" x="0.0" y="0.0" width="608" height="1"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="2Yh-FK-Hc3"/>
+                            </constraints>
+                        </view>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kDN-J3-1yQ" userLabel="Bottom Separator View">
+                            <rect key="frame" x="0.0" y="55" width="608" height="1"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="1" id="JU4-jx-j2y"/>
+                            </constraints>
+                        </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sUF-O9-qPx">
-                            <rect key="frame" x="0.0" y="0.0" width="608" height="55"/>
+                            <rect key="frame" x="0.0" y="1" width="608" height="54"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="EXD-xE-jh0">
                                     <rect key="frame" x="16" y="16" width="24" height="24"/>
@@ -35,7 +49,7 @@
                                     </constraints>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ose-j1-DFZ">
-                                    <rect key="frame" x="56" y="16" width="536" height="23.5"/>
+                                    <rect key="frame" x="56" y="15.5" width="536" height="23.5"/>
                                     <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
@@ -52,22 +66,18 @@
                                 <constraint firstAttribute="trailing" secondItem="Ose-j1-DFZ" secondAttribute="trailing" constant="16" id="yIi-Gk-vmX"/>
                             </constraints>
                         </view>
-                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kDN-J3-1yQ">
-                            <rect key="frame" x="0.0" y="55" width="608" height="1"/>
-                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="1" id="JU4-jx-j2y"/>
-                            </constraints>
-                        </view>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     <constraints>
+                        <constraint firstItem="sUF-O9-qPx" firstAttribute="top" secondItem="Jj0-yw-nIu" secondAttribute="bottom" id="6xp-Gy-Jrc"/>
                         <constraint firstItem="kDN-J3-1yQ" firstAttribute="top" secondItem="sUF-O9-qPx" secondAttribute="bottom" id="8E6-Q6-L7v"/>
+                        <constraint firstItem="Jj0-yw-nIu" firstAttribute="top" secondItem="sTl-By-6dh" secondAttribute="top" id="Nma-E1-bfU"/>
                         <constraint firstItem="kDN-J3-1yQ" firstAttribute="leading" secondItem="sTl-By-6dh" secondAttribute="leading" id="TDf-5Y-4RV"/>
+                        <constraint firstAttribute="trailing" secondItem="Jj0-yw-nIu" secondAttribute="trailing" id="YXR-c5-jcd"/>
                         <constraint firstAttribute="trailing" secondItem="kDN-J3-1yQ" secondAttribute="trailing" id="gaN-6E-qEx"/>
+                        <constraint firstItem="Jj0-yw-nIu" firstAttribute="leading" secondItem="sTl-By-6dh" secondAttribute="leading" id="jIP-HD-YOZ"/>
                         <constraint firstItem="sUF-O9-qPx" firstAttribute="leading" secondItem="sTl-By-6dh" secondAttribute="leading" id="lSs-ko-XOG"/>
                         <constraint firstAttribute="trailing" secondItem="sUF-O9-qPx" secondAttribute="trailing" id="tCM-VZ-sRu"/>
-                        <constraint firstItem="sUF-O9-qPx" firstAttribute="top" secondItem="sTl-By-6dh" secondAttribute="top" id="xnM-2g-Qva"/>
                         <constraint firstAttribute="bottom" secondItem="kDN-J3-1yQ" secondAttribute="bottom" id="yKN-IS-5Xa"/>
                     </constraints>
                 </view>
@@ -82,10 +92,11 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="tdp-jG-peB"/>
             <connections>
+                <outlet property="bottomSeparatorView" destination="kDN-J3-1yQ" id="RxE-7h-78v"/>
                 <outlet property="checkImageView" destination="EXD-xE-jh0" id="vzT-Cy-zYL"/>
                 <outlet property="container" destination="sTl-By-6dh" id="prH-1q-OJS"/>
-                <outlet property="separatorView" destination="kDN-J3-1yQ" id="RxE-7h-78v"/>
                 <outlet property="titleLabel" destination="Ose-j1-DFZ" id="D1o-ZW-Wwe"/>
+                <outlet property="topSeparatorView" destination="Jj0-yw-nIu" id="hjU-nH-rxO"/>
             </connections>
             <point key="canvasLocation" x="81" y="-387"/>
         </view>

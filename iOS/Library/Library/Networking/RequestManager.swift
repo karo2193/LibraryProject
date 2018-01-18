@@ -37,11 +37,11 @@ extension RequestManager {
     
     func getBooks(withOffset offset: Int, completion: @escaping (([Book])->())) {
         let filter: Filter = getFilter(usingBook: SessionManager.shared.searchedBook)
-        let categories = ["G_02"]
+        let categories = SessionManager.shared.searchedBook.getCategoriesId()
         let parameters = [
             "query" : [
                 "filters" : filter,
-                "kategorie" : [],
+                "kategorie" : categories,
                 "pagination" : [
                     "offset" : offset,
                     "limit" : DefaultValues.BOOKS_PER_FETCH

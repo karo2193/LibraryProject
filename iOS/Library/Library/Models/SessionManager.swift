@@ -21,4 +21,16 @@ class SessionManager {
     var mainCategories: [MainCategory] = []
     var dictionaryTypes: DictionaryTypes!
     
+//    func getAllCategories() -> [Category] {
+//        var allCategories: [Category] = []
+//        for mainCategory in mainCategories {
+//            guard let category = mainCategory.category else { continue }
+//            allCategories.append(category)
+//            for subcategory in mainCategory.subcategories {
+//                allCategories.append(subcategory)
+//            }
+//        }
+//        return allCategories
+//    }
+    
 }

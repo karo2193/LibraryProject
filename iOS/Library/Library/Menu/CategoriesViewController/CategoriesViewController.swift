@@ -23,7 +23,7 @@ class CategoriesViewController: MainVC {
     @IBOutlet weak var acceptButton: UIButton! {
         didSet {
             acceptButton.appTheme()
-            acceptButton.setTitle(R.string.localizable.bookSearch(), for: .normal)
+            acceptButton.setTitle(R.string.localizable.accept(), for: .normal)
             acceptButton.addTarget(self, action: #selector(onAcceptButtonClicked), for: .touchUpInside)
             acceptButton.addShadow()
         }
@@ -40,6 +40,12 @@ class CategoriesViewController: MainVC {
         setColor(to: .main)
     }
     
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        selectSavedCategories()
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         acceptButton.isUserInteractionEnabled = true
@@ -49,11 +55,110 @@ class CategoriesViewController: MainVC {
         acceptButton.isUserInteractionEnabled = false
         guard let searchVC = R.storyboard.main().instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController else { return }
         searchVC.delegate = self.delegate
+        saveSelectedCategories()
         delegate?.next(viewController: searchVC)
     }
     
+    private func saveSelectedCategories() {
+        SessionManager.shared.searchedBook.categories.removeAll()
+        guard let selectedIndexPaths = tableView.indexPathsForSelectedRows else { return }
+        for selectedIndexPath in selectedIndexPaths {
+            guard let selectedCategory = getCategory(forIndexPath: selectedIndexPath) else { continue }
+            SessionManager.shared.searchedBook.categories.append(selectedCategory)
+        }
+    }
+    
+    
+    
 }
 
+//MARK: Autoselecting saved categories
+extension CategoriesViewController {
+    
+    fileprivate func selectSavedCategories() {
+        let selectedCategories = SessionManager.shared.searchedBook.categories
+        var selectedIndexPaths: [IndexPath] = []
+        for selectedCategory in selectedCategories {
+            let indexPaths = getIndexPaths(forCategory: selectedCategory)
+            selectedIndexPaths.append(contentsOf: indexPaths)
+        }
+        for indexPath in selectedIndexPaths {
+            tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+        }
+    }
+    
+    fileprivate func getIndexPaths(forCategory category: Category) -> [IndexPath] {
+        let mainCategories = SessionManager.shared.mainCategories
+        for (section, mainCategory) in mainCategories.enumerated() {
+            guard
+                let mainCategoryId = mainCategory.category?.id,
+                let categoryId = category.id
+                else { continue }
+            if mainCategoryId == categoryId {
+                return getIndexPaths(fromSection: section)
+            } else {
+                guard let indexPath = getIndexPath(forCategory: category, inSection: section) else { continue }
+                return [indexPath]
+            }
+        }
+        return []
+    }
+    
+    fileprivate func getIndexPaths(fromSection section: Int) -> [IndexPath] {
+        var indexPaths: [IndexPath] = []
+        let rowsCount = tableView.numberOfRows(inSection: section)
+        for row in 0..<rowsCount {
+            let indexPath = IndexPath(row: row, section: section)
+            indexPaths.append(indexPath)
+        }
+        return indexPaths
+    }
+    
+    fileprivate func getIndexPath(forCategory category: Category, inSection section: Int) -> IndexPath? {
+        let mainCategory = SessionManager.shared.mainCategories[section]
+        for (row, subcategory) in mainCategory.subcategories.enumerated() {
+            guard let subcategoryId = subcategory.id,
+                let categoryId = category.id else { continue }
+            if subcategoryId == categoryId {
+                let indexPath = IndexPath(row: row, section: section)
+                return indexPath
+            }
+        }
+        return nil
+    }
+    
+    //    private func selectSavedCategories() {
+    //        let selectedCategories = SessionManager.shared.searchedBook.categories
+    //        let mainCategories = SessionManager.shared.mainCategories
+    //        var selectedIndexPaths: [IndexPath] = []
+    //        for selectedCategoryIdObject in selectedCategories.map({$0.id}) {
+    //            guard let selectedCategoryId = selectedCategoryIdObject else { continue }
+    //            for (section, mainCategory) in mainCategories.enumerated() {
+    //                guard let categoryId = mainCategory.category?.id else { continue }
+    //                if categoryId == selectedCategoryId {
+    //                    let indexPaths = getIndexPaths(fromSection: section)
+    //                    selectedIndexPaths.append(contentsOf: indexPaths)
+    //                    continue
+    //                }
+    //                for (row, subcategory) in mainCategory.subcategories.enumerated() {
+    //                    guard let subcategoryId = subcategory.id else { continue }
+    //                    if subcategoryId == selectedCategoryId {
+    //                        let selectedIndexPath = IndexPath(row: row, section: section)
+    //                        selectedIndexPaths.append(selectedIndexPath)
+    //                        break
+    //                    }
+    //                }
+    //            }
+    //        }
+    //
+    //        for indexPath in selectedIndexPaths {
+    //            tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+    //        }
+    //    }
+    
+}
+
+//MARK: UITableView Delegate and DataSource
 extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -74,7 +179,18 @@ extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         guard let categoryCell = cell as? CategoryTableViewCell else { return }
         categoryCell.category = getCategory(forIndexPath: indexPath)
+        categoryCell.selectionStyle = .none
+        let rowsCount = tableView.numberOfRows(inSection: indexPath.section)
+        if indexPath.row == rowsCount - 1 {
+            categoryCell.separatorView.isHidden = true
+        } else {
+            categoryCell.separatorView.isHidden = false
+        }
     }
+    
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        guard let categoryCell = tableView.cellForRow(at: indexPath) as? CategoryTableViewCell else { return }
+//    }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let categoryHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: "CategoryHeaderView") as? CategoryHeaderView else {

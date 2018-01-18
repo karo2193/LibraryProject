@@ -19,7 +19,7 @@ struct Book: Codable {
     private var tom: String?
     private var typ: String?
     private var dostepnosc: String?
-    private var kategoria: [Category]?
+    private var kategoria: [Category] = []
     
     var title: String? {
         set {
@@ -114,13 +114,19 @@ struct Book: Codable {
         }
     }
     
-    var categories: [Category]? {
+    var categories: [Category] {
         set {
-            kategoria = categories
+            kategoria = newValue
         }
         get {
             return kategoria
         }
+    }
+    
+    func getCategoriesId() -> [String] {
+        let categoriesObject = categories
+        let categoriesId: [String] = categoriesObject.map {$0.id ?? ""}
+        return categoriesId
     }
     
 }

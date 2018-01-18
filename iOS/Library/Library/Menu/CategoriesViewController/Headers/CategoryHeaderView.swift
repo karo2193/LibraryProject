@@ -26,9 +26,14 @@ class CategoryHeaderView: UITableViewHeaderFooterView {
             titleLabel.textColor = .tintDark
         }
     }
-    @IBOutlet weak var separatorView: UIView! {
+    @IBOutlet weak var topSeparatorView: UIView! {
         didSet {
-            separatorView.backgroundColor = .tintDark
+            topSeparatorView.backgroundColor = .tintDark
+        }
+    }
+    @IBOutlet weak var bottomSeparatorView: UIView! {
+        didSet {
+            bottomSeparatorView.backgroundColor = .tintDark
         }
     }
     

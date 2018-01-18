@@ -19,6 +19,7 @@
 "typePhraseToSearch" = "Wpisz szukaną frazę";
 "chooseCategories" = "Wybierz kategorie";
 "categories" = "Kategorie";
+"accept" = "Zatwierdź";
 
 //Titles available to search for
 "title" = "Tytuł";
