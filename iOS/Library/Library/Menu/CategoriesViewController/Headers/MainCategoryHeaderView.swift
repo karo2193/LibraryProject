@@ -1,5 +1,5 @@
 //
-//  CategoryHeaderView.swift
+//  MainCategoryHeaderView.swift
 //  Library
 //
 //  Created by Kryg Tomasz on 18.01.2018.
@@ -8,11 +8,17 @@
 
 import UIKit
 
-class CategoryHeaderView: UITableViewHeaderFooterView {
+protocol MainCategoryHeaderViewDelegate: class {
+    func toggleSubcategories(usingHeader header: MainCategoryHeaderView)
+}
+
+class MainCategoryHeaderView: UITableViewHeaderFooterView {
 
     @IBOutlet weak var container: UIView! {
         didSet {
             container.backgroundColor = .main
+            let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onHeaderTap))
+            container.addGestureRecognizer(tapGesture)
         }
     }
     @IBOutlet weak var checkImageView: UIImageView! {
@@ -37,10 +43,26 @@ class CategoryHeaderView: UITableViewHeaderFooterView {
         }
     }
     
+    weak var delegate: MainCategoryHeaderViewDelegate?
+    var section: Int = 0
+    var isSelected: Bool = false {
+        didSet {
+            if isSelected {
+                checkImageView.image = #imageLiteral(resourceName: "checked").withRenderingMode(.alwaysTemplate)
+            } else {
+                checkImageView.image = #imageLiteral(resourceName: "unchecked").withRenderingMode(.alwaysTemplate)
+            }
+//            delegate?.toggleSubcategories(usingHeader: self)
+        }
+    }
     var mainCategory: MainCategory? {
         didSet {
             titleLabel.text = mainCategory?.category?.name
         }
+    }
+    
+    @objc func onHeaderTap() {
+        delegate?.toggleSubcategories(usingHeader: self)
     }
 
 }

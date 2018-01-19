@@ -17,7 +17,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="TJw-xJ-jZq" customClass="CategoryHeaderView" customModule="Library" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="TJw-xJ-jZq" customClass="MainCategoryHeaderView" customModule="Library" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="608" height="56"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>

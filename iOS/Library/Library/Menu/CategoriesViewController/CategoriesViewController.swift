@@ -13,7 +13,7 @@ class CategoriesViewController: MainVC {
     @IBOutlet weak var tableView: UITableView! {
         didSet {
             tableView.backgroundColor = .main
-            tableView.register(R.nib.categoryHeaderView(), forHeaderFooterViewReuseIdentifier: "CategoryHeaderView")
+            tableView.register(R.nib.mainCategoryHeaderView(), forHeaderFooterViewReuseIdentifier: "MainCategoryHeaderView")
             tableView.register(R.nib.categoryTableViewCell(), forCellReuseIdentifier: "CategoryTableViewCell")
             tableView.delegate = self
             tableView.dataSource = self
@@ -34,10 +34,12 @@ class CategoriesViewController: MainVC {
             delegate?.initNavigationBar(withTitle: R.string.localizable.categories())
         }
     }
+    var headerIsSelectedArray: [Bool] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setColor(to: .main)
+        deselectAllHeaders()
     }
     
     
@@ -49,6 +51,7 @@ class CategoriesViewController: MainVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         acceptButton.isUserInteractionEnabled = true
+        selectSavedCategories()
     }
     
     @objc func onAcceptButtonClicked() {
@@ -61,6 +64,20 @@ class CategoriesViewController: MainVC {
     
     private func saveSelectedCategories() {
         SessionManager.shared.searchedBook.categories.removeAll()
+        saveMainCategories()
+        saveSubcategories()
+    }
+    
+    private func saveMainCategories() {
+        for (section, isHeaderSelected) in headerIsSelectedArray.enumerated() {
+            if isHeaderSelected {
+                guard let category = SessionManager.shared.mainCategories[section].category else { continue }
+                SessionManager.shared.searchedBook.categories.append(category)
+            }
+        }
+    }
+    
+    private func saveSubcategories() {
         guard let selectedIndexPaths = tableView.indexPathsForSelectedRows else { return }
         for selectedIndexPath in selectedIndexPaths {
             guard let selectedCategory = getCategory(forIndexPath: selectedIndexPath) else { continue }
@@ -68,7 +85,43 @@ class CategoriesViewController: MainVC {
         }
     }
     
+    private func deselectAllHeaders() {
+        let mainCategoriesCount = SessionManager.shared.mainCategories.count
+        headerIsSelectedArray = Array(repeating: false, count: mainCategoriesCount)
+    }
     
+    private func toggleHeader(inSection section: Int, select: Bool) {
+        headerIsSelectedArray[section] = select
+        guard let header = tableView.headerView(forSection: section) as? MainCategoryHeaderView else { return }
+        header.isSelected = select
+    }
+    
+    private func trySelectHeaders() {
+        let sectionsCount = tableView.numberOfSections
+        for section in 0..<sectionsCount {
+            trySelectHeader(inSection: section)
+        }
+    }
+    
+    private func trySelectHeader(inSection section: Int) {
+        let rowsCount = tableView.numberOfRows(inSection: section)
+        if rowsCount == 0 {
+            return
+        }
+        var selectedCount = 0
+        guard let selectedIndexPaths = tableView.indexPathsForSelectedRows else { return }
+        for selectedIndexPath in selectedIndexPaths {
+            if selectedIndexPath.section == section {
+                selectedCount += 1
+            }
+        }
+        if rowsCount == selectedCount {
+            toggleHeader(inSection: section, select: true)
+        } else {
+            toggleHeader(inSection: section, select: false)
+        }
+        
+    }
     
 }
 
@@ -85,6 +138,7 @@ extension CategoriesViewController {
         for indexPath in selectedIndexPaths {
             tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
         }
+        trySelectHeaders()
     }
     
     fileprivate func getIndexPaths(forCategory category: Category) -> [IndexPath] {
@@ -95,6 +149,7 @@ extension CategoriesViewController {
                 let categoryId = category.id
                 else { continue }
             if mainCategoryId == categoryId {
+                toggleHeader(inSection: section, select: true)
                 return getIndexPaths(fromSection: section)
             } else {
                 guard let indexPath = getIndexPath(forCategory: category, inSection: section) else { continue }
@@ -188,19 +243,28 @@ extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        guard let categoryCell = tableView.cellForRow(at: indexPath) as? CategoryTableViewCell else { return }
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        trySelectHeader(inSection: indexPath.section)
+        //sprawdzic przy kliknieciu czy są wszystkie czy nie z danej indexPath.section i na tej podstawie wejść w headera i go zaznaczyc/odznaczyc
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        let section = indexPath.section
+        toggleHeader(inSection: section, select: false)
+    }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        guard let categoryHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: "CategoryHeaderView") as? CategoryHeaderView else {
+        guard let categoryHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: "MainCategoryHeaderView") as? MainCategoryHeaderView else {
             return UIView()
         }
         return categoryHeader
     }
     
     func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
-        guard let categoryHeader = view as? CategoryHeaderView else { return }
+        guard let categoryHeader = view as? MainCategoryHeaderView else { return }
+        categoryHeader.delegate = self
+        categoryHeader.section = section
+        categoryHeader.isSelected = headerIsSelectedArray[section]
         let mainCategory = SessionManager.shared.mainCategories[section]
         categoryHeader.mainCategory = mainCategory
     }
@@ -219,6 +283,24 @@ extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource {
         let mainCategory = SessionManager.shared.mainCategories[section]
         let category = mainCategory.subcategories[row]
         return category
+    }
+    
+}
+
+extension CategoriesViewController: MainCategoryHeaderViewDelegate {
+    
+    func toggleSubcategories(usingHeader header: MainCategoryHeaderView) {
+        let headerIsSelected = headerIsSelectedArray[header.section]
+        guard let subcategories = header.mainCategory?.subcategories else { return }
+        for (index, _) in subcategories.enumerated() {
+            let indexPath = IndexPath(row: index, section: header.section)
+            if headerIsSelected {
+                tableView.deselectRow(at: indexPath, animated: true)
+            } else {
+                tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+            }
+        }
+        toggleHeader(inSection: header.section, select: !headerIsSelected)
     }
     
 }
