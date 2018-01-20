@@ -33,7 +33,7 @@ class BookListViewController: MainVC {
     private var canFetchMore: Bool = true
     weak var delegate: MainPageViewControllerDelegate? {
         didSet {
-            delegate?.initNavigationBar(withTitle: R.string.localizable.searchingResults())
+            delegate?.initNavigationBar(withTitle: R.string.localizable.searchingResults(), rightButton: nil)
         }
     }
     var books: [Book] = [] {

@@ -123,6 +123,19 @@ struct Book: Codable {
         }
     }
     
+    mutating func clear() {
+        self.title = ""
+        self.authors = ""
+        self.isbn = ""
+        self.mathLibrarySignature = ""
+        self.mainLibrarySignature = ""
+        self.year = ""
+        self.volume = ""
+        self.type = ""
+        self.available = ""
+        self.categories = []
+    }
+    
     func getCategoriesId() -> [String] {
         let categoriesObject = categories
         let categoriesId: [String] = categoriesObject.map {$0.id ?? ""}

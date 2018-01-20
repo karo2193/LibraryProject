@@ -58,9 +58,12 @@ class SearchTextTableViewCell: UITableViewCell {
                 pickerView = UIPickerView()
                 pickerView?.delegate = self
                 pickerView?.dataSource = self
-//                pickerView?.addTarget(self, action: #selector(onPickerChange), for: .valueChanged)
                 textField.inputView = pickerView
+            case .mathSignature, .year:
+                textField.keyboardType = .numberPad
+                textField.inputView = nil
             default:
+                textField.keyboardType = .default
                 textField.inputView = nil
             }
         }
