@@ -52,7 +52,6 @@ extension RequestManager {
         guard var request = getRequest(usingHttpMethod: "POST", forEndpoint: BOOK_ENDPOINT) else { return }
         guard let httpBody = try? JSONSerialization.data(withJSONObject: parameters, options: []) else { return }
         request.httpBody = httpBody
-        
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
                 NSLog(error.localizedDescription)
