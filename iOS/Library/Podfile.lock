@@ -2,14 +2,17 @@ PODS:
   - R.swift (3.3.0):
     - R.swift.Library (~> 3.0.2)
   - R.swift.Library (3.0.2)
+  - UIEmptyState (2.0.2)
 
 DEPENDENCIES:
   - R.swift
+  - UIEmptyState
 
 SPEC CHECKSUMS:
   R.swift: bde9704d50ff36820f49e266bc88ef545e1e9b36
   R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
+  UIEmptyState: d75e294fd324520c0c437e17dd096a1a5f5b2b25
 
-PODFILE CHECKSUM: c4731baa4ec6dba9aa6fe533540806d0a2a4ee9e
+PODFILE CHECKSUM: a74cba6fa436c58b546ec0d7ee1faac81d9683b0
 
 COCOAPODS: 1.2.0

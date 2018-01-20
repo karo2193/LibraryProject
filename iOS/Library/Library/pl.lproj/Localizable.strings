@@ -20,6 +20,7 @@
 "chooseCategories" = "Wybierz kategorie";
 "categories" = "Kategorie";
 "accept" = "Zatwierdź";
+"noResults" = "Brak wyników wyszukiwania";
 
 //Titles available to search for
 "title" = "Tytuł";

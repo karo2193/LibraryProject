@@ -20,6 +20,8 @@
 "chooseCategories" = "Choose categories";
 "categories" = "Categories";
 "accept" = "Accept";
+"noResults" = "No search results";
+
 
 //Titles available to search for
 "title" = "Title";

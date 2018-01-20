@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UIEmptyState
 
 class BookListViewController: MainVC {
     
@@ -40,14 +41,20 @@ class BookListViewController: MainVC {
             DispatchQueue.main.async {
                 self.view.layoutIfNeeded()
                 self.tableView.reloadData()
+                if self.books.isEmpty {
+                    self.tableView.isHidden = true
+                } else {
+                    self.tableView.isHidden = false
+                }
+                self.reloadEmptyStateForTableView(self.tableView)
             }
-            
         }
     }
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        setEmptyStateDelegates()
         setColor(to: .main)
         tableView.separatorColor = .tintDark
     }
@@ -165,6 +172,33 @@ extension BookListViewController: UIViewControllerPreviewingDelegate {
     //POP
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
         self.showDetailViewController(viewControllerToCommit, sender: self)
+    }
+    
+}
+
+extension BookListViewController: UIEmptyStateDelegate, UIEmptyStateDataSource {
+    
+    fileprivate func setEmptyStateDelegates() {
+        self.emptyStateDelegate = self
+        self.emptyStateDataSource = self
+    }
+    
+    var emptyStateBackgroundColor: UIColor {
+        return .main
+    }
+    
+    var emptyStateTitle: NSAttributedString {
+        let title = R.string.localizable.noResults()
+        let range = (title as NSString).range(of: title)
+        let titleAttributedString = NSMutableAttributedString(string: title)
+        let titleColor = UIColor.tintDark
+        titleAttributedString.addAttribute(NSAttributedStringKey.foregroundColor, value: titleColor, range: range)
+        return titleAttributedString
+    }
+    
+    var emptyStateImage: UIImage? {
+        let image = #imageLiteral(resourceName: "bookShelf").maskWithColor(color: .tintDark)
+        return image
     }
     
 }
