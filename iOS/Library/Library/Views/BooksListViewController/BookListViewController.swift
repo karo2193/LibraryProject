@@ -17,15 +17,6 @@ class BookListViewController: MainVC {
             tableView.dataSource = self
             tableView.delegate = self
             tableView.separatorInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-            tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: DefaultValues.EDGE_INSET_BOTTOM, right: 0)
-        }
-    }
-    @IBOutlet weak var backButton: UIButton! {
-        didSet {
-            backButton.appTheme()
-            backButton.setTitle(R.string.localizable.bookSearch(), for: .normal)
-            backButton.addTarget(self, action: #selector(onButtonClicked), for: .touchUpInside)
-            backButton.addShadow()
         }
     }
     
@@ -33,7 +24,8 @@ class BookListViewController: MainVC {
     private var canFetchMore: Bool = true
     weak var delegate: MainPageViewControllerDelegate? {
         didSet {
-            delegate?.initNavigationBar(withTitle: R.string.localizable.searchingResults(), rightButton: nil)
+            let leftButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "back").scale(toWidth: 24, height: 24), style: .plain, target: self, action: #selector(onBackButtonClicked))
+            delegate?.initNavigationBar(withTitle: R.string.localizable.searchingResults(), leftButton: leftButtonItem, rightButton: nil)
         }
     }
     var books: [Book] = [] {
@@ -60,7 +52,6 @@ class BookListViewController: MainVC {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        backButton.isUserInteractionEnabled = true
         if traitCollection.forceTouchCapability == .available {
             registerForPreviewing(with: self, sourceView: tableView)
         }
@@ -78,11 +69,10 @@ class BookListViewController: MainVC {
         }
     }
     
-    @objc func onButtonClicked() {
-        backButton.isUserInteractionEnabled = false
+    @objc func onBackButtonClicked() {
         guard let searchVC = R.storyboard.main().instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController else { return }
         searchVC.delegate = self.delegate
-        delegate?.next(viewController: searchVC)
+        delegate?.previous(viewController: searchVC)
     }
 
 }

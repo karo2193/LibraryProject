@@ -89,41 +89,17 @@
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LFp-id-2fU">
-                                <rect key="frame" x="0.0" y="595" width="375" height="72"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TJV-uQ-UgX">
-                                        <rect key="frame" x="16" y="16" width="343" height="40"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="Bce-XH-D2A"/>
-                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="40" id="kJs-Lc-sG8"/>
-                                        </constraints>
-                                        <state key="normal" title="Button"/>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="TJV-uQ-UgX" firstAttribute="leading" secondItem="LFp-id-2fU" secondAttribute="leading" constant="16" id="CXI-mq-YDe"/>
-                                    <constraint firstAttribute="bottom" secondItem="TJV-uQ-UgX" secondAttribute="bottom" constant="16" id="KOD-g5-qHw"/>
-                                    <constraint firstItem="TJV-uQ-UgX" firstAttribute="top" secondItem="LFp-id-2fU" secondAttribute="top" constant="16" id="XBG-Ea-lm2"/>
-                                    <constraint firstAttribute="trailing" secondItem="TJV-uQ-UgX" secondAttribute="trailing" constant="16" id="YWi-Iz-RWz"/>
-                                </constraints>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="gQY-XF-Fyi" firstAttribute="trailing" secondItem="95D-oA-xA7" secondAttribute="trailing" id="2Cr-sO-KiW"/>
-                            <constraint firstItem="gQY-XF-Fyi" firstAttribute="bottom" secondItem="LFp-id-2fU" secondAttribute="bottom" id="Ct0-Ch-1Ql"/>
-                            <constraint firstAttribute="trailing" secondItem="LFp-id-2fU" secondAttribute="trailing" id="KwU-MQ-TYS"/>
                             <constraint firstItem="95D-oA-xA7" firstAttribute="top" secondItem="gQY-XF-Fyi" secondAttribute="top" id="Ndf-pU-AIZ"/>
                             <constraint firstItem="95D-oA-xA7" firstAttribute="leading" secondItem="gQY-XF-Fyi" secondAttribute="leading" id="is4-8y-bgI"/>
                             <constraint firstItem="gQY-XF-Fyi" firstAttribute="bottom" secondItem="95D-oA-xA7" secondAttribute="bottom" id="mHh-SL-Zu9"/>
-                            <constraint firstItem="LFp-id-2fU" firstAttribute="leading" secondItem="gQY-XF-Fyi" secondAttribute="leading" id="q3I-56-BjW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="gQY-XF-Fyi"/>
                     </view>
                     <connections>
-                        <outlet property="acceptButton" destination="TJV-uQ-UgX" id="chN-Kh-Xc7"/>
                         <outlet property="tableView" destination="95D-oA-xA7" id="Cc2-yP-VQJ"/>
                     </connections>
                 </viewController>
@@ -147,35 +123,13 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </tableView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2aV-pX-vOu">
-                                        <rect key="frame" x="0.0" y="575" width="375" height="72"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5NP-Fc-ZMf">
-                                                <rect key="frame" x="16" y="16" width="343" height="40"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="40" id="MG9-cV-Uvu"/>
-                                                </constraints>
-                                                <state key="normal" title="Button"/>
-                                            </button>
-                                        </subviews>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="5NP-Fc-ZMf" secondAttribute="trailing" constant="16" id="aRp-0a-Hd7"/>
-                                            <constraint firstItem="5NP-Fc-ZMf" firstAttribute="top" secondItem="2aV-pX-vOu" secondAttribute="top" constant="16" id="pl2-z6-7jM"/>
-                                            <constraint firstAttribute="bottom" secondItem="5NP-Fc-ZMf" secondAttribute="bottom" constant="16" id="yW8-H0-7VI"/>
-                                            <constraint firstItem="5NP-Fc-ZMf" firstAttribute="leading" secondItem="2aV-pX-vOu" secondAttribute="leading" constant="16" id="zYY-Pe-JZI"/>
-                                        </constraints>
-                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="2aV-pX-vOu" secondAttribute="trailing" id="3Gn-tl-kqm"/>
-                                    <constraint firstAttribute="bottom" secondItem="2aV-pX-vOu" secondAttribute="bottom" id="Aue-rc-rts"/>
                                     <constraint firstItem="hNF-5K-BuM" firstAttribute="top" secondItem="26s-VE-Oow" secondAttribute="top" id="GHQ-IP-xib"/>
                                     <constraint firstAttribute="bottom" secondItem="hNF-5K-BuM" secondAttribute="bottom" id="HoF-LP-lZV"/>
                                     <constraint firstItem="hNF-5K-BuM" firstAttribute="leading" secondItem="26s-VE-Oow" secondAttribute="leading" id="Pxl-bK-xgN"/>
                                     <constraint firstAttribute="trailing" secondItem="hNF-5K-BuM" secondAttribute="trailing" id="mfD-ry-Wcz"/>
-                                    <constraint firstItem="2aV-pX-vOu" firstAttribute="leading" secondItem="26s-VE-Oow" secondAttribute="leading" id="xke-5B-It7"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -189,7 +143,6 @@
                         <viewLayoutGuide key="safeArea" id="iPS-Xy-ebM"/>
                     </view>
                     <connections>
-                        <outlet property="backButton" destination="5NP-Fc-ZMf" id="2Kh-l2-deT"/>
                         <outlet property="tableView" destination="hNF-5K-BuM" id="UdT-uA-3qb"/>
                     </connections>
                 </viewController>
@@ -232,6 +185,7 @@
         <scene sceneID="UYm-8C-Vqt">
             <objects>
                 <pageViewController storyboardIdentifier="MainViewController" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="lbz-6y-pOQ" customClass="MainPageViewController" customModule="Library" customModuleProvider="target" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="k7x-d9-c5L"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="03R-I9-zoQ" userLabel="First Responder" sceneMemberID="firstResponder"/>

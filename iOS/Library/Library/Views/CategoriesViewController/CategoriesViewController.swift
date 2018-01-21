@@ -17,22 +17,14 @@ class CategoriesViewController: MainVC {
             tableView.register(R.nib.categoryTableViewCell(), forCellReuseIdentifier: "CategoryTableViewCell")
             tableView.delegate = self
             tableView.dataSource = self
-            tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: DefaultValues.EDGE_INSET_BOTTOM, right: 0)
-        }
-    }
-    @IBOutlet weak var acceptButton: UIButton! {
-        didSet {
-            acceptButton.appTheme()
-            acceptButton.setTitle(R.string.localizable.accept(), for: .normal)
-            acceptButton.addTarget(self, action: #selector(onAcceptButtonClicked), for: .touchUpInside)
-            acceptButton.addShadow()
         }
     }
     
     weak var delegate: MainPageViewControllerDelegate? {
         didSet {
-            let rightButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "trash").scale(toWidth: 24, height: 24), style: .plain, target: self, action: #selector(onRightBarButtonClicked))
-            delegate?.initNavigationBar(withTitle: R.string.localizable.categories(), rightButton: rightButtonItem)
+            let rightButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(onRightBarButtonClicked))
+            let leftButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(onLeftBarButtonClicked))
+            delegate?.initNavigationBar(withTitle: R.string.localizable.categories(), leftButton: leftButtonItem, rightButton: rightButtonItem)
         }
     }
     var selectedHeaders: [Bool] = []
@@ -51,24 +43,24 @@ class CategoriesViewController: MainVC {
         selectSavedCategories()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        acceptButton.isUserInteractionEnabled = true
-//        selectSavedCategories()
-    }
-    
-    @objc func onAcceptButtonClicked() {
-        acceptButton.isUserInteractionEnabled = false
+    @objc func onLeftBarButtonClicked() {
         guard let searchVC = R.storyboard.main().instantiateViewController(withIdentifier: "SearchViewController") as? SearchViewController else { return }
         searchVC.delegate = self.delegate
         saveSelectedCategories()
-        delegate?.next(viewController: searchVC)
+        delegate?.previous(viewController: searchVC)
     }
     
     @objc func onRightBarButtonClicked() {
         deselectAllHeaders()
         selectedCells.removeAll()
         tableView.reloadData()
+    }
+    
+    private func fillCategories(using mainCategoriesArray: [MainCategory]) {
+        SessionManager.shared.mainCategories = mainCategoriesArray
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
     
 }

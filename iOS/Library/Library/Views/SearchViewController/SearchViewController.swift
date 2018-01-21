@@ -32,8 +32,8 @@ class SearchViewController: MainVC {
     
     weak var delegate: MainPageViewControllerDelegate? {
         didSet {
-            let rightButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "trash").scale(toWidth: 24, height: 24), style: .plain, target: self, action: #selector(onRightBarButtonClicked))
-            delegate?.initNavigationBar(withTitle: R.string.localizable.bookSearch(), rightButton: rightButtonItem)
+            let rightButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(onRightBarButtonClicked))
+            delegate?.initNavigationBar(withTitle: R.string.localizable.bookSearch(), leftButton: nil, rightButton: rightButtonItem)
         }
     }
     let searchTitles: [String] = [R.string.localizable.title(), R.string.localizable.author(), R.string.localizable.publicationYear(), R.string.localizable.bookVolume(), R.string.localizable.availability(), R.string.localizable.positionType(), R.string.localizable.isbn(), R.string.localizable.mathLibrarySignature(), R.string.localizable.mainLibrarySignature(), R.string.localizable.category()]
@@ -47,14 +47,18 @@ class SearchViewController: MainVC {
         RequestManager.shared.getDictionary()
     }
     
-    @objc func onRightBarButtonClicked() {
-        SessionManager.shared.searchedBook.clear()
-        self.tableView.reloadData()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         searchButton.isUserInteractionEnabled = true
+    }
+    
+    @objc func onRightBarButtonClicked() {
+        SessionManager.shared.searchedBook.clear()
+        self.tableView.reloadData()
     }
     
     private func initObservers() {
@@ -70,7 +74,7 @@ class SearchViewController: MainVC {
         }
     }
     
-    func fillCategories(using mainCategoriesArray: [MainCategory]) {
+    private func fillCategories(using mainCategoriesArray: [MainCategory]) {
         SessionManager.shared.mainCategories = mainCategoriesArray
     }
     
