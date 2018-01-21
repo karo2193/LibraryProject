@@ -121,15 +121,18 @@ extension BookListViewController: UITableViewDataSource, UITableViewDelegate {
         }
         selectedCell.setSelected(false, animated: true)
         let book = books[indexPath.row]
-        let detailsVC = getDetailsViewController(withBook: book)
-        present(detailsVC, animated: true, completion: nil)
+        let detailsVC = getBookDetailsViewController(forBook: book)
+        let navController = UINavigationController(rootViewController: detailsVC)
+        present(navController, animated: true, completion: nil)
     }
     
-    private func getDetailsViewController(withBook book: Book) -> UIViewController {
-        guard let detailsVC = R.storyboard.main().instantiateViewController(withIdentifier: "BookCoverViewController") as? BookCoverViewController else { return UIViewController() }
+    private func getBookDetailsViewController(forBook book: Book) -> UIViewController {
+        guard let detailsVC = R.storyboard.main().instantiateViewController(withIdentifier: "BookDetailsViewController") as? BookDetailsViewController else { return UIViewController() }
         detailsVC.book = book
         return detailsVC
     }
+    
+    
     
 }
 
@@ -164,7 +167,7 @@ extension BookListViewController: UIViewControllerPreviewingDelegate {
                 return nil
         }
         let book = books[indexPath.row]
-        let detailsVC = getDetailsViewController(withBook: book)
+        let detailsVC = getBookDetailsViewController(forBook: book)
         previewingContext.sourceRect = cell.frame
         return detailsVC
     }

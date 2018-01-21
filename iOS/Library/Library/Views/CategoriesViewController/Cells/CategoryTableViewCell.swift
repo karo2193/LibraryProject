@@ -61,16 +61,7 @@ class CategoryTableViewCell: UITableViewCell {
     }
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
-        super.setHighlighted(highlighted, animated: animated)
-        if highlighted {
-            self.contentView.backgroundColor = .tintDark
-            self.titleLabel.textColor = .main
-            self.checkImageView.tintColor = .main
-        } else {
-            self.contentView.backgroundColor = .main
-            self.titleLabel.textColor = .tintDark
-            self.checkImageView.tintColor = .tintDark
-        }
+        super.setHighlighted(false, animated: animated)
     }
     
 }

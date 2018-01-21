@@ -34,14 +34,16 @@ class CategoriesViewController: MainVC {
             delegate?.initNavigationBar(withTitle: R.string.localizable.categories(), rightButton: nil)
         }
     }
-    var headerIsSelectedArray: [Bool] = []
+    var selectedHeaders: [Bool] = []
+    var selectedCells: [IndexPath:Bool] = [:]
+    var expandedHeaders: [Bool] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setColor(to: .main)
         deselectAllHeaders()
+        collapseAllHeaders()
     }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -51,7 +53,7 @@ class CategoriesViewController: MainVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         acceptButton.isUserInteractionEnabled = true
-        selectSavedCategories()
+//        selectSavedCategories()
     }
     
     @objc func onAcceptButtonClicked() {
@@ -60,67 +62,6 @@ class CategoriesViewController: MainVC {
         searchVC.delegate = self.delegate
         saveSelectedCategories()
         delegate?.next(viewController: searchVC)
-    }
-    
-    private func saveSelectedCategories() {
-        SessionManager.shared.searchedBook.categories.removeAll()
-        saveMainCategories()
-        saveSubcategories()
-    }
-    
-    private func saveMainCategories() {
-        for (section, isHeaderSelected) in headerIsSelectedArray.enumerated() {
-            if isHeaderSelected {
-                guard let category = SessionManager.shared.mainCategories[section].category else { continue }
-                SessionManager.shared.searchedBook.categories.append(category)
-            }
-        }
-    }
-    
-    private func saveSubcategories() {
-        guard let selectedIndexPaths = tableView.indexPathsForSelectedRows else { return }
-        for selectedIndexPath in selectedIndexPaths {
-            guard let selectedCategory = getCategory(forIndexPath: selectedIndexPath) else { continue }
-            SessionManager.shared.searchedBook.categories.append(selectedCategory)
-        }
-    }
-    
-    private func deselectAllHeaders() {
-        let mainCategoriesCount = SessionManager.shared.mainCategories.count
-        headerIsSelectedArray = Array(repeating: false, count: mainCategoriesCount)
-    }
-    
-    private func toggleHeader(inSection section: Int, select: Bool) {
-        headerIsSelectedArray[section] = select
-        guard let header = tableView.headerView(forSection: section) as? MainCategoryHeaderView else { return }
-        header.isSelected = select
-    }
-    
-    private func trySelectHeaders() {
-        let sectionsCount = tableView.numberOfSections
-        for section in 0..<sectionsCount {
-            trySelectHeader(inSection: section)
-        }
-    }
-    
-    private func trySelectHeader(inSection section: Int) {
-        let rowsCount = tableView.numberOfRows(inSection: section)
-        if rowsCount == 0 {
-            return
-        }
-        var selectedCount = 0
-        guard let selectedIndexPaths = tableView.indexPathsForSelectedRows else { return }
-        for selectedIndexPath in selectedIndexPaths {
-            if selectedIndexPath.section == section {
-                selectedCount += 1
-            }
-        }
-        if rowsCount == selectedCount {
-            toggleHeader(inSection: section, select: true)
-        } else {
-            toggleHeader(inSection: section, select: false)
-        }
-        
     }
     
 }
@@ -136,7 +77,8 @@ extension CategoriesViewController {
             selectedIndexPaths.append(contentsOf: indexPaths)
         }
         for indexPath in selectedIndexPaths {
-            tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+            selectedCells[indexPath] = true
+//            tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
         }
         trySelectHeaders()
     }
@@ -182,35 +124,6 @@ extension CategoriesViewController {
         return nil
     }
     
-    //    private func selectSavedCategories() {
-    //        let selectedCategories = SessionManager.shared.searchedBook.categories
-    //        let mainCategories = SessionManager.shared.mainCategories
-    //        var selectedIndexPaths: [IndexPath] = []
-    //        for selectedCategoryIdObject in selectedCategories.map({$0.id}) {
-    //            guard let selectedCategoryId = selectedCategoryIdObject else { continue }
-    //            for (section, mainCategory) in mainCategories.enumerated() {
-    //                guard let categoryId = mainCategory.category?.id else { continue }
-    //                if categoryId == selectedCategoryId {
-    //                    let indexPaths = getIndexPaths(fromSection: section)
-    //                    selectedIndexPaths.append(contentsOf: indexPaths)
-    //                    continue
-    //                }
-    //                for (row, subcategory) in mainCategory.subcategories.enumerated() {
-    //                    guard let subcategoryId = subcategory.id else { continue }
-    //                    if subcategoryId == selectedCategoryId {
-    //                        let selectedIndexPath = IndexPath(row: row, section: section)
-    //                        selectedIndexPaths.append(selectedIndexPath)
-    //                        break
-    //                    }
-    //                }
-    //            }
-    //        }
-    //
-    //        for indexPath in selectedIndexPaths {
-    //            tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
-    //        }
-    //    }
-    
 }
 
 //MARK: UITableView Delegate and DataSource
@@ -221,7 +134,11 @@ extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return SessionManager.shared.mainCategories[section].subcategories.count
+        if expandedHeaders[section] {
+            return SessionManager.shared.mainCategories[section].subcategories.count
+        } else {
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -241,16 +158,21 @@ extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             categoryCell.separatorView.isHidden = false
         }
+        if let selected = selectedCells[indexPath],
+            selected {
+            tableView.selectRow(at: indexPath, animated: false, scrollPosition: .none)
+        }
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedCells[indexPath] = true
         trySelectHeader(inSection: indexPath.section)
-        //sprawdzic przy kliknieciu czy są wszystkie czy nie z danej indexPath.section i na tej podstawie wejść w headera i go zaznaczyc/odznaczyc
+
     }
     
     func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        let section = indexPath.section
-        toggleHeader(inSection: section, select: false)
+        selectedCells[indexPath] = false
+        toggleHeader(inSection: indexPath.section, select: false)
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
@@ -264,13 +186,19 @@ extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource {
         guard let categoryHeader = view as? MainCategoryHeaderView else { return }
         categoryHeader.delegate = self
         categoryHeader.section = section
-        categoryHeader.isSelected = headerIsSelectedArray[section]
+        categoryHeader.isSelected = selectedHeaders[section]
+        categoryHeader.isExpanded = expandedHeaders[section]
         let mainCategory = SessionManager.shared.mainCategories[section]
         categoryHeader.mainCategory = mainCategory
+        if mainCategory.subcategories.isEmpty {
+            categoryHeader.expandButton.isHidden = true
+        } else {
+            categoryHeader.expandButton.isHidden = false
+        }
     }
     
     func tableView(_ tableView: UITableView, estimatedHeightForHeaderInSection section: Int) -> CGFloat {
-        return 100
+        return 56
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -287,20 +215,112 @@ extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource {
     
 }
 
+//MARK: Header delegate
 extension CategoriesViewController: MainCategoryHeaderViewDelegate {
     
     func toggleSubcategories(usingHeader header: MainCategoryHeaderView) {
-        let headerIsSelected = headerIsSelectedArray[header.section]
+        let headerIsSelected = selectedHeaders[header.section]
         guard let subcategories = header.mainCategory?.subcategories else { return }
         for (index, _) in subcategories.enumerated() {
             let indexPath = IndexPath(row: index, section: header.section)
             if headerIsSelected {
                 tableView.deselectRow(at: indexPath, animated: true)
+                selectedCells[indexPath] = false
             } else {
                 tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
+                selectedCells[indexPath] = true
             }
         }
         toggleHeader(inSection: header.section, select: !headerIsSelected)
+    }
+    
+    func expandSubcategories(usingHeader header: MainCategoryHeaderView) {
+        var headerIsExpanded = expandedHeaders[header.section]
+        headerIsExpanded = !headerIsExpanded
+        header.isExpanded = headerIsExpanded
+        expandedHeaders[header.section] = headerIsExpanded
+        tableView.reloadData()
+    }
+    
+}
+
+//MARK: Selection handlers
+extension CategoriesViewController {
+    
+    private func saveSelectedCategories() {
+        SessionManager.shared.searchedBook.categories.removeAll()
+        saveMainCategories()
+        saveSubcategories()
+    }
+    
+    private func saveMainCategories() {
+        for (section, isHeaderSelected) in selectedHeaders.enumerated() {
+            if isHeaderSelected {
+                guard let category = SessionManager.shared.mainCategories[section].category else { continue }
+                SessionManager.shared.searchedBook.categories.append(category)
+            }
+        }
+    }
+    
+    private func saveSubcategories() {
+//        guard let selectedIndexPaths = tableView.indexPathsForSelectedRows else { return }
+//        for selectedIndexPath in selectedIndexPaths {
+//            guard let selectedCategory = getCategory(forIndexPath: selectedIndexPath) else { continue }
+//            SessionManager.shared.searchedBook.categories.append(selectedCategory)
+//        }
+        
+        let mainCategories = SessionManager.shared.mainCategories
+        for (section, mainCategory) in mainCategories.enumerated() {
+            for (row, subcategory) in mainCategory.subcategories.enumerated() {
+                let indexPath = IndexPath(row: row, section: section)
+                guard let selected = selectedCells[indexPath] else { continue }
+                if selected {
+                    SessionManager.shared.searchedBook.categories.append(subcategory)
+                }
+            }
+        }
+    }
+    
+    private func deselectAllHeaders() {
+        let mainCategoriesCount = SessionManager.shared.mainCategories.count
+        selectedHeaders = Array(repeating: false, count: mainCategoriesCount)
+    }
+    
+    private func toggleHeader(inSection section: Int, select: Bool) {
+        selectedHeaders[section] = select
+        guard let header = tableView.headerView(forSection: section) as? MainCategoryHeaderView else { return }
+        header.isSelected = select
+    }
+    
+    private func trySelectHeaders() {
+        let sectionsCount = tableView.numberOfSections
+        for section in 0..<sectionsCount {
+            trySelectHeader(inSection: section)
+        }
+    }
+    
+    private func trySelectHeader(inSection section: Int) {
+        let subcategories = SessionManager.shared.mainCategories[section].subcategories
+        if subcategories.isEmpty { return }
+        for (index, _) in subcategories.enumerated() {
+            let indexPath = IndexPath(row: index, section: section)
+            guard let selected = selectedCells[indexPath] else { return }
+            if !selected {
+                toggleHeader(inSection: indexPath.section, select: false)
+                return
+            }
+        }
+        toggleHeader(inSection: section, select: true)
+    }
+    
+}
+
+//MARK: Expanding/collapsing handlers
+extension CategoriesViewController {
+    
+    func collapseAllHeaders() {
+        let mainCategoriesCount = SessionManager.shared.mainCategories.count
+        expandedHeaders = Array(repeating: false, count: mainCategoriesCount)
     }
     
 }
