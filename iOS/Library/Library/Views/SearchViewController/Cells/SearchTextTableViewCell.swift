@@ -11,13 +11,13 @@ import UIKit
 enum SearchPropertyType {
     case title
     case author
+    case year
+    case volume
+    case availability
+    case type
     case isbn
     case mathSignature
     case mainSignature
-    case year
-    case volume
-    case type
-    case availability
     case category
     case none
 }
@@ -49,23 +49,29 @@ class SearchTextTableViewCell: UITableViewCell {
     
     private var pickerView: UIPickerView?
     weak var delegate: SearchTextTableViewCellDelegate?
-    var searchPropertyType: SearchPropertyType = .none
-    var row: Int = 0 {
+    var searchPropertyType: SearchPropertyType = .none {
         didSet {
-            setPropertyType()
             switch searchPropertyType {
             case .type, .availability:
                 pickerView = UIPickerView()
                 pickerView?.delegate = self
                 pickerView?.dataSource = self
                 textField.inputView = pickerView
+                textField.placeholder = R.string.localizable.choose() + "..."
             case .mathSignature, .year:
                 textField.keyboardType = .numberPad
                 textField.inputView = nil
+                textField.placeholder = R.string.localizable.typePhraseToSearch() + "..."
             default:
                 textField.keyboardType = .default
                 textField.inputView = nil
+                textField.placeholder = R.string.localizable.typePhraseToSearch() + "..."
             }
+        }
+    }
+    var row: Int = 0 {
+        didSet {
+            setPropertyType()
         }
     }
     
@@ -87,19 +93,19 @@ class SearchTextTableViewCell: UITableViewCell {
         case 1:
             searchPropertyType = .author
         case 2:
-            searchPropertyType = .isbn
-        case 3:
-            searchPropertyType = .mathSignature
-        case 4:
-            searchPropertyType = .mainSignature
-        case 5:
             searchPropertyType = .year
-        case 6:
+        case 3:
             searchPropertyType = .volume
-        case 7:
-            searchPropertyType = .type
-        case 8:
+        case 4:
             searchPropertyType = .availability
+        case 5:
+            searchPropertyType = .type
+        case 6:
+            searchPropertyType = .isbn
+        case 7:
+            searchPropertyType = .mathSignature
+        case 8:
+            searchPropertyType = .mainSignature
         case 9:
             searchPropertyType = .category
         default:

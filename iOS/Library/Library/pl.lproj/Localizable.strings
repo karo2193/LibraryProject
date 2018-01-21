@@ -17,14 +17,20 @@
 "copyTitle" = "Kopiuj tytuł";
 "copyAuthor" = "Kopiuj autora";
 "typePhraseToSearch" = "Wpisz szukaną frazę";
+"choose" = "Wybierz";
 "chooseCategories" = "Wybierz kategorie";
 "categories" = "Kategorie";
 "accept" = "Zatwierdź";
 "noResults" = "Brak wyników wyszukiwania";
+"bookDetails" = "Detale książki";
+"choosed" = "Wybrano";
+"oneCategorySuffix" = "kategorię";
+"twoCategorySuffix" = "kategorie";
+"threeCategorySuffix" = "kategorii";
 
 //Titles available to search for
 "title" = "Tytuł";
-"author" = "Autor";
+"author" = "Autorzy";
 "isbn" = "ISBN";
 "mathLibrarySignature" = "Sygnatura biblioteki MS";
 "mainLibrarySignature" = "Sygnatura biblioteki głównej";
@@ -32,4 +38,4 @@
 "bookVolume" = "Tom";
 "positionType" = "Typ pozycji";
 "availability" = "Dostępność";
-"category" = "Kategoria";
+"category" = "Kategorie";

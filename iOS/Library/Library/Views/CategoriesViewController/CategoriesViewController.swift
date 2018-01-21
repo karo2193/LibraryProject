@@ -31,7 +31,8 @@ class CategoriesViewController: MainVC {
     
     weak var delegate: MainPageViewControllerDelegate? {
         didSet {
-            delegate?.initNavigationBar(withTitle: R.string.localizable.categories(), rightButton: nil)
+            let rightButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "trash").scale(toWidth: 24, height: 24), style: .plain, target: self, action: #selector(onRightBarButtonClicked))
+            delegate?.initNavigationBar(withTitle: R.string.localizable.categories(), rightButton: rightButtonItem)
         }
     }
     var selectedHeaders: [Bool] = []
@@ -64,6 +65,12 @@ class CategoriesViewController: MainVC {
         delegate?.next(viewController: searchVC)
     }
     
+    @objc func onRightBarButtonClicked() {
+        deselectAllHeaders()
+        selectedCells.removeAll()
+        tableView.reloadData()
+    }
+    
 }
 
 //MARK: Autoselecting saved categories
@@ -78,7 +85,6 @@ extension CategoriesViewController {
         }
         for indexPath in selectedIndexPaths {
             selectedCells[indexPath] = true
-//            tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
         }
         trySelectHeaders()
     }

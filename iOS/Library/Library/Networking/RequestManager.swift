@@ -60,7 +60,6 @@ extension RequestManager {
             do {
                 let books = try JSONDecoder().decode([Book].self, from: data)
                 completion(books)
-                print(books.count)
             } catch let jsonError {
                 NSLog(jsonError.localizedDescription)
                 completion([])

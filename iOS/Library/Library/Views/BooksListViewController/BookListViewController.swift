@@ -51,7 +51,6 @@ class BookListViewController: MainVC {
         }
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setEmptyStateDelegates()
@@ -88,7 +87,7 @@ class BookListViewController: MainVC {
 
 }
 
-//MARK: TableView delegates
+//MARK: UITableView delegates
 extension BookListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -174,11 +173,13 @@ extension BookListViewController: UIViewControllerPreviewingDelegate {
     
     //POP
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, commit viewControllerToCommit: UIViewController) {
-        self.showDetailViewController(viewControllerToCommit, sender: self)
+        let navigationController = UINavigationController(rootViewController: viewControllerToCommit)
+        self.showDetailViewController(navigationController, sender: self)
     }
     
 }
 
+//MARK: UIEmptyState delegates
 extension BookListViewController: UIEmptyStateDelegate, UIEmptyStateDataSource {
     
     fileprivate func setEmptyStateDelegates() {

@@ -36,7 +36,7 @@ class SearchViewController: MainVC {
             delegate?.initNavigationBar(withTitle: R.string.localizable.bookSearch(), rightButton: rightButtonItem)
         }
     }
-    let searchTitles: [String] = [R.string.localizable.title(), R.string.localizable.author(), R.string.localizable.isbn(), R.string.localizable.mathLibrarySignature(), R.string.localizable.mainLibrarySignature(), R.string.localizable.publicationYear(), R.string.localizable.bookVolume(), R.string.localizable.positionType(), R.string.localizable.availability(), R.string.localizable.category()]
+    let searchTitles: [String] = [R.string.localizable.title(), R.string.localizable.author(), R.string.localizable.publicationYear(), R.string.localizable.bookVolume(), R.string.localizable.availability(), R.string.localizable.positionType(), R.string.localizable.isbn(), R.string.localizable.mathLibrarySignature(), R.string.localizable.mainLibrarySignature(), R.string.localizable.category()]
     let NUMBER_OF_ROWS: Int = 10
     
     override func viewDidLoad() {
@@ -86,7 +86,7 @@ class SearchViewController: MainVC {
     
 }
 
-//MARK: TableView delegates
+//MARK: UITableView delegates
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -122,6 +122,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         }
         if let searchCategoryCell = cell as? SearchCategoryTableViewCell {
             searchCategoryCell.delegate = self
+            searchCategoryCell.refreshButtonTitle()
         }
     }
     
@@ -178,7 +179,6 @@ extension SearchViewController: SearchTextTableViewCellDelegate {
         case .type:
             SessionManager.shared.searchedBook.type = text
         case .category:
-//            searchedBook.title = text
             return
         case .availability:
             SessionManager.shared.searchedBook.available = text

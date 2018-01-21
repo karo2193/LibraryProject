@@ -17,11 +17,16 @@
 "copyTitle" = "Copy title";
 "copyAuthor" = "Copy author";
 "typePhraseToSearch" = "Type phrase to search";
+"choose" = "Choose";
 "chooseCategories" = "Choose categories";
 "categories" = "Categories";
 "accept" = "Accept";
 "noResults" = "No search results";
-
+"bookDetails" = "Book details";
+"choosed" = "Choosed";
+"oneCategorySuffix" = "category";
+"twoCategorySuffix" = "categories";
+"threeCategorySuffix" = "categories";
 
 //Titles available to search for
 "title" = "Title";

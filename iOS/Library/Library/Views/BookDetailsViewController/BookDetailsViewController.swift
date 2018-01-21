@@ -43,6 +43,7 @@ class BookDetailsViewController: MainVC {
         super.viewDidAppear(animated)
         tableView.beginUpdates()
         tableView.endUpdates()
+        initNavigationBar()
     }
     
     private func initNavigationBar() {
@@ -51,7 +52,7 @@ class BookDetailsViewController: MainVC {
         navigationBar?.barTintColor = .tintDark
         navigationBar?.tintColor = .main
         navigationBar?.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.main]
-        navigationBar?.topItem?.title = "Detale książki"
+        navigationBar?.topItem?.title = R.string.localizable.bookDetails()
         self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "expand").scale(toWidth: 24, height: 24), style: .plain, target: self, action: #selector(onLeftBarButtonClicked))
     }
     
@@ -61,6 +62,7 @@ class BookDetailsViewController: MainVC {
     
 }
 
+//MARK: UITableView delegates
 extension BookDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -75,103 +77,9 @@ extension BookDetailsViewController: UITableViewDelegate, UITableViewDataSource 
         guard let bookDetailCell = tableView.dequeueReusableCell(withIdentifier: "BookDetailTableViewCell", for: indexPath) as? BookDetailTableViewCell else {
             return UITableViewCell()
         }
-        
-//        guard let bookDetailCell = cell as? BookDetailTableViewCell else {
-//            return
-//        }
-        switch indexPath.row {
-        case 0:
-            bookDetailCell.titleLabel.text = R.string.localizable.title()
-            bookDetailCell.detailsLabel.text = parseTextForLabel(text: book?.title)
-        case 1:
-            bookDetailCell.titleLabel.text = R.string.localizable.author()
-            bookDetailCell.detailsLabel.text = parseTextForLabel(text: book?.authors)
-        case 2:
-            bookDetailCell.titleLabel.text = R.string.localizable.isbn()
-            bookDetailCell.detailsLabel.text = parseTextForLabel(text: book?.isbn)
-        case 3:
-            bookDetailCell.titleLabel.text = R.string.localizable.mathLibrarySignature()
-            bookDetailCell.detailsLabel.text = parseTextForLabel(text: book?.mathLibrarySignature)
-        case 4:
-            bookDetailCell.titleLabel.text = R.string.localizable.mainLibrarySignature()
-            bookDetailCell.detailsLabel.text = parseTextForLabel(text: book?.mainLibrarySignature)
-        case 5:
-            bookDetailCell.titleLabel.text = R.string.localizable.publicationYear()
-            bookDetailCell.detailsLabel.text = parseTextForLabel(text: book?.year)
-        case 6:
-            bookDetailCell.titleLabel.text = R.string.localizable.bookVolume()
-            bookDetailCell.detailsLabel.text = parseTextForLabel(text: book?.volume)
-        case 7:
-            bookDetailCell.titleLabel.text = R.string.localizable.positionType()
-            bookDetailCell.detailsLabel.text = parseTextForLabel(text: book?.type)
-        case 8:
-            bookDetailCell.titleLabel.text = R.string.localizable.availability()
-            bookDetailCell.detailsLabel.text = parseTextForLabel(text: book?.available)
-        case 9:
-            bookDetailCell.titleLabel.text = R.string.localizable.category()
-            let categories: [Category] = book?.categories ?? []
-            var categoryNames = ""
-            for category in categories {
-                let categoryName = category.name ?? ""
-                categoryNames = categoryNames + categoryName + "\n"
-            }
-            bookDetailCell.detailsLabel.text = parseTextForLabel(text: categoryNames)
-        default:
-            bookDetailCell.titleLabel.text = ""
-            bookDetailCell.detailsLabel.text = ""
-        }
-        bookDetailCell.detailsLabel.sizeToFit()
-        
+        prepareCell(bookDetailCell, atIndexPath: indexPath)
         return bookDetailCell
     }
-    
-//    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-//        guard let bookDetailCell = cell as? BookDetailTableViewCell else {
-//            return
-//        }
-//        switch indexPath.row {
-//        case 0:
-//            bookDetailCell.titleLabel.text = R.string.localizable.title()
-//            bookDetailCell.detailsLabel.text = parseTextForLabel(text: book?.title)
-//        case 1:
-//            bookDetailCell.titleLabel.text = R.string.localizable.author()
-//            bookDetailCell.detailsLabel.text = parseTextForLabel(text: book?.authors)
-//        case 2:
-//            bookDetailCell.titleLabel.text = R.string.localizable.isbn()
-//            bookDetailCell.detailsLabel.text = parseTextForLabel(text: book?.isbn)
-//        case 3:
-//            bookDetailCell.titleLabel.text = R.string.localizable.mathLibrarySignature()
-//            bookDetailCell.detailsLabel.text = parseTextForLabel(text: book?.mathLibrarySignature)
-//        case 4:
-//            bookDetailCell.titleLabel.text = R.string.localizable.mainLibrarySignature()
-//            bookDetailCell.detailsLabel.text = parseTextForLabel(text: book?.mainLibrarySignature)
-//        case 5:
-//            bookDetailCell.titleLabel.text = R.string.localizable.publicationYear()
-//            bookDetailCell.detailsLabel.text = parseTextForLabel(text: book?.year)
-//        case 6:
-//            bookDetailCell.titleLabel.text = R.string.localizable.bookVolume()
-//            bookDetailCell.detailsLabel.text = parseTextForLabel(text: book?.volume)
-//        case 7:
-//            bookDetailCell.titleLabel.text = R.string.localizable.positionType()
-//            bookDetailCell.detailsLabel.text = parseTextForLabel(text: book?.type)
-//        case 8:
-//            bookDetailCell.titleLabel.text = R.string.localizable.availability()
-//            bookDetailCell.detailsLabel.text = parseTextForLabel(text: book?.available)
-//        case 9:
-//            bookDetailCell.titleLabel.text = R.string.localizable.category()
-//            let categories: [Category] = book?.categories ?? []
-//            var categoryNames = ""
-//            for category in categories {
-//                let categoryName = category.name ?? ""
-//                categoryNames = categoryNames + categoryName + "\n"
-//            }
-//            bookDetailCell.detailsLabel.text = parseTextForLabel(text: categoryNames)
-//        default:
-//            bookDetailCell.titleLabel.text = ""
-//            bookDetailCell.detailsLabel.text = ""
-//        }
-//        bookDetailCell.detailsLabel.sizeToFit()
-//    }
     
     func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
@@ -181,7 +89,61 @@ extension BookDetailsViewController: UITableViewDelegate, UITableViewDataSource 
         return UITableViewAutomaticDimension
     }
     
-    func parseTextForLabel(text: String?) -> String {
+}
+
+//MARK: Cells preparation methods
+extension BookDetailsViewController {
+    
+    private func prepareCell(_ cell: BookDetailTableViewCell, atIndexPath indexPath: IndexPath) {
+        switch indexPath.row {
+        case 0:
+            cell.titleLabel.text = R.string.localizable.title()
+            cell.detailsLabel.text = parseTextForLabel(text: book?.title)
+        case 1:
+            cell.titleLabel.text = R.string.localizable.author()
+            cell.detailsLabel.text = parseTextForLabel(text: book?.authors)
+        case 2:
+            cell.titleLabel.text = R.string.localizable.publicationYear()
+            cell.detailsLabel.text = parseTextForLabel(text: book?.year)
+        case 3:
+            cell.titleLabel.text = R.string.localizable.bookVolume()
+            cell.detailsLabel.text = parseTextForLabel(text: book?.volume)
+        case 4:
+            cell.titleLabel.text = R.string.localizable.availability()
+            cell.detailsLabel.text = parseTextForLabel(text: book?.available)
+        case 5:
+            cell.titleLabel.text = R.string.localizable.positionType()
+            cell.detailsLabel.text = parseTextForLabel(text: book?.type)
+        case 6:
+            cell.titleLabel.text = R.string.localizable.isbn()
+            cell.detailsLabel.text = parseTextForLabel(text: book?.isbn)
+        case 7:
+            cell.titleLabel.text = R.string.localizable.mathLibrarySignature()
+            cell.detailsLabel.text = parseTextForLabel(text: book?.mathLibrarySignature)
+        case 8:
+            cell.titleLabel.text = R.string.localizable.mainLibrarySignature()
+            cell.detailsLabel.text = parseTextForLabel(text: book?.mainLibrarySignature)
+        case 9:
+            cell.titleLabel.text = R.string.localizable.category()
+            let categoryNames = getCategoryNames(fromBook: book)
+            cell.detailsLabel.text = parseTextForLabel(text: categoryNames)
+        default:
+            cell.titleLabel.text = ""
+            cell.detailsLabel.text = ""
+        }
+    }
+    
+    private func getCategoryNames(fromBook book: Book?) -> String {
+        let categories: [Category] = book?.categories ?? []
+        var categoryNames = ""
+        for category in categories {
+            let categoryName = category.name ?? ""
+            categoryNames = categoryNames + categoryName + "\n"
+        }
+        return categoryNames
+    }
+    
+    private func parseTextForLabel(text: String?) -> String {
         if let parsedText = text {
             if parsedText.isEmpty {
                 return "–"
