@@ -70,31 +70,31 @@ extension RequestManager {
     fileprivate func getFilter(usingBook searchedBook: Book) -> Filter {
         var filters: Filter = [:]
         if let title = searchedBook.title {
-            filters["tytul__contains"] = title
+            filters["tytul__contains"] = title.trimmingCharacters(in: .whitespacesAndNewlines)
         }
         if let author = searchedBook.authors {
-            filters["ozn_opdow__contains"] = author
+            filters["ozn_opdow__contains"] = author.trimmingCharacters(in: .whitespacesAndNewlines)
         }
         if let isbn = searchedBook.isbn {
-            filters["isbn_issn__contains"] = isbn
+            filters["isbn_issn__contains"] = isbn.trimmingCharacters(in: .whitespacesAndNewlines)
         }
         if let mathSignature = searchedBook.mathLibrarySignature {
-            filters["syg_ms__contains"] = mathSignature
+            filters["syg_ms__contains"] = mathSignature.trimmingCharacters(in: .whitespacesAndNewlines)
         }
         if let mainSignature = searchedBook.mainLibrarySignature {
-            filters["syg_bg__contains"] = mainSignature
+            filters["syg_bg__contains"] = mainSignature.trimmingCharacters(in: .whitespacesAndNewlines)
         }
         if let year = searchedBook.year {
-            filters["rok__contains"] = year
+            filters["rok__contains"] = year.trimmingCharacters(in: .whitespacesAndNewlines)
         }
         if let volume = searchedBook.volume {
-            filters["tom__contains"] = volume
+            filters["tom__contains"] = volume.trimmingCharacters(in: .whitespacesAndNewlines)
         }
         if let type = searchedBook.type {
-            filters["typ__contains"] = type
+            filters["typ__contains"] = type.trimmingCharacters(in: .whitespacesAndNewlines)
         }
         if let availability = searchedBook.available {
-            filters["dostepnosc__contains"] = availability
+            filters["dostepnosc__contains"] = availability.trimmingCharacters(in: .whitespacesAndNewlines)
         }
         return filters
     }
