@@ -27,6 +27,9 @@
 "oneCategorySuffix" = "kategorię";
 "twoCategorySuffix" = "kategorie";
 "threeCategorySuffix" = "kategorii";
+"connectionError" = "Błąd połączenia";
+"checkInternetConnection" = "Sprawdź swoje połączenie z internetem i odśwież dane aplikacji";
+"ok" = "OK";
 
 //Titles available to search for
 "title" = "Tytuł";

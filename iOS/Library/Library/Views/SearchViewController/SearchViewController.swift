@@ -32,8 +32,9 @@ class SearchViewController: MainVC {
     
     weak var delegate: MainPageViewControllerDelegate? {
         didSet {
+            let leftButtonItem = UIBarButtonItem(barButtonSystemItem: .refresh, target: self, action: #selector(onLeftBarButtonClicked))
             let rightButtonItem = UIBarButtonItem(barButtonSystemItem: .trash, target: self, action: #selector(onRightBarButtonClicked))
-            delegate?.initNavigationBar(withTitle: R.string.localizable.bookSearch(), leftButton: nil, rightButton: rightButtonItem)
+            delegate?.initNavigationBar(withTitle: R.string.localizable.bookSearch(), leftButton: leftButtonItem, rightButton: rightButtonItem)
         }
     }
     let searchTitles: [String] = [R.string.localizable.title(), R.string.localizable.author(), R.string.localizable.publicationYear(), R.string.localizable.bookVolume(), R.string.localizable.availability(), R.string.localizable.positionType(), R.string.localizable.isbn(), R.string.localizable.mathLibrarySignature(), R.string.localizable.mainLibrarySignature(), R.string.localizable.category()]
@@ -43,12 +44,12 @@ class SearchViewController: MainVC {
         super.viewDidLoad()
         setColor(to: .main)
         initObservers()
-        RequestManager.shared.getCategories(completion: fillCategories)
-        RequestManager.shared.getDictionary()
+        getAllFromServices()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -56,14 +57,19 @@ class SearchViewController: MainVC {
         searchButton.isUserInteractionEnabled = true
     }
     
+    func getAllFromServices() {
+        RequestManager.shared.getCategories(completion: fillCategories)
+        RequestManager.shared.getDictionary(completion: fillDictionary)
+    }
+    
+    @objc func onLeftBarButtonClicked() {
+        tryShowNetworkAlert()
+        getAllFromServices()
+    }
+    
     @objc func onRightBarButtonClicked() {
         SessionManager.shared.searchedBook.clear()
         self.tableView.reloadData()
-    }
-    
-    private func initObservers() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
     @objc func onSearchButtonClicked() {
@@ -74,11 +80,34 @@ class SearchViewController: MainVC {
         }
     }
     
+    private func initObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name:NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    private func tryShowNetworkAlert() {
+        if !Reachability.isConnectedToNetwork() {
+            showNetworkAlert()
+        }
+    }
+    
+    private func showNetworkAlert() {
+        let alert = UIAlertController(title: R.string.localizable.connectionError(), message: R.string.localizable.checkInternetConnection(), preferredStyle: .alert)
+        let okAction = UIAlertAction(title: R.string.localizable.ok(), style: .cancel, handler: nil)
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+    }
+    
     private func fillCategories(using mainCategoriesArray: [MainCategory]) {
         SessionManager.shared.mainCategories = mainCategoriesArray
     }
     
-    func goToListViewController(with books: [Book]) {
+    private func fillDictionary(using dictionaryTypes: DictionaryTypes?) {
+        guard let dictionary = dictionaryTypes else { return }
+        SessionManager.shared.dictionaryTypes = dictionary
+    }
+    
+    private func goToListViewController(with books: [Book]) {
         searchButton.hideIndicator()
         guard let listVC = R.storyboard.main().instantiateViewController(withIdentifier: "BookListViewController") as? BookListViewController else { return }
         listVC.books = books

@@ -34,6 +34,7 @@ class SearchCategoryTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        categoriesButton.isUserInteractionEnabled = true
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -42,6 +43,7 @@ class SearchCategoryTableViewCell: UITableViewCell {
     
     @objc func onCategoriesButtonClicked() {
         delegate?.showCategoriesViewController()
+        categoriesButton.isUserInteractionEnabled = false
     }
     
     func refreshButtonTitle() {

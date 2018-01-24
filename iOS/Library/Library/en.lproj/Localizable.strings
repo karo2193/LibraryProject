@@ -27,6 +27,9 @@
 "oneCategorySuffix" = "category";
 "twoCategorySuffix" = "categories";
 "threeCategorySuffix" = "categories";
+"connectionError" = "Connection error";
+"checkInternetConnection" = "Check your internet connection and refresh app data";
+"ok" = "OK";
 
 //Titles available to search for
 "title" = "Title";

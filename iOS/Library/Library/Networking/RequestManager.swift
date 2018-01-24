@@ -126,7 +126,7 @@ extension RequestManager {
 //MARK: Dictionary fetch
 extension RequestManager {
     
-    func getDictionary() {
+    func getDictionary(completion: @escaping ((DictionaryTypes?)->())){
         guard let request = getRequest(usingHttpMethod: "GET", forEndpoint: DICTIONARY_ENDPOINT) else { return }
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
@@ -135,9 +135,10 @@ extension RequestManager {
             guard let data = data else { return }
             do {
                 let dictionaryTypes = try JSONDecoder().decode(DictionaryTypes.self, from: data)
-                SessionManager.shared.dictionaryTypes = dictionaryTypes
+                completion(dictionaryTypes)
             } catch let jsonError {
                 NSLog(jsonError.localizedDescription)
+                completion(nil)
             }
         }.resume()
     }
