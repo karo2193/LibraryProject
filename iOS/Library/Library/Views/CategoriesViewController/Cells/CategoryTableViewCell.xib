@@ -26,7 +26,7 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FBV-dW-64d">
-                        <rect key="frame" x="0.0" y="0.0" width="465" height="38.5"/>
+                        <rect key="frame" x="24" y="0.0" width="441" height="38.5"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="TlU-FX-PtW">
                                 <rect key="frame" x="16" y="14" width="24" height="24"/>
@@ -36,13 +36,13 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U4x-TB-yt3">
-                                <rect key="frame" x="56" y="14" width="393" height="23.5"/>
+                                <rect key="frame" x="56" y="14" width="369" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QmB-jt-PQh">
-                                <rect key="frame" x="56" y="37.5" width="409" height="1"/>
+                                <rect key="frame" x="0.0" y="38" width="441" height="1"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="0.5" id="KRx-T6-6fa"/>
@@ -52,13 +52,13 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="TlU-FX-PtW" firstAttribute="top" secondItem="FBV-dW-64d" secondAttribute="top" constant="14" id="0XZ-kP-9qa"/>
-                            <constraint firstItem="QmB-jt-PQh" firstAttribute="leading" secondItem="TlU-FX-PtW" secondAttribute="trailing" constant="16" id="5yo-Dq-nMe"/>
                             <constraint firstAttribute="bottom" secondItem="TlU-FX-PtW" secondAttribute="bottom" constant="14" id="CWK-Lx-rSj"/>
                             <constraint firstItem="U4x-TB-yt3" firstAttribute="leading" secondItem="TlU-FX-PtW" secondAttribute="trailing" constant="16" id="IZ4-Hn-dUj"/>
                             <constraint firstAttribute="bottom" secondItem="QmB-jt-PQh" secondAttribute="bottom" id="Tyj-gr-gfd"/>
                             <constraint firstAttribute="trailing" secondItem="QmB-jt-PQh" secondAttribute="trailing" id="U9H-fe-hbP"/>
                             <constraint firstItem="QmB-jt-PQh" firstAttribute="top" secondItem="U4x-TB-yt3" secondAttribute="bottom" id="eZm-PP-x6K"/>
                             <constraint firstAttribute="trailing" secondItem="U4x-TB-yt3" secondAttribute="trailing" constant="16" id="fmz-1v-ybI"/>
+                            <constraint firstItem="QmB-jt-PQh" firstAttribute="leading" secondItem="FBV-dW-64d" secondAttribute="leading" id="jDe-LZ-s9T"/>
                             <constraint firstItem="U4x-TB-yt3" firstAttribute="centerY" secondItem="TlU-FX-PtW" secondAttribute="centerY" id="lFo-to-Hjo"/>
                             <constraint firstItem="TlU-FX-PtW" firstAttribute="leading" secondItem="FBV-dW-64d" secondAttribute="leading" constant="16" id="t10-kA-4F5"/>
                         </constraints>
@@ -67,7 +67,7 @@
                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 <constraints>
                     <constraint firstItem="FBV-dW-64d" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="8A0-2c-Del"/>
-                    <constraint firstItem="FBV-dW-64d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="KuH-oZ-M7g"/>
+                    <constraint firstItem="FBV-dW-64d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="24" id="KuH-oZ-M7g"/>
                     <constraint firstAttribute="trailing" secondItem="FBV-dW-64d" secondAttribute="trailing" id="VDN-MH-Zr7"/>
                     <constraint firstAttribute="bottom" secondItem="FBV-dW-64d" secondAttribute="bottom" id="Z9o-u9-07Y"/>
                 </constraints>

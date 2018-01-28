@@ -44,12 +44,11 @@ class SearchViewController: MainVC {
         super.viewDidLoad()
         setColor(to: .main)
         initObservers()
-        getAllFromServices()
+        tryGetAllFromServices()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -57,14 +56,17 @@ class SearchViewController: MainVC {
         searchButton.isUserInteractionEnabled = true
     }
     
-    func getAllFromServices() {
-        RequestManager.shared.getCategories(completion: fillCategories)
-        RequestManager.shared.getDictionary(completion: fillDictionary)
+    func tryGetAllFromServices() {
+        if tryShowNetworkAlert() {
+            return
+        }
+        RequestManager.shared.getData(categoryCompletion: fillCategories, dictionaryCompletion: fillDictionary, completion: dataDownloadCompleted)
+//        RequestManager.shared.getCategories(completion: fillCategories)
+//        RequestManager.shared.getDictionary(completion: fillDictionary)
     }
     
     @objc func onLeftBarButtonClicked() {
-        tryShowNetworkAlert()
-        getAllFromServices()
+        tryGetAllFromServices()
     }
     
     @objc func onRightBarButtonClicked() {
@@ -85,10 +87,12 @@ class SearchViewController: MainVC {
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name:NSNotification.Name.UIKeyboardWillHide, object: nil)
     }
     
-    private func tryShowNetworkAlert() {
+    private func tryShowNetworkAlert() -> Bool {
         if !Reachability.isConnectedToNetwork() {
             showNetworkAlert()
+            return true
         }
+        return false
     }
     
     private func showNetworkAlert() {
@@ -105,6 +109,10 @@ class SearchViewController: MainVC {
     private func fillDictionary(using dictionaryTypes: DictionaryTypes?) {
         guard let dictionary = dictionaryTypes else { return }
         SessionManager.shared.dictionaryTypes = dictionary
+    }
+    
+    private func dataDownloadCompleted() {
+        
     }
     
     private func goToListViewController(with books: [Book]) {

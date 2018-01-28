@@ -29,6 +29,10 @@ class BookTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
+    override func setHighlighted(_ highlighted: Bool, animated: Bool) {
+        super.setHighlighted(false, animated: animated)
+    }
+    
     func fill(using book: Book?) {
         titleLabel.text = book?.title
         if let author = book?.authors {

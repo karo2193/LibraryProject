@@ -101,6 +101,31 @@ extension RequestManager {
     
 }
 
+//MARK: Needed data fetch (categories + dictionary)
+extension RequestManager {
+    
+    func getData(categoryCompletion: @escaping (([MainCategory])->()), dictionaryCompletion: @escaping ((DictionaryTypes?)->()), completion: @escaping (()->())) {
+        let downloadGroup = DispatchGroup()
+        downloadGroup.enter()
+        getCategories() {
+            mainCategories in
+            categoryCompletion(mainCategories)
+            downloadGroup.leave()
+        }
+        downloadGroup.enter()
+        getDictionary() {
+            dictionaryTypes in
+            dictionaryCompletion(dictionaryTypes)
+            downloadGroup.leave()
+        }
+        downloadGroup.wait(timeout: .now() + 5)
+        DispatchQueue.main.async {
+            completion()
+        }
+    }
+    
+}
+
 //MARK: Categories fetch
 extension RequestManager {
     
