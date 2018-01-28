@@ -118,8 +118,7 @@ extension RequestManager {
             dictionaryCompletion(dictionaryTypes)
             downloadGroup.leave()
         }
-        downloadGroup.wait(timeout: .now() + 5)
-        DispatchQueue.main.async {
+        downloadGroup.notify(queue: .main) {
             completion()
         }
     }

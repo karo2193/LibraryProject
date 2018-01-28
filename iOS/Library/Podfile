@@ -8,4 +8,5 @@ target 'Library' do
   # Pods for Library
     pod 'R.swift'
     pod 'UIEmptyState'
+    pod 'JGProgressHUD'
 end

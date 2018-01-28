@@ -17,6 +17,7 @@ class SessionManager {
     
     static let shared = SessionManager()
     
+    var dataDownloaded: Bool = false
     var searchedBook: Book!
     var mainCategories: [MainCategory] = []
     var dictionaryTypes: DictionaryTypes!

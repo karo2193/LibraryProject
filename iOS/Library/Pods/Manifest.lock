@@ -1,18 +1,21 @@
 PODS:
+  - JGProgressHUD (2.0)
   - R.swift (3.3.0):
     - R.swift.Library (~> 3.0.2)
   - R.swift.Library (3.0.2)
   - UIEmptyState (2.0.2)
 
 DEPENDENCIES:
+  - JGProgressHUD
   - R.swift
   - UIEmptyState
 
 SPEC CHECKSUMS:
+  JGProgressHUD: c402c0f41fc291ca7e33bba2f999118d9682dd9c
   R.swift: bde9704d50ff36820f49e266bc88ef545e1e9b36
   R.swift.Library: fbdec16c9802ad104fc1ba53415dc190e6ec5c73
   UIEmptyState: d75e294fd324520c0c437e17dd096a1a5f5b2b25
 
-PODFILE CHECKSUM: a74cba6fa436c58b546ec0d7ee1faac81d9683b0
+PODFILE CHECKSUM: 1fdf5ef7557ed74a4a5e31b19d4bbd73282801ea
 
 COCOAPODS: 1.2.0

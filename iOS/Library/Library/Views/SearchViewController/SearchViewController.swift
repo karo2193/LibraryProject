@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import JGProgressHUD
 
 class SearchViewController: MainVC {
 
@@ -40,11 +41,12 @@ class SearchViewController: MainVC {
     let searchTitles: [String] = [R.string.localizable.title(), R.string.localizable.author(), R.string.localizable.publicationYear(), R.string.localizable.bookVolume(), R.string.localizable.availability(), R.string.localizable.positionType(), R.string.localizable.isbn(), R.string.localizable.mathLibrarySignature(), R.string.localizable.mainLibrarySignature(), R.string.localizable.category()]
     let NUMBER_OF_ROWS: Int = 10
     
+    var hud: JGProgressHUD?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setColor(to: .main)
         initObservers()
-        tryGetAllFromServices()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -54,15 +56,20 @@ class SearchViewController: MainVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         searchButton.isUserInteractionEnabled = true
+        if !SessionManager.shared.dataDownloaded {
+            SessionManager.shared.dataDownloaded = true
+            tryGetAllFromServices()
+        }
     }
     
     func tryGetAllFromServices() {
         if tryShowNetworkAlert() {
             return
         }
+        hud = JGProgressHUD(style: .dark)
+        hud?.textLabel.text = "Aktualizuję dane..."
+        hud?.show(in: self.view)
         RequestManager.shared.getData(categoryCompletion: fillCategories, dictionaryCompletion: fillDictionary, completion: dataDownloadCompleted)
-//        RequestManager.shared.getCategories(completion: fillCategories)
-//        RequestManager.shared.getDictionary(completion: fillDictionary)
     }
     
     @objc func onLeftBarButtonClicked() {
@@ -112,7 +119,9 @@ class SearchViewController: MainVC {
     }
     
     private func dataDownloadCompleted() {
-        
+        hud?.textLabel.text = "Zaktualizowano dane"
+        hud?.dismiss(afterDelay: 1.5)
+        hud?.indicatorView = JGProgressHUDSuccessIndicatorView()
     }
     
     private func goToListViewController(with books: [Book]) {
