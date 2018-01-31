@@ -53,7 +53,7 @@ class BookDetailsViewController: MainVC {
         navigationBar?.tintColor = .main
         navigationBar?.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.main]
         navigationBar?.topItem?.title = R.string.localizable.bookDetails()
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "expand").scale(toWidth: 24, height: 24), style: .plain, target: self, action: #selector(onLeftBarButtonClicked))
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "expand").scale(toWidth: 24, height: 24), style: .plain, target: self, action: #selector(onLeftBarButtonClicked))
     }
     
     @objc func onLeftBarButtonClicked() {

@@ -20,17 +20,28 @@ class BookTableViewCell: UITableViewCell {
             authorLabel.textColor = .tintDark
         }
     }
+    @IBOutlet weak var yearLabel: UILabel! {
+        didSet {
+            yearLabel.textColor = .tintDark
+        }
+    }
+    @IBOutlet weak var arrowImageView: UIImageView! {
+        didSet {
+            arrowImageView.image = #imageLiteral(resourceName: "forward").withRenderingMode(.alwaysTemplate)
+            arrowImageView.tintColor = .tintDark
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+        super.setSelected(false, animated: animated)
     }
     
     override func setHighlighted(_ highlighted: Bool, animated: Bool) {
-        super.setHighlighted(false, animated: animated)
+        super.setHighlighted(highlighted, animated: animated)
     }
     
     func fill(using book: Book?) {
@@ -41,6 +52,17 @@ class BookTableViewCell: UITableViewCell {
             } else {
                 authorLabel.text = book?.authors
             }
+        } else {
+            authorLabel.text = "—"
+        }
+        if let year = book?.year {
+            if year.isEmpty {
+                yearLabel.text = "—"
+            } else {
+                yearLabel.text = book?.year
+            }
+        } else {
+            yearLabel.text = "—"
         }
         
     }

@@ -12,6 +12,7 @@
     <customFonts key="customFonts">
         <array key="Avenir.ttc">
             <string>Avenir-Heavy</string>
+            <string>Avenir-Light</string>
             <string>Avenir-LightOblique</string>
         </array>
     </customFonts>
@@ -29,30 +30,45 @@
                         <rect key="frame" x="0.0" y="0.0" width="474" height="189.5"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="Kst-qe-sRE">
-                                <rect key="frame" x="16" y="16" width="442" height="157.5"/>
+                                <rect key="frame" x="16" y="4" width="418" height="181.5"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iga-qm-GGT">
-                                        <rect key="frame" x="0.0" y="0.0" width="442" height="92"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="418" height="72.5"/>
                                         <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="20"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O2t-Cu-XDC">
-                                        <rect key="frame" x="0.0" y="92" width="442" height="65.5"/>
-                                        <fontDescription key="fontDescription" name="Avenir-LightOblique" family="Avenir" pointSize="14"/>
+                                        <rect key="frame" x="0.0" y="72.5" width="418" height="57.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-LightOblique" family="Avenir" pointSize="16"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w5p-Zu-hDP">
+                                        <rect key="frame" x="0.0" y="130" width="418" height="51.5"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="14"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </stackView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MaI-Ct-K6Y">
+                                <rect key="frame" x="442" y="87" width="16" height="16"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="16" id="uW9-cg-I2v"/>
+                                    <constraint firstAttribute="width" constant="16" id="zlr-lD-DCO"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="Kst-qe-sRE" secondAttribute="bottom" constant="16" id="Axw-19-1ex"/>
+                            <constraint firstAttribute="bottom" secondItem="Kst-qe-sRE" secondAttribute="bottom" constant="4" id="Axw-19-1ex"/>
+                            <constraint firstItem="MaI-Ct-K6Y" firstAttribute="leading" secondItem="Kst-qe-sRE" secondAttribute="trailing" constant="8" id="EBu-Of-2k8"/>
+                            <constraint firstItem="MaI-Ct-K6Y" firstAttribute="centerY" secondItem="61E-oP-O0f" secondAttribute="centerY" id="REN-Au-ngw"/>
+                            <constraint firstAttribute="trailing" secondItem="MaI-Ct-K6Y" secondAttribute="trailing" constant="16" id="cRw-ib-OLq"/>
                             <constraint firstItem="Kst-qe-sRE" firstAttribute="leading" secondItem="61E-oP-O0f" secondAttribute="leading" constant="16" id="hOI-B9-PQN"/>
-                            <constraint firstItem="Kst-qe-sRE" firstAttribute="top" secondItem="61E-oP-O0f" secondAttribute="top" constant="16" id="i7C-34-RCd"/>
-                            <constraint firstAttribute="trailing" secondItem="Kst-qe-sRE" secondAttribute="trailing" constant="16" id="ztw-Mk-x1W"/>
+                            <constraint firstItem="Kst-qe-sRE" firstAttribute="top" secondItem="61E-oP-O0f" secondAttribute="top" constant="4" id="i7C-34-RCd"/>
                         </constraints>
                     </view>
                 </subviews>
@@ -67,8 +83,10 @@
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="arrowImageView" destination="MaI-Ct-K6Y" id="QKt-kd-cim"/>
                 <outlet property="authorLabel" destination="O2t-Cu-XDC" id="gkc-aV-jl7"/>
                 <outlet property="titleLabel" destination="iga-qm-GGT" id="Yxl-cx-NM4"/>
+                <outlet property="yearLabel" destination="w5p-Zu-hDP" id="qqK-wh-rRy"/>
             </connections>
             <point key="canvasLocation" x="111" y="127"/>
         </tableViewCell>

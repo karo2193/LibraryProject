@@ -191,7 +191,7 @@ extension BookListViewController: UIEmptyStateDelegate, UIEmptyStateDataSource {
     }
     
     var emptyStateImage: UIImage? {
-        let image = #imageLiteral(resourceName: "bookShelf").maskWithColor(color: .tintDark)
+        let image = #imageLiteral(resourceName: "books").maskWithColor(color: .tintDark)
         return image
     }
     
