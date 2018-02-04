@@ -31,9 +31,6 @@ class SearchTextTableViewCell: UITableViewCell {
     @IBOutlet weak var titleLabel: UILabel! {
         didSet {
             titleLabel.textColor = .tintDark
-            let tapGesture = UIGestureRecognizer(target: self, action: #selector(onCellTap))
-            titleLabel.addGestureRecognizer(tapGesture)
-            titleLabel.isUserInteractionEnabled = true
         }
     }
     @IBOutlet weak var textField: UITextField! {
@@ -80,6 +77,13 @@ class SearchTextTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        addTapGesture()
+    }
+    
+    private func addTapGesture() {
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(onCellTap))
+        contentView.addGestureRecognizer(tapGesture)
+        contentView.isUserInteractionEnabled = true
     }
     
     @objc func onCellTap() {
