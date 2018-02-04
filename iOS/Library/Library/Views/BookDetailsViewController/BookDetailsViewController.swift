@@ -19,18 +19,19 @@ class BookDetailsViewController: MainVC {
             tableView.estimatedRowHeight = 100
         }
     }
-    
+    var hudDelegate: HudDelegate?
     var book: Book?
     
     override var previewActionItems: [UIPreviewActionItem] {
         let copyTitleAction = UIPreviewAction(title: R.string.localizable.copyTitle(), style: .default) { (action, vc) in
+            self.hudDelegate?.showHud(R.string.localizable.copied())
             UIPasteboard.general.string = self.book?.title
         }
         let copyAuthorAction = UIPreviewAction(title: R.string.localizable.copyAuthor(), style: .default) { (action, viewcontroller) in
+            self.hudDelegate?.showHud(R.string.localizable.copied())
             UIPasteboard.general.string = self.book?.authors
         }
-        let copyGroupAction = UIPreviewActionGroup(title: R.string.localizable.copy() + "...", style: .default, actions: [copyTitleAction, copyAuthorAction])
-        return [copyGroupAction]
+        return [copyTitleAction, copyAuthorAction]
     }
     
     override func viewDidLoad() {

@@ -58,7 +58,7 @@ class SearchViewController: MainVC {
         searchButton.isUserInteractionEnabled = true
         if !SessionManager.shared.dataDownloaded {
             SessionManager.shared.dataDownloaded = true
-            tryGetAllFromServices()
+            RequestManager.shared.getData(categoryCompletion: fillCategories, dictionaryCompletion: fillDictionary, completion: (dataDownloadCompleted))
         }
     }
     
@@ -67,8 +67,9 @@ class SearchViewController: MainVC {
             return
         }
         hud = JGProgressHUD(style: .dark)
-        hud?.textLabel.text = "Aktualizuję dane..."
+        hud?.textLabel.text = R.string.localizable.updatingData()
         hud?.show(in: self.view)
+        delegate?.enableBarButtonItem(.left, enabled: false)
         RequestManager.shared.getData(categoryCompletion: fillCategories, dictionaryCompletion: fillDictionary, completion: dataDownloadCompleted)
     }
     
@@ -119,9 +120,12 @@ class SearchViewController: MainVC {
     }
     
     private func dataDownloadCompleted() {
-        hud?.textLabel.text = "Zaktualizowano dane"
-        hud?.dismiss(afterDelay: 1.5)
+        hud?.textLabel.text = R.string.localizable.dataUpdated()
         hud?.indicatorView = JGProgressHUDSuccessIndicatorView()
+        hud?.dismiss(afterDelay: 1.0)
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1.0, execute: {
+            self.delegate?.enableBarButtonItem(.left, enabled: true)
+        })
     }
     
     private func goToListViewController(with books: [Book]) {
@@ -196,7 +200,6 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         case .type:
             return SessionManager.shared.searchedBook.type
         case .category:
-//            cell.textField.text = searchedBook.
             return ""
         case .availability:
             return SessionManager.shared.searchedBook.available

@@ -8,11 +8,17 @@
 
 import UIKit
 
+enum BarButtonItemSide {
+    case left
+    case right
+}
+
 protocol MainPageViewControllerDelegate: class {
     func presentViewController(_ viewController: UIViewController)
     func next(viewController: UIViewController)
     func previous(viewController: UIViewController)
     func initNavigationBar(withTitle title: String?, leftButton: UIBarButtonItem?, rightButton: UIBarButtonItem?)
+    func enableBarButtonItem(_ side: BarButtonItemSide, enabled: Bool)
 }
 
 class MainPageViewController: UIPageViewController {
@@ -81,13 +87,22 @@ extension MainPageViewController: MainPageViewControllerDelegate {
     func initNavigationBar(withTitle title: String?, leftButton: UIBarButtonItem?, rightButton: UIBarButtonItem?) {
         DispatchQueue.main.async {
             let navigationBar = self.navigationController?.navigationBar
-            navigationBar?.barStyle = .blackOpaque
+            navigationBar?.barStyle = .blackTranslucent
             navigationBar?.barTintColor = .tintDark
             navigationBar?.tintColor = .main
             navigationBar?.titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.main]
             navigationBar?.topItem?.title = title
             self.navigationItem.rightBarButtonItem = rightButton
             self.navigationItem.leftBarButtonItem = leftButton
+        }
+    }
+    
+    func enableBarButtonItem(_ side: BarButtonItemSide, enabled: Bool) {
+        switch side {
+        case .left:
+            self.navigationItem.leftBarButtonItem?.isEnabled = enabled
+        case .right:
+            self.navigationItem.rightBarButtonItem?.isEnabled = enabled
         }
     }
     

@@ -13,7 +13,7 @@
 "searchingResults" = "Wyniki wyszukiwania";
 "bookSearch" = "Wyszukiwarka";
 "show" = "Wyświetl";
-"copy" = "Kopiuj";
+"copied" = "Skopiowano";
 "copyTitle" = "Kopiuj tytuł";
 "copyAuthor" = "Kopiuj autora";
 "typePhraseToSearch" = "Wpisz szukaną frazę";
@@ -30,6 +30,8 @@
 "connectionError" = "Błąd połączenia";
 "checkInternetConnection" = "Sprawdź swoje połączenie z internetem i odśwież dane aplikacji";
 "ok" = "OK";
+"updatingData" = "Aktualizuję dane...";
+"dataUpdated" = "Zaktualizowano dane";
 
 //Titles available to search for
 "title" = "Tytuł";

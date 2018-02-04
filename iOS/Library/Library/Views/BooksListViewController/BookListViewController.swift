@@ -8,6 +8,11 @@
 
 import UIKit
 import UIEmptyState
+import JGProgressHUD
+
+protocol HudDelegate: class {
+    func showHud(_ title: String)
+}
 
 class BookListViewController: MainVC {
     
@@ -20,6 +25,7 @@ class BookListViewController: MainVC {
         }
     }
     
+    var hud: JGProgressHUD? = nil
     private var offset: Int = 0
     private var canFetchMore: Bool = true
     weak var delegate: MainPageViewControllerDelegate? {
@@ -121,8 +127,6 @@ extension BookListViewController: UITableViewDataSource, UITableViewDelegate {
         return detailsVC
     }
     
-    
-    
 }
 
 //MARK: Fetch more books methods
@@ -146,6 +150,21 @@ extension BookListViewController {
     
 }
 
+//MARK: HudDelegate
+extension BookListViewController: HudDelegate {
+    
+    func showHud(_ title: String) {
+        DispatchQueue.main.async {
+            self.hud = JGProgressHUD(style: .dark)
+            self.hud?.textLabel.text = title
+            self.hud?.indicatorView = JGProgressHUDSuccessIndicatorView()
+            self.hud?.show(in: self.view)
+            self.hud?.dismiss(afterDelay: 0.75)
+        }
+    }
+    
+}
+
 //MARK: 3D Touch delegate
 extension BookListViewController: UIViewControllerPreviewingDelegate {
     
@@ -157,6 +176,9 @@ extension BookListViewController: UIViewControllerPreviewingDelegate {
         }
         let book = books[indexPath.row]
         let detailsVC = getBookDetailsViewController(forBook: book)
+        if let detailsViewController = detailsVC as? BookDetailsViewController {
+            detailsViewController.hudDelegate = self
+        }
         previewingContext.sourceRect = cell.frame
         return detailsVC
     }
