@@ -69,7 +69,7 @@ class CategoriesViewController: MainVC {
 extension CategoriesViewController {
     
     fileprivate func selectSavedCategories() {
-        let selectedCategories = SessionManager.shared.searchedBook.categories
+        let selectedCategories = SessionManager.shared.searchedBook.bookCategories
         var selectedIndexPaths: [IndexPath] = []
         for selectedCategory in selectedCategories {
             let indexPaths = getIndexPaths(forCategory: selectedCategory)
@@ -111,7 +111,7 @@ extension CategoriesViewController {
     
     fileprivate func getIndexPath(forCategory category: Category, inSection section: Int) -> IndexPath? {
         let mainCategory = SessionManager.shared.mainCategories[section]
-        for (row, subcategory) in mainCategory.subcategories.enumerated() {
+        for (row, subcategory) in mainCategory.subcategoriesArray.enumerated() {
             guard let subcategoryId = subcategory.id,
                 let categoryId = category.id else { continue }
             if subcategoryId == categoryId {
@@ -133,7 +133,7 @@ extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if expandedHeaders[section] {
-            return SessionManager.shared.mainCategories[section].subcategories.count
+            return SessionManager.shared.mainCategories[section].subcategoriesArray.count
         } else {
             return 0
         }
@@ -188,7 +188,7 @@ extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource {
         categoryHeader.isExpanded = expandedHeaders[section]
         let mainCategory = SessionManager.shared.mainCategories[section]
         categoryHeader.mainCategory = mainCategory
-        if mainCategory.subcategories.isEmpty {
+        if mainCategory.subcategoriesArray.isEmpty {
             categoryHeader.expandButton.isHidden = true
         } else {
             categoryHeader.expandButton.isHidden = false
@@ -207,7 +207,7 @@ extension CategoriesViewController: UITableViewDelegate, UITableViewDataSource {
         let section = indexPath.section
         let row = indexPath.row
         let mainCategory = SessionManager.shared.mainCategories[section]
-        let category = mainCategory.subcategories[row]
+        let category = mainCategory.subcategoriesArray[row]
         return category
     }
     
@@ -218,7 +218,7 @@ extension CategoriesViewController: MainCategoryHeaderViewDelegate {
     
     func toggleSubcategories(usingHeader header: MainCategoryHeaderView) {
         let headerIsSelected = selectedHeaders[header.section]
-        guard let subcategories = header.mainCategory?.subcategories else { return }
+        guard let subcategories = header.mainCategory?.subcategoriesArray else { return }
         for (index, _) in subcategories.enumerated() {
             let indexPath = IndexPath(row: index, section: header.section)
             if headerIsSelected {
@@ -246,7 +246,7 @@ extension CategoriesViewController: MainCategoryHeaderViewDelegate {
 extension CategoriesViewController {
     
     private func saveSelectedCategories() {
-        SessionManager.shared.searchedBook.categories.removeAll()
+        SessionManager.shared.searchedBook.bookCategories.removeAll()
         saveMainCategories()
         saveSubcategories()
     }
@@ -255,7 +255,7 @@ extension CategoriesViewController {
         for (section, isHeaderSelected) in selectedHeaders.enumerated() {
             if isHeaderSelected {
                 guard let category = SessionManager.shared.mainCategories[section].category else { continue }
-                SessionManager.shared.searchedBook.categories.append(category)
+                SessionManager.shared.searchedBook.bookCategories.append(category)
             }
         }
     }
@@ -269,11 +269,11 @@ extension CategoriesViewController {
         
         let mainCategories = SessionManager.shared.mainCategories
         for (section, mainCategory) in mainCategories.enumerated() {
-            for (row, subcategory) in mainCategory.subcategories.enumerated() {
+            for (row, subcategory) in mainCategory.subcategoriesArray.enumerated() {
                 let indexPath = IndexPath(row: row, section: section)
                 guard let selected = selectedCells[indexPath] else { continue }
                 if selected {
-                    SessionManager.shared.searchedBook.categories.append(subcategory)
+                    SessionManager.shared.searchedBook.bookCategories.append(subcategory)
                 }
             }
         }
@@ -298,7 +298,7 @@ extension CategoriesViewController {
     }
     
     private func trySelectHeader(inSection section: Int) {
-        let subcategories = SessionManager.shared.mainCategories[section].subcategories
+        let subcategories = SessionManager.shared.mainCategories[section].subcategoriesArray
         if subcategories.isEmpty { return }
         for (index, _) in subcategories.enumerated() {
             let indexPath = IndexPath(row: index, section: section)

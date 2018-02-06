@@ -10,36 +10,36 @@ import Foundation
 
 struct Book: Codable {
     
-    private var tytul: String?
-    private var ozn_opdow: String?
+    private var title: String?
+    private var responsibility: String?
     private var isbn_issn: String?
-    private var syg_ms: Int?
-    private var syg_bg: String?
-    private var rok: Int?
-    private var tom: String?
-    private var typ: String?
-    private var dostepnosc: String?
-    private var kategoria: [Category] = []
+    private var signature_ms: Int?
+    private var signature_bg: String?
+    private var year: Int?
+    private var volume: String?
+    private var type: String?
+    private var availability: String?
+    private var categories: [Category] = []
     
-    var title: String? {
+    var bookTitle: String? {
         set {
-            tytul = newValue
+            title = newValue
         }
         get {
-            return tytul
+            return title
         }
     }
     
-    var authors: String? {
+    var bookAuthors: String? {
         set {
-            ozn_opdow = newValue
+            responsibility = newValue
         }
         get {
-            return ozn_opdow
+            return responsibility
         }
     }
     
-    var isbn: String? {
+    var bookIsbn: String? {
         set {
             isbn_issn = newValue
         }
@@ -48,14 +48,14 @@ struct Book: Codable {
         }
     }
     
-    var mathLibrarySignature: String? {
+    var bookMathLibrarySignature: String? {
         set {
             let mathSignatureString = newValue ?? ""
             let mathSignatureValue = Int(mathSignatureString)
-            syg_ms = mathSignatureValue
+            signature_ms = mathSignatureValue
         }
         get {
-            if let mathSignatureValue = syg_ms {
+            if let mathSignatureValue = signature_ms {
                 return "\(mathSignatureValue)"
             } else {
                 return nil
@@ -63,23 +63,23 @@ struct Book: Codable {
         }
     }
     
-    var mainLibrarySignature: String? {
+    var bookMainLibrarySignature: String? {
         set {
-            syg_bg = newValue
+            signature_bg = newValue
         }
         get {
-            return syg_bg
+            return signature_bg
         }
     }
     
-    var year: String? {
+    var bookYear: String? {
         set {
             let yearString = newValue ?? ""
             let yearValue = Int(yearString)
-            rok = yearValue
+            year = yearValue
         }
         get {
-            if let yearValue = rok {
+            if let yearValue = year {
                 return "\(yearValue)"
             } else {
                 return nil
@@ -87,57 +87,57 @@ struct Book: Codable {
         }
     }
     
-    var volume: String? {
+    var bookVolume: String? {
         set {
-            tom = newValue
+            volume = newValue
         }
         get {
-            return tom
+            return volume
         }
     }
     
-    var type: String? {
+    var bookType: String? {
         set {
-            typ = newValue
+            type = newValue
         }
         get {
-            return typ
+            return type
         }
     }
     
-    var available: String? {
+    var bookAvailable: String? {
         set {
-            dostepnosc = newValue
+            availability = newValue
         }
         get {
-            return dostepnosc
+            return availability
         }
     }
     
-    var categories: [Category] {
+    var bookCategories: [Category] {
         set {
-            kategoria = newValue
+            categories = newValue
         }
         get {
-            return kategoria
+            return categories
         }
     }
     
     mutating func clear() {
-        self.title = ""
-        self.authors = ""
-        self.isbn = ""
-        self.mathLibrarySignature = ""
-        self.mainLibrarySignature = ""
-        self.year = ""
-        self.volume = ""
-        self.type = ""
-        self.available = ""
-        self.categories = []
+        self.bookTitle = ""
+        self.bookAuthors = ""
+        self.bookIsbn = ""
+        self.bookMathLibrarySignature = ""
+        self.bookMainLibrarySignature = ""
+        self.bookYear = ""
+        self.bookVolume = ""
+        self.bookType = ""
+        self.bookAvailable = ""
+        self.bookCategories = []
     }
     
     func getCategoriesId() -> [String] {
-        let categoriesObject = categories
+        let categoriesObject = bookCategories
         let categoriesId: [String] = categoriesObject.map {$0.id ?? ""}
         return categoriesId
     }

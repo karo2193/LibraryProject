@@ -184,25 +184,25 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         let type = cell.searchPropertyType
         switch type {
         case .title:
-            return SessionManager.shared.searchedBook.title
+            return SessionManager.shared.searchedBook.bookTitle
         case .author:
-            return SessionManager.shared.searchedBook.authors
+            return SessionManager.shared.searchedBook.bookAuthors
         case .isbn:
-            return SessionManager.shared.searchedBook.isbn
+            return SessionManager.shared.searchedBook.bookIsbn
         case .mathSignature:
-            return SessionManager.shared.searchedBook.mathLibrarySignature
+            return SessionManager.shared.searchedBook.bookMathLibrarySignature
         case .mainSignature:
-            return SessionManager.shared.searchedBook.mainLibrarySignature
+            return SessionManager.shared.searchedBook.bookMainLibrarySignature
         case .year:
-            return SessionManager.shared.searchedBook.year
+            return SessionManager.shared.searchedBook.bookYear
         case .volume:
-            return SessionManager.shared.searchedBook.volume
+            return SessionManager.shared.searchedBook.bookVolume
         case .type:
-            return SessionManager.shared.searchedBook.type
+            return SessionManager.shared.searchedBook.bookType
         case .category:
             return ""
         case .availability:
-            return SessionManager.shared.searchedBook.available
+            return SessionManager.shared.searchedBook.bookAvailable
         default:
             return ""
         }
@@ -216,25 +216,25 @@ extension SearchViewController: SearchTextTableViewCellDelegate {
     func fill(text: String, forType type: SearchPropertyType) {
         switch type {
         case .title:
-            SessionManager.shared.searchedBook.title = text
+            SessionManager.shared.searchedBook.bookTitle = text
         case .author:
-            SessionManager.shared.searchedBook.authors = text
+            SessionManager.shared.searchedBook.bookAuthors = text
         case .isbn:
-            SessionManager.shared.searchedBook.isbn = text
+            SessionManager.shared.searchedBook.bookIsbn = text
         case .mathSignature:
-            SessionManager.shared.searchedBook.mathLibrarySignature = text
+            SessionManager.shared.searchedBook.bookMathLibrarySignature = text
         case .mainSignature:
-            SessionManager.shared.searchedBook.mainLibrarySignature = text
+            SessionManager.shared.searchedBook.bookMainLibrarySignature = text
         case .year:
-            SessionManager.shared.searchedBook.year = text
+            SessionManager.shared.searchedBook.bookYear = text
         case .volume:
-            SessionManager.shared.searchedBook.volume = text
+            SessionManager.shared.searchedBook.bookVolume = text
         case .type:
-            SessionManager.shared.searchedBook.type = text
+            SessionManager.shared.searchedBook.bookType = text
         case .category:
             return
         case .availability:
-            SessionManager.shared.searchedBook.available = text
+            SessionManager.shared.searchedBook.bookAvailable = text
         default:
             return
         }

@@ -25,11 +25,11 @@ class BookDetailsViewController: MainVC {
     override var previewActionItems: [UIPreviewActionItem] {
         let copyTitleAction = UIPreviewAction(title: R.string.localizable.copyTitle(), style: .default) { (action, vc) in
             self.hudDelegate?.showHud(R.string.localizable.copied())
-            UIPasteboard.general.string = self.book?.title
+            UIPasteboard.general.string = self.book?.bookTitle
         }
         let copyAuthorAction = UIPreviewAction(title: R.string.localizable.copyAuthor(), style: .default) { (action, viewcontroller) in
             self.hudDelegate?.showHud(R.string.localizable.copied())
-            UIPasteboard.general.string = self.book?.authors
+            UIPasteboard.general.string = self.book?.bookAuthors
         }
         return [copyTitleAction, copyAuthorAction]
     }
@@ -99,31 +99,31 @@ extension BookDetailsViewController {
         switch indexPath.row {
         case 0:
             cell.titleLabel.text = R.string.localizable.title()
-            cell.detailsLabel.text = parseTextForLabel(text: book?.title)
+            cell.detailsLabel.text = parseTextForLabel(text: book?.bookTitle)
         case 1:
             cell.titleLabel.text = R.string.localizable.author()
-            cell.detailsLabel.text = parseTextForLabel(text: book?.authors)
+            cell.detailsLabel.text = parseTextForLabel(text: book?.bookAuthors)
         case 2:
             cell.titleLabel.text = R.string.localizable.publicationYear()
-            cell.detailsLabel.text = parseTextForLabel(text: book?.year)
+            cell.detailsLabel.text = parseTextForLabel(text: book?.bookYear)
         case 3:
             cell.titleLabel.text = R.string.localizable.bookVolume()
-            cell.detailsLabel.text = parseTextForLabel(text: book?.volume)
+            cell.detailsLabel.text = parseTextForLabel(text: book?.bookVolume)
         case 4:
             cell.titleLabel.text = R.string.localizable.availability()
-            cell.detailsLabel.text = parseTextForLabel(text: book?.available)
+            cell.detailsLabel.text = parseTextForLabel(text: book?.bookAvailable)
         case 5:
             cell.titleLabel.text = R.string.localizable.positionType()
-            cell.detailsLabel.text = parseTextForLabel(text: book?.type)
+            cell.detailsLabel.text = parseTextForLabel(text: book?.bookType)
         case 6:
             cell.titleLabel.text = R.string.localizable.isbn()
-            cell.detailsLabel.text = parseTextForLabel(text: book?.isbn)
+            cell.detailsLabel.text = parseTextForLabel(text: book?.bookIsbn)
         case 7:
             cell.titleLabel.text = R.string.localizable.mathLibrarySignature()
-            cell.detailsLabel.text = parseTextForLabel(text: book?.mathLibrarySignature)
+            cell.detailsLabel.text = parseTextForLabel(text: book?.bookMathLibrarySignature)
         case 8:
             cell.titleLabel.text = R.string.localizable.mainLibrarySignature()
-            cell.detailsLabel.text = parseTextForLabel(text: book?.mainLibrarySignature)
+            cell.detailsLabel.text = parseTextForLabel(text: book?.bookMainLibrarySignature)
         case 9:
             cell.titleLabel.text = R.string.localizable.category()
             let categoryNames = getCategoryNames(fromBook: book)
@@ -135,7 +135,7 @@ extension BookDetailsViewController {
     }
     
     private func getCategoryNames(fromBook book: Book?) -> String {
-        let categories: [Category] = book?.categories ?? []
+        let categories: [Category] = book?.bookCategories ?? []
         var categoryNames = ""
         for category in categories {
             let categoryName = category.name ?? ""

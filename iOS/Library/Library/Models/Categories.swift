@@ -10,24 +10,24 @@ import Foundation
 
 struct MainCategory: Decodable {
     
-    private var kategoria: Category?
-    private var podkategorie: [Category]
+    private var main_category: Category?
+    private var subcategories: [Category]
     
     var category: Category? {
         get {
-            return kategoria
+            return main_category
         }
         set {
-            kategoria = newValue
+            main_category = newValue
         }
     }
     
-    var subcategories: [Category] {
+    var subcategoriesArray: [Category] {
         get {
-            return podkategorie
+            return subcategories
         }
         set {
-            podkategorie = newValue
+            subcategories = newValue
         }
     }
     
@@ -35,24 +35,24 @@ struct MainCategory: Decodable {
 
 struct Category: Codable {
     
-    private var id_kategorii: String?
-    private var kategoria: String?
+    private var category_id: String?
+    private var category_name: String?
     
     var id: String? {
         get {
-            return id_kategorii
+            return category_id
         }
         set {
-            id_kategorii = newValue
+            category_id = newValue
         }
     }
     
     var name: String? {
         get {
-            return kategoria
+            return category_name
         }
         set {
-            kategoria = newValue
+            category_name = newValue
         }
     }
     

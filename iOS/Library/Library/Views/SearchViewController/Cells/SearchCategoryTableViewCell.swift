@@ -47,7 +47,7 @@ class SearchCategoryTableViewCell: UITableViewCell {
     }
     
     func refreshButtonTitle() {
-        let searchedCategoriesCount = SessionManager.shared.searchedBook.categories.count
+        let searchedCategoriesCount = SessionManager.shared.searchedBook.bookCategories.count
         let categoriesCountLastDigit = searchedCategoriesCount % 10
         var suffixWord = ""
         if searchedCategoriesCount == 0 {

@@ -180,11 +180,11 @@ extension SearchTextTableViewCell: UIPickerViewDelegate, UIPickerViewDataSource 
         switch searchPropertyType {
         case .type:
             let type = dictionaryTypes?.type[row]
-            SessionManager.shared.searchedBook.type = type
+            SessionManager.shared.searchedBook.bookType = type
             textField.text = type
         case .availability:
             let availability = dictionaryTypes?.availability[row]
-            SessionManager.shared.searchedBook.available = availability
+            SessionManager.shared.searchedBook.bookAvailable = availability
             textField.text = availability
         default:
             return

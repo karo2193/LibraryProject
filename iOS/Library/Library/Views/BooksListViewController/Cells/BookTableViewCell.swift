@@ -45,21 +45,21 @@ class BookTableViewCell: UITableViewCell {
     }
     
     func fill(using book: Book?) {
-        titleLabel.text = book?.title
-        if let author = book?.authors {
+        titleLabel.text = book?.bookTitle
+        if let author = book?.bookAuthors {
             if author.isEmpty {
                 authorLabel.text = "—"
             } else {
-                authorLabel.text = book?.authors
+                authorLabel.text = book?.bookAuthors
             }
         } else {
             authorLabel.text = "—"
         }
-        if let year = book?.year {
+        if let year = book?.bookYear {
             if year.isEmpty {
                 yearLabel.text = "—"
             } else {
-                yearLabel.text = book?.year
+                yearLabel.text = book?.bookYear
             }
         } else {
             yearLabel.text = "—"

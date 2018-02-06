@@ -10,26 +10,26 @@ import Foundation
 
 struct DictionaryTypes: Codable {
     
-    private var typ: [String] = []
-    private var dostepnosc: [String] = []
+    private var types: [String] = []
+    private var availability_types: [String] = []
     
     var type: [String] {
         get {
-            let types = [""] + typ
-            return types
+            let dictTypes = [""] + types
+            return dictTypes
         }
         set {
-            typ = newValue
+            types = newValue
         }
     }
     
     var availability: [String] {
         get {
-            let availables = [""] + dostepnosc
+            let availables = [""] + availability_types
             return availables
         }
         set {
-            dostepnosc = newValue
+            availability_types = newValue
         }
     }
 

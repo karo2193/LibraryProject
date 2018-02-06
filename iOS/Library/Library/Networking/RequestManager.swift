@@ -14,10 +14,10 @@ class RequestManager {
     
     static let shared = RequestManager()
     
-    private let URL_STRING = "http://szymongor.pythonanywhere.com"
-    private let BOOK_ENDPOINT = "/ksiazka"
-    private let CATEGORY_ENDPOINT = "/kategorie"
-    private let DICTIONARY_ENDPOINT = "/slownik"
+    private let URL_STRING = "http://157.158.16.217:8000/"
+    private let BOOK_ENDPOINT = "books"
+    private let CATEGORY_ENDPOINT = "categories"
+    private let DICTIONARY_ENDPOINT = "dictionary"
     
     typealias Filter = [String:Any]
     
@@ -41,7 +41,7 @@ extension RequestManager {
         let parameters = [
             "query" : [
                 "filters" : filter,
-                "kategorie" : categories,
+                "categories" : categories,
                 "pagination" : [
                     "offset" : offset,
                     "limit" : DefaultValues.BOOKS_PER_FETCH
@@ -69,32 +69,32 @@ extension RequestManager {
     
     fileprivate func getFilter(usingBook searchedBook: Book) -> Filter {
         var filters: Filter = [:]
-        if let title = searchedBook.title {
-            filters["tytul__contains"] = title.trimmingCharacters(in: .whitespacesAndNewlines)
+        if let title = searchedBook.bookTitle {
+            filters["title__contains"] = title.trimmingCharacters(in: .whitespacesAndNewlines)
         }
-        if let author = searchedBook.authors {
-            filters["ozn_opdow__contains"] = author.trimmingCharacters(in: .whitespacesAndNewlines)
+        if let author = searchedBook.bookAuthors {
+            filters["responsibility__contains"] = author.trimmingCharacters(in: .whitespacesAndNewlines)
         }
-        if let isbn = searchedBook.isbn {
+        if let isbn = searchedBook.bookIsbn {
             filters["isbn_issn__contains"] = isbn.trimmingCharacters(in: .whitespacesAndNewlines)
         }
-        if let mathSignature = searchedBook.mathLibrarySignature {
-            filters["syg_ms__contains"] = mathSignature.trimmingCharacters(in: .whitespacesAndNewlines)
+        if let mathSignature = searchedBook.bookMathLibrarySignature {
+            filters["signature_ms__contains"] = mathSignature.trimmingCharacters(in: .whitespacesAndNewlines)
         }
-        if let mainSignature = searchedBook.mainLibrarySignature {
-            filters["syg_bg__contains"] = mainSignature.trimmingCharacters(in: .whitespacesAndNewlines)
+        if let mainSignature = searchedBook.bookMainLibrarySignature {
+            filters["signature_bg__contains"] = mainSignature.trimmingCharacters(in: .whitespacesAndNewlines)
         }
-        if let year = searchedBook.year {
-            filters["rok__contains"] = year.trimmingCharacters(in: .whitespacesAndNewlines)
+        if let year = searchedBook.bookYear {
+            filters["year__contains"] = year.trimmingCharacters(in: .whitespacesAndNewlines)
         }
-        if let volume = searchedBook.volume {
-            filters["tom__contains"] = volume.trimmingCharacters(in: .whitespacesAndNewlines)
+        if let volume = searchedBook.bookVolume {
+            filters["volume__contains"] = volume.trimmingCharacters(in: .whitespacesAndNewlines)
         }
-        if let type = searchedBook.type {
-            filters["typ__contains"] = type.trimmingCharacters(in: .whitespacesAndNewlines)
+        if let type = searchedBook.bookType {
+            filters["type__contains"] = type.trimmingCharacters(in: .whitespacesAndNewlines)
         }
-        if let availability = searchedBook.available {
-            filters["dostepnosc__contains"] = availability.trimmingCharacters(in: .whitespacesAndNewlines)
+        if let availability = searchedBook.bookAvailable {
+            filters["availability__contains"] = availability.trimmingCharacters(in: .whitespacesAndNewlines)
         }
         return filters
     }
