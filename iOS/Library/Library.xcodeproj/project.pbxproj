@@ -41,6 +41,7 @@
 		22B6632B2002265D004B9731 /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22B6632A2002265D004B9731 /* RequestManager.swift */; };
 		22C271F6200A834800FE674B /* SearchTextTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22C271F4200A834800FE674B /* SearchTextTableViewCell.swift */; };
 		22C271F7200A834800FE674B /* SearchTextTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22C271F5200A834800FE674B /* SearchTextTableViewCell.xib */; };
+		22CF0819202A2A2F00CB6EBE /* UITextField+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22CF0818202A2A2F00CB6EBE /* UITextField+Extensions.swift */; };
 		22EC020D2014FF040020852E /* BookDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EC020C2014FF040020852E /* BookDetailsViewController.swift */; };
 		22EC02112015027B0020852E /* BookDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EC020F2015027B0020852E /* BookDetailTableViewCell.swift */; };
 		22EC02122015027B0020852E /* BookDetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 22EC02102015027B0020852E /* BookDetailTableViewCell.xib */; };
@@ -86,6 +87,7 @@
 		22B6632A2002265D004B9731 /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
 		22C271F4200A834800FE674B /* SearchTextTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTextTableViewCell.swift; sourceTree = "<group>"; };
 		22C271F5200A834800FE674B /* SearchTextTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SearchTextTableViewCell.xib; sourceTree = "<group>"; };
+		22CF0818202A2A2F00CB6EBE /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		22EC020C2014FF040020852E /* BookDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailsViewController.swift; sourceTree = "<group>"; };
 		22EC020F2015027B0020852E /* BookDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailTableViewCell.swift; sourceTree = "<group>"; };
 		22EC02102015027B0020852E /* BookDetailTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookDetailTableViewCell.xib; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				22A18FA01FC77F3B000A00FE /* UIButton+Extensions.swift */,
 				22A18FA71FC7936A000A00FE /* UIView+Extensions.swift */,
 				22401E2220135B5200424554 /* UIImage+Extensions.swift */,
+				22CF0818202A2A2F00CB6EBE /* UITextField+Extensions.swift */,
 			);
 			path = UIExtensions;
 			sourceTree = "<group>";
@@ -464,6 +467,7 @@
 				22A18FA11FC77F3B000A00FE /* UIButton+Extensions.swift in Sources */,
 				222F4D5E200FE1BC004FF825 /* DictionaryTypes.swift in Sources */,
 				222F4D59200FD3AC004FF825 /* SearchCategoryTableViewCell.swift in Sources */,
+				22CF0819202A2A2F00CB6EBE /* UITextField+Extensions.swift in Sources */,
 				22EC020D2014FF040020852E /* BookDetailsViewController.swift in Sources */,
 				22A18F811FC75F35000A00FE /* MainPageViewController.swift in Sources */,
 				222F4D5C200FDCE5004FF825 /* SessionManager.swift in Sources */,

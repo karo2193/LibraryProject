@@ -39,6 +39,7 @@ class SearchTextTableViewCell: UITableViewCell {
             textField.textColor = .tintDark
             textField.placeholder = R.string.localizable.typePhraseToSearch() + "..."
             textField.clearButtonMode = .always
+            textField.addDoneButtonAboveKeyboard()
         }
     }
     @IBOutlet weak var separatorView: UIView! {
@@ -127,9 +128,12 @@ class SearchTextTableViewCell: UITableViewCell {
 extension SearchTextTableViewCell: UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        var text = textField.text ?? ""
-        text = text + string
-        delegate?.fill(text: text, forType: searchPropertyType)
+        if
+            var text = textField.text,
+            let textRange = Range(range, in: text) {
+                text = text.replacingCharacters(in: textRange, with: string)
+                delegate?.fill(text: text, forType: searchPropertyType)
+        }
         return true
     }
     

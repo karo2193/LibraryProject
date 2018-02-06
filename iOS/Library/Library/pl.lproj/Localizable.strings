@@ -32,6 +32,7 @@
 "ok" = "OK";
 "updatingData" = "Aktualizuję dane...";
 "dataUpdated" = "Zaktualizowano dane";
+"done" = "Gotowe";
 
 //Titles available to search for
 "title" = "Tytuł";
