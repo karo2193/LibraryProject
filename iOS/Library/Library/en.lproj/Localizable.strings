@@ -37,7 +37,7 @@
 //Titles available to search for
 "title" = "Title";
 "author" = "Author";
-"isbn" = "ISBN";
+"isbn" = "ISBN/ISSN";
 "mathLibrarySignature" = "Math library signature";
 "mainLibrarySignature" = "Main library signature";
 "publicationYear" = "Publication year";

@@ -84,16 +84,16 @@ extension RequestManager {
                     value += String(char)
                 }
             }
-            filters["isbn_issn__contains"] = value
+            filters["isbn_issn"] = value
         }
         if let mathSignature = searchedBook.bookMathLibrarySignature {
-            filters["signature_ms__contains"] = mathSignature.trimmingCharacters(in: .whitespacesAndNewlines)
+            filters["signature_ms"] = mathSignature.trimmingCharacters(in: .whitespacesAndNewlines)
         }
         if let mainSignature = searchedBook.bookMainLibrarySignature {
             filters["signature_bg__contains"] = mainSignature.trimmingCharacters(in: .whitespacesAndNewlines)
         }
         if let year = searchedBook.bookYear {
-            filters["year__contains"] = year.trimmingCharacters(in: .whitespacesAndNewlines)
+            filters["year"] = year.trimmingCharacters(in: .whitespacesAndNewlines)
         }
         if let volume = searchedBook.bookVolume {
             filters["volume__contains"] = volume.trimmingCharacters(in: .whitespacesAndNewlines)

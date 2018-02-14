@@ -22,7 +22,7 @@
 "categories" = "Kategorie";
 "accept" = "Zatwierdź";
 "noResults" = "Brak wyników wyszukiwania";
-"bookDetails" = "Detale książki";
+"bookDetails" = "Szczegóły książki";
 "choosed" = "Wybrano";
 "oneCategorySuffix" = "kategorię";
 "twoCategorySuffix" = "kategorie";
@@ -37,7 +37,7 @@
 //Titles available to search for
 "title" = "Tytuł";
 "author" = "Autorzy";
-"isbn" = "ISBN";
+"isbn" = "ISBN/ISSN";
 "mathLibrarySignature" = "Sygnatura biblioteki MS";
 "mainLibrarySignature" = "Sygnatura biblioteki głównej";
 "publicationYear" = "Rok wydania";
