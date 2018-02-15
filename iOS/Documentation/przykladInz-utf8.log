@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.19)  24 JAN 2018 02:56
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.19)  15 FEB 2018 19:46
 entering extended mode
 **przykladInz-utf8.tex
 ("C:\Users\Tomasz Kryg\Desktop\projektInzynierskiMS\przykladInz-utf8.tex"
@@ -387,23 +387,35 @@ Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
 \c@twa=\count105
 \c@dd=\count106
 
-("C:\Users\Tomasz Kryg\Desktop\projektInzynierskiMS\przykladInz-utf8.aux")
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
-LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 58.
-LaTeX Font Info:    ... okay on input line 58.
+("C:\Users\Tomasz Kryg\Desktop\projektInzynierskiMS\przykladInz-utf8.aux"
 
-("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+LaTeX Warning: Label `fig:iosCategories' multiply defined.
+
+
+LaTeX Warning: Label `fig:iosCategories' multiply defined.
+
+
+LaTeX Warning: Label `fig:iosCategories' multiply defined.
+
+
+LaTeX Warning: Label `fig:iosCategories' multiply defined.
+
+)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 44.
+LaTeX Font Info:    ... okay on input line 44.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count107
 \scratchdimen=\dimen115
@@ -417,34 +429,34 @@ LaTeX Font Info:    ... okay on input line 58.
 \makeMPintoPDFobject=\count112
 \everyMPtoPDFconversion=\toks23
 )
-LaTeX Font Info:    Try loading font information for OT4+cmss on input line 58.
+LaTeX Font Info:    Try loading font information for OT4+cmss on input line 44.
 
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\polski\ot4cmss.fd"
 File: ot4cmss.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-LaTeX Font Info:    Try loading font information for OML+plm on input line 58.
+LaTeX Font Info:    Try loading font information for OML+plm on input line 44.
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\polski\omlplm.fd"
 File: omlplm.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-LaTeX Font Info:    Try loading font information for OMS+plsy on input line 58.
+LaTeX Font Info:    Try loading font information for OMS+plsy on input line 44.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\polski\omsplsy.fd"
 File: omsplsy.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-LaTeX Font Info:    Try loading font information for OMX+plex on input line 58.
+LaTeX Font Info:    Try loading font information for OMX+plex on input line 44.
 
 
 ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\polski\omxplex.fd"
 File: omxplex.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <12> on input line 58.
+(Font)              <12> on input line 44.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <8> on input line 58.
+(Font)              <8> on input line 44.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <6> on input line 58.
+(Font)              <6> on input line 44.
  [1
 
 {C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2] [3] [4] [1] [2] [3] [
@@ -453,121 +465,185 @@ LaTeX Font Info:    External font `plex10' loaded for size
 \tf@toc=\write3
 
 [5] [6] [7] [8]
-LaTeX Font Info:    Try loading font information for OMS+cmr on input line 87.
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 72.
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
 File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 )
 LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 87.
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 72.
 
 [9]
-LaTeX Font Info:    Try loading font information for OT4+cmtt on input line 101
-.
+LaTeX Font Info:    Try loading font information for OT4+cmtt on input line 85.
+
  ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\polski\ot4cmtt.fd"
 File: ot4cmtt.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 ) [10]
-Overfull \hbox (18.56236pt too wide) in paragraph at lines 119--120
+Overfull \hbox (18.56236pt too wide) in paragraph at lines 103--104
 [][]\OT4/cmtt/m/n/12 Category \OT4/cmr/m/n/12 -- kla-sa re-pre-zen-tu-j¡-ca obi
 ekt ka-te-go-rii. Im-ple-men-tu-je pro-to-kóª []\OT4/cmtt/m/n/12 Codable\OT4/cm
 r/m/n/12 . 
  []
 
 [11] [12]
-Overfull \hbox (17.7822pt too wide) in paragraph at lines 160--161
+Overfull \hbox (17.7822pt too wide) in paragraph at lines 162--163
 \OT4/cmr/m/n/12 Ka»dy z wi-do-ków pod-rz¦d-nych po-sia-da po-le ty-pu []\OT4/cm
 tt/m/n/12 MainPageViewControllerDelegate?\OT4/cmr/m/n/12 ,
  []
 
-[13] [14] [15] [16] [17] [18]
-Overfull \hbox (6.25021pt too wide) in paragraph at lines 347--347
+[13] <img/SearchProject.png, id=67, 562.2606pt x 996.3624pt>
+File: img/SearchProject.png Graphic file (type png)
+
+<use img/SearchProject.png>
+Package pdftex.def Info: img/SearchProject.png used on input line 174.
+(pdftex.def)             Requested size: 170.3974pt x 301.95168pt.
+ [14 <C:/Users/Tomasz Kryg/Desktop/projektInzynierskiMS/img/SearchProject.png
+
+pdfTeX warning: pdflatex (file C:/Users/Tomasz Kryg/Desktop/projektInzynierskiM
+S/img/SearchProject.png): large interlaced PNG might cause out of memory (use n
+on-interlaced PNG to fix this)
+>] [15] <img/CategoriesProject.png, id=77, 562.2606pt x 996.3624pt>
+File: img/CategoriesProject.png Graphic file (type png)
+
+<use img/CategoriesProject.png>
+Package pdftex.def Info: img/CategoriesProject.png used on input line 236.
+(pdftex.def)             Requested size: 170.3974pt x 301.95168pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[16] [17 <C:/Users/Tomasz Kryg/Desktop/projektInzynierskiMS/img/CategoriesProje
+ct.png
+
+pdfTeX warning: pdflatex (file C:/Users/Tomasz Kryg/Desktop/projektInzynierskiM
+S/img/CategoriesProject.png): large interlaced PNG might cause out of memory (u
+se non-interlaced PNG to fix this)
+>] [18] [19] <img/BookListProject.png, id=91, 562.2606pt x 996.3624pt>
+File: img/BookListProject.png Graphic file (type png)
+
+<use img/BookListProject.png>
+Package pdftex.def Info: img/BookListProject.png used on input line 318.
+(pdftex.def)             Requested size: 170.3974pt x 301.95168pt.
+ [20 <C:/Users/Tomasz Kryg/Desktop/projektInzynierskiMS/img/BookListProject.png
+
+
+pdfTeX warning: pdflatex (file C:/Users/Tomasz Kryg/Desktop/projektInzynierskiM
+S/img/BookListProject.png): large interlaced PNG might cause out of memory (use
+ non-interlaced PNG to fix this)
+>]
+Overfull \hbox (6.25021pt too wide) in paragraph at lines 373--373
 []\OT4/cmtt/m/n/12 extension BookListViewController: UIViewControllerPreviewing
 Delegate {[] 
  []
 
 
-Overfull \hbox (24.77522pt too wide) in paragraph at lines 347--347
+Overfull \hbox (24.77522pt too wide) in paragraph at lines 373--373
 []        \OT4/cmtt/m/n/12 viewControllerForLocation location: CGPoint) -> UIVi
 ewController?[] 
  []
 
 
-Overfull \hbox (6.25021pt too wide) in paragraph at lines 347--347
+Overfull \hbox (6.25021pt too wide) in paragraph at lines 373--373
 []        \OT4/cmtt/m/n/12 guard let indexPath = tableView.indexPathForRow(at: 
 location),[] 
  []
 
-[19]
-Overfull \hbox (8.6055pt too wide) in paragraph at lines 361--362
+[21] [22] <img/DetailsProject.png, id=103, 562.2606pt x 996.3624pt>
+File: img/DetailsProject.png Graphic file (type png)
+
+<use img/DetailsProject.png>
+Package pdftex.def Info: img/DetailsProject.png used on input line 422.
+(pdftex.def)             Requested size: 170.3974pt x 301.95168pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (8.6055pt too wide) in paragraph at lines 427--428
 []\OT4/cmr/m/n/12 Klasa []\OT4/cmtt/m/n/12 BookDetailsViewController \OT4/cmr/m
 /n/12 przed-sta-wia obiekt wi-do-ku in-for-ma-cji o ksi¡»-
  []
 
-[20] [21] [22] [23] [24] <img/ios1.PNG, id=102, 752.8125pt x 1339.0025pt>
-File: img/ios1.PNG Graphic file (type png)
+[23] [24 <C:/Users/Tomasz Kryg/Desktop/projektInzynierskiMS/img/DetailsProject.
+png
 
-<use img/ios1.PNG>
-Package pdftex.def Info: img/ios1.PNG used on input line 516.
-(pdftex.def)             Requested size: 170.40065pt x 303.08096pt.
- <img/ios3.PNG, id=103, 752.8125pt x 1339.0025pt>
-File: img/ios3.PNG Graphic file (type png)
+pdfTeX warning: pdflatex (file C:/Users/Tomasz Kryg/Desktop/projektInzynierskiM
+S/img/DetailsProject.png): large interlaced PNG might cause out of memory (use 
+non-interlaced PNG to fix this)
+>] [25] [26] <img/iOS/ios1.PNG, id=117, 752.8125pt x 1339.0025pt>
+File: img/iOS/ios1.PNG Graphic file (type png)
 
-<use img/ios3.PNG>
-Package pdftex.def Info: img/ios3.PNG used on input line 522.
+<use img/iOS/ios1.PNG>
+Package pdftex.def Info: img/iOS/ios1.PNG used on input line 523.
 (pdftex.def)             Requested size: 170.40065pt x 303.08096pt.
- [25 <C:/Users/Tomasz Kryg/Desktop/projektInzynierskiMS/img/ios1.PNG> <C:/Users
-/Tomasz Kryg/Desktop/projektInzynierskiMS/img/ios3.PNG>]
-<img/ios2.PNG, id=107, 752.8125pt x 1339.0025pt>
-File: img/ios2.PNG Graphic file (type png)
- <use img/ios2.PNG>
-Package pdftex.def Info: img/ios2.PNG used on input line 540.
-(pdftex.def)             Requested size: 170.3974pt x 303.08096pt.
- [26 <C:/Users/Tomasz Kryg/Desktop/projektInzynierskiMS/img/ios2.PNG>]
-<img/ios4.PNG, id=111, 752.8125pt x 1339.0025pt>
-File: img/ios4.PNG Graphic file (type png)
- <use img/ios4.PNG>
-Package pdftex.def Info: img/ios4.PNG used on input line 556.
-(pdftex.def)             Requested size: 170.40065pt x 303.08096pt.
+ <img/iOS/ios3.PNG, id=118, 752.8125pt x 1339.0025pt>
+File: img/iOS/ios3.PNG Graphic file (type png)
 
-<img/ios5.PNG, id=112, 752.8125pt x 1339.0025pt>
-File: img/ios5.PNG Graphic file (type png)
- <use img/ios5.PNG>
-Package pdftex.def Info: img/ios5.PNG used on input line 562.
+<use img/iOS/ios3.PNG>
+Package pdftex.def Info: img/iOS/ios3.PNG used on input line 529.
 (pdftex.def)             Requested size: 170.40065pt x 303.08096pt.
- [27 <C:/Users/Tomasz Kryg/Desktop/projektInzynierskiMS/img/ios4.PNG> <C:/Users
-/Tomasz Kryg/Desktop/projektInzynierskiMS/img/ios5.PNG>]
-<img/ios6.PNG, id=117, 752.8125pt x 1339.0025pt>
-File: img/ios6.PNG Graphic file (type png)
- <use img/ios6.PNG>
-Package pdftex.def Info: img/ios6.PNG used on input line 576.
+ [27] [28 <C:/Users/Tomasz Kryg/Desktop/projektInzynierskiMS/img/iOS/ios1.PNG> 
+<C:/Users/Tomasz Kryg/Desktop/projektInzynierskiMS/img/iOS/ios3.PNG>] <img/iOS/
+ios2.PNG, id=126, 752.8125pt x 1339.0025pt>
+File: img/iOS/ios2.PNG Graphic file (type png)
+
+<use img/iOS/ios2.PNG>
+Package pdftex.def Info: img/iOS/ios2.PNG used on input line 547.
+(pdftex.def)             Requested size: 170.3974pt x 303.08096pt.
+ [29 <C:/Users/Tomasz Kryg/Desktop/projektInzynierskiMS/img/iOS/ios2.PNG>] <img
+/iOS/ios4.PNG, id=130, 752.8125pt x 1339.0025pt>
+File: img/iOS/ios4.PNG Graphic file (type png)
+
+<use img/iOS/ios4.PNG>
+Package pdftex.def Info: img/iOS/ios4.PNG used on input line 563.
+(pdftex.def)             Requested size: 170.40065pt x 303.08096pt.
+ <img/iOS/ios5.PNG, id=131, 752.8125pt x 1339.0025pt>
+File: img/iOS/ios5.PNG Graphic file (type png)
+
+<use img/iOS/ios5.PNG>
+Package pdftex.def Info: img/iOS/ios5.PNG used on input line 569.
+(pdftex.def)             Requested size: 170.40065pt x 303.08096pt.
+ <img/iOS/ios6.PNG, id=132, 752.8125pt x 1339.0025pt>
+File: img/iOS/ios6.PNG Graphic file (type png)
+
+<use img/iOS/ios6.PNG>
+Package pdftex.def Info: img/iOS/ios6.PNG used on input line 583.
+(pdftex.def)             Requested size: 170.3974pt x 303.08096pt.
+ <img/iOS/ios7.PNG, id=133, 752.8125pt x 1339.0025pt>
+File: img/iOS/ios7.PNG Graphic file (type png)
+
+<use img/iOS/ios7.PNG>
+Package pdftex.def Info: img/iOS/ios7.PNG used on input line 584.
 (pdftex.def)             Requested size: 170.3974pt x 303.08096pt.
 
-<img/ios7.PNG, id=118, 752.8125pt x 1339.0025pt>
-File: img/ios7.PNG Graphic file (type png)
- <use img/ios7.PNG>
-Package pdftex.def Info: img/ios7.PNG used on input line 577.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[30 <C:/Users/Tomasz Kryg/Desktop/projektInzynierskiMS/img/iOS/ios4.PNG> <C:/Us
+ers/Tomasz Kryg/Desktop/projektInzynierskiMS/img/iOS/ios5.PNG>]
+<img/iOS/ios8.PNG, id=137, 752.8125pt x 1339.0025pt>
+File: img/iOS/ios8.PNG Graphic file (type png)
+ <use img/iOS/ios8.PNG>
+Package pdftex.def Info: img/iOS/ios8.PNG used on input line 599.
 (pdftex.def)             Requested size: 170.3974pt x 303.08096pt.
- [28 <C:/Users/Tomasz Kryg/Desktop/projektInzynierskiMS/img/ios6.PNG> <C:/Users
-/Tomasz Kryg/Desktop/projektInzynierskiMS/img/ios7.PNG>]
-<img/ios8.PNG, id=122, 752.8125pt x 1339.0025pt>
-File: img/ios8.PNG Graphic file (type png)
- <use img/ios8.PNG>
-Package pdftex.def Info: img/ios8.PNG used on input line 592.
-(pdftex.def)             Requested size: 170.3974pt x 303.08096pt.
- [29 <C:/Users/Tomasz Kryg/Desktop/projektInzynierskiMS/img/ios8.PNG>] [30] [31
-] [32]
-[33] [34] [35] [36] [37] [38]
-Underfull \hbox (badness 10000) in paragraph at lines 654--655
+
+[31 <C:/Users/Tomasz Kryg/Desktop/projektInzynierskiMS/img/iOS/ios6.PNG> <C:/Us
+ers/Tomasz Kryg/Desktop/projektInzynierskiMS/img/iOS/ios7.PNG>] [32 <C:/Users/T
+omasz Kryg/Desktop/projektInzynierskiMS/img/iOS/ios8.PNG>] [33] [34]
+Underfull \hbox (badness 10000) in paragraph at lines 620--621
 []\OT4/cmr/m/n/12 http://www.bn.org.pl/aktualnosci/1338-czytelnictwo-polakow-20
 16-
  []
 
-[39] ("C:\Users\Tomasz Kryg\Desktop\projektInzynierskiMS\przykladInz-utf8.aux")
+[35] ("C:\Users\Tomasz Kryg\Desktop\projektInzynierskiMS\przykladInz-utf8.aux")
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 2477 strings out of 495309
- 31400 string characters out of 3181739
- 88264 words of memory out of 3000000
- 5622 multiletter control sequences out of 15000+200000
+ 2501 strings out of 495309
+ 32085 string characters out of 3181739
+ 88031 words of memory out of 3000000
+ 5640 multiletter control sequences out of 15000+200000
  16749 words of font info for 44 fonts, out of 3000000 for 9000
  34 hyphenation exceptions out of 8191
  27i,12n,24p,1292b,284s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -584,9 +660,9 @@ s/type1/public/pl/plsl12.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/pub
 lic/pl/plss17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plss
 bx10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb><C
 :/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/pltt12.pfb>
-Output written on przykladInz-utf8.pdf (43 pages, 808281 bytes).
+Output written on przykladInz-utf8.pdf (39 pages, 1498054 bytes).
 PDF statistics:
- 201 PDF objects out of 1000 (max. 8388607)
+ 197 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 61 words of extra memory for PDF output out of 10000 (max. 10000000)
 

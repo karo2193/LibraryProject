@@ -4,24 +4,19 @@
 \contentsline {subsection}{\numberline {1.2}\kernsubsekcyjny Wymagania systemowe}{9}
 \contentsline {subsection}{\numberline {1.3}\kernsubsekcyjny Model danych}{10}
 \contentsline {subsection}{\numberline {1.4}\kernsubsekcyjny Realizacja projektu}{11}
-\contentsline {subsubsection}{\numberline {1.4.1}\kernsubsubsekcyjny Zarz\IeC {\k a}dzanie widokami}{12}
-\contentsline {subsubsection}{\numberline {1.4.2}\kernsubsubsekcyjny MainViewController}{13}
-\contentsline {subsubsection}{\numberline {1.4.3}\kernsubsubsekcyjny SearchViewController}{13}
-\contentsline {subsubsection}{\numberline {1.4.4}\kernsubsubsekcyjny CategoriesViewController}{15}
-\contentsline {subsubsection}{\numberline {1.4.5}\kernsubsubsekcyjny BookListViewController}{18}
-\contentsline {subsubsection}{\numberline {1.4.6}\kernsubsubsekcyjny BookDetailsViewController}{20}
-\contentsline {subsubsection}{\numberline {1.4.7}\kernsubsubsekcyjny SessionManager}{21}
-\contentsline {subsubsection}{\numberline {1.4.8}\kernsubsubsekcyjny RequestManager}{22}
-\contentsline {subsection}{\numberline {1.5}\kernsubsekcyjny Wykorzystane biblioteki}{23}
-\contentsline {subsubsection}{\numberline {1.5.1}\kernsubsubsekcyjny R.swift}{23}
-\contentsline {subsubsection}{\numberline {1.5.2}\kernsubsubsekcyjny UIEmptyState}{23}
-\contentsline {subsection}{\numberline {1.6}\kernsubsekcyjny Interfejs u\IeC {\.z}ytkownika}{24}
-\contentsline {subsubsection}{\numberline {1.6.1}\kernsubsubsekcyjny Wyszukiwarka ksi\IeC {\k a}\IeC {\.z}ek}{25}
-\contentsline {subsubsection}{\numberline {1.6.2}\kernsubsubsekcyjny Wyb\IeC {\'o}r kategorii}{26}
-\contentsline {subsubsection}{\numberline {1.6.3}\kernsubsubsekcyjny Wyniki wyszukiwania}{27}
-\contentsline {subsubsection}{\numberline {1.6.4}\kernsubsubsekcyjny Detale ksi\IeC {\k a}\IeC {\.z}ki}{29}
-\contentsline {section}{\numberline {2}\kernsekcyjny Zako\IeC {\'n}czenie}{31}
-\contentsline {section}{Dodatek: M\IeC {\'o}j specjalny dodatek}{33}
-\contentsline {section}{Rysunki}{35}
-\contentsline {section}{Programy}{37}
-\contentsline {section}{Literatura}{39}
+\contentsline {subsubsection}{\numberline {1.4.1}\kernsubsubsekcyjny Biblioteka R.swift}{12}
+\contentsline {subsubsection}{\numberline {1.4.2}\kernsubsubsekcyjny Zarz\IeC {\k a}dzanie widokami}{13}
+\contentsline {subsubsection}{\numberline {1.4.3}\kernsubsubsekcyjny MainViewController}{14}
+\contentsline {subsubsection}{\numberline {1.4.4}\kernsubsubsekcyjny SearchViewController}{14}
+\contentsline {subsubsection}{\numberline {1.4.5}\kernsubsubsekcyjny CategoriesViewController}{16}
+\contentsline {subsubsection}{\numberline {1.4.6}\kernsubsubsekcyjny BookListViewController}{20}
+\contentsline {subsubsection}{\numberline {1.4.7}\kernsubsubsekcyjny BookDetailsViewController}{24}
+\contentsline {subsubsection}{\numberline {1.4.8}\kernsubsubsekcyjny SessionManager}{25}
+\contentsline {subsubsection}{\numberline {1.4.9}\kernsubsubsekcyjny RequestManager}{26}
+\contentsline {subsection}{\numberline {1.5}\kernsubsekcyjny Interfejs u\IeC {\.z}ytkownika}{27}
+\contentsline {subsubsection}{\numberline {1.5.1}\kernsubsubsekcyjny Wyszukiwarka ksi\IeC {\k a}\IeC {\.z}ek}{27}
+\contentsline {subsubsection}{\numberline {1.5.2}\kernsubsubsekcyjny Wyb\IeC {\'o}r kategorii}{29}
+\contentsline {subsubsection}{\numberline {1.5.3}\kernsubsubsekcyjny Wyniki wyszukiwania}{30}
+\contentsline {subsubsection}{\numberline {1.5.4}\kernsubsubsekcyjny Szczeg\IeC {\'o}\IeC {\l }y ksi\IeC {\k a}\IeC {\.z}ki}{31}
+\contentsline {section}{\numberline {2}\kernsekcyjny Zako\IeC {\'n}czenie}{33}
+\contentsline {section}{Literatura}{35}
