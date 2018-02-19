@@ -1,0 +1,42 @@
+\contentsline {section}{Wst\k ep}{7}{section*.4}
+\contentsline {section}{\numberline {1}\kernsekcyjny Aplikacja na system Android}{9}{section.1}
+\contentsline {subsection}{\numberline {1.1}\kernsubsekcyjny Wykorzystane narz\IeC {\k e}dzie}{9}{subsection.1.1}
+\contentsline {subsection}{\numberline {1.2}\kernsubsekcyjny Wymagania systemowe}{9}{subsection.1.2}
+\contentsline {subsection}{\numberline {1.3}\kernsubsekcyjny Model danych}{9}{subsection.1.3}
+\contentsline {subsection}{\numberline {1.4}\kernsubsekcyjny Realizacja projektu}{11}{subsection.1.4}
+\contentsline {subsubsection}{\numberline {1.4.1}\kernsubsubsekcyjny ModelViewPresenter}{12}{subsubsection.1.4.1}
+\contentsline {subsubsection}{\numberline {1.4.2}\kernsubsubsekcyjny Pobieranie i wysy\IeC {\l }anie danych}{13}{subsubsection.1.4.2}
+\contentsline {subsubsection}{\numberline {1.4.3}\kernsubsubsekcyjny Zarz\IeC {\k a}dzanie widokami}{14}{subsubsection.1.4.3}
+\contentsline {subsubsection}{\numberline {1.4.4}\kernsubsubsekcyjny BaseActivity}{15}{subsubsection.1.4.4}
+\contentsline {subsubsection}{\numberline {1.4.5}\kernsubsubsekcyjny MainActivity}{15}{subsubsection.1.4.5}
+\contentsline {subsubsection}{\numberline {1.4.6}\kernsubsubsekcyjny SearchActivity}{16}{subsubsection.1.4.6}
+\contentsline {subsubsection}{\numberline {1.4.7}\kernsubsubsekcyjny CategoryActivity}{18}{subsubsection.1.4.7}
+\contentsline {subsubsection}{\numberline {1.4.8}\kernsubsubsekcyjny BookActivity}{20}{subsubsection.1.4.8}
+\contentsline {subsubsection}{\numberline {1.4.9}\kernsubsubsekcyjny BookDetailsActivity}{23}{subsubsection.1.4.9}
+\contentsline {subsection}{\numberline {1.5}\kernsubsekcyjny Interfejs u\IeC {\.z}ytkownika}{23}{subsection.1.5}
+\contentsline {subsection}{\numberline {1.6}\kernsubsekcyjny Splash screen}{24}{subsection.1.6}
+\contentsline {subsubsection}{\numberline {1.6.1}\kernsubsubsekcyjny Wyszukiwarka ksi\IeC {\k a}\IeC {\.z}ek}{24}{subsubsection.1.6.1}
+\contentsline {subsubsection}{\numberline {1.6.2}\kernsubsubsekcyjny Wyb\IeC {\'o}r kategorii}{25}{subsubsection.1.6.2}
+\contentsline {subsubsection}{\numberline {1.6.3}\kernsubsubsekcyjny Wyniki wyszukiwania}{27}{subsubsection.1.6.3}
+\contentsline {subsubsection}{\numberline {1.6.4}\kernsubsubsekcyjny Szczeg\IeC {\'o}\IeC {\l }y ksi\IeC {\k a}\IeC {\.z}ki}{28}{subsubsection.1.6.4}
+\contentsline {section}{\numberline {2}\kernsekcyjny Aplikacja na system iOS}{29}{section.2}
+\contentsline {subsection}{\numberline {2.1}\kernsubsekcyjny Wykorzystane narz\IeC {\k e}dzia}{29}{subsection.2.1}
+\contentsline {subsection}{\numberline {2.2}\kernsubsekcyjny Wymagania systemowe}{30}{subsection.2.2}
+\contentsline {subsection}{\numberline {2.3}\kernsubsekcyjny Model danych}{31}{subsection.2.3}
+\contentsline {subsection}{\numberline {2.4}\kernsubsekcyjny Realizacja projektu}{32}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}\kernsubsubsekcyjny Biblioteka R.swift}{33}{subsubsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}\kernsubsubsekcyjny Zarz\IeC {\k a}dzanie widokami}{33}{subsubsection.2.4.2}
+\contentsline {subsubsection}{\numberline {2.4.3}\kernsubsubsekcyjny MainViewController}{34}{subsubsection.2.4.3}
+\contentsline {subsubsection}{\numberline {2.4.4}\kernsubsubsekcyjny SearchViewController}{34}{subsubsection.2.4.4}
+\contentsline {subsubsection}{\numberline {2.4.5}\kernsubsubsekcyjny CategoriesViewController}{37}{subsubsection.2.4.5}
+\contentsline {subsubsection}{\numberline {2.4.6}\kernsubsubsekcyjny BookListViewController}{40}{subsubsection.2.4.6}
+\contentsline {subsubsection}{\numberline {2.4.7}\kernsubsubsekcyjny BookDetailsViewController}{44}{subsubsection.2.4.7}
+\contentsline {subsubsection}{\numberline {2.4.8}\kernsubsubsekcyjny SessionManager}{45}{subsubsection.2.4.8}
+\contentsline {subsubsection}{\numberline {2.4.9}\kernsubsubsekcyjny RequestManager}{46}{subsubsection.2.4.9}
+\contentsline {subsection}{\numberline {2.5}\kernsubsekcyjny Interfejs u\IeC {\.z}ytkownika}{47}{subsection.2.5}
+\contentsline {subsubsection}{\numberline {2.5.1}\kernsubsubsekcyjny Wyszukiwarka ksi\IeC {\k a}\IeC {\.z}ek}{48}{subsubsection.2.5.1}
+\contentsline {subsubsection}{\numberline {2.5.2}\kernsubsubsekcyjny Wyb\IeC {\'o}r kategorii}{49}{subsubsection.2.5.2}
+\contentsline {subsubsection}{\numberline {2.5.3}\kernsubsubsekcyjny Wyniki wyszukiwania}{50}{subsubsection.2.5.3}
+\contentsline {subsubsection}{\numberline {2.5.4}\kernsubsubsekcyjny Szczeg\IeC {\'o}\IeC {\l }y ksi\IeC {\k a}\IeC {\.z}ki}{52}{subsubsection.2.5.4}
+\contentsline {section}{\numberline {3}\kernsekcyjny Zako\IeC {\'n}czenie}{53}{section.3}
+\contentsline {section}{Literatura}{55}{section*.5}
