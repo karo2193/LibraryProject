@@ -1,0 +1,196 @@
+G_00		ALGEBRA
+G_00-S_00	algebra matematyczna
+G_00-S_01	algebra homologiczna
+G_00-S_02	algebra liniowa
+G_00-S_03	algebry Banacha
+G_00-S_04	algebry Boole’a
+G_00-S_05	geometria w algebrze (geometria algebraiczna)
+G_00-S_06	grupy topologiczne, grupy i algebry Lie’go
+G_00-S_07	kombinatoryka
+G_00-S_08	K-teoria
+G_00-S_09	liczby zespolone
+G_00-S_10	półgrupy
+G_00-S_11	teoria ciał i wielomianów
+G_00-S_12	teoria grafów
+G_00-S_13	teoria grup
+G_00-S_14	teoria kategorii i funktorów
+G_00-S_15	teoria krat
+G_00-S_16	teoria liczb, arytmetyka, stałe, liczby pierwsze
+G_00-S_17	teoria macierzy
+G_00-S_18	teoria pierścieni
+G_00-S_19	wektory i tensory
+G_00-S_20	teoria Galios
+G_00-S_21	algebry uniwersalne, algebry abstrakcyjne
+G_00-S_22	rozmaitości
+G_01		ANALIZA
+G_01-S_00	analiza matematyczna
+G_01-S_01	analiza Fouriera
+G_01-S_02	analiza funkcjonalna
+G_01-S_03	analiza harmoniczna
+G_01-S_04	analiza zespolona i twierdzenie podstawowe Cauchy’ego
+G_01-S_05	ciągi, szeregi
+G_01-S_06	funkcje analityczne
+G_01-S_07	funkcje specjalne
+G_01-S_08	funkcje wielu zmiennych zespolonych i przestrzenie analityczne
+G_01-S_09	funkcje zmiennej zespolonej
+G_01-S_10	optymalizacja
+G_01-S_11	rachunek operatorowy, transformacje całkowe
+G_01-S_12	rachunek różniczkowy i całkowy
+G_01-S_13	rachunek wariacyjny
+G_01-S_14	równania całkowe
+G_01-S_15	równania funkcyjne i różnicowe
+G_01-S_16	równania różniczkowe cząstkowe
+G_01-S_17	równania różniczkowe zwyczajne
+G_01-S_18	równania różniczkowe, nierówności różniczkowe
+G_01-S_19	teoria aproksymacji, MES (FEM), splajny
+G_01-S_20	teoria funkcji rzeczywistych
+G_01-S_21	teoria miary i całkowania
+G_01-S_22	teoria operatorów
+G_01-S_23	teoria potencjału
+G_01-S_24	teoria układów dynamicznych i ergodyczności
+G_01-S_25	stabilność
+G_01-S_26	ułamki łañcuchowe
+G_01-S_27	bifurkacja
+G_02		BADANIA OKOŁOMATEMATYCZNE
+G_02-S_00	badania ogólne, filozofia matematyki, rozrywka matematyczna
+G_02-S_01	historia matematyki, biografie matematyków
+G_03		FRAKTALE, FALKI
+G_04		FOTOGRAFIA
+G_05		GEOMETRIA
+G_05-S_00	geometria
+G_05-S_01	geometria analityczna
+G_05-S_02	geometria różniczkowa
+G_05-S_03	geometryczne pojêcie wypukłości, wielotopy, geometria dyskretna
+G_05-S_04	geometria nieuklidesowa
+G_06		KOMPUTER BEZ TAJEMNIC
+G_06-S_00	informatyka kwantowa
+G_06-S_01	komputer bez tajemnic
+G_06-S_02	składanie tekstu
+G_07		LEKSYKONY, TABLICE, PORADNIKI, HANDBOOKI
+G_08		LOGIKA
+G_08-S_00	logika
+G_08-S_01	logika algebraiczna
+G_08-S_02	niestandardowe modele
+G_08-S_03	teoria dowodu, matematyka konstruktywna, metamatematyka
+G_08-S_04	teoria mnogości
+G_08-S_05	teoria modeli
+G_08-S_06	teoria obliczeñ, teoria rekursji
+G_09		MATEMATYKA DYSKRETNA
+G_10		MATEMATYKA KONKRETNA
+G_11		MATEMATYKA STOSOWANA
+G_11-S_00	algorytmy
+G_11-S_01	algorytmy genetyczne, heurystyczne, ewolucyjne
+G_11-S_02	analiza numeryczna, metody numeryczne
+G_11-S_03	badania operacyjne
+G_11-S_04	biomatematyka, matematyka w innych naukach przyrodniczych
+G_11-S_05	edukacja matematyczna
+G_11-S_06	ekonometria
+G_11-S_07	ekonomia – nauka społeczna
+G_11-S_08	fizyka matematyczna
+G_11-S_09	geometria wykreślna
+G_11-S_10	informatyka matematyczna
+G_11-S_11	kompresja
+G_11-S_12	kryptografia
+G_11-S_13	matematyka finansowa
+G_11-S_14	matematyka stosowana
+G_11-S_15	matematyka w naukach ekonomicznych
+G_11-S_16	mechanika ciał deformowalnych
+G_11-S_17	mechanika cząstek i układów
+G_11-S_18	mechanika kwantowa
+G_11-S_19	mechanika statystyczna, budowa materii
+G_11-S_20	programowanie matematyczne
+G_11-S_21	rachunek wyrównawczy
+G_11-S_22	teoria gier
+G_11-S_23	teoria informacji
+G_11-S_24	teoria kodowania
+G_11-S_25	teoria obliczeñ
+G_11-S_26	teoria sygnałów
+G_11-S_27	teoria systemów, teoria sterowania
+G_11-S_28	teoria wzglêdności
+G_11-S_29	teoria złożoności
+G_11-S_30	zastosowania matematyki w mechanice płynów
+G_11-S_31	zastosowania matematyki w optyce, elektromagnetyzmie, elektryce
+G_11-S_32	zastosowania matematyki w termodynamice, termokinetyce
+G_11-S_33	zbiory rozmyte
+G_11-S_34	teoria błêdów
+G_11-S_35	kartografia matematyczna
+G_12		MODELOWANIE MATEMATYCZNE
+G_13		PODSTAWY MATEMATYKI
+G_14		PROGRAMOWANIE / PROJEKTOWANIE W INFORMATYCE
+G_14-S_00	Android
+G_14-S_01	Arduino
+G_14-S_02	C / C++
+G_14-S_03	C#
+G_14-S_04	Clipper
+G_14-S_05	Corel, Autocad, grafika komputerowa
+G_14-S_06	CSS
+G_14-S_07	Delphi
+G_14-S_08	DOS, Norton, Windows, Outlook, Sieci, Linux, systemy operacyjne
+G_14-S_09	Excel, Access
+G_14-S_10	Fortran
+G_14-S_11	HTML
+G_14-S_12	Java
+G_14-S_13	JavaScript
+G_14-S_14	Assembler
+G_14-S_15	LaTeX
+G_14-S_16	Mathematica
+G_14-S_17	MATLAB, Mathcad, Maple
+G_14-S_18	Pascal, Turbo Pascal, Borland Pascal
+G_14-S_19	Perl
+G_14-S_20	PHP
+G_14-S_21	PowerPoint
+G_14-S_22	SQL
+G_14-S_23	Statgraphic
+G_14-S_24	Statistica
+G_14-S_25	Word, Works, Word Perfect, Open Office, EXCEL
+G_14-S_26	CMS
+G_14-S_27	strony internetowe
+G_14-S_28	inżynieria oprogramowania
+G_14-S_29	bazy danych
+G_14-S_30	Basic
+G_14-S_31	PostScript
+G_14-S_32	programowanie obiektowe
+G_14-S_33	programowanie wizualne
+G_15		RACHUNEK PRAWDOPODOBIEÑSTWA I STATYSTYKA
+G_15-S_00	analiza danych
+G_15-S_01	analiza danych wielowymiarowych
+G_15-S_02	analiza przeżycia
+G_15-S_03	metody graficzne statystyki
+G_15-S_04	metody liniowe statystyki
+G_15-S_05	modelowanie statystyczne
+G_15-S_06	procesy stochastyczne, teoria obsługi masowej
+G_15-S_07	projektowanie eksperymentalne
+G_15-S_08	rachunek prawdopodobieñstwa
+G_15-S_09	rozkłady prawdopodobieñstwa
+G_15-S_10	statystyka
+G_15-S_11	statystyka nieparametryczna
+G_15-S_12	teoria decyzji
+G_15-S_13	teoria estymacji
+G_15-S_14	wnioskowanie z procesów stochastycznych
+G_15-S_15	zastosowania statystyki
+G_16		SIECI NEURONOWE
+G_17		SŁOWNIKI / GRAMATYKA, SŁOWNICTWO
+G_18		SZTUCZNA INTELIGENCJA
+G_19		TEORIA AUTOMATÓW
+G_20		TEORIA CHAOSU, TEORIA KATASTROF
+G_21		TEORIA PUNKTÓW STAŁYCH
+G_22		TOPOLOGIA
+G_22-S_00	topologia ogólna
+G_22-S_01	topologia algebraiczna, teoria homologii, teoria homotopii
+G_22-S_02	rozmaitości topologiczne i kompleksy komórkowe, teoria wêzłów
+G_22-S_03	topologia – różne
+G_23		ENCYKLOPEDIE
+G_24		KONFERENCJE, SEMINARIA, ZEBRANE MATERIAŁY, ARTYKUŁY
+G_25		TRYGONOMETRIA
+G_26		PRZESTRZEÑ METRYCZNA
+G_27 		NIEZMIENNIKI
+G_28		KRZYWE ELIPTYCZNE
+G_29		INFORMATYKA
+G_29-S_00	zarządzanie pamiêcią, struktury danych
+G_29-S_01	bezpieczeñstwo, wirusy
+G_29-S_02	przetwarzanie obrazów
+G_29-S_03	poczta elektroniczna
+G_29-S_04	Photoshop
+G_29-S_05	Internet
+G_29-S_06	liczby losowe
+G_29-S_07	wirtualna rzeczywistość
