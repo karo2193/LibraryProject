@@ -49,21 +49,21 @@ Każde przeczytane słowo pozwala poszerzyć zdolności językowe.
 
 W dzisiejszych czasach, książki są coraz częściej pomijane kosztem innych rozrywek, takich jak gry komputerowe, kino czy telewizja, które z roku na rok wypychają książkę na dalszy plan. Jak wynika z raportu Biblioteki Narodowej \cite{raportBN}, w roku $2016$ jedynie $37\%$ Polaków przeczytało choć jedną książkę. Mogłoby się więc wydawać, że wchodzenie na rynek książek nie jest najlepszym pomysłem. Jednak istnieją książki, które posiadają często wiadomości niezmienne i nie służą rozrywce, a przede wszystkim pozyskiwaniu wiedzy. Są to między innymi książki z działów ścisłych dotyczących bezpośrednio matematyki. Przykładowo ciąg Fibonacciego omówiony w roku $1202$ przez Leonarda z Pizy, do dziś został opisany i wykorzystany w wielu książkach związanych z~różnorodnymi dziedzinami. Z przytoczonego przykładu wynika, że książki dotyczące matematyki czy też fizyki, bardzo często zawierają dużo wiedzy, nawet w czasach współczesnych. Wszystko ewoluuje, jednak prawa natury pozostają niezmienne.
 
-Współcześnie doszliśmy do punktu, w którym książka zaczyna mieć znaczenie przede wszystkim edukacyjne. Na uczelniach całego świata, książki są synonimem wiedzy, ponieważ bardzo często profesorzy i doktorzy kształcili się za pomocą takich samych (lub być może tych samych) materiałów co ich dzisiejsi uczniowie. Z tego powodu biblioteki -- szczególnie na początku semestru -- muszą zmagać się z dużymi ilościami studentów, chcącymi poszukać potrzebnych im książek oraz sprawdzić ich ilość i dostępność, aby później je wypożyczyć. Najczęściej staje się to problemem dla pracowników biblioteki jak i dla studentów. Bibliotekarze są przez to bardzo zabiegani, natomiast uczniowie są zdenerwowani sporymi kolejkami, w których czekają często tylko po to, by zadać pytanie.
+Współcześnie doszliśmy do punktu, w którym książka zaczyna mieć znaczenie przede wszystkim edukacyjne. Na uczelniach całego świata, książki są synonimem wiedzy, ponieważ bardzo często profesorzy i doktorzy kształcili się za pomocą takich samych materiałów co ich dzisiejsi uczniowie. Z tego powodu biblioteki -- szczególnie na początku semestru -- muszą zmagać się z dużymi ilościami studentów, chcącymi poszukać potrzebnych im książek oraz sprawdzić ich ilość i dostępność, aby później je wypożyczyć. Jest to problem zarówno dla pracowników biblioteki jak i dla studentów. Bibliotekarze są zajęci sprawdzaniem tych samych informacji dla każdego studenta z osobna. Natomiast uczniowie są zdenerwowani sporymi kolejkami i tłumem ludzi, który zniechęca do odwiedzania bibliotek.
 
-Skupiając się na książkach naukowych i na własnym doświadczeniu uczelnianym, gdzie wypożyczanie książek związanych z matematyką jest czymś powszechnym, postanowiliśmy stworzyć system dla Biblioteki Wydziału Matematyki Stosowanej na Politechnice Śląskiej w Gliwicach. Głównym celem takiego systemu byłoby posiadanie informacji o zbiorach biblioteki wydziałowej i łatwe udostępnianie ich studentom. Podstawą byłby prosty interfejs dla administratora uzupełniającego pozycje książek w systemie, jak i dla studenta chcącego szybko sprawdzić dostępność wybranej książki w bibliotece bez potrzeby wychodzenia z domu.
+Skupiając się na książkach naukowych i na własnym doświadczeniu uczelnianym, postanowiliśmy stworzyć system dla Biblioteki Wydziału Matematyki Stosowanej na Politechnice Śląskiej w Gliwicach. Głównym celem systemu jest posiadanie informacji o zbiorach biblioteki wydziałowej i łatwe udostępnianie ich studentom. Podstawą jest prosty interfejs dla administratora uzupełniającego pozycje książek w systemie, jak i dla studenta chcącego szybko sprawdzić dostępność wybranej książki w bibliotece bez potrzeby wychodzenia z domu.
 
-Jednym z typów aplikacji byłaby aplikacja webowa. Musiałaby zapewnić administratorowi pracującemu w bibliotece prostą obsługę bazy danych.
+Jednym z typów aplikacji będzie aplikacja webowa. Powinna zapewnić administratorowi pracującemu w bibliotece prostą obsługę bazy danych. Szybkie katalogowanie dostępnych woluminów oraz aktualizowanie informacji na temat dostępności.
 
 Drugim typem aplikacji obsługujących bibliotekę będą aplikacje na smartfony. Zostaną stworzone dwie aplikacje mobilne, każda na oddzielny system: Android oraz iOS w celu poszerzenia grupy odbiorców na wydziale. Pozwolą one na przeszukanie biblioteki pod względem dowolnej szukanej frazy oraz dostarczą informacji o~wszystkich książkach i ich dostępności w bibliotece.
 
 \section{Aplikacja serwerowa}
-Aplikacja sewerowa LibraryApp, stanowi backend systemu bibliotecznego oraz zapewnia narzędzia dla bibliotekarza i administratora systemu, pozwalające na zarządzanie aplikacją. Głównymi zadaniami tej aplikacji są:
+Aplikacja serwerowa LibraryApp, stanowi backend systemu bibliotecznego oraz zapewnia narzędzia dla bibliotekarza i administratora systemu, pozwalające na zarządzanie aplikacją. Głównymi zadaniami tej aplikacji są:
 \begin{itemize}
 	\item zarządzanie użytkownikami i~ich uprawnienami,
 	\item zarządzanie bazą danych,
 	\item zarządzanie informacją na temat woluminów biblioteki wydziałowej poprzez panel administracyjny,
-	\item integracja aplikacji mobilnych poprzez usługe, dającą dostep do informacji w~bazie danych.
+	\item integracja aplikacji mobilnych poprzez usługę, dającą dostęp do informacji znajdujących się w~bazie danych.
 \end{itemize}
 
 \subsection{Użyte frameworki}
@@ -76,7 +76,7 @@ Do stworzenia aplikacji został wykorzystany \textit{Django}. Framework ten dost
 	\item narzędzie do tworzenia serwisów webowych - \textit{Django REST framework} \cite{DjangoRest},
 	\item wsparcie dla wielojęzycznych aplikacji (w tym język polski) \cite{DjangoTranslation},
 \end{itemize}
-które kompletnie pokrywają potrzeby aplikacji LibraryApp. Oprócz tego, jak można przeczytać na oficjalnej stronie \textit{Django} \cite{DjangoOfficial}, framework jest zaprojektowany~w taki sposób, aby robić częste zadania web-deweloperskie szybko i prosto. W praktyce oznacza to, że powstaje mało kodu aplikacji, dzięki czemu będzie on łatwiejszy do zrozumienia i modyfikowania. Obszerna i aktualna dokumentacja, dostepna na stronie projektu oraz duża społeczność korzystająca z \textit{Django} sprawia, że rozwój aplikacji jest łatwiejszy.
+które kompletnie pokrywają potrzeby aplikacji LibraryApp. Oprócz tego, jak można przeczytać na oficjalnej stronie \textit{Django} \cite{DjangoOfficial}, framework jest zaprojektowany~w taki sposób, aby robić częste zadania web-deweloperskie szybko i prosto. W praktyce oznacza to, że powstaje mało kodu aplikacji, dzięki czemu będzie on łatwiejszy do zrozumienia i modyfikowania. Obszerna i aktualna dokumentacja, dostępna na stronie projektu oraz duża społeczność korzystająca z \textit{Django} sprawia, że rozwój aplikacji jest łatwiejszy.
 
 \subsubsection{Modele Django}
 W \textit{Django} modele danych definiuje się jako klasy Python, które dziedziczą po \verb`django.db.models.Model` \cite{DjangoModel}. Na podstawie takiej klasy \textit{Django} automatycznie generuje tabele w bazie danych, każdy atrybut modelu reprezentuje pole w tabeli. Przykładowo, z modelu zdefniowanego w ten sposób:
@@ -119,27 +119,27 @@ Model ten został zaprojektowany na podstawie zakładki 'KSIAZKA' w arkuszu \ver
 	\item \verb`responsibility`, \\
 		typu: \verb`TextField`, \\
 		odpowiada danym z kolumny: OZN\_OPDOW,
-	\item \verb`title` \\
+	\item \verb`title`, \\
 		typu: \verb`CharField`, \\
 		odpowiada danym z kolumny: TYTUL,
-	\item \verb`volume` \\
+	\item \verb`volume`, \\
 		typu: \verb`CharField`, \\
 		odpowiada danym z kolumny: TOM,
-	\item \verb`year`\\
+	\item \verb`year`,\\
 		typu: \verb`IntegerField`, \\
 		odpowiada danym z kolumny: ROK,
-	\item \verb`isbn_issn` \\
+	\item \verb`isbn_issn`, \\
 		typu: \verb`CharField`, \\
 		odpowiada danym z kolumny: ISBN/ISSN,
-	\item \verb`type` \\
+	\item \verb`type`, \\
 		typu: \verb`CharField`, \\
 		odpowiada danym z kolumny: TYP, \\
-		przyjmuje wartości: \verb`'podręcznik'', \verb`'inny'`, \verb`'zbiór zadań'`,
-	\item \verb`availability` \\
+		przyjmuje wartości: \verb`'podręcznik'`, \verb`'inny'`, \verb`'zbiór zadań'`,
+	\item \verb`availability`, \\
 		typu: \verb`CharField`, \\
 		odpowiada danym z kolumny DOSTEPNOSC, \\
 		przyjmuje wartości: \verb`'dostępna'`, \verb`'wypożyczona'`, \verb`'czytelnia'`.
-	\item \verb`categories` \\
+	\item \verb`categories`, \\
 		typu: \verb`ManyToManyField`, \\
 		odpowiada danym z zakładki PRZYPISANIE\_KATEGORII.
 \end{itemize}
@@ -164,8 +164,8 @@ Oprócz modeli opracowanych na podstawie dostarczonych danych, zostały zaprojek
 
 \subsubsection{Klasa CategoryTree}
 
-Ze względu na wymagania opisane w punktach \textit{10 Kategoria główna} i \textit{11 kategoria szczegółowa}, dokumentu \verb`BIBLIOTEKA-program.docx`, dotyczące podziału kategorii na "kategoria główna" i "kategoria szczegółowa", została zaimplementowana klasa która przedstawia tę relację między kategoriami. Kategoria główna to taka, której id jest postaci "\verb`G_x`", gdzie \verb`x` to ciąg cyfr, na przykład \textbf{G\_00:ALGEBRA}.
- Kategoria główna może mieć kategorie szczegółowe, których id jest postaci "\verb`G_x-S_y`", gdzie \verb`x` i \verb`y` to ciągi cyfr, część znajdująca się przed "\verb`-`" to id kategori głownej. Zatem kategoria \textbf{G\_00-S\_04:algebry Boole’a}, jest kategorią szczegółową kategori \textbf{G\_00:ALGEBRA}. 
+Ze względu na wymagania opisane w punktach \textit{10 Kategoria główna} i \textit{11 kategoria szczegółowa}, dokumentu \verb`BIBLIOTEKA-program.docx`, dotyczące podziału kategorii na ,,kategoria główna'' i "kategoria szczegółowa", została zaimplementowana klasa, która przedstawia tę relację między kategoriami. Kategoria główna to taka, której id jest postaci "\verb`G_x`", gdzie \verb`x` to ciąg cyfr, na przykład \textbf{G\_00:ALGEBRA}.
+ Kategoria główna może mieć kategorie szczegółowe, których id jest postaci "\verb`G_x-S_y`", gdzie \verb`x` i \verb`y` to ciągi cyfr, część znajdująca się przed "\verb`-`" to id kategorii głównej. Zatem kategoria \textbf{G\_00-S\_04:algebry Boole’a}, jest kategorią szczegółową kategorii \textbf{G\_00:ALGEBRA}. 
  
 Klasa \verb`CategoryTree` składa się z pól:
 \begin{itemize}
@@ -196,10 +196,10 @@ Przykład:
 \end{verbatim}
 
 \subsubsection{Klasa Dictionary}
-W celu dostarczenia do aplikacji mobilnych informacji o wartościach jakie mogą przyjmować niektóre pola w bazie danych oraz ułatwić w przyszłości modyfikowanie zakresu tych wartości, została zaimplementowana klasa \verb`Dictionary`. Obiekt tej klasy zawiera składa się z pól:
+W celu dostarczenia do aplikacji mobilnych informacji o wartościach jakie mogą przyjmować niektóre pola w bazie danych oraz ułatwić w przyszłości modyfikowanie zakresu tych wartości, została zaimplementowana klasa \verb`Dictionary`. Obiekt tej klasy składa się z pól:
 \begin{itemize}
-	\item \verb`types`, tablica zawierająca wartości jakie może przyjać pole \verb`Book.types`,
-	\item \verb`availability_types`, tablica zawierająca wartości jakie może przyjać pole \verb`Book.availability`.
+	\item \verb`types`, tablica zawierająca wartości jakie może przyjąć pole \verb`Book.types`,
+	\item \verb`availability_types`, tablica zawierająca wartości jakie może przyjąć pole \verb`Book.availability`.
 \end{itemize}
 
 
@@ -221,7 +221,7 @@ W celu dostarczenia do aplikacji mobilnych informacji o wartościach jakie mogą
 \subsubsection{Klasa query}
 Obiekt klasy \verb`query` definiuje kryteria, według których, serwis zwróci książki. Klasa \verb`query` składa się z pól:
 \begin{itemize}
-	\item \verb`filters` - Obiekt definiujący filtry pól książek. Pola obiektu \verb`filters` są opcjonalne. Aby otrzymać książki których tytuł jest równy pewnej wartości, obiekt \verb`filters` należy zdefiniować w następujący sposób:
+	\item \verb`filters` - obiekt definiujący filtry pól książek. Pola obiektu \verb`filters` są opcjonalne. Aby otrzymać książki, których tytuł jest równy pewnej wartości, obiekt \verb`filters` należy zdefiniować w następujący sposób:
 	
 	\begin{verbatim}
 	"filters":{
@@ -428,7 +428,7 @@ w rezultacie, powinien się pojawić folder library w obecnej lokalizacji. Nale�
 
 \subsubsection{Konfiguracja aplikacji}
 
-Aby skonfigurować aplikację należy edytować plik \verb`properties.py`, np używając polecenia:
+Aby skonfigurować aplikację należy edytować plik \verb`properties.py`, np. używając polecenia:
 \begin{verbatim}
 nano properties.py
 \end{verbatim}
@@ -448,15 +448,15 @@ MAIL="admin@mail.com"
 
 Plik konfiguracyjny składa się z pól:
 \begin{itemize}
-	\item \verb`PROJECT_PATH` (!) - lokalizacja folderu library z aplikacją,
-	\item \verb`VENV` (*)- nazwa wirtualnego środowiska, jeśli jeszcze nie zostało utworzone, skrypt setup\_app.sh automatycznie utworzy wirtualne środowisko o takiej nazwie,
-	\item \verb`HOST` (!) - adres IP oraz port na które zostanie wystawiona aplikacja,
-	\item \verb`LOG_FILE` (*) - nazwa pliku z logami aplikacji,
-	\item \verb`SECRET_KEY` (!)- tajny klucz, typu string, długości 50, używany przez \textit{Django} np do podpisywania plików cookies i autoryzacji,
-	\item \verb`ALLOWED_HOSTS` (!)- tablica adresów hostów/domen, które moga serwować aplikację, zabezpieczenie ze strony \textit{Django} przed atakami typu Host Header Injection,
-	\item \verb`USER_NAME` (*)- nazwa użytkownika panelu administracyjnego, mającego uprawnienia administratorskie~w aplikacji,
-	\item \verb`PASSWORD` (!)- hasło użytkownika,
-	\item \verb`MAIL` (*)- adres email użytkownika.
+	\item \verb`PROJECT_PATH` (!) -- lokalizacja folderu library z aplikacją,
+	\item \verb`VENV` (*) -- nazwa wirtualnego środowiska, jeśli jeszcze nie zostało utworzone, skrypt \verb`setup_app.sh` automatycznie utworzy wirtualne środowisko o takiej nazwie,
+	\item \verb`HOST` (!) -- adres IP oraz port na które zostanie wystawiona aplikacja,
+	\item \verb`LOG_FILE` (*) -- nazwa pliku z logami aplikacji,
+	\item \verb`SECRET_KEY` (!) -- tajny klucz, typu string, długości 50, używany przez \textit{Django} np. do podpisywania plików cookies i autoryzacji,
+	\item \verb`ALLOWED_HOSTS` (!) -- tablica adresów hostów/domen, które mogą serwować aplikację, zabezpieczenie ze strony \textit{Django} przed atakami typu Host Header Injection,
+	\item \verb`USER_NAME` (*) -- nazwa użytkownika panelu administracyjnego, mającego uprawnienia administratorskie~w aplikacji,
+	\item \verb`PASSWORD` (!) -- hasło użytkownika,
+	\item \verb`MAIL` (*) -- adres email użytkownika.
 \end{itemize}
 
 Pola oznaczone "!" należy edytować, pola oznaczone "*" można edytować lub pozostawić niezmienione.
@@ -466,7 +466,7 @@ Podczas pierwszego uruchomienia aplikacji należy wywołać komendę:
 \begin{verbatim}
 ./setup_app.sh
 \end{verbatim}
-z poziomu głównego folderu aplikacji (\verb`library`). Komenda ta usuchomi skrypt, który realizuje takie zadania jak:
+z poziomu głównego folderu aplikacji (\verb`library`). Komenda ta uruchomi skrypt, który realizuje takie zadania jak:
 \begin{itemize}
 	\item utworzenie wirtualnego środowiska o nazwie zdefiniowanej w pliku \verb`properties.py` jako \verb`VENV`,
 	\item instalacja zależności wypisanych w pliku \verb`requirements.txt` wewnątrz wirtualnego środowiska,
@@ -488,13 +488,13 @@ Starting development server at http://157.158.16.217:8000/
 Quit the server with CONTROL-C.
 \end{verbatim}
 
-a po wpisaniu w przeglądarkę adresu hosta (w tym przypadku \href{http://157.158.16.217:8000/}{157.158.16.217:8000}), powinno się ukazać okno logowania do panelu administracyjnego.
+Po wpisaniu w przeglądarkę adresu hosta (w tym przypadku \href{http://157.158.16.217:8000/}{157.158.16.217:8000}), powinno się ukazać okno logowania do panelu administracyjnego.
 
 W ten sposób uruchomiona aplikacja zostanie wyłączona po zamknięciu terminala. Aby uruchomić aplikację w tle jako proces niezależny od terminala można skorzystać z wirtualnej konsoli, używając polecenia:
 \begin{verbatim}
 screen ./boot_script.sh
 \end{verbatim}
-aby opuścić wirtualną konsolę należy użyć skrótu \verb`ctrl+a` a nastepnie \verb`d`. Po opuszczeniu konsoli wyświetli się komunikat:
+Aby opuścić wirtualną konsolę należy użyć skrótu \verb`ctrl+a`, a nastepnie \verb`d`. Po opuszczeniu konsoli wyświetli się komunikat:
 \begin{verbatim}
 [detached from identyfikator_konsoli]
 \end{verbatim}
@@ -522,7 +522,7 @@ Z powodu częstych przerw w działaniu serwera, konieczne jest uruchamianie apli
 crontab -e
 \end{verbatim}
 
-i w ostatniej lini pliku dodać wpis:
+i w ostatniej linii pliku dodać wpis:
 
 \begin{verbatim}
 @reboot cd /home/<lokalizacja_projektu>/library && ./boot_script.sh
@@ -534,7 +534,7 @@ Aby przetestować wywołanie zadania, można zdefiniować zadanie wywołujące s
 * * * * * cd /home/<lokalizacja_projektu>/library && ./boot_script.sh
 \end{verbatim}
 
-po minucie powinna się uruchomić aplikacja, ważne aby po teście usunąć ten wpis z \textit{Crona}. 
+Po minucie powinna się uruchomić aplikacja, ważne aby po teście usunąć ten wpis z \textit{Crona}. 
 
 
 \section{Panel administracyjny}
@@ -574,7 +574,7 @@ Po naciśnięciu "+ Dodaj", w wierszu "Importuj csv" (rysunek \ref{fig:bibliotek
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.6\linewidth]{img/backend/ImportCSV.png}
-  \caption{Formmularz importowania plików CSV}
+  \caption{Formularz importowania plików CSV}
   \label{fig:importCSV}
 \end{figure}
 
@@ -592,7 +592,7 @@ Wybór "Kategorie" w sekcji "Biblioteka" (rysunek \ref{fig:biblioteka}), przenos
   \label{fig:adminAllCategories}
 \end{figure}
 
-Po naciśnieciu "Dodaj kat. +" (prawy górny róg na rysunku \ref{fig:adminAllCategories}), otworzy się formularz tworzenia nowej kategorii. Aby dodać kategorię główną nadajemy jej id "\verb`G_nr_kat`", gdzie "\verb`nr_kat`" to ciąg cyfr. Aby dodać kategorię szczegółową nadajemy jej id "\verb`G_nr_kat-S_nr_sub_kat`", gdzie "\verb`G_nr_kat`" to id kategorii głównej a "\verb`nr_sub_kat`" to id kategori szczegółowej.
+Po naciśnieciu "Dodaj kat. +" (prawy górny róg na rysunku \ref{fig:adminAllCategories}), otworzy się formularz tworzenia nowej kategorii. Aby dodać kategorię główną nadajemy jej id "\verb`G_nr_kat`", gdzie "\verb`nr_kat`" to ciąg cyfr. Aby dodać kategorię szczegółową nadajemy jej id "\verb`G_nr_kat-S_nr_sub_kat`", gdzie "\verb`G_nr_kat`" to id kategorii głównej, a "\verb`nr_sub_kat`" to id kategorii szczegółowej.
 Z poziomu okna edycji kategorii można podejrzeć historię naniesionych zmian wybierając "Historia" (prawy górny róg rysunku \ref{fig:adminEditCategory}).
 
 
@@ -617,7 +617,7 @@ Po naciśnieciu "Książki" w sekcji "Biblioteka" (rysunek \ref{fig:biblioteka})
 
 Z poziomu widoku z listą można:
 \begin{itemize}
-	\item wyszukiwać książek, wpisując jej id (całe) lub fragment tytułu,
+	\item wyszukać książkę, wpisując jej id (całe) lub fragment tytułu,
 	\item sortować wyświetlone książki po dowolnym zbiorze pól, klikając na nazwę tych pól w nagłówku tablicy, w odpowiedniej kolejności,
 	\item usuwać wybrane książki, poprzez zaznaczenie zbioru książek i wykonanie akcji "Usuń wybrane Książki",
 	\item wybrać książkę do edycji, klikając jej id na liście,
@@ -678,7 +678,7 @@ W formularzu edycji nowego użytkownika (rysunek \ref{fig:editUser}), w sekcji "
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.6\linewidth]{img/backend/Uprawnienia.png}
-  \caption{Formularz edycji użytnownika}
+  \caption{Formularz edycji użytkownika}
   \label{fig:editUser}
 \end{figure}
 
@@ -694,7 +694,7 @@ Aplikacja na urządzenia mobilne z systemem Android została napisana w języku 
  
 \subsection{Wymagania systemowe}
 
-Aplikację można zainstalować na telefonach komórkowych oraz tabletach z systemem Android w wersji minimum $5.0$ Lollipop (API $21$). Według statystyk z dnia $5$ lutego $2018$ roku \cite{androidStatistics} przedstawionych na zdjęciu \ref{fig:androidStats} najwięcej użytkowników korzysta z wersji Marshmallow $6.0$. Jednak duży procent nadal używa wersji Lollipop, nie jest to na tyle znacząca różnica, aby zignorować tę wersję. Aplikację będzie mogło używać około $24\%$ więcej użytkowników.    
+Aplikację można zainstalować na telefonach komórkowych oraz tabletach z systemem Android w wersji minimum $5.0$ Lollipop (API $21$). Według statystyk z dnia $5$ lutego $2018$ roku \cite{androidStatistics} przedstawionych na rysunku \ref{fig:androidStats} najwięcej użytkowników korzysta z wersji Marshmallow $6.0$. Jednak duży procent nadal używa wersji Lollipop, nie jest to na tyle znacząca różnica, aby zignorować tę wersję. Aplikację będzie mogło używać około $24\%$ więcej użytkowników.    
 
 \begin{figure}[h]
   \centering
@@ -740,9 +740,9 @@ Aplikacja posiada następujący model danych stworzony na podstawie informacji d
 
 \subsection{Realizacja projektu}
 
-Poniższe rozdziały opiszą budowę poszczególnych obiektów klasy \verb`Activity`, które w dalszej części pracy będą nazywane aktywnościami. 
+Poniższe rozdziały opisują budowę poszczególnych obiektów klasy \verb`Activity`, które w dalszej części pracy będą nazywane aktywnościami. 
 
-W celu monitorowania działania aplikacji po wdrożeniu, został do niej przyłączony \textit{Crashlytics} \cite{crashlytics}. Jest to jedno z najlepszych urządzeń, które pozwala na śledzenie działania aplikacji. Biblioteka ta jest częścią platformy \textit{Fabric}. Poza analizą ilości użytkowników w danych okresie czasu, pozwala na bieżąco śledzić błędy krytyczne powodujące zatrzymanie działania aplikacji. System Android jest jednym z najbardziej znanych i najczęściej używanych systemów, co niestety rodzi pewne problemu. Na przykład ilość urządzeń oraz ich różnorodność. Aplikacja wspiera cztery główne wersje systemu oraz wszystkie rozmiary telefonów oraz tabletów. Bardzo trudno jest dobrze przetestować taki produkt i znaleźć wszystkie możliwe niepożądane działania. Stąd pomysł na wprowadzenie Crashlyticsa. W każdej chwili można sprawdzić na stronie \href{https://fabric.io/}{fabric.io} raport błędów wysłany przez bibliotekę. Między innymi zostają wyświetlone data, czas i ilość wystąpienia konkretnego błędu, model urządzenia oraz wersja Androida, na którym wybrany błąd się pojawił, a także sam log błędu. 
+W celu monitorowania działania aplikacji po wdrożeniu, został do niej przyłączony \textit{Crashlytics} \cite{crashlytics}. Jest to jedno z najlepszych urządzeń, które pozwala na śledzenie działania aplikacji. Biblioteka ta jest częścią platformy \textit{Fabric}. Poza analizą ilości użytkowników w danych okresie czasu, pozwala na bieżąco śledzić błędy krytyczne powodujące zatrzymanie działania aplikacji. System Android jest jednym z najbardziej znanych i najczęściej używanych systemów, co niestety rodzi pewne problemy. Na przykład ilość urządzeń oraz ich różnorodność. Aplikacja wspiera cztery główne wersje systemu oraz wszystkie rozmiary telefonów i tabletów. Bardzo trudno jest dobrze przetestować taki produkt i znaleźć wszystkie możliwe niepożądane działania. Stąd pomysł na wprowadzenie Crashlyticsa. W każdej chwili można sprawdzić na stronie \href{https://fabric.io/}{fabric.io} raport błędów wysłany przez bibliotekę. Między innymi zostają wyświetlone data, czas i ilość wystąpień konkretnego błędu, model urządzenia oraz wersja Androida, na którym wybrany błąd się pojawił, a także sam log błędu. 
 
 \subsubsection{ModelViewPresenter}
 
@@ -755,7 +755,7 @@ Projekt powstał w oparciu o strukturę \textit{Model View Presenter}. \textit{M
   \label{fig:mvp}
 \end{figure}
 
-W projekcie Model został odseparowany przez przeniesienie wszystkich klas związanych z pobieraniem/wysyłaniem danych do paczki \verb`data`, co widać na rysunku \ref{fig:mvpProject}. Natomiast elementy widoku znajdują się w paczce UI. W nich występuje również konkretny podział na klasy View oraz Presenter. Dodatkowo występuje tu interfejs Contract, który łączy w sobie interfejsy Presentera i View. Użycie interfejsów umożliwia zarządzanie widokiem z poziomu Presentera, bez konieczności posiadania elementów widoku w nim. 
+W projekcie Model został odseparowany przez przeniesienie wszystkich klas związanych z pobieraniem/wysyłaniem danych do paczki \verb`data`, co widać na rysunku \ref{fig:mvpProject}. Natomiast elementy widoku znajdują się w paczce \verb`ui`. W nich występuje również konkretny podział na klasy View oraz Presenter. Dodatkowo występuje tu interfejs \verb`Contract`, który łączy w sobie interfejsy Presentera i View. Użycie interfejsów umożliwia zarządzanie widokiem z poziomu Presentera, bez konieczności posiadania elementów widoku w nim. 
 
 \begin{figure}[h]
   \centering
@@ -766,7 +766,7 @@ W projekcie Model został odseparowany przez przeniesienie wszystkich klas zwią
 \end{figure}
 
 W celu uproszczenia i polepszenia czytelności kodu w projekcie została również użyta biblioteka \textit{Dagger2} \cite{dagger2}.
-Jest to implementacja wzorca Dependency Injection, czyli wstrzykiwania zależności. Celem tego podejścia jest minimalizacja tworzenia obiektów poprzez 
+Jest to implementacja wzorca \textit{Dependency Injection}, czyli wstrzykiwania zależności. Celem tego podejścia jest minimalizacja tworzenia obiektów poprzez 
 \begin{verbatim}
 new ClassName()
 \end{verbatim}
@@ -777,7 +777,7 @@ dowolnym miejscu aplikacji \cite{PPPAndroida}.
 
 Do pobierania i wysyłania danych oraz łączenia się z serwerem wykorzystano biblioteki \textit{Retrofit} \cite{retrofit} oraz \textit{RxJava2} \cite{rxjava2}.
 
-\textit{Retrofit} jest darmową biblioteką przeznaczoną do korzystania z API REST z poziomu Androida. Dzięki metodom oraz anotacjom zawartym w bibliotece budowanie zapytań jest szybkie, proste i przede wszystkim przejrzyste (rysunek \ref{fig:retrofit}). Jej ogromną zaletą jest również wbudowana obsługa GSON, która zapewnia automatyczne mapowanie obiektów POJO na JSON i odwrotnie \cite{PPPAndroida}.
+\textit{Retrofit} jest darmową biblioteką przeznaczoną do korzystania z API REST z~poziomu Androida. Dzięki metodom oraz anotacjom zawartym w bibliotece budowanie zapytań jest szybkie, proste i przede wszystkim przejrzyste (rysunek \ref{fig:retrofit}). Jej ogromną zaletą jest również wbudowana obsługa GSON, która zapewnia automatyczne mapowanie obiektów POJO na JSON i odwrotnie \cite{PPPAndroida}.
 
 \begin{figure}[h]
   \centering
@@ -786,7 +786,7 @@ Do pobierania i wysyłania danych oraz łączenia się z serwerem wykorzystano b
   \label{fig:retrofit}
 \end{figure}
 
-Natomiast biblioteka \textit{RxJava} rozszerza wzorzec Observable, w celu umożliwienia prostej obsługi sekwencji danych/zdarzeń. Umożliwia odpowiednie składanie sekwencji, jednocześnie eliminując możliwe błędy związane ze złą synchronizacją zdarzeń oraz działaniem na wielu wątkach \cite{rxjava2}.
+Natomiast biblioteka \textit{RxJava} rozszerza wzorzec \textit{Observable}, w celu umożliwienia prostej obsługi sekwencji danych/zdarzeń. Umożliwia odpowiednie składanie sekwencji, jednocześnie eliminując możliwe błędy związane ze złą synchronizacją zdarzeń oraz działaniem na wielu wątkach \cite{rxjava2}.
 
 \subsubsection{Zarządzanie widokami}
 
@@ -824,7 +824,7 @@ Jej celem jest przerwanie wszystkich połączeń z API, gdy widok zostanie znisz
 
 Celem \verb`MainActivity` jest wyświetlenie powitalnego ekranu użytkownikowi, tak zwanego \textit{SplashScreena}, który po $1.5$ sekundy znika i otwiera widok wyszukiwania. W przyszłości w tym miejscu można dodać opcję logowania lub utworzenia nowego konta do aplikacji.
 
-Cały widok, podobnie jak pozostałe, zawiera się w \verb`ConstraintLayout` \cite{constraintLayout}. Jest to jeden z najnowszych obiektów typu \verb`ViewGroup` wprowadzony razem z wersją $3.0$ Android Studio. Do tej pory najczęściej używanymi elementami były \verb`RelativeLayout` oraz \verb`LinearLayout`, które działają prosto i intuicyjnie, ale mimo wszystko są mocno ograniczone. \verb`ConstraintLayout` jest stworzony przede wszystkim do ułatwienia tworzenia widoków przy pomocy wbudowanego narzędzia \textit{Layout Editor's}. Umożliwia tworzenie pojedynczych widoków, których każdą z krawędzi można pozycjonować względem dowolnie wybranych innych elementów znajdujących się w grupie. Następnie umożliwia tworzenie łańcuchów widoków i pozycjonowanie ich tak, jakby były jednym obiektem, bez konieczności dodawania i zagnieżdżania kolejnego obiektu typu \verb`ViewGroup`. 
+Cały widok, podobnie jak pozostałe, zawiera się w \verb`ConstraintLayout` \cite{constraintLayout}. Jest to jeden z najnowszych obiektów typu \verb`ViewGroup` wprowadzony razem z wersją $3.0$ Android Studio. Do tej pory najczęściej używanymi elementami były \verb`RelativeLayout` oraz \verb`LinearLayout`, które działają prosto i intuicyjnie, ale mimo wszystko są mocno ograniczone. \verb`ConstraintLayout` jest stworzony przede wszystkim do ułatwienia tworzenia widoków przy pomocy wbudowanego narzędzia \textit{Layout Editor's}. Umożliwia tworzenie pojedynczych widoków, z których każdą krawędź można pozycjonować względem dowolnie wybranych innych elementów znajdujących się w grupie. Następnie umożliwia tworzenie łańcuchów widoków i pozycjonowanie ich tak, jakby były jednym obiektem, bez konieczności dodawania i zagnieżdżania kolejnego obiektu typu \verb`ViewGroup`. 
 
 \subsubsection{SearchActivity}
 
@@ -837,7 +837,7 @@ Jest to aktywność otwierana bezpośrednio z poprzedniej, po upływie danego cz
   \label{fig:androidSearch}
 \end{figure}
 
-Jej celem jest umożliwienie wprowadzenia filtrów szukanych książek przez użytkownika. Widok składa się z customowego elementu typu \verb`Toolbar`, elementów \verb`TextInputEditText`, w które użytkownik może wprowadzić tekst oraz obiektów \verb`Button` widocznych na wstępnym projekcie \ref{fig:androidSearch}.
+Jej celem jest umożliwienie wprowadzenia filtrów szukanych książek przez użytkownika. Widok składa się z customowego elementu typu \verb`Toolbar`, elementów typu  \verb`TextInputEditText`, w które użytkownik może wprowadzić tekst oraz obiektów \verb`Button` widocznych na wstępnym projekcie \ref{fig:androidSearch}.
 
 \verb`Toolbar` został dodany w celu poprawienia czytelności aplikacji, zwiększenia intuicyjnego działania oraz ułatwienia nawigacji pomiędzy widokami. Każda aktywność posiada swój \verb`Toolbar`. W przypadku \verb`SearchActivity` znajduje się tam tekst z informacją, na którym widoku znajduje się użytkownik, po lewej stronie ikona do odświeżenia informacji przychodzących z API (np. typ, dostępność książki oraz kategorie w przypadku braku internetu nie zostaną pobrane), po prawej ikona usunięcia wszystkich, do tej pory, wprowadzonych danych. 
 
