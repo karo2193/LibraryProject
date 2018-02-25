@@ -103,58 +103,11 @@ CREATE TABLE `libraryapp_category` (
 
 \subsection{Model danych}
 
-Model danych został zaprojektowany na podstawie specyfikacji:
-\begin{itemize}
-	\item arkusza kalkulacyjnego z danymi (\verb`dane-prog-bibl.xlsx`),
-	\item dokumentu zawierającego opis pól (\verb`BIBLIOTEKA-program.docx`).
-\end{itemize}
-
-Arkusz \verb`dane-prog-bibl.xlsx` składa się z 3 zakładek:
-\begin{itemize}
-	\item KSIAZKA,
-	\item KATEGORIE,
-	\item PRZYPISANIE\_KATEGORII.
-\end{itemize}
-
-Zakładka KSIAZKA składa się z kolumn:
-
-\begin{itemize}
-	\item SYG\_MS,
-	\item SYG\_BG
-	\item OZN\_OPDOW,
-	\item TYTUL,
-	\item TOM,
-	\item ROK,
-	\item ISBN/ISSN,
-	\item TYP,
-	\item DOSTEPNOSC.
-\end{itemize}
-
-Zakładka KATEGORIE składa się z kolumn: 
-\begin{itemize}
-	\item ID\_KATEGORII,
-	\item KATEGORIA.
-\end{itemize}
- 
-Zakładka PRZYPISANIE\_KATEGORII składa się z kolumn:
-
-\begin{itemize}
-	\item SYG\_MS,
-	\item ID\_KATEGORII.
-\end{itemize}
- 
-
-Na podstawie takiej struktury danych zostały zaprojektowane dwa modele:
-\begin{itemize}
-	\item \verb`Book`, odpowiadający danym z zakładek KSIAZKA i PRZYPISANIE\_KATEGORII,
-	\item \verb`Category`, odpowiadający danym z zakładki KATEGORIE.
-\end{itemize}
-
-Wszystkie definicje modeli znajdują się w pliku \verb`/libproject/libraryapp/models.py`.
+Model danych został zaprojektowany na podstawie specyfikacji, którą określił pracownik odpowiedzialny za działanie biblioteki. Wszystkie definicje modeli znajdują się w pliku \verb`/libproject/libraryapp/models.py`.
 
 \subsubsection{Model Book}
 
-Model danych \verb`Book` jest zdefiniowany jako model \textit{Django}, składa się z pól:
+Model ten został zaprojektowany na podstawie zakładki 'KSIAZKA' w arkuszu \verb`dane-prog-bibl.xlsx`, wchodzącego w skład specyfikacji. Model \verb`Book` jest zdefiniowany jako model \textit{Django} i składa się z pól:
 
 \begin{itemize}
 	\item \verb`signature_ms`, \\
@@ -193,7 +146,8 @@ Model danych \verb`Book` jest zdefiniowany jako model \textit{Django}, składa s
 
 \subsubsection{Model Category}
 
-Model danych \verb`Category` jest zdefiniowany jako model \textit{Django}, składa się z pól:
+Model ten został zaprojektowany na podstawie zakładki 'KATEGORIE' w arkuszu \verb`dane-prog-bibl.xlsx`.
+Model \verb`Category` jest zdefiniowany jako model \textit{Django}, składa się z pól:
 
 \begin{itemize}
 	\item \verb`category_id`, \\
@@ -206,7 +160,7 @@ Model danych \verb`Category` jest zdefiniowany jako model \textit{Django}, skła
 
 \subsection{Główne klasy}
 
-Oprócz modeli opracowanych na podstawie dostarczonych danych, zostały zaprojektowane jeszcze klasy takie jak: \verb`CategoryTree`, \verb`Dictionary`, \verb`query`. 
+Oprócz modeli opracowanych na podstawie dostarczonych danych, zostały zaprojektowane jeszcze klasy takie jak: \verb`CategoryTree`, \verb`Dictionary`, \verb`query`.
 
 \subsubsection{Klasa CategoryTree}
 
@@ -479,7 +433,7 @@ Aby skonfigurować aplikację należy edytować plik \verb`properties.py`, np u�
 nano properties.py
 \end{verbatim}
 
-Konfiguracja zastosowana na środowisku Politechniki Śląskiej:
+Przykładowa konfiguracja aplikacji:
 \begin{verbatim}
 PROJECT_PATH="/home/biblio/libproject/"
 VENV="libvenv"
