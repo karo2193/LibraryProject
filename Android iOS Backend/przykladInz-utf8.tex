@@ -107,7 +107,7 @@ Model danych został zaprojektowany na podstawie specyfikacji, którą określi�
 
 \subsubsection{Model Book}
 
-Model ten został zaprojektowany na podstawie zakładki 'KSIAZKA' w arkuszu \verb`dane-prog-bibl.xlsx`, wchodzącego w skład specyfikacji. Model \verb`Book` jest zdefiniowany jako model \textit{Django} i składa się z pól:
+Model ten został zaprojektowany na podstawie zakładki \verb`KSIAZKA` w arkuszu \verb`dane-prog-bibl.xlsx`, wchodzącego w skład specyfikacji. Model \verb`Book` jest zdefiniowany jako model \textit{Django} i składa się z pól:
 
 \begin{itemize}
 	\item \verb`signature_ms`, \\
@@ -146,7 +146,7 @@ Model ten został zaprojektowany na podstawie zakładki 'KSIAZKA' w arkuszu \ver
 
 \subsubsection{Model Category}
 
-Model ten został zaprojektowany na podstawie zakładki 'KATEGORIE' w arkuszu \verb`dane-prog-bibl.xlsx`.
+Model ten został zaprojektowany na podstawie zakładki \verb`KATEGORIE` w arkuszu \verb`dane-prog-bibl.xlsx`.
 Model \verb`Category` jest zdefiniowany jako model \textit{Django}, składa się z pól:
 
 \begin{itemize}
@@ -164,8 +164,8 @@ Oprócz modeli opracowanych na podstawie dostarczonych danych, zostały zaprojek
 
 \subsubsection{Klasa CategoryTree}
 
-Ze względu na wymagania opisane w punktach \textit{10 Kategoria główna} i \textit{11 kategoria szczegółowa}, dokumentu \verb`BIBLIOTEKA-program.docx`, dotyczące podziału kategorii na ,,kategoria główna'' i "kategoria szczegółowa", została zaimplementowana klasa, która przedstawia tę relację między kategoriami. Kategoria główna to taka, której id jest postaci "\verb`G_x`", gdzie \verb`x` to ciąg cyfr, na przykład \textbf{G\_00:ALGEBRA}.
- Kategoria główna może mieć kategorie szczegółowe, których id jest postaci "\verb`G_x-S_y`", gdzie \verb`x` i \verb`y` to ciągi cyfr, część znajdująca się przed "\verb`-`" to id kategorii głównej. Zatem kategoria \textbf{G\_00-S\_04:algebry Boole’a}, jest kategorią szczegółową kategorii \textbf{G\_00:ALGEBRA}. 
+Ze względu na wymagania opisane w punktach \textit{10 Kategoria główna} i \textit{11 kategoria szczegółowa}, dokumentu \verb`BIBLIOTEKA-program.docx`, dotyczące podziału kategorii na ,,kategoria główna'' i ,,kategoria szczegółowa'', została zaimplementowana klasa, która przedstawia tę relację między kategoriami. Kategoria główna to taka, której id jest postaci \verb`G_x`, gdzie \verb`x` to ciąg cyfr, na przykład \textbf{G\_00:ALGEBRA}.
+ Kategoria główna może mieć kategorie szczegółowe, których id jest postaci \verb`G_x-S_y`, gdzie \verb`x` i \verb`y` to ciągi cyfr, część znajdująca się przed \verb`-` to id kategorii głównej. Zatem kategoria \textbf{G\_00-S\_04:algebry Boole’a}, jest kategorią szczegółową kategorii \textbf{G\_00:ALGEBRA}. 
  
 Klasa \verb`CategoryTree` składa się z pól:
 \begin{itemize}
@@ -198,8 +198,10 @@ Przykład:
 \subsubsection{Klasa Dictionary}
 W celu dostarczenia do aplikacji mobilnych informacji o wartościach jakie mogą przyjmować niektóre pola w bazie danych oraz ułatwić w przyszłości modyfikowanie zakresu tych wartości, została zaimplementowana klasa \verb`Dictionary`. Obiekt tej klasy składa się z pól:
 \begin{itemize}
-	\item \verb`types`, tablica zawierająca wartości jakie może przyjąć pole \verb`Book.types`,
-	\item \verb`availability_types`, tablica zawierająca wartości jakie może przyjąć pole \verb`Book.availability`.
+	\item \verb`types`, \\
+	typ: tablica zawierająca wartości jakie może przyjąć pole \verb`Book.types`,
+	\item \verb`availability_types`, \\
+	typ: tablica zawierająca wartości jakie może przyjąć pole \verb`Book.availability`.
 \end{itemize}
 
 
@@ -221,7 +223,7 @@ W celu dostarczenia do aplikacji mobilnych informacji o wartościach jakie mogą
 \subsubsection{Klasa query}
 Obiekt klasy \verb`query` definiuje kryteria, według których, serwis zwróci książki. Klasa \verb`query` składa się z pól:
 \begin{itemize}
-	\item \verb`filters` - obiekt definiujący filtry pól książek. Pola obiektu \verb`filters` są opcjonalne. Aby otrzymać książki, których tytuł jest równy pewnej wartości, obiekt \verb`filters` należy zdefiniować w następujący sposób:
+	\item \verb`filters` -- obiekt definiujący filtry pól książek. Pola obiektu \verb`filters` są opcjonalne. Aby otrzymać książki, których tytuł jest równy pewnej wartości, obiekt \verb`filters` należy zdefiniować w następujący sposób:
 	
 	\begin{verbatim}
 	"filters":{
@@ -246,7 +248,7 @@ Filtry pozostałych pól definiujemy analogicznie. Filtrowanie po wielu polach z
 	}
 	\end{verbatim}
 	
-\item \verb`categories` - tablica id kategorii, zwrócone książki zawierają jedną z kategorii podanych w tablicy. Przykład:
+\item \verb`categories` -- tablica id kategorii, zwrócone książki zawierają jedną z kategorii podanych w tablicy. Przykład:
 
 	\begin{verbatim}
 	"categories":["G_00","G_01-S23"]
@@ -260,7 +262,14 @@ Aby otrzymać z serwisu książki, które posiadają konkretny zestaw kategorii,
 	}
 	\end{verbatim}
 
-\item \verb`pagination` - klasa pozwalająca na zdefiniowanie otrzymanego wycinka danych, zapobiega to zwróceniu zbyt dużej liczby danych jednoczesnie. Obiekt zawieta pola \verb`offset` - definiuje ile pierwszych pozycji odrzucić, \verb`limit` - definiuje ile pozycji może zostać zwróconych maksymalnie, podczas jednego zapytania.
+\item \verb`pagination` -- klasa pozwalająca na zdefiniowanie otrzymanego wycinka danych, zapobiega to zwróceniu zbyt dużej liczby danych jednoczesnie. Obiekt zawieta pola 
+\begin{itemize}
+	\item \verb`offset` -- definiuje ile pierwszych pozycji odrzucić,\\
+	typu: \verb`unsigned int`,
+	\item \verb`limit` -- definiuje ile pozycji może zostać zwróconych maksymalnie, podczas jednego zapytania,\\
+	typu: \verb`unsigned int`.
+\end{itemize}
+ 
 
 \end{itemize}
 
@@ -288,10 +297,10 @@ Usługa ta zwraca listę książek (\verb`book`), według kryterium zdefiniowane
 
 Zapytanie:
 \begin{itemize}
-	\item Enpoint: /books,
-	\item Method: POST,
-	\item Headers: "Content-Type":"application/json",
-	\item Body: JSON (application/json): \verb`query`,
+	\item Enpoint: \verb`/books`,
+	\item Method: \verb`POST`,
+	\item Headers: \verb`"Content-Type":"application/json"`,
+	\item Body: \verb`JSON (application/json): query`,
 \end{itemize}
 
 Odpowiedź:
@@ -323,9 +332,9 @@ Usługa ta zwraca listę wszystkich kategorii przedstawionych jako obiekt \verb`
 
 Zapytanie:
 \begin{itemize}
-	\item Enpoint: /categories,
-	\item Method: GET,
-	\item Headers: "Content-Type":"application/json",
+	\item Enpoint: \verb`/categories`,
+	\item Method: \verb`GET`,
+	\item Headers: \verb`"Content-Type":"application/json"`,
 \end{itemize}
 
 Odpowiedź:
@@ -365,9 +374,9 @@ Zwraca obiekt \verb`Dictionary` zawierający wszystkie typy książek oraz typy 
 
 Zapytanie:
 \begin{itemize}
-	\item Enpoint: /dictionary,
-	\item Method: GET,
-	\item Headers: "Content-Type":"application/json",
+	\item Enpoint: \verb`/dictionary`,
+	\item Method: \verb`GET`,
+	\item Headers: \verb`"Content-Type":"application/json"`,
 \end{itemize}
 
 Odpowiedź:
@@ -411,7 +420,7 @@ Aby ściągnąć aplikację poprzez \textit{git} należy skorzystać~z komendy:
 \begin{verbatim}
 git clone https://github.com/szymongor/library.git
 \end{verbatim}
-w rezultacie, powinien się pojawić folder library w obecnej lokalizacji. Należy otworzyć folder z aplikacją używająć komendy \verb`cd library`. Katalog powinien zawierać:
+w rezultacie, powinien się pojawić folder \verb`library` w obecnej lokalizacji. Należy otworzyć folder z aplikacją używająć komendy \verb`cd library`. Katalog powinien zawierać:
 
 \begin{itemize}
 	\item \verb`boot_script.sh` - skrypt bashowy, uruchamiający aplikację,
@@ -516,7 +525,7 @@ wyświetli wszystkie aktywne konsole.
 Aby wyłączyć aplikację można przełączyć się na wirtualną konsolę z uruchomioną aplikacją i użyć skrótu: \verb`ctrl+c`.
 \subsubsection{Konfiguracja Cron}
 
-Z powodu częstych przerw w działaniu serwera, konieczne jest uruchamianie aplikacji za każdym razem gdy serwer się uruchamia. Do tego celu został wykorzystany \textit{Cron}, program do harmonogramowania zadań \cite{linuxAdmin}. Aby skonfigurować \textit{Crona}, by uruchamiał aplikację wraz z uruchomieniem serwera, należy użyc polecenia:
+Z powodu częstych przerw w działaniu serwera, konieczne jest uruchamianie aplikacji wraz ze startem serwera. Do tego celu został wykorzystany \textit{Cron}, program do harmonogramowania zadań \cite{linuxAdmin}. Aby skonfigurować \textit{Crona}, by uruchamiał aplikację wraz z startem serwera, należy użyc polecenia:
 
 \begin{verbatim}
 crontab -e
@@ -539,7 +548,7 @@ Po minucie powinna się uruchomić aplikacja, ważne aby po teście usunąć ten
 
 \section{Panel administracyjny}
 
-Panel administracyjny dostępny jest pod adresem \href{http://157.158.16.217:8000/admin}{157.158.16.217:8000/admin}. Po wpisaniu tego adresu w przeglądarce, powinno wyświetlić się okno logowania zatytułowane "Administracja biblioteką", przedstawione na rysunku \ref{fig:adminLogin}. Dane do logowania, jeśli nie zostały wcześniej zmienione, powinny być takie jak w pliku \verb`properties.py` (\verb`USER_NAME` i \verb`PASSWORD`). 
+Panel administracyjny dostępny jest pod adresem \href{http://157.158.16.217:8000/admin}{157.158.16.217:8000/admin}. Po wpisaniu tego adresu w przeglądarce, powinno wyświetlić się okno logowania zatytułowane ,,Administracja biblioteką'', przedstawione na rysunku \ref{fig:adminLogin}. Dane do logowania, jeśli nie zostały wcześniej zmienione, powinny być takie jak w pliku \verb`properties.py` (\verb`USER_NAME` i \verb`PASSWORD`). 
 
 \begin{figure}[h]
   \centering
@@ -548,7 +557,7 @@ Panel administracyjny dostępny jest pod adresem \href{http://157.158.16.217:800
   \label{fig:adminLogin}
 \end{figure}
 
-Po zalogowaniu powinien się ukazać panel administracyjny do zarządzania biblioteką (rysunek \ref{fig:adminPanel}). W nagłówku strony zatytułowanym "Administracja biblioteką", znajduje się odnośnik do zmiany hasła oraz wylogowania obecnego użytkownika. Poniżej nagłówka znajdują się dwie sekcje zatytułowane "Biblioteka" i "Uwierzytelnianie i Autoryzacja". Po prawej stronie sekcja "Ostatnie działania", wyświetająca listę ostatnich zmian wprowadzonych w aplikacji.
+Po zalogowaniu powinien się ukazać panel administracyjny do zarządzania biblioteką (rysunek \ref{fig:adminPanel}). W nagłówku strony zatytułowanym ,,Administracja biblioteką'', znajduje się odnośnik do zmiany hasła oraz wylogowania obecnego użytkownika. Poniżej nagłówka znajdują się dwie sekcje zatytułowane ,,Biblioteka'' i ,,Uwierzytelnianie i Autoryzacja''. Po prawej stronie sekcja ,,Ostatnie działania'', wyświetająca listę ostatnich zmian wprowadzonych w aplikacji.
 
 
 \begin{figure}[h]
@@ -559,7 +568,7 @@ Po zalogowaniu powinien się ukazać panel administracyjny do zarządzania bibli
 \end{figure}
 
 \subsection{Biblioteka}
-W skad tej sekcji wchodzą opcje importowania plików CSV, zarządzania kategoriami i książkami.
+W skad tej sekcji wchodzą opcje importowania plików \verb`*.csv`, zarządzania kategoriami i książkami.
 
 \begin{figure}[h]
   \centering
@@ -569,21 +578,21 @@ W skad tej sekcji wchodzą opcje importowania plików CSV, zarządzania kategori
 \end{figure}
 
 \subsubsection{Importuj csv}
-Po naciśnięciu "+ Dodaj", w wierszu "Importuj csv" (rysunek \ref{fig:biblioteka}), otworzy się panel zatytułowany "Dodaj CSV", widoczny na rysunku \ref{fig:importCSV}. Aby wczytać plik CSV, należy wskazać jego lokalizację (klikając przycisk "Wybierz plik") a następnie kliknąć przycisk "Zapisz". Po załadowaniu danych z pliku CSV wyświetli się lista komunikatów dotycząca statusu importowanych danych. 
+Po naciśnięciu ,,+ Dodaj'', w wierszu ,,Importuj csv'' (rysunek \ref{fig:biblioteka}), otworzy się panel zatytułowany ,,Dodaj CSV'', widoczny na rysunku \ref{fig:importCSV}. Aby wczytać plik CSV, należy wskazać jego lokalizację (klikając przycisk ,,Wybierz plik'') a następnie kliknąć przycisk ,,Zapisz''. Po załadowaniu danych z pliku CSV wyświetli się lista komunikatów dotycząca statusu importowanych danych. 
 
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.6\linewidth]{img/backend/ImportCSV.png}
-  \caption{Formularz importowania plików CSV}
+  \caption{Formularz importowania plików *.csv}
   \label{fig:importCSV}
 \end{figure}
 
 
-Pliki CSV powinny zostać wygenerowane na podstawie arkusza kalkulacyjnego \verb`dane-prog-bibl.xlsx`, kodowanie pliku to UTF-8, symbol oddzielający pola to \textbf{,} a separator tekstu to symbol \textbf{"}. Aplikacja sama rospoznaje czy importowany plik CSV zawiera informacje z zakładki KSIAZKA, KATEGORIE czy PRZYPISANIE\_KATEGORII.
+Pliki \verb`*.csv` powinny zostać wygenerowane na podstawie arkusza kalkulacyjnego \verb`dane-prog-bibl.xlsx`, kodowanie pliku to UTF-8, symbol oddzielający pola to \textbf{,} a separator tekstu to symbol \textbf{"}. Aplikacja sama rospoznaje czy importowany plik \verb`*.csv` zawiera informacje z zakładki KSIAZKA, KATEGORIE czy PRZYPISANIE\_KATEGORII.
 
 \subsubsection{Kategorie}
 
-Wybór "Kategorie" w sekcji "Biblioteka" (rysunek \ref{fig:biblioteka}), przenosi do widoku z listą wszystkich kategorii, widocznego na rysunku \ref{fig:adminAllCategories}. Z poziomu tej listy można usuwać wybrane kategorie oraz wyszukiwać kategorie wpisując w pole tekstowe części id kategorii lub nazwy kategorii. Klikając na id kategorii w liście, otworzy się formularz edycji danej kategorii, widoczny na rysunku \ref{fig:adminEditCategory}. 
+Wybór ,,Kategorie'' w sekcji ,,Biblioteka'' (rysunek \ref{fig:biblioteka}), przenosi do widoku z listą wszystkich kategorii, widocznego na rysunku \ref{fig:adminAllCategories}. Z poziomu tej listy można usuwać wybrane kategorie oraz wyszukiwać kategorie wpisując w pole tekstowe części id kategorii lub nazwy kategorii. Klikając na id kategorii w liście, otworzy się formularz edycji danej kategorii, widoczny na rysunku \ref{fig:adminEditCategory}. 
 
 \begin{figure}[h]
   \centering
@@ -592,8 +601,8 @@ Wybór "Kategorie" w sekcji "Biblioteka" (rysunek \ref{fig:biblioteka}), przenos
   \label{fig:adminAllCategories}
 \end{figure}
 
-Po naciśnieciu "Dodaj kat. +" (prawy górny róg na rysunku \ref{fig:adminAllCategories}), otworzy się formularz tworzenia nowej kategorii. Aby dodać kategorię główną nadajemy jej id "\verb`G_nr_kat`", gdzie "\verb`nr_kat`" to ciąg cyfr. Aby dodać kategorię szczegółową nadajemy jej id "\verb`G_nr_kat-S_nr_sub_kat`", gdzie "\verb`G_nr_kat`" to id kategorii głównej, a "\verb`nr_sub_kat`" to id kategorii szczegółowej.
-Z poziomu okna edycji kategorii można podejrzeć historię naniesionych zmian wybierając "Historia" (prawy górny róg rysunku \ref{fig:adminEditCategory}).
+Po naciśnieciu ,,Dodaj kat. +'' (prawy górny róg na rysunku \ref{fig:adminAllCategories}), otworzy się formularz tworzenia nowej kategorii. Aby dodać kategorię główną nadajemy jej id \verb`G_nr_kat`, gdzie \verb`nr_kat` to ciąg cyfr. Aby dodać kategorię szczegółową nadajemy jej id \verb`G_nr_kat-S_nr_sub_kat`, gdzie \verb`G_nr_kat` to id kategorii głównej, a \verb`nr_sub_kat` to id kategorii szczegółowej.
+Z poziomu okna edycji kategorii można podejrzeć historię naniesionych zmian wybierając ,,Historia'' (prawy górny róg rysunku \ref{fig:adminEditCategory}).
 
 
 
@@ -606,7 +615,7 @@ Z poziomu okna edycji kategorii można podejrzeć historię naniesionych zmian w
 
 \subsubsection{Książki}
 
-Po naciśnieciu "Książki" w sekcji "Biblioteka" (rysunek \ref{fig:biblioteka}), otworzy się widok z~listą książek, widoczny na rysunku \ref{fig:adminBooks}. 
+Po naciśnieciu ,,Książki'' w sekcji ,,Biblioteka'' (rysunek \ref{fig:biblioteka}), otworzy się widok z~listą książek, widoczny na rysunku \ref{fig:adminBooks}. 
 
 \begin{figure}[h]
   \centering
@@ -619,9 +628,9 @@ Z poziomu widoku z listą można:
 \begin{itemize}
 	\item wyszukać książkę, wpisując jej id (całe) lub fragment tytułu,
 	\item sortować wyświetlone książki po dowolnym zbiorze pól, klikając na nazwę tych pól w nagłówku tablicy, w odpowiedniej kolejności,
-	\item usuwać wybrane książki, poprzez zaznaczenie zbioru książek i wykonanie akcji "Usuń wybrane Książki",
+	\item usuwać wybrane książki, poprzez zaznaczenie zbioru książek i wykonanie akcji ,,Usuń wybrane Książki'',
 	\item wybrać książkę do edycji, klikając jej id na liście,
-	\item dodać nową książkę, klikając "Dodaj Książka +".
+	\item dodać nową książkę, klikając ,,Dodaj Książka +''.
 \end{itemize}
 
 Po wybraniu książki do edycji, otworzy się fromularz edycji książki widoczny na rysunku \ref{fig:adminEditBook}.
@@ -633,7 +642,7 @@ Po wybraniu książki do edycji, otworzy się fromularz edycji książki widoczn
   \label{fig:adminEditBook}
 \end{figure}
 
-Z poziomu okna edycji książki można przejrzeć historię naniesionych zmian wybierając "Historia". Widok zmian widoczny na rysunku \ref{fig:adminBookHistory}.
+Z poziomu okna edycji książki można przejrzeć historię naniesionych zmian wybierając ,,Historia''. Widok zmian widoczny na rysunku \ref{fig:adminBookHistory}.
 
 \begin{figure}[h]
   \centering
@@ -649,11 +658,11 @@ Sekcja ta składa się z opcji tworzenia i zarządzania kontami użytkowników i
 \begin{figure}[h]
   \centering
   \includegraphics[width=0.6\linewidth]{img/backend/autoryzacja.png}
-  \caption{Sekcja "Uwierzytelnianie i Autoryzacja"}
+  \caption{Sekcja ,,Uwierzytelnianie i Autoryzacja''}
   \label{fig:authSection}
 \end{figure}
 
- Obecnie aplikacja nie wykorzystuje grup użytkowników, opcja ta została pozostawiona gdyby w przyszłości projekt miałby zawierać konta studentów z możliwością rezerwacji książek. Aby dodać nowe konto administratora biblioteki należy wybrać "+ Dodaj", w wierszu "Użytkownicy" (rysunek \ref{fig:authSection}), następnie uzupełnić formularz widoczny na rysunku \ref{fig:newUserForm} ~i zapisać.
+ Obecnie aplikacja nie wykorzystuje grup użytkowników, opcja ta została pozostawiona gdyby w przyszłości projekt miałby zawierać konta studentów z możliwością rezerwacji książek. Aby dodać nowe konto administratora biblioteki należy wybrać ,,+ Dodaj'', w wierszu ,,Użytkownicy'' (rysunek \ref{fig:authSection}), następnie uzupełnić formularz widoczny na rysunku \ref{fig:newUserForm} ~i zapisać.
 
 \begin{figure}[h]
   \centering
@@ -673,7 +682,7 @@ Nowy użytkownik powinien się teraz pojawić na liście wszystkich użytkownik�
   \label{fig:usersList}
 \end{figure}
 
-W formularzu edycji nowego użytkownika (rysunek \ref{fig:editUser}), w sekcji "Uprawnienia", należy zaznaczyć opcję "W zespole" i zapisać.
+W formularzu edycji nowego użytkownika (rysunek \ref{fig:editUser}), w sekcji ,,Uprawnienia'', należy zaznaczyć opcję ,,W zespole'' i zapisać.
 
 \begin{figure}[h]
   \centering
