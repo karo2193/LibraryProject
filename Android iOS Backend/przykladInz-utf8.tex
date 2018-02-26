@@ -51,11 +51,21 @@ W dzisiejszych czasach, książki są coraz częściej pomijane kosztem innych r
 
 Współcześnie doszliśmy do punktu, w którym książka zaczyna mieć znaczenie przede wszystkim edukacyjne. Na uczelniach całego świata, książki są synonimem wiedzy, ponieważ bardzo często profesorzy i doktorzy kształcili się za pomocą takich samych materiałów co ich dzisiejsi uczniowie. Z tego powodu biblioteki -- szczególnie na początku semestru -- muszą zmagać się z dużymi ilościami studentów, chcącymi poszukać potrzebnych im książek oraz sprawdzić ich ilość i dostępność, aby później je wypożyczyć. Jest to problem zarówno dla pracowników biblioteki jak i dla studentów. Bibliotekarze są zajęci sprawdzaniem tych samych informacji dla każdego studenta z osobna. Natomiast uczniowie są zdenerwowani sporymi kolejkami i tłumem ludzi, który zniechęca do odwiedzania bibliotek.
 
-Skupiając się na książkach naukowych i na własnym doświadczeniu uczelnianym, postanowiliśmy stworzyć system dla Biblioteki Wydziału Matematyki Stosowanej na Politechnice Śląskiej w Gliwicach. Głównym celem systemu jest posiadanie informacji o zbiorach biblioteki wydziałowej i łatwe udostępnianie ich studentom. Podstawą jest prosty interfejs dla administratora uzupełniającego pozycje książek w systemie, jak i dla studenta chcącego szybko sprawdzić dostępność wybranej książki w bibliotece bez potrzeby wychodzenia z domu.
+\section{System obsługi biblioteki}
+
+Korzystając z książek naukowych i na własnego doświadczenia, postanowiliśmy stworzyć system dla Biblioteki Wydziału Matematyki Stosowanej na Politechnice Śląskiej w Gliwicach. Głównym celem systemu jest posiadanie informacji o zbiorach biblioteki wydziałowej i łatwe udostępnianie ich studentom. Podstawą jest prosty interfejs dla administratora uzupełniającego pozycje książek w systemie, jak i dla studenta chcącego szybko sprawdzić dostępność wybranej książki w bibliotece o każdej porze dnia, bez potrzeby wychodzenia z domu.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=0.8\linewidth]{img/bibsys/SystemDiagram.png}
+  \caption{System obsługi biblioteki}
+  \label{fig:adminLogin}
+\end{figure}
 
 Jednym z typów aplikacji będzie aplikacja webowa. Powinna zapewnić administratorowi pracującemu w bibliotece prostą obsługę bazy danych. Szybkie katalogowanie dostępnych woluminów oraz aktualizowanie informacji na temat dostępności.
 
 Drugim typem aplikacji obsługujących bibliotekę będą aplikacje na smartfony. Zostaną stworzone dwie aplikacje mobilne, każda na oddzielny system: Android oraz iOS w celu poszerzenia grupy odbiorców na wydziale. Pozwolą one na przeszukanie biblioteki pod względem dowolnej szukanej frazy oraz dostarczą informacji o~wszystkich książkach i ich dostępności w bibliotece.
+
 
 \section{Aplikacja serwerowa}
 Aplikacja serwerowa LibraryApp, stanowi backend systemu bibliotecznego oraz zapewnia narzędzia dla bibliotekarza i administratora systemu, pozwalające na zarządzanie aplikacją. Głównymi zadaniami tej aplikacji są:
