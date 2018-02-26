@@ -47,13 +47,13 @@
 Książka -- jeden z najbardziej podstawowych przedmiotów. Każdy z nas, nawet jeśli nie lubi czytać, niejednokrotnie w swoim życiu z jakiejś korzystał. Może służyć rozrywce, ale przede wszystkim szeroko pojętej edukacji. Każda przeczytana książka pomaga rozwinąć myślenie jak i kreatywność czytelnika. Każde przeczytane zdanie rozwija zdolność wypowiadania się. 
 Każde przeczytane słowo pozwala poszerzyć zdolności językowe.
 
-W dzisiejszych czasach, książki są coraz częściej pomijane kosztem innych rozrywek, takich jak gry komputerowe, kino czy telewizja, które z roku na rok wypychają książkę na dalszy plan. Jak wynika z raportu Biblioteki Narodowej \cite{raportBN}, w roku $2016$ jedynie $37\%$ Polaków przeczytało choć jedną książkę. Mogłoby się więc wydawać, że wchodzenie na rynek książek nie jest najlepszym pomysłem. Jednak istnieją książki, które posiadają często wiadomości niezmienne i nie służą rozrywce, a przede wszystkim pozyskiwaniu wiedzy. Są to między innymi książki z działów ścisłych dotyczących bezpośrednio matematyki. Przykładowo ciąg Fibonacciego omówiony w roku $1202$ przez Leonarda z Pizy, do dziś został opisany i wykorzystany w wielu książkach związanych z~różnorodnymi dziedzinami. Z przytoczonego przykładu wynika, że książki dotyczące matematyki czy też fizyki, bardzo często zawierają dużo wiedzy, nawet w czasach współczesnych. Wszystko ewoluuje, jednak prawa natury pozostają niezmienne.
+W dzisiejszych czasach, książki są coraz częściej pomijane kosztem innych rozrywek, takich jak gry komputerowe, kino czy telewizja, które z roku na rok wypychają książkę na dalszy plan. Jak wynika z raportu Biblioteki Narodowej \cite{raportBN}, w roku $2016$ jedynie $37\%$ Polaków przeczytało choć jedną książkę. Mogłoby się więc wydawać, że wchodzenie na rynek książek nie jest najlepszym pomysłem. Jednak istnieją książki, które posiadają często wiadomości niezmienne i nie służą rozrywce, a przede wszystkim pozyskiwaniu wiedzy. Są to między innymi książki z działów ścisłych dotyczących bezpośrednio matematyki. Przykładowo ciąg Fibonacciego omówiony w~roku $1202$ przez Leonarda z Pizy, do dziś został opisany i wykorzystany w wielu książkach związanych z~różnorodnymi dziedzinami. Z przytoczonego przykładu wynika, że książki dotyczące matematyki czy też fizyki, bardzo często zawierają dużo wiedzy, nawet w czasach współczesnych. Wszystko ewoluuje, jednak prawa natury pozostają niezmienne.
 
 Współcześnie doszliśmy do punktu, w którym książka zaczyna mieć znaczenie przede wszystkim edukacyjne. Na uczelniach całego świata, książki są synonimem wiedzy, ponieważ bardzo często profesorzy i doktorzy kształcili się za pomocą takich samych materiałów co ich dzisiejsi uczniowie. Z tego powodu biblioteki -- szczególnie na początku semestru -- muszą zmagać się z dużymi ilościami studentów, chcącymi poszukać potrzebnych im książek oraz sprawdzić ich ilość i dostępność, aby później je wypożyczyć. Jest to problem zarówno dla pracowników biblioteki jak i dla studentów. Bibliotekarze są zajęci sprawdzaniem tych samych informacji dla każdego studenta z osobna. Natomiast uczniowie są zdenerwowani sporymi kolejkami i tłumem ludzi, który zniechęca do odwiedzania bibliotek.
 
 \section{System obsługi biblioteki}
 
-Korzystając z książek naukowych i na własnego doświadczenia, postanowiliśmy stworzyć system dla Biblioteki Wydziału Matematyki Stosowanej na Politechnice Śląskiej w Gliwicach. Głównym celem systemu jest posiadanie informacji o zbiorach biblioteki wydziałowej i łatwe udostępnianie ich studentom. Podstawą jest prosty interfejs dla administratora uzupełniającego pozycje książek w systemie, jak i dla studenta chcącego szybko sprawdzić dostępność wybranej książki w bibliotece o każdej porze dnia, bez potrzeby wychodzenia z domu.
+Korzystając z książek naukowych i z własnego doświadczenia, postanowiliśmy stworzyć system dla Biblioteki Wydziału Matematyki Stosowanej Politechniki Śląskiej w Gliwicach. Głównym celem systemu jest posiadanie informacji o zbiorach biblioteki wydziałowej i łatwe udostępnianie ich studentom. Podstawą jest prosty interfejs dla administratora uzupełniającego pozycje książek w systemie, jak i dla studenta chcącego szybko sprawdzić dostępność wybranej książki w bibliotece o~dowolnej porze, bez potrzeby wychodzenia z domu.
 
 \begin{figure}[h]
   \centering
@@ -562,23 +562,25 @@ Panel administracyjny dostępny jest pod adresem \href{http://157.158.16.217:800
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.4\linewidth]{img/backend/oknLogowania.png}
+  \includegraphics[width=0.6\linewidth]{img/backend/oknLogowania.png}
   \caption{Okno logowania do panelu administracyjnego}
   \label{fig:adminLogin}
 \end{figure}
 
-Po zalogowaniu powinien się ukazać panel administracyjny do zarządzania biblioteką (rysunek \ref{fig:adminPanel}). W nagłówku strony zatytułowanym ,,Administracja biblioteką'', znajduje się odnośnik do zmiany hasła oraz wylogowania obecnego użytkownika. Poniżej nagłówka znajdują się dwie sekcje zatytułowane ,,Biblioteka'' i ,,Uwierzytelnianie i Autoryzacja''. Po prawej stronie sekcja ,,Ostatnie działania'', wyświetająca listę ostatnich zmian wprowadzonych w aplikacji.
+Po zalogowaniu powinien się ukazać panel administracyjny do zarządzania biblioteką (rysunek \ref{fig:adminPanel}). 
+
+W nagłówku strony zatytułowanym ,,Administracja biblioteką'', znajduje się dwa odnośniki. Pierwszy daje możliwość zmiany hasło do konta, drugi wylogowuje obecnego użytkownika. Poniżej nagłówka znajdują się dwie sekcje zatytułowane ,,Biblioteka'' oraz ,,Uwierzytelnianie i Autoryzacja'', które zostały opisane w kolejnych rozdziałach. Po prawej stronie sekcja ,,Ostatnie działania'', wyświetająca listę ostatnich zmian wprowadzonych w aplikacji.
 
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.4\linewidth]{img/backend/PanelAdmin.png}
+  \includegraphics[width=0.6\linewidth]{img/backend/PanelAdmin.png}
   \caption{Strona główna panelu administracyjnego}
   \label{fig:adminPanel}
 \end{figure}
 
 \subsection{Biblioteka}
-W skad tej sekcji wchodzą opcje importowania plików \verb`*.csv`, zarządzania kategoriami i książkami.
+W skad tej sekcji wchodzą opcje importowania plików \verb`*.csv`, zarządzania kategoriami oraz zarządzania książkami.
 
 \begin{figure}[h]
   \centering
@@ -606,7 +608,7 @@ Wybór ,,Kategorie'' w sekcji ,,Biblioteka'' (rysunek \ref{fig:biblioteka}), prz
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.4\linewidth]{img/backend/ListaKategorii.png}
+  \includegraphics[width=0.6\linewidth]{img/backend/ListaKategorii.png}
   \caption{Widok listy kategorii}
   \label{fig:adminAllCategories}
 \end{figure}
@@ -618,7 +620,7 @@ Z poziomu okna edycji kategorii można podejrzeć historię naniesionych zmian w
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.4\linewidth]{img/backend/EdycjaKategorii.png}
+  \includegraphics[width=0.6\linewidth]{img/backend/EdycjaKategorii.png}
   \caption{Formularz edycji kategorii}
   \label{fig:adminEditCategory}
 \end{figure}
@@ -629,7 +631,7 @@ Po naciśnieciu ,,Książki'' w sekcji ,,Biblioteka'' (rysunek \ref{fig:bibliote
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.4\linewidth]{img/backend/ListaKsiazek.png}
+  \includegraphics[width=0.6\linewidth]{img/backend/ListaKsiazek.png}
   \caption{Widok listy książek}
   \label{fig:adminBooks}
 \end{figure}
@@ -647,7 +649,7 @@ Po wybraniu książki do edycji, otworzy się fromularz edycji książki widoczn
 
 \begin{figure}[h]
   \centering
-  \includegraphics[width=0.4\linewidth]{img/backend/EdycjaKsiazki.png}
+  \includegraphics[width=0.6\linewidth]{img/backend/EdycjaKsiazki.png}
   \caption{Formularz edycji książki}
   \label{fig:adminEditBook}
 \end{figure}
@@ -672,7 +674,9 @@ Sekcja ta składa się z opcji tworzenia i zarządzania kontami użytkowników i
   \label{fig:authSection}
 \end{figure}
 
- Obecnie aplikacja nie wykorzystuje grup użytkowników, opcja ta została pozostawiona gdyby w przyszłości projekt miałby zawierać konta studentów z możliwością rezerwacji książek. Aby dodać nowe konto administratora biblioteki należy wybrać ,,+ Dodaj'', w wierszu ,,Użytkownicy'' (rysunek \ref{fig:authSection}), następnie uzupełnić formularz widoczny na rysunku \ref{fig:newUserForm} ~i zapisać.
+Obecnie aplikacja nie wykorzystuje grup użytkowników, opcja ta została jednak pozostawiona gdyby w przyszłości projekt miał zawierać konta studentów z możliwością rezerwacji książek.
+ 
+W celu dodania nowego konto administratora biblioteki należy wybrać opcję ,,+ Dodaj'', znajdującą się w wierszu ,,Użytkownicy'' (rysunek \ref{fig:authSection}). Następnie zostanie otwarty formularz widoczny na rysunku \ref{fig:newUserForm}. Należy go wypełnić i~zapisać.
 
 \begin{figure}[h]
   \centering
@@ -680,8 +684,6 @@ Sekcja ta składa się z opcji tworzenia i zarządzania kontami użytkowników i
   \caption{Formularz nowego użytkownika}
   \label{fig:newUserForm}
 \end{figure}
-
-\newpage
 
 Nowy użytkownik powinien się teraz pojawić na liście wszystkich użytkowników aplikacji. Aby nadać mu uprawnienia administracyjne, należy wybrać na liście (widocznej na rysunku \ref{fig:usersList}) nowo dodanego użytkownika.
 
@@ -896,7 +898,7 @@ Natomiast wybór kategorii odbywa się w osobnej aktywności.
   \label{fig:androidCategories}
 \end{figure}
 
-Aktywność do wyboru kategorii składająca się z obiektu \verb`Toolbar` oraz obiektu \verb`ExpandableListView`. Elementami są widoki składające się z obiektu \verb`CheckBox` oraz \verb`TextView` z nazwą kategorii, podobne do tych na widocznych na rysunku \ref{fig:androidCategories}. Podobnie jak poprzednio, w Toolbarze znajduje się nazwa aktualnego widoku, po prawej stronie ikona do usuwania wszystkich do tej pory zaznaczonych elementów, po lewej stronie strzałka powrotu do poprzedniego widoku. 
+Aktywność służąca do wyboru kategorii składa się z obiektu \verb`Toolbar` oraz obiektu \verb`ExpandableListView`. Elementami są widoki składające się z obiektów \verb`CheckBox` oraz \verb`TextView` z nazwą kategorii, podobne do elementów widocznych na rysunku \ref{fig:androidCategories}. Podobnie jak poprzednio, w Toolbarze znajduje się nazwa aktualnego widoku, po prawej stronie ikona do usuwania wszystkich do tej pory zaznaczonych elementów, po lewej stronie strzałka powrotu do poprzedniego widoku. 
 
 Podczas powrotu do poprzedniej aktywności, zaznaczone elementy są przekazane w obiekcie \verb`Intent`. 
 
@@ -961,9 +963,9 @@ public class Category implements Parcelable {
   \label{fig:bookListAndroid}
 \end{figure}
 
-Celem \verb`BookActivity` jest wyświetlenie wszystkich książek, zwróconych przez API. Został użyty do tego element \verb`RecyclerView`. Pozwala on przedstawić dużą liczbę danych na ograniczonym ekranie, podobnie jak na rysunku \ref{fig:bookListAndroid}. Zarządzanie poszczególnymi elementami odbywa się przy użyciu adaptera. W adapterze zapamiętane są wszystkie elementy, w tym przypadki lista książek \verb`List<Book>`. Dla każdej z nich tworzony jest osobny widok z użyciem nadrzędnego szablonu zapamiętanego w \verb`ViewHolderze`. W adapterze do poszczególnych pól, jak na przykład \verb`TextView titleTv` zostaje przypisany tytuł konkretnej książki. Dzięki zapamiętywaniu dwóch pozycji elementu -- pozycja elementu w liście wszystkich obiektów, pozycja elementu z perspektywy \verb`LayoutManagera` -- możliwe jest odświeżanie całego widoku w przypadku jakichkolwiek zmian w danych. 
+Celem \verb`BookActivity` jest wyświetlenie wszystkich książek, zwróconych przez API. Został użyty do tego element \verb`RecyclerView`. Pozwala on przedstawić dużą liczbę danych na ograniczonym ekranie, podobnie jak na rysunku \ref{fig:bookListAndroid}. Zarządzanie poszczególnymi elementami odbywa się przy użyciu adaptera. W adapterze zapamiętane są wszystkie elementy, w tym przypadki lista książek \verb`List<Book>`. Dla każdej z nich tworzony jest osobny widok z użyciem nadrzędnego szablonu zapamiętanego w \verb`ViewHolderze`. W adapterze do poszczególnych pól, jak na przykład \verb`TextView titleTv` zostaje przypisany tytuł konkretnej książki. Dzięki zapamiętywaniu dwóch pozycji elementu -- pozycja elementu w liście wszystkich obiektów, pozycja elementu z perspektywy \verb`LayoutManagera` -- możliwe jest dynamiczne odświeżanie całego widoku w przypadku jakichkolwiek zmian w danych. 
 
-W aplikacji API dostarcza ograniczoną ilość książek. W przypadku powolnego internetu lub urządzenia nie ma sensu czekać aż serwer zwróci wszystkie możliwe wyniki, a następnie czekać aż aplikacji je przetrawi i wyświetli. Stąd na początku zostaje pobrane np. pierwszych 50 książek. Po doscrollowaniu listy do końca przez użytkownika pobieranych jest kolejnych 50 książek, przy czym poprzednie wyniki są nadal wyświetlane. 
+W aplikacji API dostarcza ograniczoną ilość książek. W przypadku powolnego internetu lub urządzenia nie ma sensu czekać aż serwer zwróci wszystkie możliwe wyniki, a następnie czekać aż aplikacji je przetworzy i wyświetli. Stąd na początku zostaje pobrane np. pierwszych 50 książek. Po doscrollowaniu listy do końca przez użytkownika pobieranych jest kolejnych 50 książek, przy czym poprzednie wyniki są nadal wyświetlane. 
 
 \begin{verbatim}
 bookRv.addOnScrollListener(getOnScrollListener());
@@ -1023,7 +1025,7 @@ Ostatnia aktywność zawiera w sobie szczegółowe informacje o książce (rys. 
 
 \subsection{Interfejs użytkownika}
 
-Głównym celem aplikacji było ułatwienie studentom Wydziału Matematyki Stosowanej korzystanie z biblioteki. W tym celu powstała aplikacja na jeden z największych systemów Android. Jednocześnie celem aplikacji była jak największa przejrzystość i intuicyjność, żeby osoby nie korzystające na co dzień z dotykowych telefonów mogły używać jej bez problemów. Projekt był konsultowany na bieżąco z osobą zarządzającą biblioteką. Jednolity \verb`Toolbar` pozwala na łatwą nawigację po aplikacji, a dobór odpowiednich kolorów zagwarantował spójność z aplikacją tworzoną na system iOS.
+Głównym celem aplikacji było ułatwienie studentom Wydziału Matematyki Stosowanej korzystania z biblioteki. W związku z tym powstała aplikacja na jeden z~największych systemów -- Android. Jednocześnie celem aplikacji była jak największa przejrzystość i intuicyjność, aby osoby nie korzystające na co dzień z dotykowych telefonów, również mogły używać jej bez problemów. Projekt był konsultowany na bieżąco z osobą zarządzającą biblioteką. Jednolity \verb`Toolbar` pozwala na łatwą nawigację po aplikacji, a dobór odpowiednich kolorów zagwarantował spójność z aplikacją tworzoną na system iOS.
  
 \subsection{Splash screen}
 
@@ -1047,7 +1049,7 @@ Ekran po $1.5$ sekundy znika i nie jest możliwe wrócenie do niego po naciśni�
   \label{fig:searchScreen}
 \end{figure}
 
-Ekranu wyszukiwania książek umożliwia użytkownikowi między innymi wpisanie żądanej treści w odpowiednie pola za pomocą klawiatury systemowej (rys. \ref{fig:searchScreen}). Trzy pola znajdujące się najniżej umożliwiają wybranie pozycji z listy. Dwa pierwsze otwierają dialog (rys. \ref{fig:androidSearch2}), ostatnie przenosi do nowej aktywności z listą kategorii, jak na rysunku \ref{fig:androidCategoriesScreen}.
+Ekran wyszukiwania książek umożliwia użytkownikowi między innymi wpisanie żądanej treści w odpowiednie pola za pomocą klawiatury systemowej (rys. \ref{fig:searchScreen}). Trzy pola znajdujące się najniżej umożliwiają wybranie pozycji z listy. Dwa pierwsze otwierają dialog (rys. \ref{fig:androidSearch2}), ostatnie przenosi do nowej aktywności z listą kategorii, jak na rysunku \ref{fig:androidCategoriesScreen}.
 
 \begin{figure}
     \centering
@@ -1059,13 +1061,13 @@ Ekranu wyszukiwania książek umożliwia użytkownikowi między innymi wpisanie 
 
 Do poprawnego pobrania danych oraz wyszukania książek aplikacja wymaga połączenia z internetem. W przypadku, gdy nie ma połączenia z internetem, na ekranie pojawi się dialog z informacją o tym oraz \textit{Toast} z informacją o nieudanym pobraniu danych. Przycisk w lewym górnym roku pozwala na odświeżenie danych po uzyskaniu dostępu do internetu.
 
-W dolnym prawy rogu ekranu znajduje się przycisk wyszukiwania. Kliknięcie go otwiera kolejną aktywność i wyszukuje książki.
+W dolnym prawym rogu ekranu znajduje się przycisk wyszukiwania. Kliknięcie go otwiera kolejną aktywność i wyszukuje książki.
 
 \subsubsection{Wybór kategorii}
 
-Widok z kategoriami zawiera listę posortowanych elementów oraz podzielonych na sekcję. Można rozróżnić kategorie główne oraz podkategorię, przy czym nie każda kategoria główna zawiera jakieś podkategorie. Jest to oznaczone strzałką znajdującą się z prawej strony elementu, która sugeruje możliwość kliknięcia i rozwinięcia listy. 
+Widok z kategoriami zawiera listę posortowanych elementów podzielonych na sekcję. Można rozróżnić kategorie główne oraz podkategorie, przy czym nie każda kategoria główna zawiera jakieś podkategorie. Jest to oznaczone strzałką znajdującą się z prawej strony elementu, która sugeruje możliwość kliknięcia i rozwinięcia listy. 
 
-Na tym etapie użytkownik ma możliwość ograniczenia zakresu poszukiwanych przez niego książek. Może zaznaczyć dowolną ilość kategorii głównych oraz podkategorii z możliwość szybkiego zresetowania zaznaczeń, po naciśnięciu ikony kosza w prawym górnym rogu. 
+Na tym etapie użytkownik ma możliwość ograniczenia zakresu poszukiwanych przez niego książek. Może zaznaczyć dowolną ilość kategorii głównych oraz podkategorii z możliwością szybkiego zresetowania zaznaczonych elementów po naciśnięciu ikony kosza w prawym górnym rogu. 
 
 \begin{figure}[h]
   \centering
@@ -1078,7 +1080,7 @@ W lewym górnym rogu znajduje się strzałka powrotu do poprzedniego widoku. Kli
 
 \subsubsection{Wyniki wyszukiwania}
 
-Po naciśnięciu przez użytkownika przycisku \textit{Szukaj} na ekranie wyszukiwania otworzy się nowy widok. W przypadku nie znalezienia żadnej pozycji pasującej do zapytania lub w przypadku błędu serwera, wyświetlony zostanie ekran znajdujący się na rysunku \ref{fig:androidResults} po prawej stronie. Ekran po lewej z rysunku \ref{fig:androidResults}, przedstawia listę z poprawnie znalezionymi pozycjami. Na tym etapie użytkownik może sprawdzić część tytułu książki (wyświetlanie zależne od wielkości ekranu urządzenia), autora oraz rok wydania. Sortowanie odbywa się alfabetycznie pod względem tytułu. W przypadku takich samych tytułów sortowanie odbywa się po dacie wydania - od najnowszej do najstarszej. 
+Po naciśnięciu przez użytkownika przycisku \textit{Szukaj} na ekranie wyszukiwania otworzy się nowy widok. W przypadku nie znalezienia żadnej pozycji pasującej do zapytania lub w przypadku błędu serwera, wyświetlony zostanie ekran znajdujący się na rysunku \ref{fig:androidResults} po prawej stronie. Ekran po lewej z rysunku \ref{fig:androidResults}, przedstawia listę z poprawnie znalezionymi pozycjami. Na tym etapie użytkownik może sprawdzić część tytułu książki (wyświetlanie zależne od wielkości ekranu urządzenia), autora oraz rok wydania. Sortowanie odbywa się alfabetycznie pod względem tytułu. W~przypadku takich samych tytułów sortowanie odbywa się po dacie wydania -- od najnowszej do najstarszej. 
 
 \begin{figure}
 \centering
@@ -1088,7 +1090,7 @@ Po naciśnięciu przez użytkownika przycisku \textit{Szukaj} na ekranie wyszuki
     \label{fig:androidResults}
 \end{figure}
 
-Jeśli użytkownik chce wrócić do ekranu wyszukiwania książki może nacisnąć na strzałkę w lewym górnym rogu lub nacisnąć klawisz systemowy znajdujący się w lewym dolnym rogu na urządzeniach z systemem Android. Po powrocie pola będą wypełnione ostatnio wpisanymi lub wybranymi informacjami.
+Jeśli użytkownik chce wrócić do ekranu wyszukiwania książki może nacisnąć na strzałkę w lewym górnym rogu lub nacisnąć klawisz systemowy znajdujący się w~lewym dolnym rogu na urządzeniach z systemem Android. Po powrocie pola będą wypełnione ostatnio wpisanymi lub wybranymi informacjami.
 
 Więcej szczegółów książki zostanie wyświetlonych po naciśnięciu na konkretną pozycję z listy. 
 
@@ -1652,11 +1654,11 @@ Jest to ekran przedstawiony na rysunku \ref{fig:bookDetails}. Jest on prezentowa
 
 \section{Zakończenie}
 
-Tworząc aplikację serwerową w tak małej grupie dla całego wydziału, mogliśmy znacznie poszerzyć swoją wiedzę o programowaniu, ale zarazem rozwinąć się w~zakresie pracy w zespole. Dodatkowo w celu lepszego porozumienia się z wieloma osobami, z którymi pracowaliśmy i dyskutowaliśmy podczas wytwarzania tej aplikacji, musieliśmy poszerzyć swoje zdolności interpersonalne. Bez ich pomocy byłoby nam ciężko dopracować wiele spraw związanych z dostosowaniem obsługi, a także wyglądu aplikacji dla klienta.
+Tworząc aplikację serwerową w tak małej grupie dla całego wydziału, mogliśmy znacznie poszerzyć swoją wiedzę jednocześnie rozwijając się w~zakresie pracy zespołowej. Dodatkowo w celu lepszego porozumienia się z wieloma osobami, z którymi pracowaliśmy i dyskutowaliśmy podczas wytwarzania tej aplikacji, musieliśmy poszerzyć swoje zdolności interpersonalne. Bez ich pomocy byłoby nam ciężko dopracować wiele spraw związanych z dostosowaniem obsługi, a także wyglądem aplikacji dla klienta.
 
 Cały projekt aplikacji mobilnych jak i aplikacji webowej został omówiony i wielokrotnie prezentowany oraz testowany z Panią mgr inż. Martyną Maciaszczyk, która była osobą zatwierdzającą wszystkie postanowienia oraz zmiany w widoku wszystkich aplikacji. Proces ten przebiegał stosunkowo długo, jednak był bardzo pouczający.
 
-To właśnie interfejs graficzny był jednym z problemów wytworzenia takiego systemu. Bardzo trudne jest dostosowanie do siebie wszystkich aplikacji pod względem wyglądu. Strona internetowa zawsze będzie nieco inna od aplikacji mobilnej, ponieważ istnieje wiele różnic dotyczących założeń działania, obsługi, czy też przyzwyczajeń i wymagań użytkownika od danego systemu. Z tego powodu aplikacja internetowa dla administratora różni się od aplikacji mobilnych przeznaczonych przede wszystkim dla studentów. Największym problemem było dostosowanie do siebie obu aplikacji mobilnych na systemy Android i iOS. Każdą z nich pisała inna osoba, więc założenia dotyczące projektu musiały być dokładnie ustalone, a każda późniejsza edycja ponosiła za sobą modyfikacje na obu platformach, co przekładało się na dwukrotnie zwiększony czas potrzebny do realizacji danej zmiany. Dodatkowo każda z platform ma inne natywne narzędzia używane do tworzenia aplikacji. Systemy różnią się od siebie również wyglądem, co przyzwyczaja użytkowników do swoich rozwiązań. Z tego powodu aplikacje na dwa różne systemy nigdy nie mogą być identyczne jeśli chcą być intuicyjne dla ich grupy docelowej odbiorców.
+Interfejs graficzny był jednym z problemów wytworzenia takiego systemu. Bardzo trudne jest dostosowanie do siebie wszystkich aplikacji pod względem wyglądu. Strona internetowa zawsze będzie nieco inna od aplikacji mobilnej, ponieważ istnieje wiele różnic dotyczących założeń działania, obsługi, czy też przyzwyczajeń i wymagań użytkownika od danego systemu. Z tego powodu aplikacja internetowa dla administratora różni się od aplikacji mobilnych przeznaczonych przede wszystkim dla studentów. Największym problemem było dostosowanie do siebie obu aplikacji mobilnych na systemy Android i iOS. Każdą z nich pisała inna osoba, więc założenia dotyczące projektu musiały być dokładnie ustalone, a każda późniejsza edycja ponosiła za sobą modyfikacje na obu platformach, co przekładało się na dwukrotnie zwiększony czas potrzebny do realizacji danej zmiany. Dodatkowo każda z platform ma inne natywne narzędzia używane do tworzenia aplikacji. Systemy różnią się od siebie również wyglądem, co przyzwyczaja użytkowników do swoich rozwiązań. Z tego powodu aplikacje na dwa różne systemy nigdy nie mogą być identyczne jeśli chcą być intuicyjne dla ich grupy docelowej odbiorców.
 
 Aplikacja serwerowa dla biblioteki została napisana w sposób łatwy do rozszerzenia. Jej wygodne i proste w obsłudze możliwości dodawania nowych książek do bazy, mogą być wykorzystywane w przyszłości w celu powiększania ilości zbiorów dostępnych w bibliotece. Dodatkowo, warto byłoby dodać możliwość rezerwacji książki online, bezpośrednio z poziomu aplikacji mobilnej. Ciekawą opcją na dalszą przyszłość (z powodu dużego nakładu pracy), byłaby możliwość wypożyczania danej pozycji książki w postaci pliku o rozszerzeniu .pdf. Pozwoliłoby to nie tylko na zmniejszenie kolejek w bibliotece, ale także na możliwość dostępu do wszystkich książek z~urządzenia przenośnego bez potrzeby noszenia dużej ich ilości przy sobie. Co więcej, ilość książek w tym wypadku byłaby nieograniczona. Każdy ze studentów miałby swój wirtualny egzemplarz. Niestety byłoby to możliwe do osiągnięcia jedynie przy dużym nakładzie pracy z powodu dużej ilości skanów do wykonania a także stworzenia nowej usługi pozwalającej na ściąganie i zapisywanie plików na urządzeniu przenośnym.
 
@@ -1674,9 +1676,9 @@ Celem naszego projektu było utworzenie systemu dla Biblioteki Wydziału Matemat
 \bibitem{DjangoTranslation} https://docs.djangoproject.com/en/2.0/topics/i18n/translation/ [dostęp: 10 lutego 2018]
 \bibitem{DjangoModel} https://docs.djangoproject.com/en/2.0/topics/db/models/ [dostęp: 10 lutego 2018]
 \bibitem{DjangoOfficial} https://docs.djangoproject.com/pl/2.0/intro/overview/ [dostęp: 10 lutego 2018]
-\bibitem{djangobook} A. Mele, "Django. Praktyczne tworzenie aplikacji sieciowych" Helion, 2015.
-\bibitem{linuxAdmin} E. Nemeth, G. Snyder, T. Hein, B. Whaley, "Unix i Linux. Przewodnik
-administratora systemów.", Wydanie IV, Helion, 2011.
+\bibitem{djangobook} A. Mele, ,,Django. Praktyczne tworzenie aplikacji sieciowych'' Helion, 2015.
+\bibitem{linuxAdmin} E. Nemeth, G. Snyder, T. Hein, B. Whaley, ,,Unix i Linux. Przewodnik
+administratora systemów.'', Wydanie IV, Helion, 2011.
 
 
 \bibitem{clean_code}
