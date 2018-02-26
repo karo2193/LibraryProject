@@ -755,7 +755,7 @@ W celu monitorowania działania aplikacji po wdrożeniu, został do niej przył�
 
 \subsubsection{ModelViewPresenter}
 
-Projekt powstał w oparciu o strukturę \textit{Model View Presenter}. \textit{MVP} jest wzorcem projektowym stworzonym na podstawie wzorca Model View Controller. Podobnie jak w \textit{MVC}, Model odpowiada za reprezentację obiektów danych, a View za wyświetlanie informacji użytkownikowi. Presenter natomiast jest odpowiedzialny za odseparowanie modelu od widoku. Podejmuje decyzję o tym, co powinno być wyświetlone użytkownikowi. Na podstawie dostarczonych danych przez Model, zwraca je w reprezentacyjnej formie do View. W przeciwieństwie do Controllera z MVC, nie posiada w sobie żadnych elementów UI \cite{mvpBook}. Rysunek \ref{fig:mvp} przedstawia uproszczony model \textit{MVP}.
+Projekt powstał w oparciu o strukturę \textit{Model View Presenter}. \textit{MVP} jest wzorcem projektowym stworzonym na podstawie wzorca \textit{Model View Controller}. Podobnie jak w \textit{MVC}, \textit{Model} odpowiada za reprezentację obiektów danych, a \textit{View} za wyświetlanie informacji użytkownikowi. Presenter natomiast jest odpowiedzialny za odseparowanie modelu od widoku. Podejmuje decyzję o tym, co powinno być wyświetlone użytkownikowi. Na podstawie dostarczonych danych przez \textit{Model}, zwraca je w reprezentacyjnej formie do \textit{View}. W przeciwieństwie do \textit{Controllera} z \textit{MVC}, nie posiada w sobie żadnych elementów \textit{UI} \cite{mvpBook}. Rysunek \ref{fig:mvp} przedstawia uproszczony model \textit{MVP}.
 
 \begin{figure}[h]
   \centering
@@ -764,7 +764,7 @@ Projekt powstał w oparciu o strukturę \textit{Model View Presenter}. \textit{M
   \label{fig:mvp}
 \end{figure}
 
-W projekcie Model został odseparowany przez przeniesienie wszystkich klas związanych z pobieraniem/wysyłaniem danych do paczki \verb`data`, co widać na rysunku \ref{fig:mvpProject}. Natomiast elementy widoku znajdują się w paczce \verb`ui`. W nich występuje również konkretny podział na klasy View oraz Presenter. Dodatkowo występuje tu interfejs \verb`Contract`, który łączy w sobie interfejsy Presentera i View. Użycie interfejsów umożliwia zarządzanie widokiem z poziomu Presentera, bez konieczności posiadania elementów widoku w nim. 
+W projekcie \textit{Model} został odseparowany przez przeniesienie wszystkich klas związanych z pobieraniem/wysyłaniem danych do paczki \verb`data`, co widać na rysunku \ref{fig:mvpProject}. Natomiast elementy widoku znajdują się w paczce \verb`ui`. W nich występuje również konkretny podział na klasy \textit{View} oraz \textit{Presenter}. Dodatkowo występuje tu interfejs \verb`Contract`, który łączy w sobie interfejsy \textit{Presentera} i \textit{View}. Użycie interfejsów umożliwia zarządzanie widokiem z poziomu \textit{Presentera}, bez konieczności posiadania elementów widoku w nim. 
 
 \begin{figure}[h]
   \centering
