@@ -56,6 +56,9 @@ class SearchViewController: MainVC {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         searchButton.isUserInteractionEnabled = true
+        if tryShowNetworkAlert() {
+            return
+        }
         if !SessionManager.shared.dataDownloaded {
             SessionManager.shared.dataDownloaded = true
             RequestManager.shared.getData(categoryCompletion: fillCategories, dictionaryCompletion: fillDictionary, completion: (dataDownloadCompleted))
