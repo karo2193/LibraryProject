@@ -7,22 +7,22 @@
 %\drukJednostronny
 
 %% tytuł promotor iautor (\title to komenda standardowa)
-\title{System obsługi Biblioteki Wydziału Matematyki Stosowanej}
+\title{System obsługi biblioteki naukowej}
 \promotor{dr inż. Zdzisław Sroczyński}
 
 
 %% każdy autor musi mieć 4 argumenty: imię nazwisko, nr albumu, procent wkładu, opis wkładu
-\autor{Karolina Chrząszcz}{252525}{1} {Projekt interfejsu aplikacji mobilnej, implementacja aplikacji na system Android}
+\autor{Karolina Chrząszcz}{225156}{33} {Projekt interfejsu aplikacji mobilnej, implementacja aplikacji na system Android}
 	
-\autor{Szymon Górnioczek}{252252}{1} {Wykonanie aplikacji serwerowej i panelu administracyjnego dla bibliotekarza}
+\autor{Szymon Górnioczek}{225164}{34} {Wykonanie aplikacji serwerowej i panelu administracyjnego dla bibliotekarza}
 
-\autor{Tomasz Kryg}{225183}{98}	{Projekt interfejsu aplikacji mobilnej, implementacja aplikacji na system iOS}
+\autor{Tomasz Kryg}{225183}{33}	{Projekt interfejsu aplikacji mobilnej, implementacja aplikacji na system iOS}
 	
 	
 
 
 %% dedykacja mile widziana
-\dedykacja{Karolinie\\Szymonowi\\Tomkowi}
+%%\dedykacja{Nam}
 %\NumeryNaPoczatku
 %% numeracja wzorów tu włączona typu (1.2.3), ta druga to typu (1.2), domyślnie typu (1)
 %\subsectionWzory
@@ -44,12 +44,11 @@
 
 \begin{document}
 
-Książka -- jeden z najbardziej podstawowych przedmiotów. Każdy z nas, nawet jeśli nie lubi czytać, niejednokrotnie w swoim życiu z jakiejś korzystał. Może służyć rozrywce, ale przede wszystkim szeroko pojętej edukacji. Każda przeczytana książka pomaga rozwinąć myślenie jak i kreatywność czytelnika. Każde przeczytane zdanie rozwija zdolność wypowiadania się. 
-Każde przeczytane słowo pozwala poszerzyć zdolności językowe.
+Książka -- jeden z najbardziej podstawowych przedmiotów. Każdy z nas, nawet jeśli nie lubi czytać, niejednokrotnie w swoim życiu z jakiejś korzystał. Może służyć rozrywce, ale przede wszystkim szeroko pojętej edukacji. Każda przeczytana książka pomaga rozwinąć myślenie jak i kreatywność czytelnika. Każde przeczytane zdanie rozwija zdolność wypowiadania się. Każde przeczytane słowo pozwala poszerzyć zdolności językowe.
 
 W dzisiejszych czasach, książki są coraz częściej pomijane kosztem innych rozrywek, takich jak gry komputerowe, kino czy telewizja, które z roku na rok wypychają książkę na dalszy plan. Jak wynika z raportu Biblioteki Narodowej \cite{raportBN}, w roku $2016$ jedynie $37\%$ Polaków przeczytało choć jedną książkę. Mogłoby się więc wydawać, że wchodzenie na rynek książek nie jest najlepszym pomysłem. Jednak istnieją książki, które posiadają często wiadomości niezmienne i nie służą rozrywce, a przede wszystkim pozyskiwaniu wiedzy. Są to między innymi książki z działów ścisłych dotyczących bezpośrednio matematyki. Przykładowo ciąg Fibonacciego omówiony w~roku $1202$ przez Leonarda z Pizy, do dziś został opisany i wykorzystany w wielu książkach związanych z~różnorodnymi dziedzinami. Z przytoczonego przykładu wynika, że książki dotyczące matematyki czy też fizyki, bardzo często zawierają dużo wiedzy, nawet w czasach współczesnych. Wszystko ewoluuje, jednak prawa natury pozostają niezmienne.
 
-Współcześnie doszliśmy do punktu, w którym książka zaczyna mieć znaczenie przede wszystkim edukacyjne. Na uczelniach całego świata, książki są synonimem wiedzy, ponieważ bardzo często profesorzy i doktorzy kształcili się za pomocą takich samych materiałów co ich dzisiejsi uczniowie. Z tego powodu biblioteki -- szczególnie na początku semestru -- muszą zmagać się z dużymi ilościami studentów, chcącymi poszukać potrzebnych im książek oraz sprawdzić ich ilość i dostępność, aby później je wypożyczyć. Jest to problem zarówno dla pracowników biblioteki jak i dla studentów. Bibliotekarze są zajęci sprawdzaniem tych samych informacji dla każdego studenta z osobna. Natomiast uczniowie są zdenerwowani sporymi kolejkami i tłumem ludzi, który zniechęca do odwiedzania bibliotek.
+Współcześnie doszliśmy do punktu, w którym książka zaczyna mieć znaczenie przede wszystkim edukacyjne. Na uczelniach całego świata, książki są synonimem wiedzy, ponieważ bardzo często profesorzy i doktorzy kształcili się za pomocą takich samych materiałów co ich dzisiejsi uczniowie. Z tego powodu biblioteki -- szczególnie na początku semestru -- muszą zmagać się z dużymi ilościami studentów, chcącymi poszukać potrzebnych im książek oraz sprawdzić ich ilość i dostępność, aby później je wypożyczyć. Jest to problem zarówno dla pracowników biblioteki jak i dla studentów. Bibliotekarze są zajęci sprawdzaniem tych samych informacji dla każdego studenta z osobna. Natomiast uczniowie są zdenerwowani sporymi kolejkami i~tłumem ludzi, który zniechęca do odwiedzania bibliotek.
 
 \section{System obsługi biblioteki}
 
@@ -906,7 +905,8 @@ Podczas powrotu do poprzedniej aktywności, zaznaczone elementy są przekazane w
 @Override
 public void onBackPressed() {
     Intent intent = new Intent();
-    intent.putParcelableArrayListExtra(ON_BACK_CATEGORIES_EXTRA, categories);
+    intent.putParcelableArrayListExtra(ON_BACK_CATEGORIES_EXTRA,
+        categories);
     setResult(RESULT_OK, intent);
     finish();
 }
@@ -1080,7 +1080,7 @@ W lewym górnym rogu znajduje się strzałka powrotu do poprzedniego widoku. Kli
 
 \subsubsection{Wyniki wyszukiwania}
 
-Po naciśnięciu przez użytkownika przycisku \textit{Szukaj} na ekranie wyszukiwania otworzy się nowy widok. W przypadku nie znalezienia żadnej pozycji pasującej do zapytania lub w przypadku błędu serwera, wyświetlony zostanie ekran znajdujący się na rysunku \ref{fig:androidResults} po prawej stronie. Ekran po lewej z rysunku \ref{fig:androidResults}, przedstawia listę z poprawnie znalezionymi pozycjami. Na tym etapie użytkownik może sprawdzić część tytułu książki (wyświetlanie zależne od wielkości ekranu urządzenia), autora oraz rok wydania. Sortowanie odbywa się alfabetycznie pod względem tytułu. W~przypadku takich samych tytułów sortowanie odbywa się po dacie wydania -- od najnowszej do najstarszej. 
+Po naciśnięciu przez użytkownika przycisku \textit{Szukaj} na ekranie wyszukiwania otworzy się nowy widok. W przypadku nie znalezienia żadnej pozycji pasującej do zapytania lub w przypadku błędu serwera, wyświetlony zostanie ekran znajdujący się na rysunku \ref{fig:androidResults} po prawej stronie. Ekran po lewej z rysunku \ref{fig:androidResults}, przedstawia listę z~poprawnie znalezionymi pozycjami. Na tym etapie użytkownik może sprawdzić część tytułu książki (wyświetlanie zależne od wielkości ekranu urządzenia), autora oraz rok wydania. Sortowanie odbywa się alfabetycznie pod względem tytułu. W~przypadku takich samych tytułów sortowanie odbywa się po dacie wydania -- od najnowszej do najstarszej. 
 
 \begin{figure}
 \centering
@@ -1096,7 +1096,7 @@ Więcej szczegółów książki zostanie wyświetlonych po naciśnięciu na konk
 
 \subsubsection{Szczegóły książki}
 
-Ekran szczegółów książki został przedstawiony na rysunku \ref{fig:anroidBookDetails}. Tym razem wszystkie znane informacje wyświetlane są w całości. Jeśli elementów jest dużo i nie mieszczą się na ekranie, użytkownik może scrollować widok w celu wyświetlenia pozostałych informacji.
+Ekran szczegółów książki został przedstawiony na rysunku \ref{fig:anroidBookDetails}. Tym razem wszystkie znane informacje wyświetlane są w całości na jednym widoku. Każda z informacji odseparowana jest od siebie horyzontalną linią. Jeśli elementów jest dużo i~nie mieszczą się na ekranie, użytkownik może przesuwać widok w celu wyświetlenia pozostałych informacji.
 
 \begin{figure}[h]
   \centering
@@ -1104,7 +1104,6 @@ Ekran szczegółów książki został przedstawiony na rysunku \ref{fig:anroidBo
   \caption{Szczegóły książki}
   \label{fig:anroidBookDetails}
 \end{figure}
-
 
 
 \section{Aplikacja na system iOS}
@@ -1559,6 +1558,28 @@ fileprivate func getRequest(
 \end{verbatim}
 
 
+\subsection{Localizable.strings}
+
+Warto wspomnieć o zastosowaniu w projekcie plików typu \textit{Localizable.strings}. Są to pliki tekstowe w formacie (klucz - wartość). Zawierają zasłownikowane wyrazy, wyrażenia oraz zdania występujące w aplikacji, w celu obsłużenia różnych wersji językowych urządzeń, na których została zainstalowana aplikacja. Przykładowa część takiego pliku w wersji angielskiej wygląda następująco:
+\begin{verbatim}
+...
+"enterLogin" = "Enter login";
+"enterPassword" = "Enter password";
+"search" = "Search";
+"backToSearch" = "Back to search";
+"searchingResults" = "Searching results";
+...
+\end{verbatim}
+Wykorzystanie powyższego rozwiązania polega na użyciu klucza zamiast tekstu, który jest do niego przypisany. Klucze we wszystkich plikach językowych są identyczne, lecz ich wartości różnią się w zależności od języka. Z tego powodu system sam zarządza wyświetlanymi wyrażeniami w zależności od języka systemu. Domyślnym językiem jest język angielski. Zastosowanie powyższego rozwiązania dla ustawienia tytułu przycisku zostało przedstawione poniżej.
+\begin{verbatim}
+...
+searchButton.setTitle(R.string.localizable.search(), for: .normal)
+...
+\end{verbatim}
+
+
+
+
 \subsection{Interfejs użytkownika}
 
 
@@ -1604,7 +1625,7 @@ W lewym górnym rogu umiejscowiony jest przycisk zapisu wybranych kategorii. Jeg
 
 \subsubsection{Wyniki wyszukiwania}
 
-Na ekranie wyszukiwania, wybór przycisku odpowiadającego za szukanie, przekierowuje użytkownika do ekranu Wyników wyszukiwania. W przypadku nie znalezienia żadnej pozycji pasującej do zapytania, wyświetlany jest ekran znajdujący się na rysunku \ref{fig:iosResultsEmpty}. Ekran z rysunku numer \ref{fig:iosResults}, przedstawia listę z poprawnie znalezionymi pozycjami. Składa się on z wierszy przedstawiających tytuły oraz autorów wyszukanych pozycji. Ilość wyszukanych książek jest równa 20 lub mniejsza. W przypadku, gdy jest ona maksymalna, użytkownik może przejść do dołu listy w celu doładowania i wyświetlenia kolejnych rekordów na widoku.
+Na ekranie wyszukiwania, wybór przycisku odpowiadającego za szukanie, przekierowuje użytkownika do ekranu Wyników wyszukiwania. W przypadku nie znalezienia żadnej pozycji pasującej do zapytania, wyświetlany jest ekran znajdujący się na rysunku \ref{fig:iosResultsEmpty}. Ekran z rysunku numer \ref{fig:iosResults}, przedstawia listę z poprawnie znalezionymi pozycjami. Składa się on z wierszy przedstawiających tytuły oraz autorów wyszukanych pozycji. Ilość wyszukanych książek jest równa 20 lub mniejsza. W~przypadku, gdy jest ona maksymalna, użytkownik może przejść do dołu listy w~celu doładowania i wyświetlenia kolejnych rekordów na widoku.
 
 \begin{figure}
 \centering
@@ -1658,12 +1679,20 @@ Tworząc aplikację serwerową w tak małej grupie dla całego wydziału, mogli�
 
 Cały projekt aplikacji mobilnych jak i aplikacji webowej został omówiony i wielokrotnie prezentowany oraz testowany z Panią mgr inż. Martyną Maciaszczyk, która była osobą zatwierdzającą wszystkie postanowienia oraz zmiany w widoku wszystkich aplikacji. Proces ten przebiegał stosunkowo długo, jednak był bardzo pouczający.
 
-Interfejs graficzny był jednym z problemów wytworzenia takiego systemu. Bardzo trudne jest dostosowanie do siebie wszystkich aplikacji pod względem wyglądu. Strona internetowa zawsze będzie nieco inna od aplikacji mobilnej, ponieważ istnieje wiele różnic dotyczących założeń działania, obsługi, czy też przyzwyczajeń i wymagań użytkownika od danego systemu. Z tego powodu aplikacja internetowa dla administratora różni się od aplikacji mobilnych przeznaczonych przede wszystkim dla studentów. Największym problemem było dostosowanie do siebie obu aplikacji mobilnych na systemy Android i iOS. Każdą z nich pisała inna osoba, więc założenia dotyczące projektu musiały być dokładnie ustalone, a każda późniejsza edycja ponosiła za sobą modyfikacje na obu platformach, co przekładało się na dwukrotnie zwiększony czas potrzebny do realizacji danej zmiany. Dodatkowo każda z platform ma inne natywne narzędzia używane do tworzenia aplikacji. Systemy różnią się od siebie również wyglądem, co przyzwyczaja użytkowników do swoich rozwiązań. Z tego powodu aplikacje na dwa różne systemy nigdy nie mogą być identyczne jeśli chcą być intuicyjne dla ich grupy docelowej odbiorców.
+Interfejs graficzny był jednym z problemów wytworzenia takiego systemu. Bardzo trudne jest dostosowanie do siebie wszystkich aplikacji pod względem wyglądu. Strona internetowa zawsze będzie nieco inna od aplikacji mobilnej, ponieważ istnieje wiele różnic dotyczących założeń działania, obsługi, czy też przyzwyczajeń i~wymagań użytkownika od danego systemu. Z tego powodu aplikacja internetowa dla administratora różni się od aplikacji mobilnych przeznaczonych przede wszystkim dla studentów. Największym problemem było dostosowanie do siebie obu aplikacji mobilnych na systemy Android i iOS. Każdą z nich pisała inna osoba, więc założenia dotyczące projektu musiały być dokładnie ustalone, a każda późniejsza edycja ponosiła za sobą modyfikacje na obu platformach, co przekładało się na dwukrotnie zwiększony czas potrzebny do realizacji danej zmiany. Dodatkowo każda z platform ma inne natywne narzędzia używane do tworzenia aplikacji. Systemy różnią się od siebie również wyglądem, co przyzwyczaja użytkowników do swoich rozwiązań. Z~ tego powodu aplikacje na dwa różne systemy nigdy nie mogą być identyczne jeśli chcą być intuicyjne dla ich grupy docelowej odbiorców.
 
 Aplikacja serwerowa dla biblioteki została napisana w sposób łatwy do rozszerzenia. Jej wygodne i proste w obsłudze możliwości dodawania nowych książek do bazy, mogą być wykorzystywane w przyszłości w celu powiększania ilości zbiorów dostępnych w bibliotece. Dodatkowo, warto byłoby dodać możliwość rezerwacji książki online, bezpośrednio z poziomu aplikacji mobilnej. Ciekawą opcją na dalszą przyszłość (z powodu dużego nakładu pracy), byłaby możliwość wypożyczania danej pozycji książki w postaci pliku o rozszerzeniu .pdf. Pozwoliłoby to nie tylko na zmniejszenie kolejek w bibliotece, ale także na możliwość dostępu do wszystkich książek z~urządzenia przenośnego bez potrzeby noszenia dużej ich ilości przy sobie. Co więcej, ilość książek w tym wypadku byłaby nieograniczona. Każdy ze studentów miałby swój wirtualny egzemplarz. Niestety byłoby to możliwe do osiągnięcia jedynie przy dużym nakładzie pracy z powodu dużej ilości skanów do wykonania a także stworzenia nowej usługi pozwalającej na ściąganie i zapisywanie plików na urządzeniu przenośnym.
 
 Celem naszego projektu było utworzenie systemu dla Biblioteki Wydziału Matematyki Stosowanej na Politechnice Śląskiej w Gliwicach. Cel ten udało nam się osiągnąć zgodnie ze wszystkimi założeniami jakie zostały przed nami postawione. Mamy nadzieję, że w przyszłości uda się wdrożyć nasz system do użytku, i że posłuży on gronu odbiorców w taki sposób, w jaki byśmy chcieli, aby służył nam, gdy faktycznie go potrzebowaliśmy.
 
+
+\section{Załączniki}
+
+W projekcie zostały wykorzystane następujące pliki do utworzenia bazy danych oraz modelu:
+\begin{enumerate}
+\item dane-prog-bibl.xlsx
+\item kategorie\_nowe.txt
+\end{enumerate}
 
 \begin{thebibliography}{12}
 
@@ -1685,7 +1714,7 @@ administratora systemów.'', Wydanie IV, Helion, 2011.
 Robert C. Martin. 
 \textit{Czysty kod. Podręcznik dobrego programisty}. 
 Wydawnictwo Helion, 2010, ISBN 978-83-283-1401-6.
-\bibitem{Swift1} The Swift Programming Language (Swift 4.0.3)
+\bibitem{Swift1} The Swift Programming Language (Swift 4.0.3), 
 \bibitem{Swift2} Using Swift with Cocoa and Objective-C (Swift 4.0.3)
 \bibitem{iosStatistics} https://developer.apple.com/support/app-store/ [dostęp: 10 lutego 2018]
 \bibitem{AppleDeveloper} https://developer.apple.com/documentation/ [dostęp: 10 lutego 2018]
