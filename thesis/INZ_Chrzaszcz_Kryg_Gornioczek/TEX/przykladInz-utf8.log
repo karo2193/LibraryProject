@@ -1,0 +1,1593 @@
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (MiKTeX 2.9) (preloaded format=pdflatex 2014.10.19)  28 FEB 2018 13:01
+entering extended mode
+**przykladInz-utf8.tex
+("C:\Users\Tomasz Kryg\Desktop\INZ\PÅ‚ytka\TEX\przykladInz-utf8.tex"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, polish, loaded.
+("C:\Users\Tomasz Kryg\Desktop\INZ\PÅ‚ytka\TEX\projektInzynierskiMS.cls"
+Document Class: projektInzynierskiMS 2005/05/10 v2.4 nonStandard LaTeX document
+ class
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\size12.clo"
+File: size12.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\capspecdimx=\dimen102
+\bibindent=\dimen103
+\nr@@tora=\count87
+\nr@@klasy=\count88
+\t@mpnumer=\count89
+\c@numeracjadod=\count90
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\polski\polski.sty"
+Package: polski 2008/02/24 v1.3.3 Polish language package
+
+Document language package `polski' v1.3.3 <2008/02/24>
+\l@nohyphenation=\language2
+   Switching to Polish text encoding and Polish maths fonts.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ot4enc.def"
+File: ot4enc.def 2005/09/27 v1.99g Standard LaTeX file
+)
+LaTeX Font Info:    Try loading font information for OT4+cmr on input line 346.
+
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\polski\ot4cmr.fd"
+File: ot4cmr.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
+(Font)                  OT1/cmr/bx/n --> OT4/cmr/bx/n on input line 346.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
+(Font)                  OT1/cmss/m/n --> OT4/cmss/m/n on input line 346.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
+(Font)                  OT1/cmr/m/it --> OT4/cmr/m/it on input line 346.
+LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
+(Font)                  OT1/cmtt/m/n --> OT4/cmtt/m/n on input line 346.
+LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
+(Font)                  OT1/cmss/bx/n --> OT4/cmss/bx/n on input line 346.
+LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
+(Font)                  OT1/cmr/bx/it --> OT4/cmr/bx/it on input line 346.
+LaTeX Font Info:    Encoding `OT1' has changed to `OT4' for symbol font
+(Font)              `operators' in the math version `normal' on input line 346.
+
+LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
+(Font)                  OT1/cmr/m/n --> OT4/cmr/m/n on input line 346.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `normal'
+(Font)                  OML/cmm/m/it --> OML/plm/m/it on input line 346.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `normal'
+(Font)                  OMS/cmsy/m/n --> OMS/plsy/m/n on input line 346.
+LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `normal'
+(Font)                  OMX/cmex/m/n --> OMX/plex/m/n on input line 346.
+LaTeX Font Info:    Encoding `OT1' has changed to `OT4' for symbol font
+(Font)              `operators' in the math version `bold' on input line 346.
+LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
+(Font)                  OT1/cmr/bx/n --> OT4/cmr/bx/n on input line 346.
+LaTeX Font Info:    Overwriting symbol font `letters' in version `bold'
+(Font)                  OML/cmm/b/it --> OML/plm/b/it on input line 346.
+LaTeX Font Info:    Overwriting symbol font `symbols' in version `bold'
+(Font)                  OMS/cmsy/b/n --> OMS/plsy/b/n on input line 346.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\inputenc.sty"
+Package: inputenc 2008/03/30 v1.1d Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\utf8.def"
+File: utf8.def 2008/04/05 v1.1m UTF-8 support for inputenc
+Now handling font encoding OML ...
+... no UTF-8 mapping file for font encoding OML
+Now handling font encoding T1 ...
+... processing UTF-8 mapping file for font encoding T1
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\t1enc.dfu"
+File: t1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00AB (decimal 171)
+   defining Unicode char U+00BB (decimal 187)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C0 (decimal 192)
+   defining Unicode char U+00C1 (decimal 193)
+   defining Unicode char U+00C2 (decimal 194)
+   defining Unicode char U+00C3 (decimal 195)
+   defining Unicode char U+00C4 (decimal 196)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00C7 (decimal 199)
+   defining Unicode char U+00C8 (decimal 200)
+   defining Unicode char U+00C9 (decimal 201)
+   defining Unicode char U+00CA (decimal 202)
+   defining Unicode char U+00CB (decimal 203)
+   defining Unicode char U+00CC (decimal 204)
+   defining Unicode char U+00CD (decimal 205)
+   defining Unicode char U+00CE (decimal 206)
+   defining Unicode char U+00CF (decimal 207)
+   defining Unicode char U+00D0 (decimal 208)
+   defining Unicode char U+00D1 (decimal 209)
+   defining Unicode char U+00D2 (decimal 210)
+   defining Unicode char U+00D3 (decimal 211)
+   defining Unicode char U+00D4 (decimal 212)
+   defining Unicode char U+00D5 (decimal 213)
+   defining Unicode char U+00D6 (decimal 214)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00D9 (decimal 217)
+   defining Unicode char U+00DA (decimal 218)
+   defining Unicode char U+00DB (decimal 219)
+   defining Unicode char U+00DC (decimal 220)
+   defining Unicode char U+00DD (decimal 221)
+   defining Unicode char U+00DE (decimal 222)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E0 (decimal 224)
+   defining Unicode char U+00E1 (decimal 225)
+   defining Unicode char U+00E2 (decimal 226)
+   defining Unicode char U+00E3 (decimal 227)
+   defining Unicode char U+00E4 (decimal 228)
+   defining Unicode char U+00E5 (decimal 229)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00E7 (decimal 231)
+   defining Unicode char U+00E8 (decimal 232)
+   defining Unicode char U+00E9 (decimal 233)
+   defining Unicode char U+00EA (decimal 234)
+   defining Unicode char U+00EB (decimal 235)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F0 (decimal 240)
+   defining Unicode char U+00F1 (decimal 241)
+   defining Unicode char U+00F2 (decimal 242)
+   defining Unicode char U+00F3 (decimal 243)
+   defining Unicode char U+00F4 (decimal 244)
+   defining Unicode char U+00F5 (decimal 245)
+   defining Unicode char U+00F6 (decimal 246)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+00F9 (decimal 249)
+   defining Unicode char U+00FA (decimal 250)
+   defining Unicode char U+00FB (decimal 251)
+   defining Unicode char U+00FC (decimal 252)
+   defining Unicode char U+00FD (decimal 253)
+   defining Unicode char U+00FE (decimal 254)
+   defining Unicode char U+00FF (decimal 255)
+   defining Unicode char U+0102 (decimal 258)
+   defining Unicode char U+0103 (decimal 259)
+   defining Unicode char U+0104 (decimal 260)
+   defining Unicode char U+0105 (decimal 261)
+   defining Unicode char U+0106 (decimal 262)
+   defining Unicode char U+0107 (decimal 263)
+   defining Unicode char U+010C (decimal 268)
+   defining Unicode char U+010D (decimal 269)
+   defining Unicode char U+010E (decimal 270)
+   defining Unicode char U+010F (decimal 271)
+   defining Unicode char U+0110 (decimal 272)
+   defining Unicode char U+0111 (decimal 273)
+   defining Unicode char U+0118 (decimal 280)
+   defining Unicode char U+0119 (decimal 281)
+   defining Unicode char U+011A (decimal 282)
+   defining Unicode char U+011B (decimal 283)
+   defining Unicode char U+011E (decimal 286)
+   defining Unicode char U+011F (decimal 287)
+   defining Unicode char U+0130 (decimal 304)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0132 (decimal 306)
+   defining Unicode char U+0133 (decimal 307)
+   defining Unicode char U+0139 (decimal 313)
+   defining Unicode char U+013A (decimal 314)
+   defining Unicode char U+013D (decimal 317)
+   defining Unicode char U+013E (decimal 318)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0143 (decimal 323)
+   defining Unicode char U+0144 (decimal 324)
+   defining Unicode char U+0147 (decimal 327)
+   defining Unicode char U+0148 (decimal 328)
+   defining Unicode char U+014A (decimal 330)
+   defining Unicode char U+014B (decimal 331)
+   defining Unicode char U+0150 (decimal 336)
+   defining Unicode char U+0151 (decimal 337)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+0154 (decimal 340)
+   defining Unicode char U+0155 (decimal 341)
+   defining Unicode char U+0158 (decimal 344)
+   defining Unicode char U+0159 (decimal 345)
+   defining Unicode char U+015A (decimal 346)
+   defining Unicode char U+015B (decimal 347)
+   defining Unicode char U+015E (decimal 350)
+   defining Unicode char U+015F (decimal 351)
+   defining Unicode char U+0160 (decimal 352)
+   defining Unicode char U+0161 (decimal 353)
+   defining Unicode char U+0162 (decimal 354)
+   defining Unicode char U+0163 (decimal 355)
+   defining Unicode char U+0164 (decimal 356)
+   defining Unicode char U+0165 (decimal 357)
+   defining Unicode char U+016E (decimal 366)
+   defining Unicode char U+016F (decimal 367)
+   defining Unicode char U+0170 (decimal 368)
+   defining Unicode char U+0171 (decimal 369)
+   defining Unicode char U+0178 (decimal 376)
+   defining Unicode char U+0179 (decimal 377)
+   defining Unicode char U+017A (decimal 378)
+   defining Unicode char U+017B (decimal 379)
+   defining Unicode char U+017C (decimal 380)
+   defining Unicode char U+017D (decimal 381)
+   defining Unicode char U+017E (decimal 382)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201A (decimal 8218)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+   defining Unicode char U+201E (decimal 8222)
+   defining Unicode char U+2030 (decimal 8240)
+   defining Unicode char U+2031 (decimal 8241)
+   defining Unicode char U+2039 (decimal 8249)
+   defining Unicode char U+203A (decimal 8250)
+   defining Unicode char U+2423 (decimal 9251)
+)
+Now handling font encoding OT1 ...
+... processing UTF-8 mapping file for font encoding OT1
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\ot1enc.dfu"
+File: ot1enc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A1 (decimal 161)
+   defining Unicode char U+00A3 (decimal 163)
+   defining Unicode char U+00B8 (decimal 184)
+   defining Unicode char U+00BF (decimal 191)
+   defining Unicode char U+00C5 (decimal 197)
+   defining Unicode char U+00C6 (decimal 198)
+   defining Unicode char U+00D8 (decimal 216)
+   defining Unicode char U+00DF (decimal 223)
+   defining Unicode char U+00E6 (decimal 230)
+   defining Unicode char U+00EC (decimal 236)
+   defining Unicode char U+00ED (decimal 237)
+   defining Unicode char U+00EE (decimal 238)
+   defining Unicode char U+00EF (decimal 239)
+   defining Unicode char U+00F8 (decimal 248)
+   defining Unicode char U+0131 (decimal 305)
+   defining Unicode char U+0141 (decimal 321)
+   defining Unicode char U+0142 (decimal 322)
+   defining Unicode char U+0152 (decimal 338)
+   defining Unicode char U+0153 (decimal 339)
+   defining Unicode char U+2013 (decimal 8211)
+   defining Unicode char U+2014 (decimal 8212)
+   defining Unicode char U+2018 (decimal 8216)
+   defining Unicode char U+2019 (decimal 8217)
+   defining Unicode char U+201C (decimal 8220)
+   defining Unicode char U+201D (decimal 8221)
+)
+Now handling font encoding OMS ...
+... processing UTF-8 mapping file for font encoding OMS
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omsenc.dfu"
+File: omsenc.dfu 2008/04/05 v1.1m UTF-8 support for inputenc
+   defining Unicode char U+00A7 (decimal 167)
+   defining Unicode char U+00B6 (decimal 182)
+   defining Unicode char U+00B7 (decimal 183)
+   defining Unicode char U+2020 (decimal 8224)
+   defining Unicode char U+2021 (decimal 8225)
+   defining Unicode char U+2022 (decimal 8226)
+)
+Now handling font encoding OMX ...
+... no UTF-8 mapping file for font encoding OMX
+Now handling font encoding U ...
+... no UTF-8 mapping file for font encoding U
+Now handling font encoding OT4 ...
+... no UTF-8 mapping file for font encoding OT4
+   defining Unicode char U+00A9 (decimal 169)
+   defining Unicode char U+00AA (decimal 170)
+   defining Unicode char U+00AE (decimal 174)
+   defining Unicode char U+00BA (decimal 186)
+   defining Unicode char U+02C6 (decimal 710)
+   defining Unicode char U+02DC (decimal 732)
+   defining Unicode char U+200C (decimal 8204)
+   defining Unicode char U+2026 (decimal 8230)
+   defining Unicode char U+2122 (decimal 8482)
+   defining Unicode char U+2423 (decimal 9251)
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsmath.sty"
+Package: amsmath 2013/01/14 v2.14 AMS math features
+\@mathmargin=\skip43
+
+For additional information on amsmath, use the `?' option.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amstext.sty"
+Package: amstext 2000/06/29 v2.01
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsgen.sty"
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks16
+\ex@=\dimen104
+))
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsbsy.sty"
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen105
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\amsmath\amsopn.sty"
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count91
+LaTeX Info: Redefining \frac on input line 210.
+\uproot@=\count92
+\leftroot@=\count93
+LaTeX Info: Redefining \overline on input line 306.
+\classnum@=\count94
+\DOTSCASE@=\count95
+LaTeX Info: Redefining \ldots on input line 378.
+LaTeX Info: Redefining \dots on input line 381.
+LaTeX Info: Redefining \cdots on input line 466.
+\Mathstrutbox@=\box26
+\strutbox@=\box27
+\big@size=\dimen106
+LaTeX Font Info:    Redeclaring font encoding OML on input line 566.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 567.
+\macc@depth=\count96
+\c@MaxMatrixCols=\count97
+\dotsspace@=\muskip10
+\c@parentequation=\count98
+\dspbrk@lvl=\count99
+\tag@help=\toks17
+\row@=\count100
+\column@=\count101
+\maxfields@=\count102
+\andhelp@=\toks18
+\eqnshift@=\dimen107
+\alignsep@=\dimen108
+\tagshift@=\dimen109
+\tagwidth@=\dimen110
+\totwidth@=\dimen111
+\lineht@=\dimen112
+\@envbody=\toks19
+\multlinegap=\skip44
+\multlinetaggap=\skip45
+\mathdisplay@stack=\toks20
+LaTeX Info: Redefining \[ on input line 2665.
+LaTeX Info: Redefining \] on input line 2666.
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks21
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count103
+))
+\Gin@req@height=\dimen113
+\Gin@req@width=\dimen114
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hyperref.sty"
+Package: hyperref 2012/11/06 v6.83m Hypertext links for LaTeX
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-hyperref.sty"
+Package: hobsub-hyperref 2012/04/25 v1.12 Bundle oberdiek, subset hyperref (HO)
+
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\hobsub-generic.sty"
+Package: hobsub-generic 2012/04/25 v1.12 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/04/25 v1.12 Construct package bundles (HO)
+Package hobsub Info: Skipping package `infwarerr' (already loaded).
+Package hobsub Info: Skipping package `ltxcmds' (already loaded).
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2011/06/24 v1.1 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\ifxetex\ifxetex.sty"
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\auxhook.sty"
+Package: auxhook 2011/03/04 v1.3 Hooks for auxiliary files (HO)
+
+
+Package auxhook Warning: Cannot patch \document,
+(auxhook)                using \AtBeginDocument instead.
+
+) ("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\kvoptions.sty"
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen115
+\Hy@linkcounter=\count104
+\Hy@pagecounter=\count105
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\pd1enc.def"
+File: pd1enc.def 2012/11/06 v6.83m Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+\Hy@SavedSpaceFactor=\count106
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\00miktex\hyperref.cfg"
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4443.
+Package hyperref Info: Link nesting OFF on input line 4448.
+Package hyperref Info: Hyper index ON on input line 4451.
+Package hyperref Info: Plain pages OFF on input line 4458.
+Package hyperref Info: Backreferencing OFF on input line 4463.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4688.
+\c@Hy@tempcnt=\count107
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\url\url.sty"
+\Urlmuskip=\muskip11
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 5041.
+\XeTeXLinkMargin=\dimen116
+\Fld@menulength=\count108
+\Field@Width=\dimen117
+\Fld@charsize=\dimen118
+Package hyperref Info: Hyper figures OFF on input line 6295.
+Package hyperref Info: Link nesting OFF on input line 6300.
+Package hyperref Info: Hyper index ON on input line 6303.
+Package hyperref Info: backreferencing OFF on input line 6310.
+Package hyperref Info: Link coloring OFF on input line 6315.
+Package hyperref Info: Link coloring with OCG OFF on input line 6320.
+Package hyperref Info: PDF/A mode OFF on input line 6325.
+LaTeX Info: Redefining \ref on input line 6365.
+LaTeX Info: Redefining \pageref on input line 6369.
+\Hy@abspage=\count109
+\c@Item=\count110
+\c@Hfootnote=\count111
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\hpdftex.def"
+File: hpdftex.def 2012/11/06 v6.83m Hyperref driver for pdfTeX
+\Fld@listcount=\count112
+\c@bookmark@seq@number=\count113
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\oberdiek\rerunfilecheck.sty"
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip46
+)
+\c@tw=\count114
+\c@twa=\count115
+\c@dd=\count116
+
+("C:\Users\Tomasz Kryg\Desktop\INZ\PÅ‚ytka\TEX\przykladInz-utf8.aux"
+
+LaTeX Warning: Label `fig:adminLogin' multiply defined.
+
+
+LaTeX Warning: Label `fig:iosCategories' multiply defined.
+
+
+LaTeX Warning: Label `fig:iosCategories' multiply defined.
+
+
+LaTeX Warning: Label `fig:iosCategories' multiply defined.
+
+
+LaTeX Warning: Label `fig:iosCategories' multiply defined.
+
+)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 45.
+LaTeX Font Info:    ... okay on input line 45.
+ ("C:\Program Files (x86)\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count117
+\scratchdimen=\dimen119
+\scratchbox=\box28
+\nofMPsegments=\count118
+\nofMParguments=\count119
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count120
+\MPscratchDim=\dimen120
+\MPnumerator=\count121
+\makeMPintoPDFobject=\count122
+\everyMPtoPDFconversion=\toks23
+)
+\AtBeginShipoutBox=\box29
+
+
+Package hyperref Warning: Height of page (\paperheight) is invalid (0.0pt),
+(hyperref)                using 11in.
+
+Package hyperref Info: Link coloring OFF on input line 45.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\hyperref\nameref.sty"
+Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\generic\oberdiek\gettitlestring.sty"
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count123
+)
+LaTeX Info: Redefining \ref on input line 45.
+LaTeX Info: Redefining \pageref on input line 45.
+LaTeX Info: Redefining \nameref on input line 45.
+
+("C:\Users\Tomasz Kryg\Desktop\INZ\PÅ‚ytka\TEX\przykladInz-utf8.out")
+("C:\Users\Tomasz Kryg\Desktop\INZ\PÅ‚ytka\TEX\przykladInz-utf8.out")
+\@outlinefile=\write3
+LaTeX Font Info:    Try loading font information for OT4+cmss on input line 45.
+
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\polski\ot4cmss.fd"
+File: ot4cmss.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    Try loading font information for OML+plm on input line 45.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\polski\omlplm.fd"
+File: omlplm.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    Try loading font information for OMS+plsy on input line 45.
+
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\polski\omsplsy.fd"
+File: omsplsy.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    Try loading font information for OMX+plex on input line 45.
+
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\polski\omxplex.fd"
+File: omxplex.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <12> on input line 45.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <8> on input line 45.
+LaTeX Font Info:    External font `plex10' loaded for size
+(Font)              <6> on input line 45.
+ [1
+
+{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}] [2]pdfTeX warning (ext4):
+ destination with the same identifier (name{page.1}) has been already used, dup
+licate ignored
+<to be read again> 
+                   \relax 
+l.45 \begin{document}
+                      [1]pdfTeX warning (ext4): destination with the same ident
+ifier (name{page.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.45 \begin{document}
+                      [2] [3] [4]
+("C:\Users\Tomasz Kryg\Desktop\INZ\PÅ‚ytka\TEX\przykladInz-utf8.toc" [5]
+[6])
+\tf@toc=\write4
+ [7] [8] [9] [10]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 53.
+
+<img/bibsys/SystemDiagram.png, id=421, 516.93124pt x 502.87875pt>
+File: img/bibsys/SystemDiagram.png Graphic file (type png)
+
+<use img/bibsys/SystemDiagram.png>
+Package pdftex.def Info: img/bibsys/SystemDiagram.png used on input line 59.
+(pdftex.def)             Requested size: 340.8013pt x 331.54802pt.
+ [11 <C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/bibsys/SystemDiagram.png
+>] [12]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 69.
+
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 72.
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\base\omscmr.fd"
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 72.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 78.
+
+[13]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 90.
+
+LaTeX Font Info:    Try loading font information for OT4+cmtt on input line 91.
+
+("C:\Program Files (x86)\MiKTeX 2.9\tex\latex\polski\ot4cmtt.fd"
+File: ot4cmtt.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
+)
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 113.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 117.
+
+[14] [15]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 156.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 170.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 174.
+
+[16]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 207.
+
+[17]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 232.
+
+[18] [19]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 301.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 304.
+
+[20]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 339.
+
+
+Overfull \hbox (30.65231pt too wide) in paragraph at lines 340--341
+[]\OT4/cmr/m/n/12 Usªuga ta zwra-ca li-st¦ wszyst-kich ka-te-go-rii przed-sta-w
+io-nych ja-ko obiekt []\OT4/cmtt/m/n/12 CategoryTree\OT4/cmr/m/n/12 . 
+ []
+
+[21]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 381.
+
+[22]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 413.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 416.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 423.
+
+[23]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 447.
+
+[24]
+Overfull \hbox (10.2045pt too wide) in paragraph at lines 475--476
+[][]\OT4/cmtt/m/n/12 USER_NAME \OT4/cmr/m/n/12 (*) -- na-zwa u»yt-kow-ni-ka pa-
+ne-lu ad-mi-ni-stra-cyj-ne-go, ma-j¡-ce-go upraw-
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 482.
+
+
+Overfull \hbox (17.67265pt too wide) in paragraph at lines 489--490
+[]\OT4/cmr/m/n/12 utworzenie wir-tu-al-ne-go ±ro-do-wi-ska o na-zwie zde-fi-nio
+-wa-nej w pli-ku []\OT4/cmtt/m/n/12 properties.py
+ []
+
+
+Overfull \hbox (53.1834pt too wide) in paragraph at lines 491--492
+[]\OT4/cmr/m/n/12 utworzenie kon-ta ad-mi-ni-stra-to-ra apli-ka-cji, zgod-nie z
+ da-ny-mi po-da-ny-mi w []\OT4/cmtt/m/n/12 properties.py
+ []
+
+[25]
+Overfull \hbox (4.20665pt too wide) in paragraph at lines 509--510
+[]\OT4/cmr/m/n/12 Po wpi-sa-niu w prze-gl¡-dar-k¦ ad-re-su ho-sta (w tym przy-p
+ad-ku []157.158.16.217:8000[]),
+ []
+
+[26]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 535.
+
+[27] [28]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 558.
+
+<img/backend/oknLogowania.png, id=526, 512.91624pt x 384.43625pt>
+File: img/backend/oknLogowania.png Graphic file (type png)
+
+<use img/backend/oknLogowania.png>
+Package pdftex.def Info: img/backend/oknLogowania.png used on input line 564.
+(pdftex.def)             Requested size: 255.6026pt x 191.57825pt.
+
+<img/backend/PanelAdmin.png, id=528, 912.40875pt x 501.875pt>
+File: img/backend/PanelAdmin.png Graphic file (type png)
+
+<use img/backend/PanelAdmin.png>
+Package pdftex.def Info: img/backend/PanelAdmin.png used on input line 576.
+(pdftex.def)             Requested size: 255.6026pt x 140.59296pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 581.
+
+<img/backend/biblioteka.png, id=529, 566.115pt x 183.68625pt>
+File: img/backend/biblioteka.png Graphic file (type png)
+
+<use img/backend/biblioteka.png>
+Package pdftex.def Info: img/backend/biblioteka.png used on input line 586.
+(pdftex.def)             Requested size: 255.6026pt x 82.93271pt.
+ [29 <C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/backend/oknLogowania.png
+>]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 591.
+
+<img/backend/ImportCSV.png, id=539, 1810.765pt x 644.4075pt>
+File: img/backend/ImportCSV.png Graphic file (type png)
+
+<use img/backend/ImportCSV.png>
+Package pdftex.def Info: img/backend/ImportCSV.png used on input line 596.
+(pdftex.def)             Requested size: 255.6026pt x 90.95389pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 604.
+
+[30 <C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/backend/PanelAdmin.png> <
+C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/backend/biblioteka.png>]
+<img/backend/ListaKategorii.png, id=550, 1891.065pt x 1134.2375pt>
+File: img/backend/ListaKategorii.png Graphic file (type png)
+
+<use img/backend/ListaKategorii.png>
+Package pdftex.def Info: img/backend/ListaKategorii.png used on input line 610.
+
+(pdftex.def)             Requested size: 255.6026pt x 153.30583pt.
+
+<img/backend/EdycjaKategorii.png, id=553, 1858.945pt x 1047.915pt>
+File: img/backend/EdycjaKategorii.png Graphic file (type png)
+
+<use img/backend/EdycjaKategorii.png>
+Package pdftex.def Info: img/backend/EdycjaKategorii.png used on input line 622
+.
+(pdftex.def)             Requested size: 255.6026pt x 144.08475pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 627.
+
+<img/backend/ListaKsiazek.png, id=556, 2477.255pt x 1509.64pt>
+File: img/backend/ListaKsiazek.png Graphic file (type png)
+
+<use img/backend/ListaKsiazek.png>
+Package pdftex.def Info: img/backend/ListaKsiazek.png used on input line 633.
+(pdftex.def)             Requested size: 255.6026pt x 155.76416pt.
+ [31 <C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/backend/ImportCSV.png> <
+C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/backend/ListaKategorii.png>] [
+32 <C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/backend/EdycjaKategorii.pn
+g> <C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/backend/ListaKsiazek.png>]
+
+<img/backend/EdycjaKsiazki.png, id=571, 1238.6275pt x 742.775pt>
+File: img/backend/EdycjaKsiazki.png Graphic file (type png)
+
+<use img/backend/EdycjaKsiazki.png>
+Package pdftex.def Info: img/backend/EdycjaKsiazki.png used on input line 651.
+(pdftex.def)             Requested size: 255.6026pt x 153.27856pt.
+
+<img/backend/HistoriaZmian.png, id=573, 1738.495pt x 662.475pt>
+File: img/backend/HistoriaZmian.png Graphic file (type png)
+
+<use img/backend/HistoriaZmian.png>
+Package pdftex.def Info: img/backend/HistoriaZmian.png used on input line 660.
+(pdftex.def)             Requested size: 255.6026pt x 97.3958pt.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 666.
+
+<img/backend/autoryzacja.png, id=574, 780.9175pt x 119.44624pt>
+File: img/backend/autoryzacja.png Graphic file (type png)
+
+<use img/backend/autoryzacja.png>
+Package pdftex.def Info: img/backend/autoryzacja.png used on input line 671.
+(pdftex.def)             Requested size: 255.6026pt x 39.09477pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<img/backend/NowyAdminForm.png, id=577, 990.70125pt x 676.5275pt>
+File: img/backend/NowyAdminForm.png Graphic file (type png)
+
+<use img/backend/NowyAdminForm.png>
+Package pdftex.def Info: img/backend/NowyAdminForm.png used on input line 682.
+(pdftex.def)             Requested size: 255.6026pt x 174.54068pt.
+ [33 <C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/backend/EdycjaKsiazki.pn
+g> <C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/backend/HistoriaZmian.png>
+]
+<img/backend/ListaUser.png, id=587, 994.71625pt x 521.95pt>
+File: img/backend/ListaUser.png Graphic file (type png)
+
+<use img/backend/ListaUser.png>
+Package pdftex.def Info: img/backend/ListaUser.png used on input line 691.
+(pdftex.def)             Requested size: 255.6026pt x 134.1189pt.
+
+<img/backend/Uprawnienia.png, id=589, 965.6075pt x 671.50874pt>
+File: img/backend/Uprawnienia.png Graphic file (type png)
+
+<use img/backend/Uprawnienia.png>
+Package pdftex.def Info: img/backend/Uprawnienia.png used on input line 700.
+(pdftex.def)             Requested size: 255.6026pt x 177.75429pt.
+ [34 <C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/backend/autoryzacja.png>
+ <C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/backend/NowyAdminForm.png> <
+C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/backend/ListaUser.png>] [35 <C
+:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/backend/Uprawnienia.png>] [36]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 705.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 707.
+
+
+Overfull \hbox (1.19144pt too wide) in paragraph at lines 713--714
+[]\OT4/cmr/m/it/12 AndroidStudio \OT4/cmr/m/n/12 jest ofi-cjal-nym ±ro-do-wi-sk
+iem pro-gra-mi-stycz-nym do two-rze-nia apli-
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 715.
+
+<img/android/stats.png, id=615, 301.125pt x 430.60875pt>
+File: img/android/stats.png Graphic file (type png)
+
+<use img/android/stats.png>
+Package pdftex.def Info: img/android/stats.png used on input line 721.
+(pdftex.def)             Requested size: 255.6026pt x 365.52635pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 726.
+
+[37] [38 <C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/android/stats.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 761.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 767.
+
+[39] <img/android/mvp.png, id=640, 282.05376pt x 246.9225pt>
+File: img/android/mvp.png Graphic file (type png)
+
+<use img/android/mvp.png>
+Package pdftex.def Info: img/android/mvp.png used on input line 773.
+(pdftex.def)             Requested size: 213.0pt x 186.47243pt.
+
+<img/android/mvpData.png, id=642, 229.60782pt x 364.36125pt>
+File: img/android/mvpData.png Graphic file (type png)
+
+<use img/android/mvpData.png>
+Package pdftex.def Info: img/android/mvpData.png used on input line 782.
+(pdftex.def)             Requested size: 170.3974pt x 270.41257pt.
+
+<img/android/mvpMainActivity.png, id=643, 229.60782pt x 364.36125pt>
+File: img/android/mvpMainActivity.png Graphic file (type png)
+
+<use img/android/mvpMainActivity.png>
+Package pdftex.def Info: img/android/mvpMainActivity.png used on input line 783
+.
+(pdftex.def)             Requested size: 170.3974pt x 270.41257pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[40 <C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/android/mvp.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 796.
+
+<img/android/apiService.png, id=659, 414.04688pt x 158.84344pt>
+File: img/android/apiService.png Graphic file (type png)
+
+<use img/android/apiService.png>
+Package pdftex.def Info: img/android/apiService.png used on input line 804.
+(pdftex.def)             Requested size: 340.8013pt x 130.7469pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 811.
+
+[41 <C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/android/mvpData.png> <C:/
+Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/android/mvpMainActivity.png>]
+<img/android/butterknife.png, id=674, 493.0922pt x 255.95625pt>
+File: img/android/butterknife.png Graphic file (type png)
+
+<use img/android/butterknife.png>
+Package pdftex.def Info: img/android/butterknife.png used on input line 817.
+(pdftex.def)             Requested size: 362.1026pt x 187.9713pt.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 822.
+
+[42 <C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/android/apiService.png> <
+C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/android/butterknife.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 843.
+
+
+Overfull \hbox (6.99992pt too wide) in paragraph at lines 847--848
+\OT4/cmr/m/n/12 An-dro-id Stu-dio. Do tej po-ry naj-cz¦-±ciej u»y-wa-ny-mi ele-
+men-ta-mi by-ªy []\OT4/cmtt/m/n/12 RelativeLayout
+ []
+
+[43]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 849.
+
+<img/SearchProject.png, id=689, 562.2606pt x 996.3624pt>
+File: img/SearchProject.png Graphic file (type png)
+
+<use img/SearchProject.png>
+Package pdftex.def Info: img/SearchProject.png used on input line 855.
+(pdftex.def)             Requested size: 170.3974pt x 301.95168pt.
+ [44 <C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/SearchProject.png
+
+pdfTeX warning: pdflatex (file C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img
+/SearchProject.png): large interlaced PNG might cause out of memory (use non-in
+terlaced PNG to fix this)
+>] [45]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 891.
+
+<img/CategoriesProject.png, id=703, 562.2606pt x 996.3624pt>
+File: img/CategoriesProject.png Graphic file (type png)
+
+<use img/CategoriesProject.png>
+Package pdftex.def Info: img/CategoriesProject.png used on input line 895.
+(pdftex.def)             Requested size: 170.3974pt x 301.95168pt.
+ [46 <C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/CategoriesProject.png
+
+pdfTeX warning: pdflatex (file C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img
+/CategoriesProject.png): large interlaced PNG might cause out of memory (use no
+n-interlaced PNG to fix this)
+>]
+Overfull \hbox (8.56337pt too wide) in paragraph at lines 915--916
+[]\OT4/cmr/m/n/12 Jest to mo»-li-we dzi¦-ki im-ple-men-ta-cji przez obiekt []\O
+T4/cmtt/m/n/12 Category \OT4/cmr/m/n/12 in-ter-fej-su []\OT4/cmtt/m/n/12 Parcel
+able\OT4/cmr/m/n/12 .
+ []
+
+
+Overfull \hbox (24.77522pt too wide) in paragraph at lines 954--954
+[]\OT4/cmtt/m/n/12 public static final Creator<Category> CREATOR = new Creator<
+Category>() {[] 
+ []
+
+[47]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 957.
+
+<img/BookListProject.png, id=716, 562.2606pt x 996.3624pt>
+File: img/BookListProject.png Graphic file (type png)
+
+<use img/BookListProject.png>
+Package pdftex.def Info: img/BookListProject.png used on input line 961.
+(pdftex.def)             Requested size: 170.3974pt x 301.95168pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[48] [49 <C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/BookListProject.png
+
+pdfTeX warning: pdflatex (file C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img
+/BookListProject.png): large interlaced PNG might cause out of memory (use non-
+interlaced PNG to fix this)
+>]
+Overfull \hbox (55.65024pt too wide) in paragraph at lines 1009--1009
+[]        \OT4/cmtt/m/n/12 private boolean isEndOfScrollView(LinearLayoutManage
+r layoutManager) {[] 
+ []
+
+
+Overfull \hbox (3.45598pt too wide) in paragraph at lines 1011--1012
+[]\OT4/cmr/m/n/12 Metoda []\OT4/cmtt/m/n/12 isEndOfScrollView(LinearLayoutManag
+er layoutManager) \OT4/cmr/m/n/12 wy-ko-rzy-
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 1015.
+
+<img/DetailsProject.png, id=728, 562.2606pt x 996.3624pt>
+File: img/DetailsProject.png Graphic file (type png)
+
+<use img/DetailsProject.png>
+Package pdftex.def Info: img/DetailsProject.png used on input line 1019.
+(pdftex.def)             Requested size: 170.3974pt x 301.95168pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[50]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 1026.
+
+[51 <C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/DetailsProject.png
+
+pdfTeX warning: pdflatex (file C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img
+/DetailsProject.png): large interlaced PNG might cause out of memory (use non-i
+nterlaced PNG to fix this)
+>]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 1030.
+
+<img/android/android1.png, id=741, 722.7pt x 1284.8pt>
+File: img/android/android1.png Graphic file (type png)
+
+<use img/android/android1.png>
+Package pdftex.def Info: img/android/android1.png used on input line 1036.
+(pdftex.def)             Requested size: 170.3974pt x 302.92787pt.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 1043.
+
+<img/android/android2.png, id=742, 722.7pt x 1284.8pt>
+File: img/android/android2.png Graphic file (type png)
+
+<use img/android/android2.png>
+Package pdftex.def Info: img/android/android2.png used on input line 1047.
+(pdftex.def)             Requested size: 170.3974pt x 302.92787pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+<img/android/android3.png, id=746, 722.7pt x 1284.8pt>
+File: img/android/android3.png Graphic file (type png)
+
+<use img/android/android3.png>
+Package pdftex.def Info: img/android/android3.png used on input line 1056.
+(pdftex.def)             Requested size: 170.3974pt x 302.92787pt.
+
+<img/android/android5.png, id=747, 722.7pt x 1284.8pt>
+File: img/android/android5.png Graphic file (type png)
+
+<use img/android/android5.png>
+Package pdftex.def Info: img/android/android5.png used on input line 1057.
+(pdftex.def)             Requested size: 170.3974pt x 302.92787pt.
+ [52 <C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/android/android1.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 1066.
+
+[53 <C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/android/android2.png>]
+[54 <C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/android/android3.png> <C:
+/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/android/android5.png>]
+<img/android/android4.png, id=765, 722.7pt x 1284.8pt>
+File: img/android/android4.png Graphic file (type png)
+
+<use img/android/android4.png>
+Package pdftex.def Info: img/android/android4.png used on input line 1074.
+(pdftex.def)             Requested size: 170.3974pt x 302.92787pt.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 1081.
+
+[55 <C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/android/android4.png>]
+<img/android/android7.png, id=774, 722.7pt x 1284.8pt>
+File: img/android/android7.png Graphic file (type png)
+
+<use img/android/android7.png>
+Package pdftex.def Info: img/android/android7.png used on input line 1087.
+(pdftex.def)             Requested size: 170.3974pt x 302.92787pt.
+
+<img/android/android6.png, id=775, 722.7pt x 1284.8pt>
+File: img/android/android6.png Graphic file (type png)
+
+<use img/android/android6.png>
+Package pdftex.def Info: img/android/android6.png used on input line 1088.
+(pdftex.def)             Requested size: 170.3974pt x 302.92787pt.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 1097.
+
+
+Overfull \hbox (2.90111pt too wide) in paragraph at lines 1099--1100
+[]\OT4/cmr/m/n/12 Ekran szcze-gó-ªów ksi¡»-ki zo-staª przed-sta-wio-ny na ry-su
+n-ku []29[]. Tym ra-zem wszyst-
+ []
+
+<img/android/android8.png, id=777, 722.7pt x 1284.8pt>
+File: img/android/android8.png Graphic file (type png)
+
+<use img/android/android8.png>
+Package pdftex.def Info: img/android/android8.png used on input line 1103.
+(pdftex.def)             Requested size: 170.3974pt x 302.92787pt.
+ [56 <C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/android/android7.png> <C
+:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/android/android6.png>] [57 <C:/
+Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/android/android8.png>] [58]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 1109.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 1111.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 1115.
+
+[59]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 1131.
+
+[60]
+Overfull \hbox (18.56236pt too wide) in paragraph at lines 1152--1153
+[][]\OT4/cmtt/m/n/12 Category \OT4/cmr/m/n/12 -- kla-sa re-pre-zen-tu-j¡-ca obi
+ekt ka-te-go-rii. Im-ple-men-tu-je pro-to-kóª []\OT4/cmtt/m/n/12 Codable\OT4/cm
+r/m/n/12 . 
+ []
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 1167.
+
+[61]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 1178.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 1196.
+
+[62]
+Overfull \hbox (17.7822pt too wide) in paragraph at lines 1211--1212
+\OT4/cmr/m/n/12 Ka»dy z wi-do-ków pod-rz¦d-nych po-sia-da po-le ty-pu []\OT4/cm
+tt/m/n/12 MainPageViewControllerDelegate?\OT4/cmr/m/n/12 ,
+ []
+
+[63]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 1214.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 1219.
+
+File: img/SearchProject.png Graphic file (type png)
+<use img/SearchProject.png>
+Package pdftex.def Info: img/SearchProject.png used on input line 1223.
+(pdftex.def)             Requested size: 170.3974pt x 301.95168pt.
+ [64] [65]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 1281.
+
+File: img/CategoriesProject.png Graphic file (type png)
+<use img/CategoriesProject.png>
+Package pdftex.def Info: img/CategoriesProject.png used on input line 1285.
+(pdftex.def)             Requested size: 170.3974pt x 301.95168pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[66] [67] [68] [69]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 1363.
+
+File: img/BookListProject.png Graphic file (type png)
+<use img/BookListProject.png>
+Package pdftex.def Info: img/BookListProject.png used on input line 1367.
+(pdftex.def)             Requested size: 170.3974pt x 301.95168pt.
+ [70]
+Overfull \hbox (6.25021pt too wide) in paragraph at lines 1422--1422
+[]\OT4/cmtt/m/n/12 extension BookListViewController: UIViewControllerPreviewing
+Delegate {[] 
+ []
+
+
+Overfull \hbox (24.77522pt too wide) in paragraph at lines 1422--1422
+[]        \OT4/cmtt/m/n/12 viewControllerForLocation location: CGPoint) -> UIVi
+ewController?[] 
+ []
+
+
+Overfull \hbox (6.25021pt too wide) in paragraph at lines 1422--1422
+[]        \OT4/cmtt/m/n/12 guard let indexPath = tableView.indexPathForRow(at: 
+location),[] 
+ []
+
+[71] [72]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 1467.
+
+File: img/DetailsProject.png Graphic file (type png)
+<use img/DetailsProject.png>
+Package pdftex.def Info: img/DetailsProject.png used on input line 1471.
+(pdftex.def)             Requested size: 170.3974pt x 301.95168pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+Overfull \hbox (8.6055pt too wide) in paragraph at lines 1476--1477
+[]\OT4/cmr/m/n/12 Klasa []\OT4/cmtt/m/n/12 BookDetailsViewController \OT4/cmr/m
+/n/12 przed-sta-wia obiekt wi-do-ku in-for-ma-cji o ksi¡»-
+ []
+
+[73] [74]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 1496.
+
+[75]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 1519.
+
+[76]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 1561.
+
+[77]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 1583.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 1586.
+
+<img/iOS/ios1.png, id=886, 752.8125pt x 1339.0025pt>
+File: img/iOS/ios1.png Graphic file (type png)
+ <use img/iOS/ios1.png>
+Package pdftex.def Info: img/iOS/ios1.png used on input line 1594.
+(pdftex.def)             Requested size: 170.40065pt x 303.08096pt.
+
+<img/iOS/ios3.png, id=887, 752.8125pt x 1339.0025pt>
+File: img/iOS/ios3.png Graphic file (type png)
+ <use img/iOS/ios3.png>
+Package pdftex.def Info: img/iOS/ios3.png used on input line 1600.
+(pdftex.def)             Requested size: 170.40065pt x 303.08096pt.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 1611.
+
+<img/iOS/ios2.png, id=890, 752.8125pt x 1339.0025pt>
+File: img/iOS/ios2.png Graphic file (type png)
+ <use img/iOS/ios2.png>
+Package pdftex.def Info: img/iOS/ios2.png used on input line 1618.
+(pdftex.def)             Requested size: 170.3974pt x 303.08096pt.
+
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+[78] [79 <C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/iOS/ios1.png> <C:/Us
+ers/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/iOS/ios3.png>]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 1626.
+
+<img/iOS/ios4.png, id=905, 752.8125pt x 1339.0025pt>
+File: img/iOS/ios4.png Graphic file (type png)
+ <use img/iOS/ios4.png>
+Package pdftex.def Info: img/iOS/ios4.png used on input line 1634.
+(pdftex.def)             Requested size: 170.40065pt x 303.08096pt.
+
+<img/iOS/ios5.png, id=906, 752.8125pt x 1339.0025pt>
+File: img/iOS/ios5.png Graphic file (type png)
+ <use img/iOS/ios5.png>
+Package pdftex.def Info: img/iOS/ios5.png used on input line 1640.
+(pdftex.def)             Requested size: 170.40065pt x 303.08096pt.
+
+[80 <C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/iOS/ios2.png>] [81 <C:/Us
+ers/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/iOS/ios4.png> <C:/Users/Tomasz Kryg
+/Desktop/INZ/PÅ‚ytka/TEX/img/iOS/ios5.png>]
+<img/iOS/ios6.png, id=917, 752.8125pt x 1339.0025pt>
+File: img/iOS/ios6.png Graphic file (type png)
+ <use img/iOS/ios6.png>
+Package pdftex.def Info: img/iOS/ios6.png used on input line 1654.
+(pdftex.def)             Requested size: 170.3974pt x 303.08096pt.
+
+<img/iOS/ios7.png, id=918, 752.8125pt x 1339.0025pt>
+File: img/iOS/ios7.png Graphic file (type png)
+ <use img/iOS/ios7.png>
+Package pdftex.def Info: img/iOS/ios7.png used on input line 1655.
+(pdftex.def)             Requested size: 170.3974pt x 303.08096pt.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 1664.
+
+[82 <C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/iOS/ios6.png> <C:/Users/T
+omasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/iOS/ios7.png>]
+<img/iOS/ios8.png, id=928, 752.8125pt x 1339.0025pt>
+File: img/iOS/ios8.png Graphic file (type png)
+ <use img/iOS/ios8.png>
+Package pdftex.def Info: img/iOS/ios8.png used on input line 1670.
+(pdftex.def)             Requested size: 170.3974pt x 303.08096pt.
+
+[83 <C:/Users/Tomasz Kryg/Desktop/INZ/PÅ‚ytka/TEX/img/iOS/ios8.png>] [84]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 1676.
+
+[85] [86]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                \kern -11.74988pt
+(hyperref)                removed on input line 1689.
+
+[87] [88]
+Underfull \hbox (badness 10000) in paragraph at lines 1699--1700
+[]\OT4/cmr/m/n/12 http://www.bn.org.pl/aktualnosci/1338-czytelnictwo-polakow-20
+16-
+ []
+
+
+Underfull \hbox (badness 2310) in paragraph at lines 1705--1706
+[]\OT4/cmr/m/n/12 https://docs.djangoproject.com/en/2.0/topics/i18n/translation
+/ [do-st¦p: 10
+ []
+
+
+Underfull \hbox (badness 5288) in paragraph at lines 1707--1708
+[]\OT4/cmr/m/n/12 https://docs.djangoproject.com/pl/2.0/intro/overview/ [do-st¦
+p: 10 lu-te-go
+ []
+
+[89]
+LaTeX Font Info:    Font shape `OMS/cmr/m/it' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 1725.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 1733--1734
+[]\OT4/cmr/m/n/12 https://github.com/codepath/android$[]$guides/wiki/Dependency
+-Injection-
+ []
+
+
+Overfull \hbox (77.0559pt too wide) in paragraph at lines 1736--1737
+[]\OT4/cmr/m/n/12 https://developer.android.com/reference/android/support/const
+raint/ConstraintLayout.html
+ []
+
+
+Overfull \hbox (105.0556pt too wide) in paragraph at lines 1737--1738
+[]\OT4/cmr/m/n/12 https://developer.android.com/reference/android/support/desig
+n/widget/TextInputEditText.html
+ []
+
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 1740.
+[90]
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 1740.
+ ("C:\Users\Tomasz Kryg\Desktop\INZ\PÅ‚ytka\TEX\przykladInz-utf8.aux")
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 1740.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 1740.
+
+
+
+Package rerunfilecheck Warning: File `przykladInz-utf8.out' has changed.
+(rerunfilecheck)                Rerun to get outlines right
+(rerunfilecheck)                or use package `bookmark'.
+
+Package rerunfilecheck Info: Checksums for `przykladInz-utf8.out':
+(rerunfilecheck)             Before: CD658C4B1DA6FF9F6A5C971B954FA1E8;5261
+(rerunfilecheck)             After:  304E831615988DA21DCD542BC4338C4C;5332.
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 1740.
+ ) 
+Here is how much of TeX's memory you used:
+ 6800 strings out of 495309
+ 99268 string characters out of 3181739
+ 178126 words of memory out of 3000000
+ 9624 multiletter control sequences out of 15000+200000
+ 16749 words of font info for 44 fonts, out of 3000000 for 9000
+ 34 hyphenation exceptions out of 8191
+ 29i,12n,31p,1292b,505s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/plmi.enc}{C:/Program Fi
+les (x86)/MiKTeX 2.9/fonts/enc/dvips/pl/pltt.enc}{C:/Program Files (x86)/MiKTeX
+ 2.9/fonts/enc/dvips/pl/plrm.enc}{C:/Program Files (x86)/MiKTeX 2.9/fonts/enc/d
+vips/pl/plit.enc}<C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/amsfonts
+/cm/cmsy10.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plbx12.
+pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plbxti10.pfb><C:/P
+rogram Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plmi12.pfb><C:/Program File
+s (x86)/MiKTeX 2.9/fonts/type1/public/pl/plr12.pfb><C:/Program Files (x86)/MiKT
+eX 2.9/fonts/type1/public/pl/plr17.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts
+/type1/public/pl/plr6.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public
+/pl/plr8.pfb><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plsl12.pf
+b><C:/Program Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plss17.pfb><C:/Progr
+am Files (x86)/MiKTeX 2.9/fonts/type1/public/pl/plssbx10.pfb><C:/Program Files 
+(x86)/MiKTeX 2.9/fonts/type1/public/pl/plti12.pfb><C:/Program Files (x86)/MiKTe
+X 2.9/fonts/type1/public/pl/pltt12.pfb>
+Output written on przykladInz-utf8.pdf (92 pages, 2817116 bytes).
+PDF statistics:
+ 1069 PDF objects out of 1200 (max. 8388607)
+ 239 named destinations out of 1000 (max. 500000)
+ 769 words of extra memory for PDF output out of 10000 (max. 10000000)
+

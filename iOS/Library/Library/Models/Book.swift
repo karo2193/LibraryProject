@@ -124,15 +124,15 @@ struct Book: Codable {
     }
     
     mutating func clear() {
-        self.bookTitle = ""
-        self.bookAuthors = ""
-        self.bookIsbn = ""
-        self.bookMathLibrarySignature = ""
-        self.bookMainLibrarySignature = ""
-        self.bookYear = ""
-        self.bookVolume = ""
-        self.bookType = ""
-        self.bookAvailable = ""
+        self.bookTitle = nil
+        self.bookAuthors = nil
+        self.bookIsbn = nil
+        self.bookMathLibrarySignature = nil
+        self.bookMainLibrarySignature = nil
+        self.bookYear = nil
+        self.bookVolume = nil
+        self.bookType = nil
+        self.bookAvailable = nil
         self.bookCategories = []
     }
     

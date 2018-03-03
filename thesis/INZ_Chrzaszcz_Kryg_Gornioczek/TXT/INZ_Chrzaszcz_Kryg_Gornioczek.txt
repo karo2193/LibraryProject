@@ -1,0 +1,1017 @@
+
+
+
+System obsługi biblioteki naukowej
+dr inż. Zdzisław Sroczyński
+
+
+
+Karolina Chrząszcz22515633 Projekt interfejsu aplikacji mobilnej, implementacja aplikacji na system Android
+	
+Szymon Górnioczek22516434 Wykonanie aplikacji serwerowej i panelu administracyjnego dla bibliotekarza
+
+Tomasz Kryg22518333	Projekt interfejsu aplikacji mobilnej, implementacja aplikacji na system iOS
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+twTwierdzenie
+twaTwierdzenie
+ddDefinicja
+
+Książka - jeden z najbardziej podstawowych przedmiotów. Każdy z nas, nawet jeśli nie lubi czytać, niejednokrotnie w swoim życiu z jakiejś korzystał. Może służyć rozrywce, ale przede wszystkim szeroko pojętej edukacji. Każda przeczytana książka pomaga rozwinąć myślenie jak i kreatywność czytelnika. Każde przeczytane zdanie rozwija zdolność wypowiadania się. Każde przeczytane słowo pozwala poszerzyć zdolności językowe.
+
+W dzisiejszych czasach, książki są coraz częściej pomijane kosztem innych rozrywek, takich jak gry komputerowe, kino czy telewizja, które z roku na rok wypychają książkę na dalszy plan. Jak wynika z raportu Biblioteki Narodowej, w roku  jedynie  Polaków przeczytało choć jedną książkę. Mogłoby się więc wydawać, że wchodzenie na rynek książek nie jest najlepszym pomysłem. Jednak istnieją książki, które posiadają często wiadomości niezmienne i nie służą rozrywce, a przede wszystkim pozyskiwaniu wiedzy. Są to między innymi książki z działów ścisłych dotyczących bezpośrednio matematyki. Przykładowo ciąg Fibonacciego omówiony w roku  przez Leonarda z Pizy, do dziś został opisany i wykorzystany w wielu książkach związanych z różnorodnymi dziedzinami. Z przytoczonego przykładu wynika, że książki dotyczące matematyki czy też fizyki, bardzo często zawierają dużo wiedzy, nawet w czasach współczesnych. Wszystko ewoluuje, jednak prawa natury pozostają niezmienne.
+
+Współcześnie doszliśmy do punktu, w którym książka zaczyna mieć znaczenie przede wszystkim edukacyjne. Na uczelniach całego świata, książki są synonimem wiedzy, ponieważ bardzo często profesorzy i doktorzy kształcili się za pomocą takich samych materiałów co ich dzisiejsi uczniowie. Z tego powodu biblioteki - szczególnie na początku semestru - muszą zmagać się z dużymi ilościami studentów, chcącymi poszukać potrzebnych im książek oraz sprawdzić ich ilość i dostępność, aby później je wypożyczyć. Jest to problem zarówno dla pracowników biblioteki jak i dla studentów. Bibliotekarze są zajęci sprawdzaniem tych samych informacji dla każdego studenta z osobna. Natomiast uczniowie są zdenerwowani sporymi kolejkami i tłumem ludzi, który zniechęca do odwiedzania bibliotek.
+
+
+System obsługi biblioteki
+
+Korzystając z książek naukowych i z własnego doświadczenia, postanowiliśmy stworzyć system dla Biblioteki Wydziału Matematyki Stosowanej Politechniki Śląskiej w Gliwicach. Głównym celem systemu jest posiadanie informacji o zbiorach biblioteki wydziałowej i łatwe udostępnianie ich studentom. Podstawą jest prosty interfejs dla administratora uzupełniającego pozycje książek w systemie, jak i dla studenta chcącego szybko sprawdzić dostępność wybranej książki w bibliotece o dowolnej porze, bez potrzeby wychodzenia z domu.
+
+
+      System obsługi biblioteki
+  Jednym z typów aplikacji będzie aplikacja webowa. Powinna zapewnić administratorowi pracującemu w bibliotece prostą obsługę bazy danych. Szybkie katalogowanie dostępnych woluminów oraz aktualizowanie informacji na temat dostępności.
+
+Drugim typem aplikacji obsługujących bibliotekę będą aplikacje na smartfony. Zostaną stworzone dwie aplikacje mobilne, każda na oddzielny system: Android oraz iOS w celu poszerzenia grupy odbiorców na wydziale. Pozwolą one na przeszukanie biblioteki pod względem dowolnej szukanej frazy oraz dostarczą informacji o wszystkich książkach i ich dostępności w bibliotece.
+
+
+
+Aplikacja serwerowa
+Aplikacja serwerowa LibraryApp, stanowi backend systemu bibliotecznego oraz zapewnia narzędzia dla bibliotekarza i administratora systemu, pozwalające na zarządzanie aplikacją. Głównymi zadaniami tej aplikacji są:
+
+	zarządzanie użytkownikami i ich uprawnienami,
+	zarządzanie bazą danych,
+	zarządzanie informacją na temat woluminów biblioteki wydziałowej poprzez panel administracyjny,
+	integracja aplikacji mobilnych poprzez usługę, dającą dostęp do informacji znajdujących się w bazie danych.
+
+Użyte frameworki
+
+Do stworzenia aplikacji został wykorzystany Django. Framework ten dostarcza rozwiązania takie jak:
+
+	system autoryzacji użytkowników,
+	możliwość zdefiniowania modelu danych kodem pythonowym oraz ORM wysokiego poziomu,
+	automatycznie generowany i kompletny panel administracyjny,
+	narzędzie do tworzenia serwisów webowych - Django REST framework,
+	wsparcie dla wielojęzycznych aplikacji (w tym język polski),
+które kompletnie pokrywają potrzeby aplikacji LibraryApp. Oprócz tego, jak można przeczytać na oficjalnej stronie Django, framework jest zaprojektowany w taki sposób, aby robić częste zadania web-deweloperskie szybko i prosto. W praktyce oznacza to, że powstaje mało kodu aplikacji, dzięki czemu będzie on łatwiejszy do zrozumienia i modyfikowania. Obszerna i aktualna dokumentacja, dostępna na stronie projektu oraz duża społeczność korzystająca z Django sprawia, że rozwój aplikacji jest łatwiejszy.
+
+
+Modele Django
+W Django modele danych definiuje się jako klasy Python, które dziedziczą po django.db.models.Model. Na podstawie takiej klasy Django automatycznie generuje tabele w bazie danych, każdy atrybut modelu reprezentuje pole w tabeli. Przykładowo, z modelu zdefniowanego w ten sposób:
+
+
+zostanie wygenerowana tabela w bazie danych:
+
+
+
+Model danych
+
+Model danych został zaprojektowany na podstawie specyfikacji, którą określił pracownik odpowiedzialny za działanie biblioteki. Wszystkie definicje modeli znajdują się w pliku /libproject/libraryapp/models.py.
+
+
+Model Book
+
+Model ten został zaprojektowany na podstawie zakładki KSIAZKA w arkuszu dane-prog-bibl.xlsx, wchodzącego w skład specyfikacji. Model Book jest zdefiniowany jako model Django i składa się z pól:
+
+
+	signature_ms, 
+
+	typu: IntegerField, 
+
+	odpowiada danym z kolumny: SYGMS,
+	signature_bg, 
+
+	typu: CharField, 
+
+	odpowiada danym z kolumny: SYGBG,
+	responsibility, 
+
+	typu: TextField, 
+
+	odpowiada danym z kolumny: OZNOPDOW,
+	title, 
+
+	typu: CharField, 
+
+	odpowiada danym z kolumny: TYTUL,
+	volume, 
+
+	typu: CharField, 
+
+	odpowiada danym z kolumny: TOM,
+	year,
+
+	typu: IntegerField, 
+
+	odpowiada danym z kolumny: ROK,
+	isbn_issn, 
+
+	typu: CharField, 
+
+	odpowiada danym z kolumny: ISBN/ISSN,
+	type, 
+
+	typu: CharField, 
+
+	odpowiada danym z kolumny: TYP, 
+
+	przyjmuje wartości: 'podręcznik', 'inny', 'zbiór zadań',
+	availability, 
+
+	typu: CharField, 
+
+	odpowiada danym z kolumny DOSTEPNOSC, 
+
+	przyjmuje wartości: 'dostępna', 'wypożyczona', 'czytelnia'.
+	categories, 
+
+	typu: ManyToManyField, 
+
+	odpowiada danym z zakładki PRZYPISANIEKATEGORII.
+
+Model Category
+
+Model ten został zaprojektowany na podstawie zakładki KATEGORIE w arkuszu dane-prog-bibl.xlsx.
+Model Category jest zdefiniowany jako model Django, składa się z pól:
+
+
+	category_id, 
+
+	typu: CharField, 
+
+	odpowiada danym z kolumny: IDKATEGORII,
+	category_name, 
+
+	typu: TextField, 
+
+	odpowiada danym z kolumny: KATEGORIA.
+
+Główne klasy
+
+Oprócz modeli opracowanych na podstawie dostarczonych danych, zostały zaprojektowane jeszcze klasy takie jak: CategoryTree, Dictionary, query.
+
+
+Klasa CategoryTree
+
+Ze względu na wymagania opisane w punktach 10 Kategoria główna i 11 kategoria szczegółowa, dokumentu BIBLIOTEKA-program.docx, dotyczące podziału kategorii na "kategoria główna" i "kategoria szczegółowa", została zaimplementowana klasa, która przedstawia tę relację między kategoriami. Kategoria główna to taka, której id jest postaci G_x, gdzie x to ciąg cyfr, na przykład G00:ALGEBRA.
+ Kategoria główna może mieć kategorie szczegółowe, których id jest postaci G_x-S_y, gdzie x i y to ciągi cyfr, część znajdująca się przed - to id kategorii głównej. Zatem kategoria G00-S04:algebry Boole’a, jest kategorią szczegółową kategorii G00:ALGEBRA. 
+ 
+Klasa CategoryTree składa się z pól:
+
+	main_category, 
+	zawiera obiekt Category,
+	odpowiadający kategorii głównej,
+	subcategories, 
+	zawiera tablicę obiektów Category,
+	odpowiadającym kategoriom szczegółowym.
+Przykład:
+
+
+
+Klasa Dictionary
+W celu dostarczenia do aplikacji mobilnych informacji o wartościach jakie mogą przyjmować niektóre pola w bazie danych oraz ułatwić w przyszłości modyfikowanie zakresu tych wartości, została zaimplementowana klasa Dictionary. Obiekt tej klasy składa się z pól:
+
+	types, 
+
+	typ: tablica zawierająca wartości jakie może przyjąć pole Book.types,
+	availability_types, 
+
+	typ: tablica zawierająca wartości jakie może przyjąć pole Book.availability.
+
+
+
+Klasa query
+Obiekt klasy query definiuje kryteria, według których, serwis zwróci książki. Klasa query składa się z pól:
+
+	filters - obiekt definiujący filtry pól książek. Pola obiektu filters są opcjonalne. Aby otrzymać książki, których tytuł jest równy pewnej wartości, obiekt filters należy zdefiniować w następujący sposób:
+	
+	
+	
+Aby otrzymać z serwisu książki, których tytuł zawiera jakiś literał, obiekt filters należy zdefiniować w następujący sposób:
+	
+	
+Filtry pozostałych pól definiujemy analogicznie. Filtrowanie po wielu polach zdefiniowane jest w następujący sposób:
+
+	
+	
+categories - tablica id kategorii, zwrócone książki zawierają jedną z kategorii podanych w tablicy. Przykład:
+
+	
+
+Aby otrzymać z serwisu książki, które posiadają konkretny zestaw kategorii, należy zdefiniować obiekt filter:
+ 
+	
+
+pagination - klasa pozwalająca na zdefiniowanie otrzymanego wycinka danych, zapobiega to zwróceniu zbyt dużej liczby danych jednoczesnie. Obiekt zawieta pola 
+
+	offset - definiuje ile pierwszych pozycji odrzucić,
+
+	typu: unsigned int,
+	limit - definiuje ile pozycji może zostać zwróconych maksymalnie, podczas jednego zapytania,
+
+	typu: unsigned int.
+ 
+
+Przykładowy obiekt query:
+
+
+
+
+Usługi
+Aplikacja serwerowa zapewnia usługi dające dostęp do informacji zawartych w bazie danych. Usługi dostępne są za pomocą REST Api na środowisku uczelnianym pod adresem 157.158.16.217:8000. Do korzystania z usług nie jest wymagana autoryzacja.
+
+
+Usługa dostarczająca książki
+Usługa ta zwraca listę książek (book), według kryterium zdefiniowanego przez obiekt query.
+
+Zapytanie:
+
+	Enpoint: /books,
+	Method: POST,
+	Headers: "Content-Type":"application/json",
+	Body: JSON (application/json): query,
+Odpowiedź:
+
+	Tablica obiektów Book.
+Przykład odpowiedzi:
+
+
+
+Usługa dostarczająca kategorie
+Usługa ta zwraca listę wszystkich kategorii przedstawionych jako obiekt CategoryTree. 
+
+Zapytanie:
+
+	Enpoint: /categories,
+	Method: GET,
+	Headers: "Content-Type":"application/json",
+Odpowiedź:
+
+	Tablica obiektów CategoryTree.
+Przykładowa odpowiedź:
+
+
+
+
+
+Usługa dostarczająca słownik
+Zwraca obiekt Dictionary zawierający wszystkie typy książek oraz typy ich dostępności.
+
+Zapytanie:
+
+	Enpoint: /dictionary,
+	Method: GET,
+	Headers: "Content-Type":"application/json",
+Odpowiedź:
+
+	Obiekt Dictionary.
+Przykładowa odpowiedź:
+
+
+
+
+Wdrażanie
+Aby uruchomić aplikację wymagany jest jedynie zainstalowany python3.6. Aplikację można uruchomić w systemach Linux, OS X i Windows, ten rozdział jednak opisuje proces wdrażania w systemie Linux. Skrypty załączone razem z aplikacją (setup_app.sh oraz boot_script.sh), są skryptami bashowymi, działającymi pod systemem Linux. 
+
+
+Wirtualne środowisko
+Wszystkie zależności potrzebne do uruchomienia aplikacji są instalowane wewnątrz wirtualnego środowiska, dzięki czemu proces wdrażania można w dużej części zautomatyzować. Aby móc stworzyć wirtualne środowisko należy zainstalować paczkę virtualenv korzystająć z polecenia:
+
+
+
+
+Pobranie aplikacji
+
+Aplikacja jest dostępna na repozytorium https://github.com/szymongor/librarygithub.com/szymongor/library, aby ją pobrać można skorzystać z git lub pobrać paczkę w formie zip i rozpakować na maszynie, zalecane jest jednak użycie gita, ułatwi to w przyszłości nanoszenie zmian w aplikacji. Szczegóły dotyczące instalacji gita dostępne są na stronie https://git-scm.com/book/en/v2/Getting-Started-Installing-Git/git-scm.com/book/en/v2/Getting-Started-Installing-Git/. 
+
+Aby ściągnąć aplikację poprzez git należy skorzystać z komendy:
+
+
+w rezultacie, powinien się pojawić folder library w obecnej lokalizacji. Należy otworzyć folder z aplikacją używająć komendy cd library. Katalog powinien zawierać:
+
+
+	boot_script.sh - skrypt bashowy, uruchamiający aplikację,
+	librarysite - folder zawierający pliki aplikacji Django,
+	properties.py - plik zawierający konfigurację aplikacji,
+	setup_app.sh - skrypt bashowy, automatycznie konfiguruje środowisko,
+	libraryapp - folder z plikami aplikacji Django,
+	manage.py - skrypt Django, do zarządzania aplikacją,
+	requirements.txt - lista zależności potrzebna do uruchomienia aplikacji, zostanie automatycznie załadowana przez skrypt setup_app.sh,
+	static - folder z plikami statycznimi aplikacji.
+
+Konfiguracja aplikacji
+
+Aby skonfigurować aplikację należy edytować plik properties.py, np. używając polecenia:
+
+
+Przykładowa konfiguracja aplikacji:
+
+
+Plik konfiguracyjny składa się z pól:
+
+	PROJECT_PATH (!) - lokalizacja folderu library z aplikacją,
+	VENV (*) - nazwa wirtualnego środowiska, jeśli jeszcze nie zostało utworzone, skrypt setup_app.sh automatycznie utworzy wirtualne środowisko o takiej nazwie,
+	HOST (!) - adres IP oraz port na które zostanie wystawiona aplikacja,
+	LOG_FILE (*) - nazwa pliku z logami aplikacji,
+	SECRET_KEY (!) - tajny klucz, typu string, długości 50, używany przez Django np. do podpisywania plików cookies i autoryzacji,
+	ALLOWED_HOSTS (!) - tablica adresów hostów/domen, które mogą serwować aplikację, zabezpieczenie ze strony Django przed atakami typu Host Header Injection,
+	USER_NAME (*) - nazwa użytkownika panelu administracyjnego, mającego uprawnienia administratorskie w aplikacji,
+	PASSWORD (!) - hasło użytkownika,
+	MAIL (*) - adres email użytkownika.
+Pola oznaczone "!" należy edytować, pola oznaczone "*" można edytować lub pozostawić niezmienione.
+
+
+Uruchomienie aplikacji
+Podczas pierwszego uruchomienia aplikacji należy wywołać komendę:
+
+z poziomu głównego folderu aplikacji (library). Komenda ta uruchomi skrypt, który realizuje takie zadania jak:
+
+	utworzenie wirtualnego środowiska o nazwie zdefiniowanej w pliku properties.py jako VENV,
+	instalacja zależności wypisanych w pliku requirements.txt wewnątrz wirtualnego środowiska,
+	utworzenie konta administratora aplikacji, zgodnie z danymi podanymi w properties.py (USER_NAME, PASSWORD, MAIL),
+	wygenerowanie bazy danych na podstawie modelu zdefiniowanego w pliku libraryapp/models.py.
+Aby uruchomić aplikację należy wywołać:
+
+
+
+jeśli skrypt został wykonany poprawnie powinien się ukazać komunikat podobny do tego:
+
+
+
+Po wpisaniu w przeglądarkę adresu hosta (w tym przypadku http://157.158.16.217:8000/157.158.16.217:8000), powinno się ukazać okno logowania do panelu administracyjnego.
+
+W ten sposób uruchomiona aplikacja zostanie wyłączona po zamknięciu terminala. Aby uruchomić aplikację w tle jako proces niezależny od terminala można skorzystać z wirtualnej konsoli, używając polecenia:
+
+Aby opuścić wirtualną konsolę należy użyć skrótu ctrl+a, a nastepnie d. Po opuszczeniu konsoli wyświetli się komunikat:
+
+
+Aby włączyć ponownie wirtualną konsolę z uruchomioną aplikacją należy użyć polecenia:
+
+
+
+Polecenie: 
+
+
+
+wyświetli wszystkie aktywne konsole.
+
+Aby wyłączyć aplikację można przełączyć się na wirtualną konsolę z uruchomioną aplikacją i użyć skrótu: ctrl+c.
+
+Konfiguracja Cron
+
+Z powodu częstych przerw w działaniu serwera, konieczne jest uruchamianie aplikacji wraz ze startem serwera. Do tego celu został wykorzystany Cron, program do harmonogramowania zadań. Aby skonfigurować Crona, by uruchamiał aplikację wraz z startem serwera, należy użyc polecenia:
+
+
+
+i w ostatniej linii pliku dodać wpis:
+
+
+
+Aby przetestować wywołanie zadania, można zdefiniować zadanie wywołujące się co minutę w analogiczny sposób:
+
+
+
+Po minucie powinna się uruchomić aplikacja, ważne aby po teście usunąć ten wpis z Crona. 
+
+
+
+Panel administracyjny
+
+Panel administracyjny dostępny jest pod adresem http://157.158.16.217:8000/admin157.158.16.217:8000/admin. Po wpisaniu tego adresu w przeglądarce, powinno wyświetlić się okno logowania zatytułowane "Administracja biblioteką", przedstawione na rysunku . Dane do logowania, jeśli nie zostały wcześniej zmienione, powinny być takie jak w pliku properties.py (USER_NAME i PASSWORD). 
+
+
+      Okno logowania do panelu administracyjnego
+  Po zalogowaniu powinien się ukazać panel administracyjny do zarządzania biblioteką (rysunek ). 
+
+W nagłówku strony zatytułowanym "Administracja biblioteką", znajduje się dwa odnośniki. Pierwszy daje możliwość zmiany hasło do konta, drugi wylogowuje obecnego użytkownika. Poniżej nagłówka znajdują się dwie sekcje zatytułowane "Biblioteka" oraz "Uwierzytelnianie i Autoryzacja", które zostały opisane w kolejnych rozdziałach. Po prawej stronie sekcja "Ostatnie działania", wyświetająca listę ostatnich zmian wprowadzonych w aplikacji.
+
+
+
+      Strona główna panelu administracyjnego
+  
+Biblioteka
+W skad tej sekcji wchodzą opcje importowania plików *.csv, zarządzania kategoriami oraz zarządzania książkami.
+
+
+      Sekcja "Biblioteka"
+  
+Importuj csv
+Po naciśnięciu "+ Dodaj", w wierszu "Importuj csv" (rysunek ), otworzy się panel zatytułowany "Dodaj CSV", widoczny na rysunku . Aby wczytać plik CSV, należy wskazać jego lokalizację (klikając przycisk "Wybierz plik") a następnie kliknąć przycisk "Zapisz". Po załadowaniu danych z pliku CSV wyświetli się lista komunikatów dotycząca statusu importowanych danych. 
+
+
+      Formularz importowania plików *.csv
+  Pliki *.csv powinny zostać wygenerowane na podstawie arkusza kalkulacyjnego dane-prog-bibl.xlsx, kodowanie pliku to UTF-8, symbol oddzielający pola to , a separator tekstu to symbol ". Aplikacja sama rospoznaje czy importowany plik *.csv zawiera informacje z zakładki KSIAZKA, KATEGORIE czy PRZYPISANIEKATEGORII.
+
+
+Kategorie
+
+Wybór "Kategorie" w sekcji "Biblioteka" (rysunek ), przenosi do widoku z listą wszystkich kategorii, widocznego na rysunku . Z poziomu tej listy można usuwać wybrane kategorie oraz wyszukiwać kategorie wpisując w pole tekstowe części id kategorii lub nazwy kategorii. Klikając na id kategorii w liście, otworzy się formularz edycji danej kategorii, widoczny na rysunku . 
+
+
+      Widok listy kategorii
+  Po naciśnieciu "Dodaj kat. +" (prawy górny róg na rysunku ), otworzy się formularz tworzenia nowej kategorii. Aby dodać kategorię główną nadajemy jej id G_nr_kat, gdzie nr_kat to ciąg cyfr. Aby dodać kategorię szczegółową nadajemy jej id G_nr_kat-S_nr_sub_kat, gdzie G_nr_kat to id kategorii głównej, a nr_sub_kat to id kategorii szczegółowej.
+Z poziomu okna edycji kategorii można podejrzeć historię naniesionych zmian wybierając "Historia" (prawy górny róg rysunku ).
+
+
+
+
+      Formularz edycji kategorii
+  
+Książki
+
+Po naciśnieciu "Książki" w sekcji "Biblioteka" (rysunek ), otworzy się widok z listą książek, widoczny na rysunku . 
+
+
+      Widok listy książek
+  Z poziomu widoku z listą można:
+
+	wyszukać książkę, wpisując jej id (całe) lub fragment tytułu,
+	sortować wyświetlone książki po dowolnym zbiorze pól, klikając na nazwę tych pól w nagłówku tablicy, w odpowiedniej kolejności,
+	usuwać wybrane książki, poprzez zaznaczenie zbioru książek i wykonanie akcji "Usuń wybrane Książki",
+	wybrać książkę do edycji, klikając jej id na liście,
+	dodać nową książkę, klikając "Dodaj Książka +".
+Po wybraniu książki do edycji, otworzy się fromularz edycji książki widoczny na rysunku .
+
+
+      Formularz edycji książki
+  Z poziomu okna edycji książki można przejrzeć historię naniesionych zmian wybierając "Historia". Widok zmian widoczny na rysunku .
+
+
+      Widok historii zmian książki
+  
+Uwierzytelnianie i Autoryzacja
+Sekcja ta składa się z opcji tworzenia i zarządzania kontami użytkowników i grup użytkowników.
+
+
+      Sekcja "Uwierzytelnianie i Autoryzacja"
+  Obecnie aplikacja nie wykorzystuje grup użytkowników, opcja ta została jednak pozostawiona gdyby w przyszłości projekt miał zawierać konta studentów z możliwością rezerwacji książek.
+ 
+W celu dodania nowego konto administratora biblioteki należy wybrać opcję "+ Dodaj", znajdującą się w wierszu "Użytkownicy" (rysunek ). Następnie zostanie otwarty formularz widoczny na rysunku . Należy go wypełnić i zapisać.
+
+
+      Formularz nowego użytkownika
+  Nowy użytkownik powinien się teraz pojawić na liście wszystkich użytkowników aplikacji. Aby nadać mu uprawnienia administracyjne, należy wybrać na liście (widocznej na rysunku ) nowo dodanego użytkownika.
+
+
+      Lista użytkowników aplikacji
+  W formularzu edycji nowego użytkownika (rysunek ), w sekcji "Uprawnienia", należy zaznaczyć opcję "W zespole" i zapisać.
+
+
+      Formularz edycji użytkownika
+  
+Aplikacja na system Android
+
+
+Wykorzystane narzędzie
+
+Aplikacja na urządzenia mobilne z systemem Android została napisana w języku Java 8 w programie Android Studio w wersji .
+
+Java jest uniwersalnym językiem obiektowym stworzonym w 1996 roku przez Jamesa Goslinga, Billy'ego Joya oraz Guya Steele. Cechuje go prostota, celem twórców było, aby każdy mógł z łatwością osiągnąć płynność w korzystaniu z Javy. Jest mocno powiązana z językami programowania C oraz C++. 
+
+AndroidStudio jest oficjalnym środowiskiem programistycznym do tworzenia aplikacji na system Android, ogłoszonym w 2013 roku przez Google. Wersja  weszła w życie w październiku 2017 roku wprowadzając, między innymi, wsparcie najnowszej wersji Android . Widać, że do tworzenia aplikacji mobilnej zostały wybrane najnowsze i jedne z najbardziej znanych narzędzi.
+ 
+
+Wymagania systemowe
+
+Aplikację można zainstalować na telefonach komórkowych oraz tabletach z systemem Android w wersji minimum  Lollipop (API ). Według statystyk z dnia  lutego  roku przedstawionych na rysunku  najwięcej użytkowników korzysta z wersji Marshmallow . Jednak duży procent nadal używa wersji Lollipop, nie jest to na tyle znacząca różnica, aby zignorować tę wersję. Aplikację będzie mogło używać około  więcej użytkowników.    
+
+
+      Procent urządzeń z uruchomioną daną wersją Androida
+  
+Model danych
+Aplikacja posiada następujący model danych stworzony na podstawie informacji dostarczanych z API:
+
+
+Book - klasa reprezentująca obiekt książki:
+
+title (String) - tytuł,
+responsibility (String) - autorzy,
+year (Integer) - rok wydania,
+volume (String) - tom,
+availability (String) - dostępność,
+type (String) - typ pozycji,
+isbnWithIssn (String) - numer ISBN/ISSN,
+facultySignature (String) - sygnatura biblioteki MS,
+mainSignature (String) - sygnatura biblioteki głównej,
+categories (List<Category>) - kategorie przypisane do książki.
+CategoryResponse - klasa reprezentująca kategorie:
+
+category (Category) - kategoria,
+subcategories (List<Category>) - podkategorie przypisane do kategorii.
+Category - klasa reprezentująca obiekt kategorii:
+
+categoryId (String) - id kategorii,
+name (String) - nazwa kategorii.
+Dictionary - klasa reprezentująca obiekt "słownik" dla książki:
+
+bookTypes (String[]) - typy pozycji (podręcznik, zbiór zadań, inny),
+bookAvailabilities (String[]) - dostępność (dostępna, wypożyczona, czytelnia).
+
+Realizacja projektu
+
+Poniższe rozdziały opisują budowę poszczególnych obiektów klasy Activity, które w dalszej części pracy będą nazywane aktywnościami. 
+
+W celu monitorowania działania aplikacji po wdrożeniu, został do niej przyłączony Crashlytics. Jest to jedno z najlepszych urządzeń, które pozwala na śledzenie działania aplikacji. Biblioteka ta jest częścią platformy Fabric. Poza analizą ilości użytkowników w danych okresie czasu, pozwala na bieżąco śledzić błędy krytyczne powodujące zatrzymanie działania aplikacji. System Android jest jednym z najbardziej znanych i najczęściej używanych systemów, co niestety rodzi pewne problemy. Na przykład ilość urządzeń oraz ich różnorodność. Aplikacja wspiera cztery główne wersje systemu oraz wszystkie rozmiary telefonów i tabletów. Bardzo trudno jest dobrze przetestować taki produkt i znaleźć wszystkie możliwe niepożądane działania. Stąd pomysł na wprowadzenie Crashlyticsa. W każdej chwili można sprawdzić na stronie https://fabric.io/fabric.io raport błędów wysłany przez bibliotekę. Między innymi zostają wyświetlone data, czas i ilość wystąpień konkretnego błędu, model urządzenia oraz wersja Androida, na którym wybrany błąd się pojawił, a także sam log błędu. 
+
+
+ModelViewPresenter
+
+Projekt powstał w oparciu o strukturę Model View Presenter. MVP jest wzorcem projektowym stworzonym na podstawie wzorca Model View Controller. Podobnie jak w MVC, Model odpowiada za reprezentację obiektów danych, a View za wyświetlanie informacji użytkownikowi. Presenter natomiast jest odpowiedzialny za odseparowanie modelu od widoku. Podejmuje decyzję o tym, co powinno być wyświetlone użytkownikowi. Na podstawie dostarczonych danych przez Model, zwraca je w reprezentacyjnej formie do View. W przeciwieństwie do Controllera z MVC, nie posiada w sobie żadnych elementów UI. Rysunek  przedstawia uproszczony model MVP.
+
+
+      Związek między odpowiednimi elementami MVP
+  W projekcie Model został odseparowany przez przeniesienie wszystkich klas związanych z pobieraniem/wysyłaniem danych do paczki data, co widać na rysunku . Natomiast elementy widoku znajdują się w paczce ui. W nich występuje również konkretny podział na klasy View oraz Presenter. Dodatkowo występuje tu interfejs Contract, który łączy w sobie interfejsy Presentera i View. Użycie interfejsów umożliwia zarządzanie widokiem z poziomu Presentera, bez konieczności posiadania elementów widoku w nim. 
+
+
+        Podział projektu z uwzględnieniem struktury MVP
+  W celu uproszczenia i polepszenia czytelności kodu w projekcie została również użyta biblioteka Dagger2.
+Jest to implementacja wzorca Dependency Injection, czyli wstrzykiwania zależności. Celem tego podejścia jest minimalizacja tworzenia obiektów poprzez 
+
+oraz stworzenie repozytorium obiektów, które możemy wstrzyknąć w
+dowolnym miejscu aplikacji.
+
+
+Pobieranie i wysyłanie danych
+
+Do pobierania i wysyłania danych oraz łączenia się z serwerem wykorzystano biblioteki Retrofit oraz RxJava2.
+
+Retrofit jest darmową biblioteką przeznaczoną do korzystania z API REST z poziomu Androida. Dzięki metodom oraz anotacjom zawartym w bibliotece budowanie zapytań jest szybkie, proste i przede wszystkim przejrzyste (rysunek ). Jej ogromną zaletą jest również wbudowana obsługa GSON, która zapewnia automatyczne mapowanie obiektów POJO na JSON i odwrotnie.
+
+
+      Fragment klasy ApiService zawierającej metody pobrania książek, kategorii oraz słownika z API
+  Natomiast biblioteka RxJava rozszerza wzorzec Observable, w celu umożliwienia prostej obsługi sekwencji danych/zdarzeń. Umożliwia odpowiednie składanie sekwencji, jednocześnie eliminując możliwe błędy związane ze złą synchronizacją zdarzeń oraz działaniem na wielu wątkach.
+
+
+Zarządzanie widokami
+
+Widoki zostały stworzone w plikach z rozszerzeniem xml. Przekazanie ich do klas zarządzającymi aktywnościami odbyło się z użyciem biblioteki ButterKnife. Jest to bardzo prosta, darmowa biblioteka, która generuje kod związany z dostępem do UI na podstawie anotacji. Dzięki niej łatwiej jest dbać o czystość kodu, niepotrzebne jest używanie findViewById, a podpięcie listenerów zajmuje mniej miejsca i jest bardziej czytelne, co widać na obrazku .
+
+
+      Przykład zastosowania biblioteki ButterKnife w klasie SearchActivity
+  
+BaseActivity
+
+Pierwszą, a zarazem najważniejszą klasą obiektu Activity jest klasa abstrakcyjna BaseActivity, którą wszystkie pozostałe aktywności rozszerzają. W całej paczce base znajdują się także interfejs BaseView, który aktywność implementuje oraz interfejs i klasę Presenter. Jest to zbiór podstawowych klas i interfejsów, które kolejne klasy będą rozszerzać bądź implementować. Poza podstawowymi metodami, takimi jak:
+ 
+które przypominają o konieczności wstrzyknięcia instancji klasy do prezentera, została zaimplementowana również poniższa metoda:
+
+
+Jej celem jest przerwanie wszystkich połączeń z API, gdy widok zostanie zniszczony, na przykład w przypadku, gdy użytkownik wyłączy aplikację.
+
+
+MainActivity
+
+Celem MainActivity jest wyświetlenie powitalnego ekranu użytkownikowi, tak zwanego SplashScreena, który po  sekundy znika i otwiera widok wyszukiwania. W przyszłości w tym miejscu można dodać opcję logowania lub utworzenia nowego konta do aplikacji.
+
+Cały widok, podobnie jak pozostałe, zawiera się w ConstraintLayout. Jest to jeden z najnowszych obiektów typu ViewGroup wprowadzony razem z wersją  Android Studio. Do tej pory najczęściej używanymi elementami były RelativeLayout oraz LinearLayout, które działają prosto i intuicyjnie, ale mimo wszystko są mocno ograniczone. ConstraintLayout jest stworzony przede wszystkim do ułatwienia tworzenia widoków przy pomocy wbudowanego narzędzia Layout Editor's. Umożliwia tworzenie pojedynczych widoków, z których każdą krawędź można pozycjonować względem dowolnie wybranych innych elementów znajdujących się w grupie. Następnie umożliwia tworzenie łańcuchów widoków i pozycjonowanie ich tak, jakby były jednym obiektem, bez konieczności dodawania i zagnieżdżania kolejnego obiektu typu ViewGroup. 
+
+
+SearchActivity
+
+Jest to aktywność otwierana bezpośrednio z poprzedniej, po upływie danego czasu. 
+
+
+      Projekt ekranu wyszukiwania książek
+  Jej celem jest umożliwienie wprowadzenia filtrów szukanych książek przez użytkownika. Widok składa się z customowego elementu typu Toolbar, elementów typu  TextInputEditText, w które użytkownik może wprowadzić tekst oraz obiektów Button widocznych na wstępnym projekcie .
+
+Toolbar został dodany w celu poprawienia czytelności aplikacji, zwiększenia intuicyjnego działania oraz ułatwienia nawigacji pomiędzy widokami. Każda aktywność posiada swój Toolbar. W przypadku SearchActivity znajduje się tam tekst z informacją, na którym widoku znajduje się użytkownik, po lewej stronie ikona do odświeżenia informacji przychodzących z API (np. typ, dostępność książki oraz kategorie w przypadku braku internetu nie zostaną pobrane), po prawej ikona usunięcia wszystkich, do tej pory, wprowadzonych danych. 
+
+Obiekt TextInputEditText jest podklasą obiektu EditText. Różni się od tradycyjnego wejściowego pola tekstowego tym, że w momencie pisania oraz po wprowadzeniu tekstu przez użytkownika powyżej, mniejszą czcionką znajduje się podpowiedź, która wcześniej była wyświetlana. W tym wypadku jest to informacja, co należy w dane pole wpisać.
+
+Filtry takie jak dostępność książki, typ pozycji oraz kategorię można wybrać po naciśnięciu obiektu Button. W przypadku dwóch pierwszych zostanie wyświetlony Dialog z listą możliwości do wyboru. W klasie odpowiedzialnej za tworzenie odpowiedniego dialogu znajduje się interfejs, dzięki któremu w łatwy sposób następuje przekazanie wybranych elementów do aktywności.
+ 
+
+Po naciśnięciu na element z listy następuje wywołanie metody finish() zaimplementowanej w aktywności.
+ 
+
+Natomiast wybór kategorii odbywa się w osobnej aktywności.
+
+
+CategoryActivity
+
+
+      Projekt ekranu wyboru kategorii
+  Aktywność służąca do wyboru kategorii składa się z obiektu Toolbar oraz obiektu ExpandableListView. Elementami są widoki składające się z obiektów CheckBox oraz TextView z nazwą kategorii, podobne do elementów widocznych na rysunku . Podobnie jak poprzednio, w Toolbarze znajduje się nazwa aktualnego widoku, po prawej stronie ikona do usuwania wszystkich do tej pory zaznaczonych elementów, po lewej stronie strzałka powrotu do poprzedniego widoku. 
+
+Podczas powrotu do poprzedniej aktywności, zaznaczone elementy są przekazane w obiekcie Intent. 
+
+ 
+
+Jest to możliwe dzięki implementacji przez obiekt Category interfejsu Parcelable. Aby instancja obiektu mogła zostać zapisana i przechowana w obiekcie Parcel konieczne jest stworzenie statycznej zmiennej CREATOR.
+
+
+
+
+
+BookActivity
+
+
+      Projekt ekranu listy książek
+  Celem BookActivity jest wyświetlenie wszystkich książek, zwróconych przez API. Został użyty do tego element RecyclerView. Pozwala on przedstawić dużą liczbę danych na ograniczonym ekranie, podobnie jak na rysunku . Zarządzanie poszczególnymi elementami odbywa się przy użyciu adaptera. W adapterze zapamiętane są wszystkie elementy, w tym przypadki lista książek List<Book>. Dla każdej z nich tworzony jest osobny widok z użyciem nadrzędnego szablonu zapamiętanego w ViewHolderze. W adapterze do poszczególnych pól, jak na przykład TextView titleTv zostaje przypisany tytuł konkretnej książki. Dzięki zapamiętywaniu dwóch pozycji elementu - pozycja elementu w liście wszystkich obiektów, pozycja elementu z perspektywy LayoutManagera - możliwe jest dynamiczne odświeżanie całego widoku w przypadku jakichkolwiek zmian w danych. 
+
+W aplikacji API dostarcza ograniczoną ilość książek. W przypadku powolnego internetu lub urządzenia nie ma sensu czekać aż serwer zwróci wszystkie możliwe wyniki, a następnie czekać aż aplikacji je przetworzy i wyświetli. Stąd na początku zostaje pobrane np. pierwszych 50 książek. Po doscrollowaniu listy do końca przez użytkownika pobieranych jest kolejnych 50 książek, przy czym poprzednie wyniki są nadal wyświetlane. 
+
+
+
+Metoda isEndOfScrollView(LinearLayoutManager layoutManager) wykorzystuje pozycję ostatniego widocznego elementu i porównuje ją z pozycją ostatniego elementu w całej liście. Jeśli znajdujemy się na końcu listy zostanie wysłane zapytanie do API o kolejną porcję książek. Po odebraniu odpowiedzi lista z wszystkimi (do tej pory) książkami zostaje zwiększona o nowe książki, a widok odświeżony przez wywołanie metody notifyDataSetChanged() na adapterze RecyclerView. 
+
+W tej aktywności Toolbar zawiera nazwę aktualnego widoku oraz po lewej stronie ikonę powrotu do widoku wyszukiwania książek. 
+
+
+BookDetailsActivity
+
+
+      Projekt ekranu szczegółów książki
+  Ostatnia aktywność zawiera w sobie szczegółowe informacje o książce (rys. ). Można do niej przejść przez kliknięciu w element na liście wszystkich wyników. Tak jak poprzednie widoki zawiera Toolbar z nazwą aktualnego widoku oraz z ikoną powrotu do listy znalezionych książek. Informacje o książce wyświetlane są w polach TextView.  
+
+
+Interfejs użytkownika
+
+Głównym celem aplikacji było ułatwienie studentom Wydziału Matematyki Stosowanej korzystania z biblioteki. W związku z tym powstała aplikacja na jeden z największych systemów - Android. Jednocześnie celem aplikacji była jak największa przejrzystość i intuicyjność, aby osoby nie korzystające na co dzień z dotykowych telefonów, również mogły używać jej bez problemów. Projekt był konsultowany na bieżąco z osobą zarządzającą biblioteką. Jednolity Toolbar pozwala na łatwą nawigację po aplikacji, a dobór odpowiednich kolorów zagwarantował spójność z aplikacją tworzoną na system iOS.
+ 
+
+Splash screen
+
+Aplikacja po uruchomieniu wyświetla ekran powitalny (rys. ). 
+
+
+      Ekran startowy aplikacji
+  Ekran po  sekundy znika i nie jest możliwe wrócenie do niego po naciśnięciu przycisku back.
+
+
+Wyszukiwarka książek
+
+
+      Wyszukiwarka książek
+  Ekran wyszukiwania książek umożliwia użytkownikowi między innymi wpisanie żądanej treści w odpowiednie pola za pomocą klawiatury systemowej (rys. ). Trzy pola znajdujące się najniżej umożliwiają wybranie pozycji z listy. Dwa pierwsze otwierają dialog (rys. ), ostatnie przenosi do nowej aktywności z listą kategorii, jak na rysunku .
+
+
+                Dialog z wyborem typu pozycji książki oraz widok wyszukiwania po wybraniu typu podręcznik przez użytkownika
+    Do poprawnego pobrania danych oraz wyszukania książek aplikacja wymaga połączenia z internetem. W przypadku, gdy nie ma połączenia z internetem, na ekranie pojawi się dialog z informacją o tym oraz Toast z informacją o nieudanym pobraniu danych. Przycisk w lewym górnym roku pozwala na odświeżenie danych po uzyskaniu dostępu do internetu.
+
+W dolnym prawym rogu ekranu znajduje się przycisk wyszukiwania. Kliknięcie go otwiera kolejną aktywność i wyszukuje książki.
+
+
+Wybór kategorii
+
+Widok z kategoriami zawiera listę posortowanych elementów podzielonych na sekcję. Można rozróżnić kategorie główne oraz podkategorie, przy czym nie każda kategoria główna zawiera jakieś podkategorie. Jest to oznaczone strzałką znajdującą się z prawej strony elementu, która sugeruje możliwość kliknięcia i rozwinięcia listy. 
+
+Na tym etapie użytkownik ma możliwość ograniczenia zakresu poszukiwanych przez niego książek. Może zaznaczyć dowolną ilość kategorii głównych oraz podkategorii z możliwością szybkiego zresetowania zaznaczonych elementów po naciśnięciu ikony kosza w prawym górnym rogu. 
+
+
+      Ekran wyboru kategorii
+  W lewym górnym rogu znajduje się strzałka powrotu do poprzedniego widoku. Kliknięcie jej przenosi użytkownika z powrotem na ekran wyszukiwania. Po przeniesieniu na guziku wyboru kategorii pojawia się ilość zaznaczonych przez użytkownika elementów (rys. ) lub tekst Kategorie, w przypadku gdy nic nie zostało zaznaczone.
+
+
+Wyniki wyszukiwania
+
+Po naciśnięciu przez użytkownika przycisku Szukaj na ekranie wyszukiwania otworzy się nowy widok. W przypadku nie znalezienia żadnej pozycji pasującej do zapytania lub w przypadku błędu serwera, wyświetlony zostanie ekran znajdujący się na rysunku  po prawej stronie. Ekran po lewej z rysunku , przedstawia listę z poprawnie znalezionymi pozycjami. Na tym etapie użytkownik może sprawdzić część tytułu książki (wyświetlanie zależne od wielkości ekranu urządzenia), autora oraz rok wydania. Sortowanie odbywa się alfabetycznie pod względem tytułu. W przypadku takich samych tytułów sortowanie odbywa się po dacie wydania - od najnowszej do najstarszej. 
+
+
+            Przykładowe wyniki wyszukiwania
+    Jeśli użytkownik chce wrócić do ekranu wyszukiwania książki może nacisnąć na strzałkę w lewym górnym rogu lub nacisnąć klawisz systemowy znajdujący się w lewym dolnym rogu na urządzeniach z systemem Android. Po powrocie pola będą wypełnione ostatnio wpisanymi lub wybranymi informacjami.
+
+Więcej szczegółów książki zostanie wyświetlonych po naciśnięciu na konkretną pozycję z listy. 
+
+
+Szczegóły książki
+
+Ekran szczegółów książki został przedstawiony na rysunku . Tym razem wszystkie znane informacje wyświetlane są w całości na jednym widoku. Każda z informacji odseparowana jest od siebie horyzontalną linią. Jeśli elementów jest dużo i nie mieszczą się na ekranie, użytkownik może przesuwać widok w celu wyświetlenia pozostałych informacji.
+
+
+      Szczegóły książki
+  
+Aplikacja na system iOS
+
+
+Wykorzystane narzędzia
+
+Aplikacja na system mobilny firmy Apple została napisana w języku Swift 4, przy pomocy środowiska Xcode 9.1. Swift jako język programowania jest dostępny na rynku informatycznym niecałe 4 lata i jest następcą dosyć skomplikowanego języka Objective-C. Jego najnowsza, czwarta wersja, która została wykorzystana w projekcie, miała premierę we wrześniu 2017 roku, w tym samym czasie co dziewiąta wersja środowiska programistycznego Xcode. Zatem do tworzenia projektu zostały użyte jedne z najnowocześniejszych narzędzi programistycznych na rynku. Warto dodać, że wykorzystane rozwiązania pozwalają na komercjalizację projektu, ponieważ narzędzie Xcode jest programem typu Freeware, natomiast język Swift bazuje na licencji Apache License 2.0, która zezwala na dystrybuowanie i sprzedaż oprogramowania.
+
+
+Wymagania systemowe
+
+Aplikacja może zostać zainstalowana na systemach iOS w wersji 10.0 lub nowszej. Wybór minimalnej wersji systemu nie był przypadkowy. System ten posiada zalety dla użytkownika jak i dla osoby tworzącej oprogramowanie.
+
+System iOS 10.0 jest systemem istniejącym na rynku od września 2016 roku. Ma on zatem mniej niż półtora roku. Wspieranie tak nowych systemów wydaje się mało sensowne, jednak jest zupełnie inaczej. W przypadku polityki firmy Apple, systemy iOS wspierają zwykle wiele urządzeń istniejących na rynku dużo wcześniej od oficjalnej premiery systemu. Przykładowo wspierając system iOS 10.0, wspieramy zarazem telefon iPhone 5, który to miał premierę we wrześniu 2012. Zatem aplikacja może być instalowana na telefonach sprzed niemal 5.5 roku. Wpływa to zwykle na dużą liczbę instalacji nowych wersji iOS na urządzeniach. Zgodnie ze statystykami na dzień 18 stycznia 2018 roku, ilość urządzeń posiadających system iOS wygląda następująco w zależności od wersji:
+
+iOS 11 - 
+iOS 10 - 
+wcześniejsze wersje iOS - 
+Z powyższych statystyk wynika, iż pisząc aplikację na system iOS 10.0, można wspierać  rynku urządzeń mobilnych z systemem firmy Apple. Dodatkowo wspieranie stosunkowo nowej wersji systemu przynosi także inne korzyści a mianowicie dłuższy okres czasu istnienia na rynku w przypadku rzadkiego aktualizowania aplikacji.
+
+Jeśli chodzi o spojrzenie na zasadność wspierania systemu iOS 10.0 od strony programisty, można z pewnością stwierdzić, że im nowszy system tym więcej narzędzi do zastosowania podczas tworzenia oprogramowania. Nowe wersje systemów zwykle przynoszą łatwiejsze i szybsze rozwiązania, które mogą być wykorzystane. Zatem najwygodniej dla programisty jest wytwarzać produkt stosując coraz to nowocześniejsze metody. Z tego względu wybór wspierania systemu iOS 10.0 jest pewnego rodzaju kompromisem pomiędzy programistą a klientem. Programista zyskuje odpowiednią wygodę podczas tworzenia aplikacji, a klient zyskuje nowoczesny produkt, który przez długi czas może utrzymać się na rynku aplikacji mobilnych.
+
+
+
+Model danych
+Aplikacja posiada następujący model danych:
+
+Book - najważniejsza klasa aplikacji. Reprezentuje obiekt książki. Implementuje protokół Codable.
+
+bookTitle (String) - tytuł
+bookAuthors (String) - autorzy
+bookYear (String) - rok wydania
+bookVolume (String) - tom
+bookAvailability (String) - dostępność
+bookPositionType (String) - typ pozycji
+bookIsbn (String) - numer ISBN
+bookMathLibrarySignature (String) - sygnatura biblioteki MS
+bookMainLibrarySignature (String) - sygnatura biblioteki głównej
+bookCategories ([Category]) - kategorie, do których książka jest przypisana
+MainCategory - klasa reprezentująca kategorię główną. Implementuje protokół Decodable.
+
+category (Category) - kategoria
+subcategoriesArray ([Category]) - tablica podkategorii, przypisanych do kategorii głównej
+Category - klasa reprezentująca obiekt kategorii. Implementuje protokół Codable.
+
+id (String) - id kategorii
+name (String) - nazwa kategorii
+DictionaryTypes - model opisujący obiekt słownika dla książki. Implementuje protokół Codable.
+
+type ([String]) - typy pozycji (np. podręcznik, zbiór zadań, inny)
+availability ([String]) - dostępność (np. dostępna, wypożyczona, czytelnia)
+Analizując powyższy model danych, który został wykorzystany w aplikacji, warto wspomnieć, że można podzielić kategorie na dwa rodzaje: kategorię główną oraz podkategorię. Każdy z tych rodzajów można jednak przedstawić za pomocą obiektu typu Category. Zatem pole categories może posiadać w tablicy kategorie jak i kategorie główne. Wystarczy z kategorii głównej wyciągnąć pole category.
+
+
+
+Realizacja projektu
+
+Projekt był realizowany przy pomocy natywnych narzędzi. Proces tworzenia widoków został oparty o narzędzie Interface Builder dostarczane przez firmę Apple. Umożliwia on budowanie widoków za pomocą prostego przenoszenia komponentów i ustawiania odległości pomiędzy nimi z poziomu interfejsu. Pozwala to na szybkie i proste tworzenie widoków aplikacji.
+
+Główne widoki aplikacji zostały utworzone w pliku o nazwie Main.storyboard, który pozwala na wykorzystanie opisanego powyżej narzędzia. Wszystkie podrzędne widoki takie jak komórki tabeli, zostały utworzone w plikach o rozszerzeniu .xib. Osobny plik dla każdej z komórek pozwala na ich ułatwione modyfikacje w przyszłości oraz wielokrotne używanie w różnych tabelach.
+
+Każdy z utworzonych widoków ma swoje odzwierciedlenie w pliku typu .swift. Dzięki temu programista ma możliwość wpływania na ich wygląd zewnętrzny za pomocą przekazywania im odpowiednich danych.
+
+Proces tworzenia aplikacji na system iOS bazował na ciągłych porównaniach aplikacji z aplikacją na system Android w celu jak najlepszego odwzorowania obu z tych aplikacji. Wiele z wykorzystanych rozwiązań było dostępne wyłącznie dla wybranej platformy. Poniżej zostały przedstawione istotne elementy, jakie użyto podczas tworzenia oprogramowania dla biblioteki wydziałowej na mobilny system firmy Apple.
+
+
+
+Biblioteka R.swift
+
+R.swift jest biblioteką, która służy do zarządzania zasobami aplikacji. Została ona wciągnięta do projektu na początku jego tworzenia w celu wygody dostępu do elementów aplikacji. Działa bardzo podobnie do klasy R występującej w języku Java dla systemu Android. Dzięki tej bibliotece można w bardzo łatwy sposób dostać się do komponentów takich jak obrazek, zainicjowany widok czy też międzynarodowe ciągi znaków zapisane w aplikacji. Przykładem pokazującym zasadność użycia tej biblioteki może być zwykłe rejestrowanie komórki do tabeli.
+
+Poniższy przykład pokazuje uproszczony sposób rejestrowania komórki przy pomocy biblioteki R.swift.
+
+
+
+
+Zarządzanie widokami
+
+Cała aplikacja na system iOS została stworzona z wykorzystaniem natywnego narzędzia jakim jest UIPageViewController. Pozwala on na przechodzenie pomiędzy widokami typu UIViewController z wykorzystaniem jednej z dwóch natywnych animacji, które można wybrać. W przypadku naszej aplikacji wykorzystana została animacja pageCurl, która imituje przewracanie strony w książce. Pozwoliło to na lepszy odbiór aplikacji przez użytkownika.
+
+Obiekt klasy UIPageViewController działa na zasadzie tablicy uporządkowanej widoków, co oznacza, że każdy z widoków "wie" jaki widok jest przed nim i za nim. Nasza aplikacja nie ma ustalonej kolejności widoków, ponieważ użytkownik za każdym razem ma pewien wybór i może przejść do jednego widoku, by potem wrócić i przejść do kolejnego. Z tego powodu, w celu skorzystania z tego narzędzia, została utworzona klasa MainPageViewController, która dziedziczy po klasie UIPageViewController w celu dostosowania jej do naszych potrzeb. Została ona zaimplementowana w taki sposób, by przed każdym przejściem pomiędzy widokami następowała analiza, jaki widok ma być wyświetlony. Następnie jest on tworzony, uzupełniany odpowiednimi danymi i pokazywany z pewnym wybranym przejściem (w prawo lub w lewo). Dodatkowo obiekt typu MainPageViewController ma możliwość zaprezentowania widoku oraz zainicjowania systemowego paska nawigacji. W celu umożliwienia wykonania tych operacji z dowolnego wyświetlonego widoku, został utworzony odpowiedni protokół, który jest implementowany przez tę klasę, a następnie wykorzystywany w widokach, które go wymagają do obsługi interfejsu użytkownika.
+
+Każdy z widoków podrzędnych posiada pole typu MainPageViewControllerDelegate?, które pozwala na przekazanie metod służących do zarządzania interfejsem bezpośrednio z poziomu tego widoku.
+
+
+
+MainViewController
+
+Klasa ta dziedziczy po klasie UIViewController i została stworzona jedynie w celu możliwości rozszerzenia funkcjonalności aplikacji w przyszłości. Jest ona bowiem dziedziczona przez każdy widok w aplikacji, co pozwala na zunifikowanie interfejsu poprzez dostęp do tych samych metod, które są w stanie wpłynąć na utworzoną instancję widoku.
+
+
+
+SearchViewController
+
+
+      Projekt ekranu wyszukiwania książek
+  Obiekt klasy tego typu jest obiektem pozwalającym przygotować formularz, który następnie będzie użyty w celu wyszukania książki w systemie biblioteki. Składa się on z natywnego elementu tabeli UITableView, dwóch rodzajów komórek: SearchTextTableViewCell i SearchCategoryTableViewCell oraz z przycisku typu LoadingButton, który został zaimplementowany na potrzeby projektu. Klasa SearchViewController implementuje delegaty obu tych komórek:
+
+SearchTextTableViewCellDelegate - w celu odczytania tekstu z komórki i zapisania odczytanego ciągu znaków w celu użycia go do wyszukiwania
+SearchCategoryTableViewCellDelegate - w celu przekazania możliwości otwarcia widoku z kategoriami, po naciśnięciu przycisku 
+Widok typu SearchCategoryTableViewCell posiada możliwość uzupełniania danych przez użytkownika. Powoduje to wysunięcie się klawiatury, która niekiedy zakrywa pole, w które użytkownik wpisuje tekst. Z tego powodu został on wyposażony w rozszerzenie, które pozwala na podwijanie się widoku podczas wysuwania na nim klawiatury.
+
+
+
+Powyższe metody w celu monitorowania zachowania klawiatury są dodane do centrum notyfikacji w aplikacji jako obserwatory pokazania/ukrycia się natywnej klawiatury.
+
+
+
+Widok posiada u dołu przycisk szukania, który odpytuje usługę za pomocą spreparowanego obiektu klasy Book utworzonego na podstawie uzupełnionych pól przez użytkownika.
+
+W pasku nawigacji widoku, zostały podpięte dwa przyciski. Jeden z nich znajduje się po lewej stronie i służy do pobrania typów pozycji, dostępności oraz kategorii książek w przypadku braku internetu przy włączaniu aplikacji. Kliknięcie tego przycisku powoduje także wyświetlenie dialogu informującego użytkownika o pobieraniu danych. Do utworzenia dialogu została wykorzystana biblioteka JGProgressHUD. Drugi z przycisków znajduje się po prawej stronie i służy do wyczyszczenia formularza ze wszystkich wpisanych danych.
+
+
+
+CategoriesViewController
+
+
+      Projekt ekranu wyboru kategorii
+  Kolejnym widokiem jest obiekt klasy CategoriesViewController. Jest to widok posiadający komponent UITableView, jednak w bardziej skomplikowanej konfiguracji niż widok SearchViewController. W tabeli został zarejestrowany model komórki kategorii CategoryTableViewCell oraz model nagłówka głównej kategorii MainCategoryHeaderView. Tabela została stworzona jako tabela rozwijalna, tzn. po wyborze sekcji, wyświetlane są komórki do niej należące. Z powodu braku natywnego rozwiązania na tę funkcjonalność, została ona stworzona samodzielnie.
+
+Widok posiada zmienną expandedHeaders, która z początku jest wypełniona wartościami typu false.
+
+Indeks każdego elementu tabeli odzwierciedla sekcję nagłówka. Pozwala to stwierdzić, które z sekcji są rozwinięte, a które zwinięte. Kliknięcie w przycisk rozwijania sekcji, uruchamia metodę ze specjalnie stworzonego na te potrzeby protokołu obsługującego nagłówek.
+
+Powoduje ona przestawienie odpowiedniej wartości w tablicy expandedHeaders na przeciwną, przekazanie jej do widoku i odświeżenie tabeli. Natywne metody delegatowe klasy UITableView zostały uzupełnione w sposób obsługujący informacje dotyczące rozwiniętej/zwiniętej sekcji. Implementacja metody odpowiadającej za ilość wierszy, pochodząca z protokołu UITableViewDataSource została zaprezentowana poniżej.
+
+W przypadku rozwiniętej sekcji zwraca ilość wierszy równą ilości podkategorii należących do kategorii głównej z danej sekcji. Dla zwiniętego nagłówka nie wyświetla żadnego wiersza.
+
+Opisywany widok obsługuje także możliwość wyboru wierszy bądź nagłówków, w celu późniejszego wykorzystania wybranych kategorii. W tym celu również zostały wykorzystane zmienne służące do pamiętania stanu wyboru.
+
+Przedstawiają one zaznaczone nagłówki (obiekt typu Array) oraz zaznaczone komórki (obiekt typu Dictionary). Każde wybranie nagłówka, zmienia jego stan, jednocześnie wpływając na stan komórek należących do danej sekcji. Wybór nagłówka powoduje skorzystanie z metody przypisującej w słowniku selectedCells zmienne typu Bool do obiektów typu IndexPath, które określają pozycję komórki w tabeli. Jednocześnie przypisując obiekty, komórki w zadanych pozycjach są zaznaczane lub odznaczane.
+
+Nie tylko nagłówek może wpłynąć na stan komórki. Istnieje również odwrotna zależność. Wybór komórek także może wpłynąć na stan nagłówka (na przykład w przypadku zaznaczenia wszystkich podkategorii). Obsługa tego zdarzenia została opisana poniższą metodą.
+
+
+Dodatkowo obiekt typu CategoriesViewController obsługuje zapis wybranych kategorii jak i załadowanie zaznaczonych już wcześniej kategorii, zaraz po wejściu na widok. 
+
+
+
+BookListViewController
+
+
+      Projekt ekranu listy książek
+  Obiekt klasy BookListViewController jest następnym z widoków posiadających tabelę UITableView. Służy do wyświetlania wyników wyszukiwania. Została w nim zarejestrowana komórka typu BookTableViewCell, która wyświetla tytuł oraz autora znalezionej książki. Tabela została przystosowana w taki sposób, aby wyświetlać pewną ilość książek, a w przypadku zaistniałej potrzeby, dociągać kolejną ich ilość. Metoda tryFetchMoreBooks(loadedIndexPath: IndexPath), która została zaimplementowana, jest wywoływana przy każdym ładowaniu się komórki na widoku. W przypadku, gdy ładowana jest szósta od końca komórka, metoda ta odpytuje usługę o kolejne książki. Gdy je otrzyma, dopisuje je do tablicy książek co powoduje odświeżenie widoku, ze zwiększoną liczbą znalezionych pozycji.
+
+
+
+Widok przedstawiający listę książek, obsługuje dodatkowo natywne rozwiązanie typu 3D Touch. Pozwala ono na podgląd zawartości komórki oraz wykonanie dodatkowych akcji przed jej wyborem. W tym celu, zostało stworzone rozszerzenie klasy BookListViewController obsługujące akcje mocnego przyciśnięcia wiersza (Peek) oraz jego jeszcze mocniejszego dociśnięcia (Pop).
+
+
+Akcja 3D Touch jest obsługiwana jedynie na telefonach typu iPhone 6s i nowszych. Z tego powodu należy po załadowaniu widoku upewnić się, czy jest sens rejestrowania metod szybkiego podglądu.
+
+
+Widok typu BookListViewController posiada dodatkowo obsługę w przypadku, gdy ilość otrzymanych książek z usługi jest równa 0. Do obsługi pustego ekranu wykorzystana została biblioteka UIEmptyState. Jest to mało rozpowszechniona biblioteka służąca do analizowania wyświetlanych informacji w tabeli UITableView lub kolekcji UICollectionView, która w przypadku liczby elementów do wyświetlenia równej 0, pokaże użytkownikowi dowolnie spersonalizowaną informację o braku danych do zaprezentowania.
+
+Biblioteka ta jest napisana w stosunkowo przyjazny sposób dla programisty. W celu zastosowania jej funkcjonalności, należy zaimplementować dwa typy protokołów: UIEmptyStateDelegate oraz UIEmptyStateDataSource. Następnie można przejść do przypisywania potrzebnych zmiennych, które zostaną automatycznie wyświetlone w przypadku braku elementów do wyświetlenia na widoku.
+
+
+
+
+BookDetailsViewController
+
+
+      Projekt ekranu szczegółów książki
+  Klasa BookDetailsViewController przedstawia obiekt widoku informacji o książce. Składa się ona tak jak inne widoki z tabeli UITableView, a do wyświetlenia zawartości wykorzystuje komórkę typu BookDetailTableViewCell posiadająca jedynie tytuł oraz zawartość pola opisującego książkę. Opisywana klasa widoku, jest dużo prostsza od poprzednich. Elementem wyróżniającym ją spośród pozostałych, jest zmienna typu [UIPreviewActionItem], która odpowiada za szybkie akcje w trybie Peek, będąc na poprzednim widoku typu BookListViewController.
+ 
+
+
+
+SessionManager
+
+SessionManager to klasa odpowiadająca za zarządzanie, przechowywanie i udostępnianie danych do widoków podczas jednej sesji działania aplikacji. Klasa ta posiada trzy pola. Wystarczają one do zarządzania całą sesją, która jest aktywna, dopóki aplikacja znajduje się w pamięci RAM urządzenia.
+
+var searchedBook: Book! - pole odpowiadające za przetrzymywanie szablonowej, poszukiwanej przez użytkownika książki. Pole to jest aktualizowane z każdą zmianą użytkownika na widoku wyszukiwania.
+var mainCategories: [MainCategory] - wszystkie kategorie (główne wraz z podkategoriami) zaciągnięte z usługi po wejściu w aplikację.
+var dictionaryTypes: DictionaryTypes! - wszystkie możliwe typy pozycji oraz stany dostępności książek. Otrzymywane są z usługi po otwarciu aplikacji.
+Klasa SessionManager, z powodu zarządzania całą sesją, została zaimplementowana z zastosowaniem wzorca projektowego Singleton. Zgodnie z jego założeniami, klasa posiada statyczną instancję oraz prywatny konstruktor.
+
+
+
+
+RequestManager
+
+Za odpytywanie usługi odpowiada klasa RequestManager. Klasa ta jest również Singletonem. Jest ona napisana korzystając jedynie z natywnych rozwiązań języka Swift 4. Dzięki implementacji odpowiednich protokołów przez klasy modelowe, metoda ta jest w stanie bezpośrednio stworzyć obiekt z danych, które przyszły z usługi w formacie .json. Poniżej został przedstawiony przykład zaciągania z usługi obiektu tablicy wszystkich kategorii głównych.
+
+
+Każda z metod odpytujących usługę zaimplementowana jest korzystając z metody tworzącej typowy obiekt klasy URLRequest?. Jest on tworzony na podstawie typu metody (w przypadku naszego projektu korzystamy jedynie z typów GET oraz POST) oraz końcówki adresu do którego powinno zostać wysłane zapytanie.
+
+
+
+
+Localizable.strings
+
+Warto wspomnieć o zastosowaniu w projekcie plików typu Localizable.strings. Są to pliki tekstowe w formacie (klucz - wartość). Zawierają zasłownikowane wyrazy, wyrażenia oraz zdania występujące w aplikacji, w celu obsłużenia różnych wersji językowych urządzeń, na których została zainstalowana aplikacja. Przykładowa część takiego pliku w wersji angielskiej wygląda następująco:
+
+Wykorzystanie powyższego rozwiązania polega na użyciu klucza zamiast tekstu, który jest do niego przypisany. Klucze we wszystkich plikach językowych są identyczne, lecz ich wartości różnią się w zależności od języka. Z tego powodu system sam zarządza wyświetlanymi wyrażeniami w zależności od języka systemu. Domyślnym językiem jest język angielski. Zastosowanie powyższego rozwiązania dla ustawienia tytułu przycisku zostało przedstawione poniżej.
+
+
+
+
+
+
+Interfejs użytkownika
+
+
+
+Wyszukiwarka książek
+
+Aplikacja po uruchomieniu, przechodzi bezpośrednio do ekranu wyszukiwarki książek, jak zostało przedstawione na rysunku . Aplikacja do poprawnego działania wymaga połączenia użytkownika z internetem. W przypadku braku połączenia internetowego, na ekranie pojawi się stosowna informacja zaraz po wejściu na widok. Przycisk w lewym górnym roku pozwala na odświeżenie zawartości. Użytkownik ma możliwość uzupełnienia dowolnych pól, w zależności od poszukiwanej przez niego pozycji. 
+
+
+            Niewypełniony ekran wyszukiwania książki
+    
+            Częściowo uzupełniony ekran wyszukiwania książki
+    Pierwsze z pól są polami służącymi do uzupełnienia tekstu za pomocą klawiatury systemowej bądź wyboru jednego z kilku elementów z prostej listy. Ostatnia z komórek posiada przycisk przenoszący użytkownika do ekranu wyboru kategorii, jak na rysunku . W prawym górnym rogu ekranu znajduje się przycisk, służący do wyczyszczenia wszystkich pól wyszukiwarki. Usunięcie dowolnego wypełnionego pola również jest możliwe - wystarczy wybrać szary przycisk znajdujący się obok wypełnionego pola, jak na rysunku .
+
+U dołu ekranu znajduje się przycisk wyszukiwania. Kliknięcie go, uruchamia wyszukiwanie, co jest oznajmione poprzez kręcące się kółeczko wewnątrz przycisku.
+
+
+
+Wybór kategorii
+
+Ekran kategorii, jest listą elementów posortowanych w sekcjach. Niektóre z sekcji są rozwijalne. Rozwinięcie sekcji pozwala użytkownikowi przejrzeć wszystkie podkategorie dla wybranej kategorii głównej. Użytkownik może na tym ekranie dokonać wyboru zakresu poszukiwanej przez niego książki. W przypadku wyboru kategorii głównej, zaznaczane są automatycznie wszystkie jej podkategorie. W prawym górnym rogu znajduje się przycisk z ikoną kosza. Pozwala on wyczyścić wybrane kategorie i zacząć wybór od nowa.
+
+
+
+      Ekran wyboru kategorii
+  W lewym górnym rogu umiejscowiony jest przycisk zapisu wybranych kategorii. Jego wybór przenosi użytkownika z powrotem na ekran wyszukiwania. Po powrocie, przycisk do wyboru kategorii wyświetla ich konkretną ilość jaka została wybrana przez użytkownika. Zostało to przedstawione na rysunku .
+
+
+
+Wyniki wyszukiwania
+
+Na ekranie wyszukiwania, wybór przycisku odpowiadającego za szukanie, przekierowuje użytkownika do ekranu Wyników wyszukiwania. W przypadku nie znalezienia żadnej pozycji pasującej do zapytania, wyświetlany jest ekran znajdujący się na rysunku . Ekran z rysunku numer , przedstawia listę z poprawnie znalezionymi pozycjami. Składa się on z wierszy przedstawiających tytuły oraz autorów wyszukanych pozycji. Ilość wyszukanych książek jest równa 20 lub mniejsza. W przypadku, gdy jest ona maksymalna, użytkownik może przejść do dołu listy w celu doładowania i wyświetlenia kolejnych rekordów na widoku.
+
+
+            Ekran wyników wyszukiwania
+    
+            Pusty ekran wyników
+    Użytkownik w celu przejścia dalej ma do wyboru dwie akcje:
+
+Mocniejsze dociśnięcie ekranu w miejscu interesującej go pozycji.
+Wybór interesującego go wiersza.
+
+        Ekrany obsługujące akcje 3D Touch
+  Pierwsza opcja jest dostępna jedynie dla telefonów z opcją 3D Touch wbudowaną w ekran. W przypadku opcji 1., użytkownik otrzymuje na ekranie podgląd szczegółów książki, który przedstawiono na rysunku . Przesunięcie go ku górze, spowoduje wyświetlenie się u dołu dodatkowych opcji. Będą to opcje umożliwiające skopiowanie tytułu bądź autora do schowka. Przeciągnięcie widoku podglądu w dół, spowoduje jego ukrycie. W przypadku jego jeszcze mocniejszego dociśnięcia, użytkownik zostanie przekierowany do ekranu. Analogiczna sytuacja ma miejsce podczas wyboru opcji numer 2., czyli zwykłego wyboru wiersza z książką.
+
+W celu powrotu i rozpoczęcia szukania książki od początku, użytkownik może wybrać przycisk w lewym górnym rogu. Kliknięcie go, spowoduje powrót do ekranu wyszukiwania.
+
+
+Szczegóły książki
+
+Jest to ekran przedstawiony na rysunku . Jest on prezentowany użytkownikowi od spodu, po wyborze jednej z komórek opisujących książkę. Przedstawia prostą przesuwaną listę elementów dotyczących wybranej książki. Przycisk w prawej górnej części ekranu pozwala schować widok i wrócić do poprzedniego ekranu wszystkich wyszukanych pozycji.
+
+
+      Szczegóły książki
+  
+Zakończenie
+
+Tworząc aplikację serwerową w tak małej grupie dla całego wydziału, mogliśmy znacznie poszerzyć swoją wiedzę jednocześnie rozwijając się w zakresie pracy zespołowej. Dodatkowo w celu lepszego porozumienia się z wieloma osobami, z którymi pracowaliśmy i dyskutowaliśmy podczas wytwarzania tej aplikacji, musieliśmy poszerzyć swoje zdolności interpersonalne. Bez ich pomocy byłoby nam ciężko dopracować wiele spraw związanych z dostosowaniem obsługi, a także wyglądem aplikacji dla klienta.
+
+Cały projekt aplikacji mobilnych jak i aplikacji webowej został omówiony i wielokrotnie prezentowany oraz testowany z Panią mgr inż. Martyną Maciaszczyk, która była osobą zatwierdzającą wszystkie postanowienia oraz zmiany w widoku wszystkich aplikacji. Proces ten przebiegał stosunkowo długo, jednak był bardzo pouczający.
+
+Interfejs graficzny był jednym z problemów wytworzenia takiego systemu. Bardzo trudne jest dostosowanie do siebie wszystkich aplikacji pod względem wyglądu. Strona internetowa zawsze będzie nieco inna od aplikacji mobilnej, ponieważ istnieje wiele różnic dotyczących założeń działania, obsługi, czy też przyzwyczajeń i wymagań użytkownika od danego systemu. Z tego powodu aplikacja internetowa dla administratora różni się od aplikacji mobilnych przeznaczonych przede wszystkim dla studentów. Największym problemem było dostosowanie do siebie obu aplikacji mobilnych na systemy Android i iOS. Każdą z nich pisała inna osoba, więc założenia dotyczące projektu musiały być dokładnie ustalone, a każda późniejsza edycja ponosiła za sobą modyfikacje na obu platformach, co przekładało się na dwukrotnie zwiększony czas potrzebny do realizacji danej zmiany. Dodatkowo każda z platform ma inne natywne narzędzia używane do tworzenia aplikacji. Systemy różnią się od siebie również wyglądem, co przyzwyczaja użytkowników do swoich rozwiązań. Z  tego powodu aplikacje na dwa różne systemy nigdy nie mogą być identyczne jeśli chcą być intuicyjne dla ich grupy docelowej odbiorców.
+
+Aplikacja serwerowa dla biblioteki została napisana w sposób łatwy do rozszerzenia. Jej wygodne i proste w obsłudze możliwości dodawania nowych książek do bazy, mogą być wykorzystywane w przyszłości w celu powiększania ilości zbiorów dostępnych w bibliotece. Dodatkowo, warto byłoby dodać możliwość rezerwacji książki online, bezpośrednio z poziomu aplikacji mobilnej. Ciekawą opcją na dalszą przyszłość (z powodu dużego nakładu pracy), byłaby możliwość wypożyczania danej pozycji książki w postaci pliku o rozszerzeniu .pdf. Pozwoliłoby to nie tylko na zmniejszenie kolejek w bibliotece, ale także na możliwość dostępu do wszystkich książek z urządzenia przenośnego bez potrzeby noszenia dużej ich ilości przy sobie. Co więcej, ilość książek w tym wypadku byłaby nieograniczona. Każdy ze studentów miałby swój wirtualny egzemplarz. Niestety byłoby to możliwe do osiągnięcia jedynie przy dużym nakładzie pracy z powodu dużej ilości skanów do wykonania a także stworzenia nowej usługi pozwalającej na ściąganie i zapisywanie plików na urządzeniu przenośnym.
+
+Celem naszego projektu było utworzenie systemu dla Biblioteki Wydziału Matematyki Stosowanej na Politechnice Śląskiej w Gliwicach. Cel ten udało nam się osiągnąć zgodnie ze wszystkimi założeniami jakie zostały przed nami postawione. Mamy nadzieję, że w przyszłości uda się wdrożyć nasz system do użytku, i że posłuży on gronu odbiorców w taki sposób, w jaki byśmy chcieli, aby służył nam, gdy faktycznie go potrzebowaliśmy.
+
+
+
+Załączniki
+
+W projekcie zostały wykorzystane następujące pliki do utworzenia bazy danych oraz modelu:
+
+dane-prog-bibl.xlsx
+kategorienowe.txt
+12
+
+ http://www.bn.org.pl/aktualnosci/1338-czytelnictwo-polakow-2016-E28093-raport-biblioteki-narodowej.html [dostęp: 10 lutego 2018]
+
+ https://docs.djangoproject.com/en/2.0/ref/contrib/auth/ [dostęp: 10 lutego 2018]
+ https://docs.djangoproject.com/en/2.0/topics/db/queries/ [dostęp: 10 lutego 2018]
+ https://docs.djangoproject.com/en/2.0/ref/contrib/admin/ [dostęp: 10 lutego 2018]
+ http://www.django-rest-framework.org/  [dostęp: 10 lutego 2018]
+ https://docs.djangoproject.com/en/2.0/topics/i18n/translation/ [dostęp: 10 lutego 2018]
+ https://docs.djangoproject.com/en/2.0/topics/db/models/ [dostęp: 10 lutego 2018]
+ https://docs.djangoproject.com/pl/2.0/intro/overview/ [dostęp: 10 lutego 2018]
+ A. Mele, "Django. Praktyczne tworzenie aplikacji sieciowych" Helion, 2015.
+ E. Nemeth, G. Snyder, T. Hein, B. Whaley, "Unix i Linux. Przewodnik
+administratora systemów.", Wydanie IV, Helion, 2011.
+
+
+Robert C. Martin. 
+Czysty kod. Podręcznik dobrego programisty. 
+Wydawnictwo Helion, 2010, ISBN 978-83-283-1401-6.
+ The Swift Programming Language (Swift 4.0.3), 
+ Using Swift with Cocoa and Objective-C (Swift 4.0.3)
+ https://developer.apple.com/support/app-store/ [dostęp: 10 lutego 2018]
+ https://developer.apple.com/documentation/ [dostęp: 10 lutego 2018]
+ https://github.com/mac-cain13/R.swift [dostęp: 10 lutego 2018]
+ https://github.com/JonasGessner/JGProgressHUD
+ https://github.com/luispadron/UIEmptyState [dostęp: 10 lutego 2018]
+
+ J. Gosling, B. Joy, G. Steele, G. Bracha, A. Buckley. The Java® Language Specification. Java SE 8 Edition. Oracle America, 2015.
+ https://developer.android.com/studio/releases/index.html [dostęp: 10 lutego 2018]
+ https://developer.android.com/about/dashboards/index.html [dostęp: 10 lutego 2018]
+ https://fabric.io/kits/android/crashlytics [dostęp: 10 lutego 2018]
+ http://jakewharton.github.io/butterknife/ [dostęp: 10 lutego 2018]
+ S. Madej, Przybornik Pragmatycznego Programisty
+Androida. Wydanie Pierwsze, 2015.
+ P. Mainkar, Expert Android Programming. Packt Publishing, 2017, ISBN 9781786468956.
+ https://github.com/codepath/androidguides/wiki/Dependency-Injection-with-Dagger-2 [dostęp: 10 lutego 2018]
+ http://square.github.io/retrofit/ [dostęp: 10 lutego 2018]
+ https://github.com/ReactiveX/RxJava [dostęp: 10 lutego 2018]
+ https://developer.android.com/reference/android/support/constraint/ConstraintLayout.html [dostęp: 10 lutego 2018]
+ https://developer.android.com/reference/android/support/design/widget/TextInputEditText.html [dostęp: 10 lutego 2018]
+

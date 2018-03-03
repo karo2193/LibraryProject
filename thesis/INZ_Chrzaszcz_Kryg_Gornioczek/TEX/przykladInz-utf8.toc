@@ -1,0 +1,71 @@
+\contentsline {section}{Wst\k ep}{9}{section*.4}
+\contentsline {section}{\numberline {1}\kernsekcyjny System obs\IeC {\l }ugi biblioteki}{11}{section.1}
+\contentsline {section}{\numberline {2}\kernsekcyjny Aplikacja serwerowa}{13}{section.2}
+\contentsline {subsection}{\numberline {2.1}\kernsubsekcyjny U\IeC {\.z}yte frameworki}{13}{subsection.2.1}
+\contentsline {subsubsection}{\numberline {2.1.1}\kernsubsubsekcyjny Modele Django}{14}{subsubsection.2.1.1}
+\contentsline {subsection}{\numberline {2.2}\kernsubsekcyjny Model danych}{14}{subsection.2.2}
+\contentsline {subsubsection}{\numberline {2.2.1}\kernsubsubsekcyjny Model Book}{15}{subsubsection.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2}\kernsubsubsekcyjny Model Category}{16}{subsubsection.2.2.2}
+\contentsline {subsection}{\numberline {2.3}\kernsubsekcyjny G\IeC {\l }\IeC {\'o}wne klasy}{16}{subsection.2.3}
+\contentsline {subsubsection}{\numberline {2.3.1}\kernsubsubsekcyjny Klasa CategoryTree}{16}{subsubsection.2.3.1}
+\contentsline {subsubsection}{\numberline {2.3.2}\kernsubsubsekcyjny Klasa Dictionary}{17}{subsubsection.2.3.2}
+\contentsline {subsubsection}{\numberline {2.3.3}\kernsubsubsekcyjny Klasa query}{18}{subsubsection.2.3.3}
+\contentsline {subsection}{\numberline {2.4}\kernsubsekcyjny Us\IeC {\l }ugi}{20}{subsection.2.4}
+\contentsline {subsubsection}{\numberline {2.4.1}\kernsubsubsekcyjny Us\IeC {\l }uga dostarczaj\IeC {\k a}ca ksi\IeC {\k a}\IeC {\.z}ki}{20}{subsubsection.2.4.1}
+\contentsline {subsubsection}{\numberline {2.4.2}\kernsubsubsekcyjny Us\IeC {\l }uga dostarczaj\IeC {\k a}ca kategorie}{21}{subsubsection.2.4.2}
+\contentsline {subsubsection}{\numberline {2.4.3}\kernsubsubsekcyjny Us\IeC {\l }uga dostarczaj\IeC {\k a}ca s\IeC {\l }ownik}{22}{subsubsection.2.4.3}
+\contentsline {subsection}{\numberline {2.5}\kernsubsekcyjny Wdra\IeC {\.z}anie}{23}{subsection.2.5}
+\contentsline {subsubsection}{\numberline {2.5.1}\kernsubsubsekcyjny Wirtualne \IeC {\'s}rodowisko}{23}{subsubsection.2.5.1}
+\contentsline {subsubsection}{\numberline {2.5.2}\kernsubsubsekcyjny Pobranie aplikacji}{23}{subsubsection.2.5.2}
+\contentsline {subsubsection}{\numberline {2.5.3}\kernsubsubsekcyjny Konfiguracja aplikacji}{24}{subsubsection.2.5.3}
+\contentsline {subsubsection}{\numberline {2.5.4}\kernsubsubsekcyjny Uruchomienie aplikacji}{25}{subsubsection.2.5.4}
+\contentsline {subsubsection}{\numberline {2.5.5}\kernsubsubsekcyjny Konfiguracja Cron}{27}{subsubsection.2.5.5}
+\contentsline {section}{\numberline {3}\kernsekcyjny Panel administracyjny}{29}{section.3}
+\contentsline {subsection}{\numberline {3.1}\kernsubsekcyjny Biblioteka}{30}{subsection.3.1}
+\contentsline {subsubsection}{\numberline {3.1.1}\kernsubsubsekcyjny Importuj csv}{30}{subsubsection.3.1.1}
+\contentsline {subsubsection}{\numberline {3.1.2}\kernsubsubsekcyjny Kategorie}{31}{subsubsection.3.1.2}
+\contentsline {subsubsection}{\numberline {3.1.3}\kernsubsubsekcyjny Ksi\IeC {\k a}\IeC {\.z}ki}{32}{subsubsection.3.1.3}
+\contentsline {subsection}{\numberline {3.2}\kernsubsekcyjny Uwierzytelnianie i Autoryzacja}{33}{subsection.3.2}
+\contentsline {section}{\numberline {4}\kernsekcyjny Aplikacja na system Android}{37}{section.4}
+\contentsline {subsection}{\numberline {4.1}\kernsubsekcyjny Wykorzystane narz\IeC {\k e}dzie}{37}{subsection.4.1}
+\contentsline {subsection}{\numberline {4.2}\kernsubsekcyjny Wymagania systemowe}{37}{subsection.4.2}
+\contentsline {subsection}{\numberline {4.3}\kernsubsekcyjny Model danych}{37}{subsection.4.3}
+\contentsline {subsection}{\numberline {4.4}\kernsubsekcyjny Realizacja projektu}{39}{subsection.4.4}
+\contentsline {subsubsection}{\numberline {4.4.1}\kernsubsubsekcyjny ModelViewPresenter}{40}{subsubsection.4.4.1}
+\contentsline {subsubsection}{\numberline {4.4.2}\kernsubsubsekcyjny Pobieranie i wysy\IeC {\l }anie danych}{41}{subsubsection.4.4.2}
+\contentsline {subsubsection}{\numberline {4.4.3}\kernsubsubsekcyjny Zarz\IeC {\k a}dzanie widokami}{42}{subsubsection.4.4.3}
+\contentsline {subsubsection}{\numberline {4.4.4}\kernsubsubsekcyjny BaseActivity}{43}{subsubsection.4.4.4}
+\contentsline {subsubsection}{\numberline {4.4.5}\kernsubsubsekcyjny MainActivity}{43}{subsubsection.4.4.5}
+\contentsline {subsubsection}{\numberline {4.4.6}\kernsubsubsekcyjny SearchActivity}{44}{subsubsection.4.4.6}
+\contentsline {subsubsection}{\numberline {4.4.7}\kernsubsubsekcyjny CategoryActivity}{46}{subsubsection.4.4.7}
+\contentsline {subsubsection}{\numberline {4.4.8}\kernsubsubsekcyjny BookActivity}{48}{subsubsection.4.4.8}
+\contentsline {subsubsection}{\numberline {4.4.9}\kernsubsubsekcyjny BookDetailsActivity}{51}{subsubsection.4.4.9}
+\contentsline {subsection}{\numberline {4.5}\kernsubsekcyjny Interfejs u\IeC {\.z}ytkownika}{51}{subsection.4.5}
+\contentsline {subsection}{\numberline {4.6}\kernsubsekcyjny Splash screen}{52}{subsection.4.6}
+\contentsline {subsubsection}{\numberline {4.6.1}\kernsubsubsekcyjny Wyszukiwarka ksi\IeC {\k a}\IeC {\.z}ek}{52}{subsubsection.4.6.1}
+\contentsline {subsubsection}{\numberline {4.6.2}\kernsubsubsekcyjny Wyb\IeC {\'o}r kategorii}{53}{subsubsection.4.6.2}
+\contentsline {subsubsection}{\numberline {4.6.3}\kernsubsubsekcyjny Wyniki wyszukiwania}{55}{subsubsection.4.6.3}
+\contentsline {subsubsection}{\numberline {4.6.4}\kernsubsubsekcyjny Szczeg\IeC {\'o}\IeC {\l }y ksi\IeC {\k a}\IeC {\.z}ki}{56}{subsubsection.4.6.4}
+\contentsline {section}{\numberline {5}\kernsekcyjny Aplikacja na system iOS}{59}{section.5}
+\contentsline {subsection}{\numberline {5.1}\kernsubsekcyjny Wykorzystane narz\IeC {\k e}dzia}{59}{subsection.5.1}
+\contentsline {subsection}{\numberline {5.2}\kernsubsekcyjny Wymagania systemowe}{59}{subsection.5.2}
+\contentsline {subsection}{\numberline {5.3}\kernsubsekcyjny Model danych}{60}{subsection.5.3}
+\contentsline {subsection}{\numberline {5.4}\kernsubsekcyjny Realizacja projektu}{61}{subsection.5.4}
+\contentsline {subsubsection}{\numberline {5.4.1}\kernsubsubsekcyjny Biblioteka R.swift}{62}{subsubsection.5.4.1}
+\contentsline {subsubsection}{\numberline {5.4.2}\kernsubsubsekcyjny Zarz\IeC {\k a}dzanie widokami}{63}{subsubsection.5.4.2}
+\contentsline {subsubsection}{\numberline {5.4.3}\kernsubsubsekcyjny MainViewController}{64}{subsubsection.5.4.3}
+\contentsline {subsubsection}{\numberline {5.4.4}\kernsubsubsekcyjny SearchViewController}{64}{subsubsection.5.4.4}
+\contentsline {subsubsection}{\numberline {5.4.5}\kernsubsubsekcyjny CategoriesViewController}{66}{subsubsection.5.4.5}
+\contentsline {subsubsection}{\numberline {5.4.6}\kernsubsubsekcyjny BookListViewController}{70}{subsubsection.5.4.6}
+\contentsline {subsubsection}{\numberline {5.4.7}\kernsubsubsekcyjny BookDetailsViewController}{74}{subsubsection.5.4.7}
+\contentsline {subsubsection}{\numberline {5.4.8}\kernsubsubsekcyjny SessionManager}{75}{subsubsection.5.4.8}
+\contentsline {subsubsection}{\numberline {5.4.9}\kernsubsubsekcyjny RequestManager}{76}{subsubsection.5.4.9}
+\contentsline {subsection}{\numberline {5.5}\kernsubsekcyjny Localizable.strings}{77}{subsection.5.5}
+\contentsline {subsection}{\numberline {5.6}\kernsubsekcyjny Interfejs u\IeC {\.z}ytkownika}{78}{subsection.5.6}
+\contentsline {subsubsection}{\numberline {5.6.1}\kernsubsubsekcyjny Wyszukiwarka ksi\IeC {\k a}\IeC {\.z}ek}{78}{subsubsection.5.6.1}
+\contentsline {subsubsection}{\numberline {5.6.2}\kernsubsubsekcyjny Wyb\IeC {\'o}r kategorii}{78}{subsubsection.5.6.2}
+\contentsline {subsubsection}{\numberline {5.6.3}\kernsubsubsekcyjny Wyniki wyszukiwania}{80}{subsubsection.5.6.3}
+\contentsline {subsubsection}{\numberline {5.6.4}\kernsubsubsekcyjny Szczeg\IeC {\'o}\IeC {\l }y ksi\IeC {\k a}\IeC {\.z}ki}{83}{subsubsection.5.6.4}
+\contentsline {section}{\numberline {6}\kernsekcyjny Zako\IeC {\'n}czenie}{85}{section.6}
+\contentsline {section}{\numberline {7}\kernsekcyjny Za\IeC {\l }\IeC {\k a}czniki}{87}{section.7}
+\contentsline {section}{Literatura}{89}{section*.5}

@@ -1,0 +1,71 @@
+\BOOKMARK [1][-]{section*.4}{Wstep}{}% 1
+\BOOKMARK [1][-]{section.1}{. System obs\233ugi biblioteki}{}% 2
+\BOOKMARK [1][-]{section.2}{. Aplikacja serwerowa}{}% 3
+\BOOKMARK [2][-]{subsection.2.1}{. Uzyte frameworki}{section.2}% 4
+\BOOKMARK [3][-]{subsubsection.2.1.1}{. Modele Django}{subsection.2.1}% 5
+\BOOKMARK [2][-]{subsection.2.2}{. Model danych}{section.2}% 6
+\BOOKMARK [3][-]{subsubsection.2.2.1}{. Model Book}{subsection.2.2}% 7
+\BOOKMARK [3][-]{subsubsection.2.2.2}{. Model Category}{subsection.2.2}% 8
+\BOOKMARK [2][-]{subsection.2.3}{. G\233\363wne klasy}{section.2}% 9
+\BOOKMARK [3][-]{subsubsection.2.3.1}{. Klasa CategoryTree}{subsection.2.3}% 10
+\BOOKMARK [3][-]{subsubsection.2.3.2}{. Klasa Dictionary}{subsection.2.3}% 11
+\BOOKMARK [3][-]{subsubsection.2.3.3}{. Klasa query}{subsection.2.3}% 12
+\BOOKMARK [2][-]{subsection.2.4}{. Us\233ugi}{section.2}% 13
+\BOOKMARK [3][-]{subsubsection.2.4.1}{. Us\233uga dostarczajaca ksiazki}{subsection.2.4}% 14
+\BOOKMARK [3][-]{subsubsection.2.4.2}{. Us\233uga dostarczajaca kategorie}{subsection.2.4}% 15
+\BOOKMARK [3][-]{subsubsection.2.4.3}{. Us\233uga dostarczajaca s\233ownik}{subsection.2.4}% 16
+\BOOKMARK [2][-]{subsection.2.5}{. Wdrazanie}{section.2}% 17
+\BOOKMARK [3][-]{subsubsection.2.5.1}{. Wirtualne srodowisko}{subsection.2.5}% 18
+\BOOKMARK [3][-]{subsubsection.2.5.2}{. Pobranie aplikacji}{subsection.2.5}% 19
+\BOOKMARK [3][-]{subsubsection.2.5.3}{. Konfiguracja aplikacji}{subsection.2.5}% 20
+\BOOKMARK [3][-]{subsubsection.2.5.4}{. Uruchomienie aplikacji}{subsection.2.5}% 21
+\BOOKMARK [3][-]{subsubsection.2.5.5}{. Konfiguracja Cron}{subsection.2.5}% 22
+\BOOKMARK [1][-]{section.3}{. Panel administracyjny}{}% 23
+\BOOKMARK [2][-]{subsection.3.1}{. Biblioteka}{section.3}% 24
+\BOOKMARK [3][-]{subsubsection.3.1.1}{. Importuj csv}{subsection.3.1}% 25
+\BOOKMARK [3][-]{subsubsection.3.1.2}{. Kategorie}{subsection.3.1}% 26
+\BOOKMARK [3][-]{subsubsection.3.1.3}{. Ksiazki}{subsection.3.1}% 27
+\BOOKMARK [2][-]{subsection.3.2}{. Uwierzytelnianie i Autoryzacja}{section.3}% 28
+\BOOKMARK [1][-]{section.4}{. Aplikacja na system Android}{}% 29
+\BOOKMARK [2][-]{subsection.4.1}{. Wykorzystane narzedzie}{section.4}% 30
+\BOOKMARK [2][-]{subsection.4.2}{. Wymagania systemowe}{section.4}% 31
+\BOOKMARK [2][-]{subsection.4.3}{. Model danych}{section.4}% 32
+\BOOKMARK [2][-]{subsection.4.4}{. Realizacja projektu}{section.4}% 33
+\BOOKMARK [3][-]{subsubsection.4.4.1}{. ModelViewPresenter}{subsection.4.4}% 34
+\BOOKMARK [3][-]{subsubsection.4.4.2}{. Pobieranie i wysy\233anie danych}{subsection.4.4}% 35
+\BOOKMARK [3][-]{subsubsection.4.4.3}{. Zarzadzanie widokami}{subsection.4.4}% 36
+\BOOKMARK [3][-]{subsubsection.4.4.4}{. BaseActivity}{subsection.4.4}% 37
+\BOOKMARK [3][-]{subsubsection.4.4.5}{. MainActivity}{subsection.4.4}% 38
+\BOOKMARK [3][-]{subsubsection.4.4.6}{. SearchActivity}{subsection.4.4}% 39
+\BOOKMARK [3][-]{subsubsection.4.4.7}{. CategoryActivity}{subsection.4.4}% 40
+\BOOKMARK [3][-]{subsubsection.4.4.8}{. BookActivity}{subsection.4.4}% 41
+\BOOKMARK [3][-]{subsubsection.4.4.9}{. BookDetailsActivity}{subsection.4.4}% 42
+\BOOKMARK [2][-]{subsection.4.5}{. Interfejs uzytkownika}{section.4}% 43
+\BOOKMARK [2][-]{subsection.4.6}{. Splash screen}{section.4}% 44
+\BOOKMARK [3][-]{subsubsection.4.6.1}{. Wyszukiwarka ksiazek}{subsection.4.6}% 45
+\BOOKMARK [3][-]{subsubsection.4.6.2}{. Wyb\363r kategorii}{subsection.4.6}% 46
+\BOOKMARK [3][-]{subsubsection.4.6.3}{. Wyniki wyszukiwania}{subsection.4.6}% 47
+\BOOKMARK [3][-]{subsubsection.4.6.4}{. Szczeg\363\233y ksiazki}{subsection.4.6}% 48
+\BOOKMARK [1][-]{section.5}{. Aplikacja na system iOS}{}% 49
+\BOOKMARK [2][-]{subsection.5.1}{. Wykorzystane narzedzia}{section.5}% 50
+\BOOKMARK [2][-]{subsection.5.2}{. Wymagania systemowe}{section.5}% 51
+\BOOKMARK [2][-]{subsection.5.3}{. Model danych}{section.5}% 52
+\BOOKMARK [2][-]{subsection.5.4}{. Realizacja projektu}{section.5}% 53
+\BOOKMARK [3][-]{subsubsection.5.4.1}{. Biblioteka R.swift}{subsection.5.4}% 54
+\BOOKMARK [3][-]{subsubsection.5.4.2}{. Zarzadzanie widokami}{subsection.5.4}% 55
+\BOOKMARK [3][-]{subsubsection.5.4.3}{. MainViewController}{subsection.5.4}% 56
+\BOOKMARK [3][-]{subsubsection.5.4.4}{. SearchViewController}{subsection.5.4}% 57
+\BOOKMARK [3][-]{subsubsection.5.4.5}{. CategoriesViewController}{subsection.5.4}% 58
+\BOOKMARK [3][-]{subsubsection.5.4.6}{. BookListViewController}{subsection.5.4}% 59
+\BOOKMARK [3][-]{subsubsection.5.4.7}{. BookDetailsViewController}{subsection.5.4}% 60
+\BOOKMARK [3][-]{subsubsection.5.4.8}{. SessionManager}{subsection.5.4}% 61
+\BOOKMARK [3][-]{subsubsection.5.4.9}{. RequestManager}{subsection.5.4}% 62
+\BOOKMARK [2][-]{subsection.5.5}{. Localizable.strings}{section.5}% 63
+\BOOKMARK [2][-]{subsection.5.6}{. Interfejs uzytkownika}{section.5}% 64
+\BOOKMARK [3][-]{subsubsection.5.6.1}{. Wyszukiwarka ksiazek}{subsection.5.6}% 65
+\BOOKMARK [3][-]{subsubsection.5.6.2}{. Wyb\363r kategorii}{subsection.5.6}% 66
+\BOOKMARK [3][-]{subsubsection.5.6.3}{. Wyniki wyszukiwania}{subsection.5.6}% 67
+\BOOKMARK [3][-]{subsubsection.5.6.4}{. Szczeg\363\233y ksiazki}{subsection.5.6}% 68
+\BOOKMARK [1][-]{section.6}{. Zakonczenie}{}% 69
+\BOOKMARK [1][-]{section.7}{. Za\233aczniki}{}% 70
+\BOOKMARK [1][-]{section*.5}{Literatura}{}% 71

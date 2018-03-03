@@ -76,18 +76,18 @@ extension RequestManager {
             filters["responsibility__contains"] = author.trimmingCharacters(in: .whitespacesAndNewlines)
         }
         if let isbn = searchedBook.bookIsbn {
-            let isbnText = isbn.trimmingCharacters(in: .whitespacesAndNewlines)
-            var value = ""
-            let digits = NSCharacterSet.decimalDigits
-            for char in isbnText.unicodeScalars {
-                if digits.contains(char) {
-                    value += String(char)
-                }
-            }
-            filters["isbn_issn"] = value
+//            let isbnText = isbn.trimmingCharacters(in: .whitespacesAndNewlines)
+//            var value = ""
+//            let digits = NSCharacterSet.decimalDigits
+//            for char in isbnText.unicodeScalars {
+//                if digits.contains(char) {
+//                    value += String(char)
+//                }
+//            }
+            filters["isbn_issn__contains"] = isbn.trimmingCharacters(in: .whitespacesAndNewlines)
         }
         if let mathSignature = searchedBook.bookMathLibrarySignature {
-            filters["signature_ms"] = mathSignature.trimmingCharacters(in: .whitespacesAndNewlines)
+            filters["signature_ms__contains"] = mathSignature.trimmingCharacters(in: .whitespacesAndNewlines)
         }
         if let mainSignature = searchedBook.bookMainLibrarySignature {
             filters["signature_bg__contains"] = mainSignature.trimmingCharacters(in: .whitespacesAndNewlines)
