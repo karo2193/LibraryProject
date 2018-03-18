@@ -42,6 +42,13 @@ class SearchTextTableViewCell: UITableViewCell {
             textField.addDoneButtonAboveKeyboard()
         }
     }
+    @IBOutlet weak var segmentedControl: UISegmentedControl! {
+        didSet {
+            segmentedControl.tintColor = .tintDark
+            segmentedControl.isHidden = true
+            segmentedControl.addTarget(self, action: #selector(onSegmentedControlClick), for: .valueChanged)
+        }
+    }
     @IBOutlet weak var separatorView: UIView! {
         didSet {
             separatorView.backgroundColor = .tintDark
@@ -59,14 +66,23 @@ class SearchTextTableViewCell: UITableViewCell {
                 pickerView?.dataSource = self
                 textField.inputView = pickerView
                 textField.placeholder = R.string.localizable.choose() + "..."
-            case .mathSignature, .year:
+                segmentedControl.isHidden = true
+            case .mathSignature:
                 textField.keyboardType = .numberPad
                 textField.inputView = nil
                 textField.placeholder = R.string.localizable.typePhraseToSearch() + "..."
+                segmentedControl.isHidden = true
+            case .year:
+                textField.keyboardType = .numberPad
+                textField.inputView = nil
+                textField.placeholder = R.string.localizable.typePhraseToSearch() + "..."
+                segmentedControl.isHidden = false
+                refreshSegmentedControl()
             default:
                 textField.keyboardType = .default
                 textField.inputView = nil
                 textField.placeholder = R.string.localizable.typePhraseToSearch() + "..."
+                segmentedControl.isHidden = true
             }
         }
     }
@@ -119,6 +135,31 @@ class SearchTextTableViewCell: UITableViewCell {
             searchPropertyType = .category
         default:
             searchPropertyType = .none
+        }
+    }
+    
+    private func refreshSegmentedControl() {
+        switch SessionManager.shared.yearSearchType {
+        case .less:
+            segmentedControl.selectedSegmentIndex = 0
+        case .equal:
+            segmentedControl.selectedSegmentIndex = 1
+        case .greater:
+            segmentedControl.selectedSegmentIndex = 2
+        }
+    }
+    
+    @objc func onSegmentedControlClick() {
+        let index = segmentedControl.selectedSegmentIndex
+        switch index {
+        case 0:
+            SessionManager.shared.yearSearchType = .less
+        case 1:
+            SessionManager.shared.yearSearchType = .equal
+        case 2:
+            SessionManager.shared.yearSearchType = .greater
+        default:
+            SessionManager.shared.yearSearchType = .equal
         }
     }
     

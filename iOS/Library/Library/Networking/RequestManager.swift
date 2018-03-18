@@ -93,7 +93,14 @@ extension RequestManager {
             filters["signature_bg__contains"] = mainSignature.trimmingCharacters(in: .whitespacesAndNewlines)
         }
         if let year = searchedBook.bookYear {
-            filters["year"] = year.trimmingCharacters(in: .whitespacesAndNewlines)
+            switch SessionManager.shared.yearSearchType {
+            case .less:
+                filters["year__lt"] = year.trimmingCharacters(in: .whitespacesAndNewlines)
+            case .equal:
+                filters["year"] = year.trimmingCharacters(in: .whitespacesAndNewlines)
+            case .greater:
+                filters["year__gt"] = year.trimmingCharacters(in: .whitespacesAndNewlines)
+            }
         }
         if let volume = searchedBook.bookVolume {
             filters["volume__contains"] = volume.trimmingCharacters(in: .whitespacesAndNewlines)

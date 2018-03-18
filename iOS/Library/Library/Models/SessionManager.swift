@@ -8,6 +8,12 @@
 
 import Foundation
 
+enum YearSearchType {
+    case less
+    case equal
+    case greater
+}
+
 class SessionManager {
     
     private init() {
@@ -19,6 +25,7 @@ class SessionManager {
     
     var dataDownloaded: Bool = false
     var searchedBook: Book!
+    var yearSearchType: YearSearchType = .equal
     var mainCategories: [MainCategory] = []
     var dictionaryTypes: DictionaryTypes!
     
