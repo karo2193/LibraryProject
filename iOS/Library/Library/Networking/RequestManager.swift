@@ -87,7 +87,7 @@ extension RequestManager {
             filters["isbn_issn__contains"] = isbn.trimmingCharacters(in: .whitespacesAndNewlines)
         }
         if let mathSignature = searchedBook.bookMathLibrarySignature {
-            filters["signature_ms__contains"] = mathSignature.trimmingCharacters(in: .whitespacesAndNewlines)
+            filters["signature_ms"] = mathSignature.trimmingCharacters(in: .whitespacesAndNewlines)
         }
         if let mainSignature = searchedBook.bookMainLibrarySignature {
             filters["signature_bg__contains"] = mainSignature.trimmingCharacters(in: .whitespacesAndNewlines)
